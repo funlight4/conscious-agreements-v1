@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Conditional Acceptance Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 1px solid #ccc;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .notice-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #f9f9f9;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+        
+        .section {
+            margin: 35px 0;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 18pt;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+        }
+        
+        .conditions-list {
+            background: #e7f3ff;
+            border: 2px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .condition-item {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .condition-number {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .legal-notice {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .legal-notice h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        
+        .acceptance-terms {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .acceptance-terms h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        .theory-box {
+            background: #f0f0f0;
+            border: 2px dashed #999;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 10px;
+        }
+        
+        .theory-box h3 {
+            color: #666;
+            margin-top: 0;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 40px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+        
+        .deadline-notice {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+        
+        .instructions-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .trap-explanation {
+            background: #fff3e0;
+            border: 3px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .trap-explanation h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .verification-statement {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">NOTICE OF CONDITIONAL ACCEPTANCE</div>
+            <div class="subtitle">Acceptance Upon Proof of Claim</div>
+            <div class="subtitle">"Yes, but..." Strategy</div>
+        </div>
+        
+        <div class="trap-explanation no-print">
+            <h3>🎯 The Trap This Creates:</h3>
+            <p>This document agrees to pay the debt BUT ONLY if they can prove certain basic facts about the loan. Since they cannot prove these facts (because no actual money was lent), they are trapped:</p>
+            <ul>
+                <li><strong>If they provide proof</strong> → You'll pay (but they can't provide it)</li>
+                <li><strong>If they can't provide proof</strong> → Admits no valid debt exists</li>
+                <li><strong>If they ignore it</strong> → Acceptance of your conditions</li>
+                <li><strong>If they proceed without proof</strong> → Violation of your acceptance terms</li>
+            </ul>
+            <p><strong>This shifts burden of proof to them while appearing cooperative.</strong></p>
+        </div>
+        
+        <div class="notice-box">
+            NOTICE TO PRINCIPAL IS NOTICE TO AGENT<br>
+            NOTICE TO AGENT IS NOTICE TO PRINCIPAL<br>
+            This is a LEGAL NOTICE with legal consequences
+        </div>
+        
+        <div class="section">
+            <h2>PARTIES</h2>
+            
+            <p><strong>FROM:</strong><br>
+            <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Your Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Alleged Debtor")</p>
+            
+            <p><strong>TO:</strong><br>
+            <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Bank Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Alleged Creditor")</p>
+            
+            <p><strong>RE:</strong> Alleged Account/Loan Number: <input type="text" class="form-field" placeholder="Account Number" style="width: 200px;"></p>
+            
+            <p><strong>DATE:</strong> <input type="date" class="form-field" style="width: 150px;"></p>
+        </div>
+        
+        <div class="section">
+            <h2>STATEMENT OF CONDITIONAL ACCEPTANCE</h2>
+            
+            <p>I, <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, hereby provide this Notice of Conditional Acceptance regarding the above-referenced alleged debt.</p>
+            
+            <p><strong>I AM WILLING TO PAY ANY LAWFUL DEBT THAT I OWE.</strong></p>
+            
+            <p>However, I require verification of certain facts before I can determine whether a lawful debt exists. I hereby CONDITIONALLY ACCEPT your claim upon your ability to provide verified proof of the following conditions:</p>
+        </div>
+        
+        <div class="conditions-list">
+            <h2 style="text-align: center; color: #0066cc;">CONDITIONS THAT MUST BE PROVEN</h2>
+            
+            <div class="condition-item">
+                <div class="condition-number">1</div>
+                <h3>PROOF OF CONSIDERATION</h3>
+                <p>Provide verified proof that you gave adequate consideration for the alleged debt. Specifically:</p>
+                <ul>
+                    <li>Identify the specific account from which funds were transferred to fund the loan</li>
+                    <li>Provide certified copies of the accounting ledger showing money leaving your account</li>
+                    <li>Prove that you risked or lost something of value</li>
+                    <li>Show that you had the funds BEFORE making the loan</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">2</div>
+                <h3>PROOF OF LOSS</h3>
+                <p>Provide verified proof that you suffered an actual loss. Specifically:</p>
+                <ul>
+                    <li>Show reduction in your assets when loan was made</li>
+                    <li>Prove you cannot recover if I don't pay</li>
+                    <li>Demonstrate actual damages, not speculative</li>
+                    <li>Provide audited financial statements showing loss</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">3</div>
+                <h3>PROOF OF OWNERSHIP</h3>
+                <p>Provide verified proof that you own the alleged debt. Specifically:</p>
+                <ul>
+                    <li>Produce the original "wet-ink" promissory note</li>
+                    <li>Provide complete chain of title from origination</li>
+                    <li>Show all assignments and transfers with dates</li>
+                    <li>Prove note and mortgage were never separated</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">4</div>
+                <h3>PROOF OF AUTHORITY</h3>
+                <p>Provide verified proof of your authority to collect. Specifically:</p>
+                <ul>
+                    <li>Corporate charter authorizing lending in this state</li>
+                    <li>License to operate as lender/servicer</li>
+                    <li>Power of attorney if collecting for another</li>
+                    <li>Proof of standing to enforce the note</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">5</div>
+                <h3>PROOF OF ACCOUNTING</h3>
+                <p>Provide verified proof of proper accounting. Specifically:</p>
+                <ul>
+                    <li>Show how the loan was booked under GAAP</li>
+                    <li>Explain whether my note was recorded as an asset</li>
+                    <li>Clarify if offsetting liabilities were created</li>
+                    <li>Confirm no money was created from my signature</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">6</div>
+                <h3>PROOF OF NO SECURITIZATION</h3>
+                <p>Provide verified proof regarding securitization. Specifically:</p>
+                <ul>
+                    <li>Swear under oath the loan was never securitized</li>
+                    <li>Or if securitized, provide all documentation</li>
+                    <li>Name the trust and provide PSA</li>
+                    <li>Prove compliance with REMIC requirements</li>
+                </ul>
+            </div>
+            
+            <div class="condition-item">
+                <div class="condition-number">7</div>
+                <h3>PROOF OF DISCLOSURE</h3>
+                <p>Provide verified proof of full disclosure. Specifically:</p>
+                <ul>
+                    <li>Show where you disclosed money would be created</li>
+                    <li>Point to disclosure that no money would be lent</li>
+                    <li>Provide notice that my note would be an asset</li>
+                    <li>Explain why these material facts were hidden</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="deadline-notice">
+            YOU HAVE 30 DAYS TO PROVIDE THIS PROOF<br>
+            Deadline: <input type="date" class="form-field" style="width: 150px; background: white; color: black;">
+        </div>
+        
+        <div class="acceptance-terms">
+            <h3>UPON YOUR PROOF, I WILL:</h3>
+            <ol>
+                <li>Immediately pay any lawful debt proven to exist</li>
+                <li>Provide payment in full within 30 days of verification</li>
+                <li>Cease all challenges to the validity of the debt</li>
+                <li>Acknowledge the debt as valid and enforceable</li>
+                <li>Cooperate fully with reasonable payment arrangements</li>
+            </ol>
+            <p><strong>I am ready, willing, and able to pay any lawful debt upon proof of your claim.</strong></p>
+        </div>
+        
+        <div class="legal-notice">
+            <h3>FAILURE TO PROVIDE PROOF</h3>
+            <p>Your failure to provide the requested proof within 30 days constitutes:</p>
+            <ol>
+                <li><strong>Admission</strong> that no lawful debt exists</li>
+                <li><strong>Admission</strong> that no consideration was provided</li>
+                <li><strong>Admission</strong> that you lack standing to collect</li>
+                <li><strong>Agreement</strong> to cease all collection efforts</li>
+                <li><strong>Agreement</strong> to mark any credit reporting as "Paid/Satisfied"</li>
+                <li><strong>Estoppel</strong> from future claims on this matter</li>
+                <li><strong>Evidence</strong> of fraudulent collection attempts</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>LEGAL BASIS FOR CONDITIONS</h2>
+            
+            <p>The conditions requested are based on fundamental legal principles:</p>
+            
+            <h3>Consideration (Condition 1)</h3>
+            <p>Every contract requires consideration. See <em>Hamer v. Sidway</em>, 124 N.Y. 538 (1891). Without consideration, no contract exists.</p>
+            
+            <h3>Standing (Conditions 3 & 4)</h3>
+            <p>Only the real party in interest has standing to enforce a note. See <em>Sprint Communications Co. v. APCC Services</em>, 554 U.S. 269 (2008).</p>
+            
+            <h3>Burden of Proof (All Conditions)</h3>
+            <p>The party asserting a claim must prove it. See <em>Campbell v. United States</em>, 365 U.S. 85 (1961).</p>
+            
+            <h3>Full Disclosure (Condition 7)</h3>
+            <p>Material facts must be disclosed in contracts. Failure is fraud. See <em>Twomey v. Mitchum, Jones & Templeton</em>, 262 Cal.App.2d 690 (1968).</p>
+        </div>
+        
+        <div class="theory-box">
+            <h3>Why They Can't Provide This Proof:</h3>
+            <p>Banks create money when they make loans - they don't lend pre-existing money. This is confirmed by:</p>
+            <ul>
+                <li>Federal Reserve: "Banks create money when they make loans"</li>
+                <li>Bank of England: "Banks create deposits when they make loans"</li>
+                <li>German Supreme Court: <em>Daly v. First National Bank of Montgomery</em></li>
+            </ul>
+            <p>Since no money was actually lent (it was created from your signature), they cannot prove consideration, loss, or proper disclosure. This conditional acceptance exposes this fraud.</p>
+        </div>
+        
+        <div class="section">
+            <h2>AFFIDAVIT REQUIREMENT</h2>
+            
+            <p>All proofs must be provided via sworn affidavit by a competent witness with first-hand knowledge. The affiant must:</p>
+            <ul>
+                <li>Have personal knowledge of the facts sworn to</li>
+                <li>Be competent to testify</li>
+                <li>Swear under penalty of perjury</li>
+                <li>Provide their full name and title</li>
+                <li>Attach all supporting documentation</li>
+            </ul>
+            
+            <p><strong>Unsworn statements, form letters, or computer-generated responses are not acceptable.</strong></p>
+        </div>
+        
+        <div class="verification-statement">
+            I VERIFY UNDER PENALTY OF PERJURY THAT I AM READY, WILLING, AND ABLE<br>
+            TO PAY ANY LAWFUL DEBT UPON PROOF OF THE ABOVE CONDITIONS
+        </div>
+        
+        <div class="section">
+            <h2>RESERVATION OF RIGHTS</h2>
+            
+            <p>I reserve all rights, remedies, and defenses available at law and equity, including but not limited to:</p>
+            <ul>
+                <li>The right to challenge jurisdiction</li>
+                <li>The right to dispute the debt</li>
+                <li>The right to discovery</li>
+                <li>The right to jury trial</li>
+                <li>The right to counterclaim</li>
+                <li>All constitutional rights</li>
+            </ul>
+            
+            <p>This conditional acceptance is not an admission of any debt or waiver of any rights.</p>
+        </div>
+        
+        <div class="section">
+            <h2>METHOD OF RESPONSE</h2>
+            
+            <p>Your response must be sent via certified mail to:</p>
+            
+            <p style="margin-left: 40px;">
+            <input type="text" class="form-field" placeholder="Your Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Your Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;">
+            </p>
+            
+            <p><strong>Electronic responses, phone calls, or unsworn statements will not be accepted as valid proof.</strong></p>
+        </div>
+        
+        <div class="signature-section">
+            <h2>VERIFICATION AND SIGNATURE</h2>
+            
+            <p>I, <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, verify under penalty of perjury under the laws of <input type="text" class="form-field" placeholder="State" style="width: 150px;"> that the foregoing is true and correct to the best of my knowledge and belief.</p>
+            
+            <p>I am ready, willing, and able to pay any lawful debt that is properly verified according to the conditions stated herein.</p>
+            
+            <p>Executed on this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">.</p>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Signature</strong>
+            </p>
+            
+            <p>
+                <input type="text" class="form-field" placeholder="Your Name (Printed)" style="width: 400px;"><br>
+                <strong>Name (Printed)</strong>
+            </p>
+            
+            <p>Without prejudice, UCC 1-308</p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT (Recommended)</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">, before me personally appeared <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, known to me to be the person who executed the foregoing instrument.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="instructions-box no-print">
+            <h3>📋 INSTRUCTIONS FOR USE</h3>
+            
+            <p><strong>When to Use:</strong></p>
+            <ul>
+                <li>After receiving collection notices</li>
+                <li>Before foreclosure proceedings</li>
+                <li>In response to demand letters</li>
+                <li>When disputing debt validity</li>
+            </ul>
+            
+            <p><strong>How to Send:</strong></p>
+            <ol>
+                <li>Fill in all blanks completely</li>
+                <li>Calculate 30-day deadline</li>
+                <li>Have notarized (recommended)</li>
+                <li>Send via Certified Mail, Return Receipt</li>
+                <li>Keep copies of everything</li>
+                <li>Send to: Legal department, CEO, Servicer</li>
+            </ol>
+            
+            <p><strong>Expected Responses:</strong></p>
+            <ul>
+                <li><strong>Ignore it</strong> - Document their non-response</li>
+                <li><strong>Form letter reply</strong> - Not valid per your terms</li>
+                <li><strong>Threats</strong> - Document, don't be intimidated</li>
+                <li><strong>Partial response</strong> - Point out what's missing</li>
+                <li><strong>Cannot provide</strong> - You win!</li>
+            </ul>
+            
+            <p><strong>Follow-Up Actions:</strong></p>
+            <ol>
+                <li>After 30 days, send Notice of Default</li>
+                <li>Document their failure to prove claims</li>
+                <li>Use in court as evidence</li>
+                <li>Reference in all future correspondence</li>
+                <li>Include in complaint/answer filings</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            const deadline = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days from now
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[1].value = deadline.toISOString().split('T')[0];
+            
+            // Fill text fields
+            const nameFields = document.querySelectorAll('input[placeholder*="Your Name"], input[placeholder*="Your Full Name"]');
+            nameFields.forEach(field => field.value = 'John Smith');
+            
+            const addressFields = document.querySelectorAll('input[placeholder*="Your Address"]');
+            addressFields.forEach(field => field.value = '123 Main Street');
+            
+            document.querySelectorAll('input[placeholder*="City, State ZIP"]')[0].value = 'Miami, FL 33101';
+            document.querySelectorAll('input[placeholder*="City, State ZIP"]')[1].value = 'San Francisco, CA 94102';
+            
+            const bankFields = document.querySelectorAll('input[placeholder*="Bank"]');
+            bankFields.forEach(field => {
+                if (field.placeholder.includes('Name')) {
+                    field.value = 'Wells Fargo Bank, N.A.';
+                } else if (field.placeholder.includes('Address')) {
+                    field.value = '420 Montgomery Street';
+                }
+            });
+            
+            document.querySelector('input[placeholder="Account Number"]').value = '1234567890';
+            
+            // Fill state fields
+            const stateFields = document.querySelectorAll('input[placeholder="State"]');
+            stateFields.forEach(field => field.value = 'Florida');
+            
+            const countyFields = document.querySelectorAll('input[placeholder="County"]');
+            countyFields.forEach(field => field.value = 'Miami-Dade');
+            
+            // Fill date parts
+            document.querySelector('input[placeholder="Day"]').value = today.getDate();
+            document.querySelector('input[placeholder="Month"]').value = today.toLocaleString('default', { month: 'long' });
+            document.querySelector('input[placeholder="Year"]').value = today.getFullYear().toString().substr(-2);
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'conditional_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

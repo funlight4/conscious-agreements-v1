@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminology — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .term-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(212, 168, 83, 0.1);
+            border-radius: 8px;
+            justify-content: center;
+        }
+        .term-nav a {
+            padding: 0.25rem 0.75rem;
+            background: rgba(44, 62, 80, 0.1);
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+        .term-nav a:hover {
+            background: rgba(212, 168, 83, 0.3);
+        }
+        .term-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+        }
+        .term-section:last-of-type {
+            border-bottom: none;
+        }
+        .term-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .term-header h3 {
+            margin: 0;
+            color: var(--color-gold-dark, #b8860b);
+        }
+        .term-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .meaning-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        @media (max-width: 600px) {
+            .meaning-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        .meaning-common, .meaning-legal {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .meaning-common {
+            background: rgba(100, 100, 100, 0.1);
+        }
+        .meaning-legal {
+            background: rgba(212, 168, 83, 0.15);
+            border-left: 3px solid var(--color-gold, #d4a853);
+        }
+        .meaning-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .term-quote {
+            font-style: italic;
+            padding: 1rem;
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            margin: 1rem 0;
+        }
+        .term-quote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: normal;
+        }
+        .term-warning {
+            padding: 1rem;
+            background: rgba(180, 60, 60, 0.1);
+            border-left: 3px solid #8b0000;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        .category-header {
+            margin-top: 3rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(90deg, rgba(212, 168, 83, 0.2), transparent);
+            border-left: 4px solid var(--color-gold, #d4a853);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav__inner">
+            <a href="/" class="main-nav__brand">Conscious Agreements</a>
+            <ul class="main-nav__links">
+                <li><a href="/foundation/" class="main-nav__link">Foundation</a></li>
+                <li><a href="/domains/" class="main-nav__link">Domains</a></li>
+                <li><a href="/pathways/" class="main-nav__link">Pathways</a></li>
+                <li><a href="/reference/" class="main-nav__link main-nav__link--active">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/reference/">Reference</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Terminology</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Terminology</h1>
+                    <p class="lead">Legal terms rarely mean what you think they mean. Before you can navigate agreements consciously, you must understand the actual definitions in play.</p>
+                </header>
+
+                <div class="important-box">
+                    <div class="important-box__title">Why This Matters</div>
+                    <p>Every contract, statute, and legal document operates on precise definitions. When you assume a word means what it commonly means, you may be agreeing to something entirely different than what you believe. <strong>Definitions are the first battleground.</strong></p>
+                </div>
+
+                <nav class="term-nav" aria-label="Jump to term">
+                    <a href="#agreement">Agreement</a>
+                    <a href="#consideration">Consideration</a>
+                    <a href="#person">Person</a>
+                    <a href="#individual">Individual</a>
+                    <a href="#citizen">Citizen</a>
+                    <a href="#resident">Resident</a>
+                    <a href="#understand">Understand</a>
+                    <a href="#consent">Consent</a>
+                    <a href="#jurisdiction">Jurisdiction</a>
+                    <a href="#must">Must</a>
+                    <a href="#includes">Includes</a>
+                    <a href="#negotiable-instrument">Negotiable Instrument</a>
+                    <a href="#holder">Holder</a>
+                    <a href="#maker">Maker</a>
+                    <a href="#indorsement">Indorsement</a>
+                </nav>
+
+                <!-- FOUNDATIONAL TERMS -->
+                <h2 class="category-header" id="foundational">Foundational Terms</h2>
+
+                <section class="term-section" id="agreement">
+                    <div class="term-header">
+                        <h3>AGREEMENT</h3>
+                        <span class="term-category">Contract Law</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>An arrangement or understanding between parties</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>A concord of understanding and intention between two or more parties with respect to the effect upon their relative rights and duties.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "A meeting of minds with the understanding and intention to establish mutual consent."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <p>Key elements: <strong>Offer</strong>, <strong>Acceptance</strong>, <strong>Meeting of minds</strong>, <strong>Consideration</strong>, <strong>Capacity</strong>, and <strong>Lawful purpose</strong>. If any element is missing, the agreement may be void or voidable.</p>
+                </section>
+
+                <section class="term-section" id="consideration">
+                    <div class="term-header">
+                        <h3>CONSIDERATION</h3>
+                        <span class="term-category">Contract Law — Critical</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Thought, contemplation, or regard for something</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Something of value exchanged between parties. The inducement to a contract — the cause, motive, price, or impelling influence which induces a contracting party to enter into a contract.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "Some right, interest, profit, or benefit accruing to one party, or some forbearance, detriment, loss, or responsibility given, suffered, or undertaken by the other."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <div class="term-warning">
+                        <strong>Critical:</strong> Without valid consideration from BOTH parties, there is no valid contract. A one-sided "agreement" where only one party gives value is not an enforceable contract — it may be a gift, donation, or involuntary servitude.
+                    </div>
+                    <p>Always ask: <em>"What did the other party give up of value in exchange for my obligation?"</em> If the answer is nothing, the contract may be void.</p>
+                </section>
+
+                <section class="term-section" id="consent">
+                    <div class="term-header">
+                        <h3>CONSENT</h3>
+                        <span class="term-category">Contract Law</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Permission, agreement</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>A concurrence of wills. Agreement to something proposed by another. Can be <strong>express</strong> (stated) or <strong>implied</strong> (from action or inaction).</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "Consent is an act of reason, accompanied with deliberation, the mind weighing as in a balance the good and evil on each side."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <div class="term-warning">
+                        <strong>Warning:</strong> Silence can be construed as consent. Behavior can imply consent. This is precisely how unconscious agreements form — through actions, inactions, and assumptions rather than deliberate choice.
+                    </div>
+                </section>
+
+                <!-- IDENTITY TERMS -->
+                <h2 class="category-header" id="identity">Identity Terms</h2>
+
+                <section class="term-section" id="person">
+                    <div class="term-header">
+                        <h3>PERSON</h3>
+                        <span class="term-category">Identity — Critical</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>A human being, an individual</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>A legal entity. May refer to a <strong>natural person</strong> (human being) OR an <strong>artificial person</strong> (corporation, trust, partnership, etc.). The term often refers to the legal fiction/status rather than the living man or woman.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "A 'person' is such, not because he is human, but because rights and duties are ascribed to him."
+                        <cite>— Citing legal principle</cite>
+                    </div>
+                    <p>Under <strong>26 USC 7701(a)(1)</strong>, "person" includes an individual, trust, estate, partnership, association, company, or corporation. When a statute uses "person," verify whether it means human being or legal entity.</p>
+                    <p><em>See also:</em> <a href="#individual">Individual</a></p>
+                </section>
+
+                <section class="term-section" id="individual">
+                    <div class="term-header">
+                        <h3>INDIVIDUAL</h3>
+                        <span class="term-category">Identity — Surprising</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>A single human being</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>In federal tax law, may mean <strong>individual proprietorship</strong> (sole proprietorship) — a type of business entity, not necessarily a human being.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "The word 'individual' in certain contexts refers to corporations or business entities rather than natural persons."
+                        <cite>— Ohio Stat. 51, 510, 50 Am Rep. 43</cite>
+                    </div>
+                    <p>When you see "individual" on tax forms or federal documents, it may be referring to your sole proprietorship (identified by your SSN as an EIN), not you as a living man or woman.</p>
+                </section>
+
+                <section class="term-section" id="citizen">
+                    <div class="term-header">
+                        <h3>CITIZEN</h3>
+                        <span class="term-category">Identity / Jurisdiction</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Inhabitant, resident, member of a country</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>One who owes allegiance to a government and is entitled to its protection. Implies a reciprocal relationship with <strong>duties</strong> attached.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "Citizens are members of a political community who, in their associated capacity, have established or submitted themselves to the dominion of a government for the promotion of their general welfare and the protection of their individual as well as their collective rights."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <p>The <strong>Slaughter House Cases (83 US 36, 1872)</strong> established that there are TWO types of citizenship: <em>citizenship of the United States</em> (federal, post-14th Amendment) and <em>citizenship of a State</em> (original, pre-14th Amendment). These are distinct with different implications.</p>
+                </section>
+
+                <section class="term-section" id="resident">
+                    <div class="term-header">
+                        <h3>RESIDENT</h3>
+                        <span class="term-category">Identity / Jurisdiction</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Where someone lives</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>One who has a residence in a place. Different from <strong>domicile</strong>. Implies certain jurisdictional connections and potentially tax status.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "The place where a man's habitation is fixed, without any present intention of removing therefrom."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <div class="term-warning">
+                        <strong>Caution:</strong> Claiming "residence" in a jurisdiction may create jurisdictional hooks you didn't intend. The term carries implications beyond mere location.
+                    </div>
+                </section>
+
+                <!-- JURISDICTION TERMS -->
+                <h2 class="category-header" id="jurisdiction-terms">Jurisdiction & Authority</h2>
+
+                <section class="term-section" id="understand">
+                    <div class="term-header">
+                        <h3>UNDERSTAND</h3>
+                        <span class="term-category">Jurisdiction — Trap Word</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>To comprehend, to grasp the meaning</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>To "stand under" — can imply submission to authority or agreement to jurisdiction.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "Do you understand the charges against you?"
+                        <cite>— May be asking: "Do you stand under this court's authority?"</cite>
+                    </div>
+                    <div class="term-warning">
+                        <strong>Caution:</strong> Be careful with this word in legal contexts. Alternatives like "I comprehend" or "I am aware of your position" may avoid unintended implications.
+                    </div>
+                </section>
+
+                <section class="term-section" id="jurisdiction">
+                    <div class="term-header">
+                        <h3>JURISDICTION</h3>
+                        <span class="term-category">Authority</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Area, domain, territory</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>The <strong>authority</strong> to act; the power of a court or government entity to affect rights and obligations. Not merely geographic — must be properly established.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "The power and authority constitutionally conferred upon a court or judge to pronounce the sentence of the law."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <p>Jurisdiction must be established — it doesn't exist automatically. Three types: <strong>subject matter jurisdiction</strong> (authority over the type of case), <strong>personal jurisdiction</strong> (authority over the parties), and <strong>territorial jurisdiction</strong> (geographic limits).</p>
+                </section>
+
+                <section class="term-section" id="must">
+                    <div class="term-header">
+                        <h3>MUST</h3>
+                        <span class="term-category">Statutory Language</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Mandatory, required, obligatory</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Often means "may" — particularly in statutory language. Context determines whether mandatory or permissive.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "When used in a statute, the word 'must' is not always imperative and may be construed as merely directory."
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
+                    </div>
+                    <p>Don't assume "must" means "must" in legal documents. Check the context and whether mandatory or directory.</p>
+                </section>
+
+                <section class="term-section" id="includes">
+                    <div class="term-header">
+                        <h3>INCLUDES / INCLUDING</h3>
+                        <span class="term-category">Statutory Language — Trap Word</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Contains, encompasses (expansive — "this and more")</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Often <strong>limiting</strong> rather than expansive. In definitions, may mean "is limited to" what follows.</p>
+                        </div>
+                    </div>
+                    <div class="term-quote">
+                        "The term 'person' includes corporations."
+                        <cite>— May mean: For this statute's purposes, 'person' = corporations (limiting to corporations), not 'person' = humans + corporations (expansive)</cite>
+                    </div>
+                    <div class="term-warning">
+                        <strong>Critical:</strong> When a definition says "X includes Y," it may be limiting X to mean Y — not adding Y to X. This fundamentally changes who or what is subject to the statute.
+                    </div>
+                </section>
+
+                <!-- COMMERCIAL TERMS -->
+                <h2 class="category-header" id="commercial">Commercial & UCC Terms</h2>
+
+                <section class="term-section" id="negotiable-instrument">
+                    <div class="term-header">
+                        <h3>NEGOTIABLE INSTRUMENT</h3>
+                        <span class="term-category">UCC Article 3</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Checks, money orders, financial documents</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Under <strong>UCC 3-104</strong>: A written unconditional promise or order to pay a fixed amount of money, payable on demand or at a definite time, payable to order or to bearer.</p>
+                        </div>
+                    </div>
+                    <p>Two primary types:</p>
+                    <ul>
+                        <li><strong>NOTE:</strong> Unconditional <em>promise</em> to pay (e.g., promissory notes, Federal Reserve Notes)</li>
+                        <li><strong>DRAFT:</strong> Unconditional <em>order</em> to pay (e.g., checks, traffic tickets, court orders)</li>
+                    </ul>
+                    <p>Your signature on a promissory note creates a negotiable instrument. Under <strong>18 USC 8</strong>, all negotiable instruments may be considered "obligations or other securities of the United States."</p>
+                </section>
+
+                <section class="term-section" id="holder">
+                    <div class="term-header">
+                        <h3>HOLDER</h3>
+                        <span class="term-category">UCC Article 3</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Someone who has or holds something</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Someone in <strong>possession</strong> of a note or draft that is payable to them specifically, or payable to bearer. Only a holder (or holder in due course) can enforce an instrument.</p>
+                        </div>
+                    </div>
+                    <p>Under <strong>UCC 3-301</strong>, a person entitled to enforce an instrument is: (1) the holder, (2) a nonholder in possession with rights of a holder, or (3) a person entitled to enforce under specific UCC sections.</p>
+                    <p><strong>Key strategy:</strong> If the party attempting to collect cannot prove they are a proper holder of the original instrument, their standing to enforce is questionable.</p>
+                </section>
+
+                <section class="term-section" id="maker">
+                    <div class="term-header">
+                        <h3>MAKER</h3>
+                        <span class="term-category">UCC Article 3</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>One who makes something</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>Under <strong>UCC 3-103(7)</strong>: A person who signs or is identified in a note as a person undertaking to pay.</p>
+                        </div>
+                    </div>
+                    <p>The maker of a note is primarily liable for payment. However, under <strong>UCC 3-402(b)(1)</strong>, you can sign as a <em>representative</em> of a represented person to avoid being the maker personally.</p>
+                    <p>Example signature strategy:<br>
+                    <code>By: [Your Name], representative<br>For: [YOUR NAME], represented person</code></p>
+                </section>
+
+                <section class="term-section" id="indorsement">
+                    <div class="term-header">
+                        <h3>INDORSEMENT</h3>
+                        <span class="term-category">UCC Article 3</span>
+                    </div>
+                    <div class="meaning-comparison">
+                        <div class="meaning-common">
+                            <div class="meaning-label">Common Usage</div>
+                            <p>Signing the back of a check, approval</p>
+                        </div>
+                        <div class="meaning-legal">
+                            <div class="meaning-label">Legal Meaning</div>
+                            <p>A signature (other than that of a maker, drawer, or acceptor) made for the purpose of negotiating the instrument. How you indorse affects your liability.</p>
+                        </div>
+                    </div>
+                    <p><strong>Types of Indorsement:</strong></p>
+                    <ul>
+                        <li><strong>Blank:</strong> Just a signature — makes instrument payable to bearer (anyone)</li>
+                        <li><strong>Special:</strong> "Pay to the order of [Name]" — limits to specific payee</li>
+                        <li><strong>Qualified:</strong> "Without recourse" — limits your liability as indorser</li>
+                    </ul>
+                    <p><strong>Strategic indorsement example:</strong><br>
+                    <code>Without recourse<br>Pay to the order of: [ENTITY NAME]<br>By: [Your Name], agent</code></p>
+                </section>
+
+                <!-- USAGE NOTES -->
+                <section style="margin-top: 3rem;">
+                    <h2>Using This Knowledge</h2>
+
+                    <div class="insight-box">
+                        <div class="insight-box__title">Practical Guidelines</div>
+                        <ol style="margin: 0; padding-left: 1.5rem;">
+                            <li><strong>Never assume</strong> a word means what it commonly means in legal contexts</li>
+                            <li><strong>Look up</strong> key terms in Black's Law Dictionary, 4th Edition</li>
+                            <li><strong>Ask for clarification</strong> rather than stating you "understand"</li>
+                            <li><strong>Notice capitalization</strong> — "Person" may differ from "person" or "PERSON"</li>
+                            <li><strong>Consider context</strong> — the same term may mean different things in different statutes</li>
+                            <li><strong>Check the definitions section</strong> of any statute or contract — it defines the terms for that document</li>
+                        </ol>
+                    </div>
+
+                    <p>These definitions are starting points for inquiry, not final answers. When a term matters in your specific situation, research its full definition in the applicable context.</p>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/reference/" class="page-nav__link">
+                    <span class="page-nav__label">Back to</span>
+                    <span class="page-nav__title">← Reference</span>
+                </a>
+                <a href="/foundation/what-is-agreement.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Related</span>
+                    <span class="page-nav__title">What Is an Agreement? →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Conscious Agreements Framework — Private Knowledge Base</p>
+        <p class="footer__quote">"The beginning of wisdom is the definition of terms." — Socrates</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

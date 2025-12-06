@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affidavit of Truth - Money Creation and Promissory Notes</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            border: 2px solid #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px double #000;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            font-size: 12pt;
+            margin: 5px 0;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #fffef0;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .instructions {
+            background: #e8f5e9;
+            border: 3px double #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        
+        .legal-warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: #c62828;
+        }
+        
+        .affiant-section {
+            margin: 30px 0;
+        }
+        
+        .affiant-section h3 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        
+        .statement {
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .statement-number {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .notary-section {
+            border: 3px double #000;
+            padding: 20px;
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .notary-section h3 {
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .jurat-text {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px;
+            font-weight: bold;
+        }
+        
+        .legal-citation {
+            font-style: italic;
+            color: #333;
+        }
+        
+        .definitions-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #3f51b5;
+        }
+        
+        .definitions-section h3 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+        
+        .definition-item {
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .definition-term {
+            font-weight: bold;
+            color: #1a237e;
+        }
+        
+        .facts-section {
+            background: #fffef0;
+            padding: 20px;
+            margin: 30px 0;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+        }
+        
+        .facts-section h3 {
+            color: #f57c00;
+            margin-top: 0;
+        }
+        
+        .exhibit-ref {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .legal-maxim {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #1976d2;
+            font-style: italic;
+        }
+        
+        .standing-statement {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 14pt;
+        }
+        
+        ol.numbered-statements {
+            counter-reset: statement-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ol.numbered-statements li {
+            counter-increment: statement-counter;
+            margin: 20px 0;
+            padding: 15px;
+            background: #fafafa;
+            border-left: 3px solid #333;
+            position: relative;
+        }
+        
+        ol.numbered-statements li::before {
+            content: counter(statement-counter) ".";
+            font-weight: bold;
+            font-size: 16pt;
+            position: absolute;
+            left: -30px;
+            top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Affidavit of Truth</h1>
+            <p>Regarding: Money Creation Through Promissory Notes</p>
+            <p>In Support of: Challenge to Alleged Debt</p>
+        </div>
+        
+        <div class="instructions no-print">
+            <h3>⚖️ Power of an Affidavit</h3>
+            <ol>
+                <li><strong>Unrebutted affidavits stand as truth</strong> in commerce and law</li>
+                <li><strong>Creates presumption of fact</strong> that opponent must overcome</li>
+                <li><strong>Admissible as evidence</strong> in court proceedings</li>
+                <li><strong>Perjury penalties</strong> give it serious weight</li>
+                <li><strong>Record at county recorder</strong> for public notice</li>
+            </ol>
+            <p><strong>CRITICAL:</strong> Every statement must be TRUE and within your personal knowledge!</p>
+        </div>
+        
+        <div class="legal-warning no-print">
+            <strong>⚠️ PERJURY WARNING:</strong><br>
+            This affidavit is signed under penalty of perjury. False statements are punishable by fines and imprisonment under 18 U.S.C. § 1621. Only state facts you know to be true. Do not guess or speculate.
+        </div>
+        
+        <div class="affiant-section">
+            <h3>AFFIANT IDENTIFICATION</h3>
+            
+            <p>
+                State of <input type="text" class="form-field" placeholder="Your State" id="state" style="width: 150px;"><br>
+                County of <input type="text" class="form-field" placeholder="Your County" id="county" style="width: 150px;">
+            </p>
+            
+            <p>
+                I, <input type="text" class="form-field" placeholder="Your Full Legal Name" id="affiant_name" style="width: 300px;">, 
+                being first duly sworn upon oath, depose and state as follows:
+            </p>
+            
+            <ol>
+                <li>I am over the age of eighteen (18) years and competent to testify.</li>
+                <li>I have personal knowledge of the facts stated herein.</li>
+                <li>All facts stated herein are true, correct, and complete to the best of my knowledge and belief.</li>
+                <li>I am the borrower/mortgagor on the loan referenced herein.</li>
+            </ol>
+        </div>
+        
+        <div class="definitions-section">
+            <h3>DEFINITIONS USED IN THIS AFFIDAVIT</h3>
+            
+            <div class="definition-item">
+                <span class="definition-term">Promissory Note:</span> A negotiable instrument containing an unconditional written promise to pay a determinate sum of money, as defined in UCC § 3-104.
+            </div>
+            
+            <div class="definition-item">
+                <span class="definition-term">Federal Reserve Note:</span> The paper currency of the United States, which per 12 U.S.C. § 411 are "obligations of the United States."
+            </div>
+            
+            <div class="definition-item">
+                <span class="definition-term">Consideration:</span> Something of value given in exchange for a promise or performance, required for a valid contract.
+            </div>
+            
+            <div class="definition-item">
+                <span class="definition-term">Money Creation:</span> The process by which currency enters circulation through the banking system.
+            </div>
+        </div>
+        
+        <div class="facts-section">
+            <h3>STATEMENT OF FACTS</h3>
+            
+            <p class="standing-statement">
+                I have standing to make these statements as the creator of the promissory note in question.
+            </p>
+            
+            <ol class="numbered-statements">
+                <li>
+                    On or about <input type="date" class="form-field" id="loan_date" style="width: 150px;">, 
+                    I executed a promissory note in the amount of $<input type="text" class="form-field" placeholder="Loan Amount" id="loan_amount" style="width: 150px;"> 
+                    with <input type="text" class="form-field" placeholder="Original Lender Name" id="lender_name" style="width: 300px;">.
+                </li>
+                
+                <li>
+                    At the time of signing, I believed I was borrowing pre-existing money from the lender's assets or deposits.
+                </li>
+                
+                <li>
+                    I have since learned through research and federal publications that banks do not lend depositors' money or their own assets when making loans.
+                </li>
+                
+                <li>
+                    According to the Federal Reserve Bank of Chicago's publication "Modern Money Mechanics," commercial banks create new money when they make loans.
+                </li>
+                
+                <li>
+                    The Bank of England's 2014 publication "Money Creation in the Modern Economy" states: "Whenever a bank makes a loan, it simultaneously creates a matching deposit in the borrower's bank account, thereby creating new money."
+                </li>
+                
+                <li>
+                    My promissory note is a negotiable instrument under UCC § 3-104, having value as an asset.
+                </li>
+                
+                <li>
+                    Upon information and belief, the lender deposited my promissory note as an asset on their books and created a corresponding liability (deposit) in my account.
+                </li>
+                
+                <li>
+                    The alleged "loan" was actually an exchange of my promissory note (an asset with value) for credits in my account.
+                </li>
+                
+                <li>
+                    Federal Reserve Notes themselves are evidence of promissory obligations, as stated in 12 U.S.C. § 411.
+                </li>
+                
+                <li>
+                    In our current monetary system, where all currency consists of promises to pay, my promissory note constitutes payment, not a loan to be repaid.
+                </li>
+                
+                <li>
+                    The lender provided no consideration from their own assets for my promissory note.
+                </li>
+                
+                <li>
+                    The lender never disclosed that they would:
+                    <ul>
+                        <li>Deposit my promissory note as an asset</li>
+                        <li>Create new money from my signature</li>
+                        <li>Not lend me pre-existing money</li>
+                        <li>Effectively exchange my note for credits</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    Had I known the true nature of this transaction, I would have understood that:
+                    <ul>
+                        <li>I was providing the value (my promissory note)</li>
+                        <li>The lender was merely processing my note</li>
+                        <li>No pre-existing money was lent</li>
+                        <li>I was essentially paying for the property with my promissory note</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    The lender has or will potentially:
+                    <ul>
+                        <li>Sell my note for profit</li>
+                        <li>Securitize my note for additional profit</li>
+                        <li>Collect insurance if I default</li>
+                        <li>Receive tax benefits from any loss</li>
+                        <li>All while claiming I owe them money</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    Under the principle that promissory notes ARE payment in our debt-based monetary system, I have already paid for the property in full with my promissory note.
+                </li>
+                
+                <li>
+                    Any demand for additional payment, without the lender having provided consideration, constitutes:
+                    <ul>
+                        <li>Lack of consideration making the contract void</li>
+                        <li>Unjust enrichment</li>
+                        <li>Fraud in the inducement</li>
+                        <li>Violation of Truth in Lending Act</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    I never agreed to create money for the bank's benefit while also paying interest on my own creation.
+                </li>
+                
+                <li>
+                    The current monetary system operates on the principle that all money is created from debt, specifically from promissory notes like mine.
+                </li>
+                
+                <li>
+                    If my promissory note was discounted at the Federal Reserve discount window under 12 U.S.C. § 347, it was directly monetized into Federal Reserve Notes.
+                </li>
+                
+                <li>
+                    I reserve all rights and defenses under law, including but not limited to:
+                    <ul>
+                        <li>Lack of consideration</li>
+                        <li>Fraud in the factum</li>
+                        <li>Fraud in the inducement</li>
+                        <li>Failure of consideration</li>
+                        <li>Accord and satisfaction</li>
+                        <li>Payment already made via promissory note</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="legal-maxim">
+            <strong>Legal Maxim:</strong> "An unrebutted affidavit stands as truth in commerce."<br>
+            <strong>Legal Maxim:</strong> "He who does not deny, admits."<br>
+            <strong>Legal Maxim:</strong> "A matter must be expressed to be resolved."
+        </div>
+        
+        <div class="affiant-section">
+            <h3>CLAIMS AND DEMANDS</h3>
+            
+            <p>Based upon the foregoing facts, I claim and demand:</p>
+            
+            <ol>
+                <li>The alleged debt is satisfied by my promissory note which constituted payment.</li>
+                <li>No lawful debt exists as no consideration was provided by the lender.</li>
+                <li>Any foreclosure action lacks standing as the debt is disputed and potentially void.</li>
+                <li>All negative credit reporting must cease immediately.</li>
+                <li>The lender must either:
+                    <ul>
+                        <li>Prove they provided consideration from their own assets, OR</li>
+                        <li>Return my promissory note marked "PAID IN FULL", OR</li>
+                        <li>Provide the deed to the property free and clear</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="affiant-section">
+            <h3>OPPORTUNITY TO REBUT</h3>
+            
+            <p>
+                Any party claiming an interest adverse to the claims made in this affidavit has thirty (30) days from receipt 
+                to rebut any statement herein, point-by-point, with specificity, under oath, with supporting evidence. 
+                Failure to rebut shall constitute agreement with and admission of all statements herein.
+            </p>
+        </div>
+        
+        <div class="affiant-section">
+            <h3>RESERVATION OF RIGHTS</h3>
+            
+            <p>
+                I reserve all rights without prejudice to any of my rights. I do not waive any rights or defenses, 
+                all of which are expressly reserved. This affidavit is made without prejudice UCC 1-308.
+            </p>
+        </div>
+        
+        <div style="margin: 50px 0;">
+            <p>Further affiant sayeth naught.</p>
+            
+            <p>
+                DATED this <input type="text" class="form-field" placeholder="Day" id="sign_day" style="width: 50px;"> day of 
+                <input type="text" class="form-field" placeholder="Month" id="sign_month" style="width: 100px;">, 
+                20<input type="text" class="form-field" placeholder="Year" id="sign_year" style="width: 50px;">.
+            </p>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <p><input type="text" class="form-field" placeholder="Your Name (Printed)" id="printed_name" style="width: 300px;">, Affiant</p>
+            </div>
+        </div>
+        
+        <div class="notary-section">
+            <h3>Notary Acknowledgment</h3>
+            
+            <p class="jurat-text">
+                State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+                County of <input type="text" class="form-field" placeholder="County" style="width: 150px;">
+            </p>
+            
+            <p class="jurat-text">
+                Subscribed and sworn to (or affirmed) before me this _____ day of _____________, 20___, 
+                by <input type="text" class="form-field" placeholder="Affiant's Name" style="width: 300px;">, 
+                who proved to me on the basis of satisfactory evidence to be the person who appeared before me.
+            </p>
+            
+            <div style="margin-top: 40px;">
+                <div class="signature-line"></div>
+                <p>Notary Public</p>
+                <p>My Commission Expires: _________________</p>
+                <p>[NOTARY SEAL]</p>
+            </div>
+        </div>
+        
+        <div class="affiant-section" style="margin-top: 30px;">
+            <h3>CERTIFICATE OF SERVICE</h3>
+            
+            <p>
+                I hereby certify that a true and correct copy of this Affidavit of Truth has been sent via 
+                Certified Mail, Return Receipt Requested, to the following parties:
+            </p>
+            
+            <ul>
+                <li><input type="text" class="form-field" placeholder="Current Servicer Name and Address" style="width: 500px;"></li>
+                <li><input type="text" class="form-field" placeholder="Original Lender (if different)" style="width: 500px;"></li>
+                <li><input type="text" class="form-field" placeholder="Alleged Note Holder (if known)" style="width: 500px;"></li>
+                <li>County Recorder (for public record)</li>
+            </ul>
+            
+            <p>Certified Mail Numbers:</p>
+            <ul>
+                <li>#<input type="text" class="form-field" placeholder="Tracking Number" style="width: 250px;"></li>
+                <li>#<input type="text" class="form-field" placeholder="Tracking Number" style="width: 250px;"></li>
+                <li>#<input type="text" class="form-field" placeholder="Tracking Number" style="width: 250px;"></li>
+            </ul>
+        </div>
+        
+        <div class="legal-warning" style="margin-top: 30px;">
+            <strong>POST-EXECUTION INSTRUCTIONS:</strong>
+            <ol>
+                <li>Have this affidavit notarized - REQUIRED for legal effect</li>
+                <li>Record at county recorder's office for public notice</li>
+                <li>Send certified mail to all parties claiming interest</li>
+                <li>Keep original in safe place</li>
+                <li>Calendar 30 days for rebuttal period</li>
+                <li>If no rebuttal, document their acquiescence</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            document.getElementById('state').value = 'Florida';
+            document.getElementById('county').value = 'Miami-Dade';
+            document.getElementById('affiant_name').value = 'John Doe';
+            document.getElementById('loan_date').value = '2019-01-15';
+            document.getElementById('loan_amount').value = '350,000';
+            document.getElementById('lender_name').value = 'First National Bank';
+            document.getElementById('sign_day').value = new Date().getDate();
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('sign_month').value = months[new Date().getMonth()];
+            document.getElementById('sign_year').value = new Date().getFullYear().toString().substr(-2);
+            document.getElementById('printed_name').value = 'John Doe';
+        }
+        
+        // Auto-save form data
+        const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('affidavit_' + input.id);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('affidavit_' + this.id, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

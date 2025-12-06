@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlement Agreement - Phase 7 - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .template-header__breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .template-header__breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .template-header__breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .template-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .template-intro {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .template-intro__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #e65100;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .meta-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .meta-item__label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a237e;
+        }
+
+        .template-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #2c1810;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-letter {
+            background: white;
+            border: 1px solid #d4c4a8;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .template-letter__header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #1a237e;
+        }
+
+        .template-letter__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .template-letter__subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #5d4037;
+            margin: 0;
+        }
+
+        .template-letter__field {
+            background: #fff8e1;
+            padding: 0.15rem 0.4rem;
+            border-bottom: 1px dashed #8b4513;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: #1a237e;
+        }
+
+        .template-letter__section {
+            margin: 2rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .party-block {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .party-block__title {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .recitals-section {
+            background: #fafafa;
+            border-left: 4px solid #666;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .recitals-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+        }
+
+        .whereas-clause {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            font-style: italic;
+        }
+
+        .whereas-clause strong {
+            font-style: normal;
+            color: #000;
+        }
+
+        .terms-section {
+            background: #e8eaf6;
+            border: 2px solid #3f51b5;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .terms-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #1a237e;
+            margin: 0 0 1rem 0;
+        }
+
+        .term-item {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-left: 4px solid #3f51b5;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .term-item__number {
+            font-weight: 700;
+            color: #1a237e;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .payment-table th {
+            background: #333;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .payment-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+        }
+
+        .payment-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .release-section {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .release-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #856404;
+            margin: 0 0 1rem 0;
+        }
+
+        .confidentiality-section {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .confidentiality-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #c62828;
+            margin: 0 0 1rem 0;
+        }
+
+        .representations-section {
+            background: #f5f5f5;
+            border-left: 5px solid #9c27b0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .representations-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #6a1b9a;
+            margin: 0 0 1rem 0;
+        }
+
+        .consideration-section {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .consideration-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin: 0 0 1rem 0;
+        }
+
+        .dispute-section {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .dispute-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #1565c0;
+            margin: 0 0 1rem 0;
+        }
+
+        .exhibit-section {
+            background: white;
+            border: 2px solid #000;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .exhibit-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #000;
+            margin: 0 0 1rem 0;
+        }
+
+        .checkbox-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .checkbox-list li {
+            padding: 0.25rem 0;
+        }
+
+        .signature-block {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .signature-block__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #2c1810;
+            margin: 0 0 1rem 0;
+        }
+
+        .signature-party {
+            margin: 2rem 0;
+        }
+
+        .signature-party__title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #333;
+            width: 300px;
+            margin: 2rem 0 0.25rem 0;
+        }
+
+        .signature-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .notary-block {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #666;
+            background: #fafafa;
+        }
+
+        .notary-block__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #2c1810;
+            margin: 0 0 1rem 0;
+        }
+
+        .checklist__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist__list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checklist__list li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist__list li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box__title {
+            font-weight: 700;
+            color: #e65100;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .critical-warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .critical-warning__title {
+            font-weight: 700;
+            color: #c62828;
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            margin-top: 3rem;
+            border-radius: 4px;
+        }
+
+        .template-nav__link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .template-header {
+                padding: 2rem 1rem;
+            }
+
+            .template-header__title {
+                font-size: 1.75rem;
+            }
+
+            .template-content {
+                padding: 0 1rem 3rem;
+            }
+
+            .template-letter {
+                padding: 1.5rem;
+            }
+
+            .template-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="template-header">
+        <nav class="template-header__nav">
+            <div class="template-header__breadcrumb">
+                <a href="/">Home</a>
+                <span>→</span>
+                <a href="/templates/">Templates</a>
+                <span>→</span>
+                <a href="/templates/phase-7/">Phase 7</a>
+                <span>→</span>
+                <span>Settlement Agreement</span>
+            </div>
+        </nav>
+        <h1 class="template-header__title">Settlement Agreement and Release</h1>
+        <p class="template-header__subtitle">Full and Final Resolution of All Claims</p>
+    </header>
+
+    <main class="template-content">
+        <div class="template-intro">
+            <h2 class="template-intro__title">When to Use This Template</h2>
+            <p>This template is used when you have negotiated a resolution with the lender/servicer and need to document the terms of settlement. A settlement agreement is a binding contract that resolves all disputes, releases both parties from further claims, and establishes the terms for satisfaction of the loan.</p>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Document Type</div>
+                <div class="meta-item__value">Binding Contract</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Risk Level</div>
+                <div class="meta-item__value">High - Final</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Phase</div>
+                <div class="meta-item__value">7 - Settlement</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Notarization</div>
+                <div class="meta-item__value">Required</div>
+            </div>
+        </div>
+
+        <div class="critical-warning">
+            <p class="critical-warning__title">IMPORTANT: Have an Attorney Review Before Signing</p>
+            <p>This is a binding legal document with significant consequences. You are releasing substantial rights. Do not sign without legal counsel.</p>
+        </div>
+
+        <section class="template-section">
+            <h2 class="template-section__title">Template Document</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <h3 class="template-letter__title">Settlement Agreement and Release</h3>
+                    <p class="template-letter__subtitle">Full and Final Resolution of All Claims</p>
+                </div>
+
+                <p style="text-align: center; font-weight: bold;">
+                    This Settlement Agreement and Release ("Agreement") is entered into as of
+                    <span class="template-letter__field">[EFFECTIVE DATE]</span>
+                    ("Effective Date") by and between:
+                </p>
+
+                <div class="party-block">
+                    <p class="party-block__title">BORROWER(S):</p>
+                    <p><span class="template-letter__field">[YOUR FULL LEGAL NAME]</span></p>
+                    <p><span class="template-letter__field">[CO-BORROWER NAME, if applicable]</span></p>
+                    <p><span class="template-letter__field">[ADDRESS]</span></p>
+                    <p><span class="template-letter__field">[CITY, STATE ZIP]</span></p>
+                    <p>(collectively, "Borrower")</p>
+                </div>
+
+                <div class="party-block">
+                    <p class="party-block__title">LENDER/SERVICER:</p>
+                    <p><span class="template-letter__field">[BANK/SERVICER NAME]</span></p>
+                    <p><span class="template-letter__field">[ADDRESS]</span></p>
+                    <p><span class="template-letter__field">[CITY, STATE ZIP]</span></p>
+                    <p>("Lender")</p>
+                </div>
+
+                <p>Borrower and Lender are sometimes referred to individually as a "Party" and collectively as the "Parties."</p>
+
+                <div class="recitals-section">
+                    <h4 class="recitals-section__title">Recitals</h4>
+
+                    <div class="whereas-clause">
+                        <strong>WHEREAS,</strong> Borrower executed a promissory note dated
+                        <span class="template-letter__field">[LOAN DATE]</span>
+                        in the original principal amount of $<span class="template-letter__field">[ORIGINAL AMOUNT]</span>
+                        and a mortgage/deed of trust securing real property located at
+                        <span class="template-letter__field">[PROPERTY ADDRESS]</span>
+                        ("Property") with loan number <span class="template-letter__field">[LOAN NUMBER]</span>
+                        (collectively, the "Loan"); and
+                    </div>
+
+                    <div class="whereas-clause">
+                        <strong>WHEREAS,</strong> disputes have arisen between the Parties regarding the validity, enforceability, and/or terms of the Loan, including but not limited to claims of lack of consideration, fraud, violation of federal and state laws, and improper lending practices ("Disputes"); and
+                    </div>
+
+                    <div class="whereas-clause">
+                        <strong>WHEREAS,</strong> Borrower has asserted that the Loan is void for lack of consideration based on evidence that no actual money was lent and that Borrower's promissory note was the source of funds; and
+                    </div>
+
+                    <div class="whereas-clause">
+                        <strong>WHEREAS,</strong> the Parties desire to resolve all Disputes and claims between them without admitting liability and to avoid the expense, inconvenience, and uncertainty of litigation; and
+                    </div>
+
+                    <div class="whereas-clause">
+                        <strong>WHEREAS,</strong> the Parties have agreed to the terms set forth herein as a complete settlement of all claims;
+                    </div>
+
+                    <p style="margin-top: 1.5rem;"><strong>NOW, THEREFORE,</strong> in consideration of the mutual covenants and agreements set forth herein, and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the Parties agree as follows:</p>
+                </div>
+
+                <div class="terms-section">
+                    <h4 class="terms-section__title">TERMS OF SETTLEMENT</h4>
+
+                    <div class="term-item">
+                        <p class="term-item__number">1. LOAN SATISFACTION</p>
+                        <p>Lender agrees that upon execution of this Agreement and receipt of the Settlement Payment (if any), the Loan shall be deemed satisfied and paid in full. The current balance claimed is $<span class="template-letter__field">[CURRENT BALANCE]</span>, which shall be reduced to $<span class="template-letter__field">[SETTLEMENT AMOUNT]</span> ("Settlement Amount").</p>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">2. SETTLEMENT PAYMENT</p>
+                        <ul class="checkbox-list">
+                            <li>☐ Borrower shall pay Lender the Settlement Amount of $<span class="template-letter__field">[PAYMENT AMOUNT]</span> as follows:</li>
+                            <li>☐ Lump sum payment due within <span class="template-letter__field">[NUMBER]</span> days of execution</li>
+                            <li>☐ Installment payments according to the following schedule:</li>
+                        </ul>
+
+                        <table class="payment-table">
+                            <tr>
+                                <th>Payment #</th>
+                                <th>Due Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="template-letter__field">[DATE]</span></td>
+                                <td>$<span class="template-letter__field">[AMOUNT]</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="template-letter__field">[DATE]</span></td>
+                                <td>$<span class="template-letter__field">[AMOUNT]</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="template-letter__field">[DATE]</span></td>
+                                <td>$<span class="template-letter__field">[AMOUNT]</span></td>
+                            </tr>
+                        </table>
+
+                        <ul class="checkbox-list">
+                            <li>☐ No payment required - debt forgiven in full</li>
+                        </ul>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">3. RELEASE OF LIENS</p>
+                        <p>Within <span class="template-letter__field">[NUMBER]</span> business days of receiving the Settlement Payment (or execution if no payment required), Lender shall:</p>
+                        <ul>
+                            <li>Execute and record a Satisfaction of Mortgage/Reconveyance of Deed of Trust</li>
+                            <li>File UCC-3 termination statements for any UCC filings</li>
+                            <li>Provide Borrower with evidence of lien release</li>
+                            <li>Return original promissory note marked "PAID IN FULL" (if available)</li>
+                        </ul>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">4. CREDIT REPORTING</p>
+                        <p>Lender shall, within 30 days of execution:</p>
+                        <ul class="checkbox-list">
+                            <li>☐ Report the account as "Paid in Full" to all credit reporting agencies</li>
+                            <li>☐ Report the account as "Settled for Less Than Full Balance"</li>
+                            <li>☐ Delete all negative tradelines entirely</li>
+                            <li>☐ Report as agreed by Borrower: <span class="template-letter__field">[SPECIFY]</span></li>
+                        </ul>
+                        <p>Lender shall provide Borrower with written confirmation of credit bureau updates.</p>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">5. PROPERTY TITLE</p>
+                        <p>Upon completion of settlement terms:</p>
+                        <ul class="checkbox-list">
+                            <li>☐ Borrower retains full ownership of the Property free and clear</li>
+                            <li>☐ Property transfers to Lender via deed in lieu (separate agreement required)</li>
+                            <li>☐ Other: <span class="template-letter__field">[SPECIFY]</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">6. TAX CONSEQUENCES</p>
+                        <ul class="checkbox-list">
+                            <li>☐ Lender agrees NOT to issue a 1099-C for forgiven debt</li>
+                            <li>☐ Lender will issue 1099-C for $<span class="template-letter__field">[AMOUNT]</span> in forgiven debt</li>
+                        </ul>
+                        <p>Each party is responsible for their own tax obligations arising from this Agreement.</p>
+                    </div>
+
+                    <div class="term-item">
+                        <p class="term-item__number">7. DISMISSAL OF PENDING ACTIONS</p>
+                        <p>Within <span class="template-letter__field">[NUMBER]</span> days of execution, the Parties shall:</p>
+                        <ul>
+                            <li>Dismiss with prejudice any pending foreclosure actions</li>
+                            <li>Dismiss with prejudice case number <span class="template-letter__field">[CASE NUMBER]</span></li>
+                            <li>Withdraw all complaints filed with regulatory agencies</li>
+                            <li>Each party bears their own attorney fees and costs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="release-section">
+                    <h4 class="release-section__title">MUTUAL RELEASE OF CLAIMS</h4>
+
+                    <p><strong>8. BORROWER'S RELEASE:</strong> Except for the obligations created by this Agreement, Borrower hereby releases and forever discharges Lender and its officers, directors, employees, agents, attorneys, successors, and assigns from any and all claims, demands, actions, causes of action, damages, costs, expenses, and compensation of every kind, known or unknown, arising from or related to the Loan.</p>
+
+                    <p><strong>9. LENDER'S RELEASE:</strong> Except for the obligations created by this Agreement, Lender hereby releases and forever discharges Borrower from any and all claims, demands, actions, causes of action, damages, costs, expenses, and compensation of every kind, known or unknown, arising from or related to the Loan, including any deficiency claims.</p>
+
+                    <p><strong>10. UNKNOWN CLAIMS:</strong> The Parties acknowledge that they may discover facts different from or in addition to those currently known, and agree that this Agreement shall remain in full force and effect notwithstanding such discovery.</p>
+
+                    <p><strong>California Civil Code § 1542 Waiver</strong> (if applicable):<br>
+                    The Parties expressly waive any rights under California Civil Code § 1542, which states: "A general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release, and that if known by him or her must have materially affected his or her settlement with the debtor or released party."</p>
+                </div>
+
+                <div class="confidentiality-section">
+                    <h4 class="confidentiality-section__title">CONFIDENTIALITY</h4>
+
+                    <p><strong>11. CONFIDENTIAL TERMS:</strong></p>
+                    <ul class="checkbox-list">
+                        <li>☐ This Agreement and its terms are CONFIDENTIAL and shall not be disclosed except:</li>
+                    </ul>
+                    <ul>
+                        <li>To attorneys, accountants, or tax advisors</li>
+                        <li>As required by law or court order</li>
+                        <li>To enforce this Agreement</li>
+                        <li>To immediate family members</li>
+                    </ul>
+
+                    <ul class="checkbox-list">
+                        <li>☐ This Agreement is NOT CONFIDENTIAL and may be disclosed freely</li>
+                    </ul>
+
+                    <p><strong>Permitted Statement:</strong> If asked, parties may state only: "The matter has been resolved to the mutual satisfaction of all parties."</p>
+                </div>
+
+                <div class="representations-section">
+                    <h4 class="representations-section__title">REPRESENTATIONS AND WARRANTIES</h4>
+
+                    <p><strong>12. BORROWER REPRESENTS:</strong></p>
+                    <ul>
+                        <li>Has full authority to enter this Agreement</li>
+                        <li>Has not assigned any claims to third parties</li>
+                        <li>Has read and understood this Agreement</li>
+                        <li>Has been advised to consult with an attorney</li>
+                        <li>Enters this Agreement voluntarily</li>
+                    </ul>
+
+                    <p><strong>13. LENDER REPRESENTS:</strong></p>
+                    <ul>
+                        <li>Has full authority to enter this Agreement</li>
+                        <li>Has authority to release all liens and claims</li>
+                        <li>Will not sell or assign the Loan after this Agreement</li>
+                        <li>Has provided accurate payoff information</li>
+                        <li>Will comply with all terms herein</li>
+                    </ul>
+                </div>
+
+                <div class="consideration-section">
+                    <h4 class="consideration-section__title">CONSIDERATION ACKNOWLEDGMENT</h4>
+
+                    <p><strong>14. SUFFICIENT CONSIDERATION:</strong> The Parties acknowledge that this Agreement is supported by adequate consideration, including but not limited to:</p>
+                    <ul>
+                        <li>Mutual release of substantial claims</li>
+                        <li>Avoidance of litigation costs and uncertainty</li>
+                        <li>Peace of mind and closure</li>
+                        <li>Settlement payment (if applicable)</li>
+                        <li>Release of liens on Property</li>
+                        <li>Other valuable consideration</li>
+                    </ul>
+                </div>
+
+                <div class="dispute-section">
+                    <h4 class="dispute-section__title">DISPUTE RESOLUTION</h4>
+
+                    <p><strong>15. GOVERNING LAW:</strong> This Agreement shall be governed by the laws of <span class="template-letter__field">[STATE]</span> without regard to conflict of law principles.</p>
+
+                    <p><strong>16. DISPUTE RESOLUTION:</strong></p>
+                    <ul class="checkbox-list">
+                        <li>☐ Any disputes shall be resolved through binding arbitration under AAA rules</li>
+                        <li>☐ Any disputes shall be resolved in court in <span class="template-letter__field">[COUNTY, STATE]</span></li>
+                    </ul>
+
+                    <p><strong>17. ATTORNEY FEES:</strong> In any action to enforce this Agreement, the prevailing party shall be entitled to recover reasonable attorney fees and costs.</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <h4 class="template-letter__section-title">GENERAL PROVISIONS</h4>
+
+                    <p><strong>18. ENTIRE AGREEMENT:</strong> This Agreement constitutes the entire agreement between the Parties and supersedes all prior negotiations, representations, and agreements, whether written or oral.</p>
+
+                    <p><strong>19. MODIFICATION:</strong> This Agreement may only be modified in writing signed by all Parties.</p>
+
+                    <p><strong>20. SEVERABILITY:</strong> If any provision is held invalid or unenforceable, the remainder shall continue in full force and effect.</p>
+
+                    <p><strong>21. NO ADMISSION:</strong> This Agreement is a compromise of disputed claims and shall not be construed as an admission of liability by any Party.</p>
+
+                    <p><strong>22. COUNTERPARTS:</strong> This Agreement may be executed in counterparts, each of which shall be deemed an original. Electronic signatures shall be valid.</p>
+
+                    <p><strong>23. TIME IS OF THE ESSENCE:</strong> Time is of the essence for all dates and deadlines in this Agreement.</p>
+                </div>
+
+                <div class="exhibit-section">
+                    <h4 class="exhibit-section__title">EXHIBITS</h4>
+                    <p>The following exhibits are attached and incorporated herein:</p>
+                    <ul class="checkbox-list">
+                        <li>☐ Exhibit A: Satisfaction of Mortgage form</li>
+                        <li>☐ Exhibit B: Payment schedule</li>
+                        <li>☐ Exhibit C: Mutual release forms</li>
+                        <li>☐ Exhibit D: Dismissal stipulations</li>
+                        <li>☐ Other: <span class="template-letter__field">[SPECIFY]</span></li>
+                    </ul>
+                </div>
+
+                <div class="signature-block">
+                    <h4 class="signature-block__title">SIGNATURES</h4>
+
+                    <p style="text-align: center; font-weight: bold;">
+                        IN WITNESS WHEREOF, the Parties have executed this Settlement Agreement and Release
+                        as of the date first written above.
+                    </p>
+
+                    <div class="signature-party">
+                        <p class="signature-party__title">BORROWER:</p>
+                        <div class="signature-line"></div>
+                        <p>Name: <span class="template-letter__field">[PRINT NAME]</span></p>
+                        <p>Date: <span class="template-letter__field">[DATE]</span></p>
+
+                        <div class="signature-line"></div>
+                        <p>Co-Borrower (if any): <span class="template-letter__field">[PRINT NAME]</span></p>
+                        <p>Date: <span class="template-letter__field">[DATE]</span></p>
+                    </div>
+
+                    <div class="signature-party">
+                        <p class="signature-party__title">LENDER:</p>
+                        <p><span class="template-letter__field">[BANK/SERVICER NAME]</span></p>
+                        <div class="signature-line"></div>
+                        <p>By: ________________________________</p>
+                        <p>Name: <span class="template-letter__field">[AUTHORIZED SIGNATORY NAME]</span></p>
+                        <p>Title: <span class="template-letter__field">[TITLE]</span></p>
+                        <p>Date: <span class="template-letter__field">[DATE]</span></p>
+                    </div>
+                </div>
+
+                <div class="notary-block">
+                    <h4 class="notary-block__title">NOTARY ACKNOWLEDGMENTS</h4>
+
+                    <p><strong>BORROWER ACKNOWLEDGMENT:</strong></p>
+                    <p>State of <span class="template-letter__field">[STATE]</span><br>
+                    County of <span class="template-letter__field">[COUNTY]</span></p>
+
+                    <p>On <span class="template-letter__field">[DATE]</span>, before me, <span class="template-letter__field">[NOTARY NAME]</span>, Notary Public, personally appeared <span class="template-letter__field">[BORROWER NAME]</span>, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity.</p>
+
+                    <p style="margin-top: 1.5rem;">_______________________________<br>
+                    Notary Public<br>
+                    My Commission Expires: _____________</p>
+
+                    <p style="margin-top: 2rem;"><strong>LENDER ACKNOWLEDGMENT:</strong></p>
+                    <p>State of <span class="template-letter__field">[STATE]</span><br>
+                    County of <span class="template-letter__field">[COUNTY]</span></p>
+
+                    <p>On <span class="template-letter__field">[DATE]</span>, before me, <span class="template-letter__field">[NOTARY NAME]</span>, Notary Public, personally appeared <span class="template-letter__field">[SIGNATORY NAME]</span>, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity for the entity identified therein.</p>
+
+                    <p style="margin-top: 1.5rem;">_______________________________<br>
+                    Notary Public<br>
+                    My Commission Expires: _____________</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="template-section">
+            <h2 class="template-section__title">Filing Checklist</h2>
+
+            <div class="checklist">
+                <h3 class="checklist__title">Before Signing</h3>
+                <ul class="checklist__list">
+                    <li>Have an attorney review all terms</li>
+                    <li>Verify all amounts are accurate (current balance, settlement amount)</li>
+                    <li>Confirm lien release timeline is acceptable</li>
+                    <li>Agree on credit reporting terms</li>
+                    <li>Understand tax implications of forgiven debt</li>
+                    <li>Verify pending litigation case numbers</li>
+                    <li>Complete all blanks or mark as N/A</li>
+                    <li>Attach all referenced exhibits</li>
+                    <li>Both parties sign and notarize</li>
+                    <li>Keep multiple copies for your records</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="warning-box">
+            <p class="warning-box__title">Final Warnings</p>
+            <ul>
+                <li>This is a BINDING LEGAL AGREEMENT</li>
+                <li>You are RELEASING SIGNIFICANT RIGHTS</li>
+                <li>Consult an attorney BEFORE signing</li>
+                <li>Ensure all terms are acceptable</li>
+                <li>Keep copies of everything</li>
+                <li>Ensure all blanks are filled or marked N/A</li>
+            </ul>
+        </div>
+
+        <nav class="template-nav">
+            <a href="/templates/phase-7/" class="template-nav__link">
+                ← Phase 7 Overview
+            </a>
+            <a href="/templates/phase-7/" class="template-nav__link">
+                Phase 7 Overview
+            </a>
+            <a href="/templates/phase-7/deed-in-lieu.html" class="template-nav__link">
+                Deed in Lieu →
+            </a>
+        </nav>
+    </main>
+</body>
+</html>

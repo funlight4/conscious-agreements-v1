@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counterclaim Template - Phase 3 Templates - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .meta-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #6a1b9a;
+            margin-top: 0.25rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .template-letter__court-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .template-letter__section {
+            margin: 2rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            text-decoration: underline;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__count-header {
+            text-align: center;
+            font-weight: bold;
+            margin: 2.5rem 0 1rem 0;
+            padding: 1rem;
+            background: #f5f5f5;
+            border: 2px solid #333;
+        }
+
+        .template-letter__paragraph {
+            text-indent: 2rem;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+
+        .template-letter__paragraph-number {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .template-letter__signature-block {
+            margin-top: 3rem;
+        }
+
+        .template-letter__signature-line {
+            border-bottom: 1px solid #333;
+            width: 250px;
+            margin: 2rem 0 0.5rem 0;
+        }
+
+        .power-banner {
+            background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .power-banner h2 {
+            margin-top: 0;
+            font-family: 'Cinzel', serif;
+        }
+
+        .claims-selector {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .claims-selector h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+
+        .claims-selector ul {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+
+        .rico-section {
+            background: #e8eaf6;
+            border: 3px solid #3f51b5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .rico-section h3 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+
+        .criminal-section {
+            background: #263238;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .criminal-section h3 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+
+        .damages-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .damages-table th {
+            background: #4a148c;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .damages-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+        }
+
+        .damages-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .insight-box {
+            background: #fffef0;
+            border-left: 4px solid #d4a574;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-box h4 {
+            color: #8b4513;
+            margin-top: 0;
+        }
+
+        .strategic-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .strategic-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 0.1rem 0.3rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Conscious Agreements</a>
+        <ul class="nav-links">
+            <li><a href="/foundation/">Foundation</a></li>
+            <li><a href="/domains/">Domains</a></li>
+            <li><a href="/pathways/">Pathways</a></li>
+            <li><a href="/templates/" class="active">Templates</a></li>
+            <li><a href="/reference/">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-3/">Phase 3</a> &rsaquo;
+            <span>Counterclaim</span>
+        </div>
+
+        <h1>Counterclaim Template</h1>
+        <p class="subtitle">Turn Defense Into Offense - Sue Them Back</p>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Answer & Counterclaim</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Phase</div>
+                <div class="meta-item__value">3 - Court Filings</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Posture</div>
+                <div class="meta-item__value">Offensive</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Potential</div>
+                <div class="meta-item__value">Triple Damages</div>
+            </div>
+        </div>
+
+        <div class="power-banner">
+            <h2>TURN DEFENSE INTO OFFENSE</h2>
+            <p>When they sue you for foreclosure, you don't just defend - you sue them back. A counterclaim flips the script, making you the plaintiff with your own claims for damages, creating leverage and potentially recovering significant money.</p>
+        </div>
+
+        <div class="claims-selector">
+            <h3>Claims Available in This Template</h3>
+            <ul>
+                <li>FDCPA Violations ($1,000+ per violation)</li>
+                <li>FCRA Violations ($1,000+ per violation)</li>
+                <li>RESPA Violations ($2,000+ per violation)</li>
+                <li>TILA Violations (rescission available)</li>
+                <li>Fraud (actual + punitive damages)</li>
+                <li>RICO (TRIPLE DAMAGES)</li>
+                <li>Breach of Contract</li>
+                <li>Unjust Enrichment</li>
+                <li>Quiet Title</li>
+                <li>Slander of Title</li>
+                <li>Emotional Distress</li>
+                <li>Abuse of Process</li>
+                <li>Civil Conspiracy</li>
+            </ul>
+        </div>
+
+        <div class="rico-section">
+            <h3>RICO - The Triple Damages Option</h3>
+            <p>Under the Racketeer Influenced and Corrupt Organizations Act (18 U.S.C. &sect; 1961), you can recover <strong>three times your actual damages</strong> if you can prove:</p>
+            <ol>
+                <li><strong>Enterprise</strong> - The bank, servicer, and related entities acting together</li>
+                <li><strong>Pattern of racketeering</strong> - Two or more predicate acts (mail fraud, wire fraud, bank fraud, extortion)</li>
+                <li><strong>Affecting interstate commerce</strong> - Mortgage lending inherently does</li>
+                <li><strong>Causing injury to you</strong> - Financial harm, property loss, emotional distress</li>
+            </ol>
+        </div>
+
+        <div class="insight-box">
+            <h4>Strategic Advantages of a Counterclaim</h4>
+            <ul>
+                <li><strong>Creates leverage</strong> - They now face liability, changing settlement dynamics</li>
+                <li><strong>Expanded discovery</strong> - You can demand their internal documents</li>
+                <li><strong>Jury trial on YOUR claims</strong> - Juries often sympathize with homeowners</li>
+                <li><strong>Survives even if foreclosure proceeds</strong> - Your claims are independent</li>
+                <li><strong>Forces them to defend</strong> - Expensive for them to fight multiple fronts</li>
+            </ul>
+        </div>
+
+        <h2>Template Document</h2>
+
+        <div class="template-letter">
+            <div class="template-letter__court-header">
+                <p>IN THE <span class="template-letter__field">[CIRCUIT/DISTRICT]</span> COURT</p>
+                <p>IN AND FOR <span class="template-letter__field">[COUNTY NAME]</span> COUNTY</p>
+                <p>STATE OF <span class="template-letter__field">[STATE]</span></p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; margin: 2rem 0;">
+                <div>
+                    <span class="template-letter__field">[BANK/SERVICER NAME]</span><br>
+                    <span style="margin-left: 2rem;">Plaintiff,</span>
+                </div>
+                <div style="text-align: center; padding: 1rem;">vs.</div>
+                <div style="text-align: right;">
+                    Case No. <span class="template-letter__field">[CASE NUMBER]</span><br><br>
+                    <span class="template-letter__field">[YOUR NAME]</span><br>
+                    <span style="margin-left: 2rem;">Defendant/Counter-Plaintiff.</span>
+                </div>
+            </div>
+
+            <h2 style="text-align: center;">DEFENDANT'S ANSWER AND COUNTERCLAIM</h2>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">ANSWER TO COMPLAINT</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">1.</span>
+                    Defendant <span class="template-letter__field">[YOUR NAME]</span> denies each and every allegation in Plaintiff's Complaint except those specifically admitted herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">2.</span>
+                    [Respond to each numbered paragraph of their complaint: ADMIT, DENY, or state you have insufficient knowledge to admit or deny and therefore deny.]
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">AFFIRMATIVE DEFENSES</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">3.</span>
+                    Defendant asserts the following affirmative defenses:
+                </p>
+                <ol style="margin-left: 3rem;">
+                    <li>Lack of Standing</li>
+                    <li>Failure to State a Claim</li>
+                    <li>Lack of Consideration</li>
+                    <li>Fraud in the Inducement</li>
+                    <li>Unclean Hands</li>
+                    <li>Statute of Limitations</li>
+                    <li>Payment/Discharge</li>
+                    <li>Failure of Conditions Precedent</li>
+                    <li>Violation of FDCPA</li>
+                    <li>Violation of Due Process</li>
+                </ol>
+            </div>
+
+            <h2 style="text-align: center; font-weight: bold; margin: 2.5rem 0;">COUNTERCLAIM</h2>
+
+            <div class="template-letter__section">
+                <p style="text-align: center; font-style: italic;">
+                    Defendant/Counter-Plaintiff <span class="template-letter__field">[YOUR NAME]</span>,
+                    for causes of action against Plaintiff/Counter-Defendant
+                    <span class="template-letter__field">[BANK NAME]</span> ("Bank"), alleges as follows:
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">PARTIES AND JURISDICTION</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">4.</span>
+                    Counter-Plaintiff is a natural person and resident of <span class="template-letter__field">[COUNTY, STATE]</span>.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">5.</span>
+                    Counter-Defendant is a <span class="template-letter__field">[corporation/national association]</span> engaged in the business of mortgage lending and servicing.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">6.</span>
+                    This Court has jurisdiction over this counterclaim as it arises from the same transaction and occurrence as the main action.
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">GENERAL ALLEGATIONS</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">7.</span>
+                    On or about <span class="template-letter__field">[LOAN DATE]</span>, Counter-Plaintiff executed a promissory note for $<span class="template-letter__field">[AMOUNT]</span> believing it was a loan of pre-existing money.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">8.</span>
+                    In reality, Counter-Defendant created bookkeeping entries using Counter-Plaintiff's promissory note as the source of value, providing no consideration.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">9.</span>
+                    Counter-Defendant has engaged in a pattern of fraudulent conduct including:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>Misrepresenting the nature of the transaction</li>
+                    <li>Creating money from Counter-Plaintiff's signature without disclosure</li>
+                    <li>Charging interest on Counter-Plaintiff's own created value</li>
+                    <li>Falsifying documents to create standing</li>
+                    <li>Robo-signing assignments and affidavits</li>
+                    <li>Violating federal and state laws</li>
+                </ul>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT I<br>
+                VIOLATION OF FAIR DEBT COLLECTION PRACTICES ACT<br>
+                (15 U.S.C. &sect; 1692 et seq.)
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">10.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">11.</span>
+                    Counter-Defendant is a "debt collector" as defined by 15 U.S.C. &sect; 1692a(6).
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">12.</span>
+                    Counter-Defendant violated FDCPA by:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>&sect; 1692e - Using false, deceptive, or misleading representations</li>
+                    <li>&sect; 1692f - Using unfair or unconscionable means</li>
+                    <li>&sect; 1692g - Failing to validate debt upon request</li>
+                    <li>&sect; 1692e(2)(A) - Falsely representing the character or legal status of debt</li>
+                    <li>&sect; 1692e(10) - Using false representations to collect debt</li>
+                    <li>&sect; 1692f(6) - Taking property when no right exists</li>
+                </ul>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">13.</span>
+                    As a result, Counter-Plaintiff is entitled to:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>Statutory damages up to $1,000 per violation</li>
+                    <li>Actual damages including emotional distress</li>
+                    <li>Attorney's fees and costs</li>
+                </ul>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT II<br>
+                VIOLATION OF FAIR CREDIT REPORTING ACT<br>
+                (15 U.S.C. &sect; 1681 et seq.)
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">14.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">15.</span>
+                    Counter-Defendant furnished false information to credit reporting agencies about Counter-Plaintiff's account.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">16.</span>
+                    Counter-Defendant failed to:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>Report the debt as disputed</li>
+                    <li>Investigate disputes properly</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Notify of dispute status</li>
+                </ul>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">17.</span>
+                    Counter-Plaintiff suffered damages including damaged credit score, denial of credit, higher interest rates, and emotional distress.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT III<br>
+                VIOLATION OF REAL ESTATE SETTLEMENT PROCEDURES ACT<br>
+                (12 U.S.C. &sect; 2601 et seq.)
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">18.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">19.</span>
+                    Counter-Plaintiff sent a Qualified Written Request on <span class="template-letter__field">[DATE]</span>.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">20.</span>
+                    Counter-Defendant failed to respond within required timeframes, provide requested information, correct errors in the account, or provide contact information for the owner.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">21.</span>
+                    Counter-Plaintiff is entitled to statutory damages of $2,000 per violation, actual damages, and attorney's fees.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT IV<br>
+                FRAUD
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">22.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">23.</span>
+                    Counter-Defendant made false representations that pre-existing money was being lent, that Counter-Defendant was risking its own assets, that interest was justified compensation, and that Counter-Defendant had standing to foreclose.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">24.</span>
+                    These representations were false and Counter-Defendant knew them to be false, made with intent to deceive, material to the transaction, relied upon by Counter-Plaintiff, and caused damages to Counter-Plaintiff.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">25.</span>
+                    Counter-Plaintiff seeks actual damages, punitive damages, and rescission of the transaction.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT V<br>
+                RACKETEERING (RICO)<br>
+                (18 U.S.C. &sect; 1961 et seq.)
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">26.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-25 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">27.</span>
+                    Counter-Defendant and its associates constitute an "enterprise" engaged in a pattern of racketeering activity.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">28.</span>
+                    The predicate acts include:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>Mail fraud (18 U.S.C. &sect; 1341) - Each mailing</li>
+                    <li>Wire fraud (18 U.S.C. &sect; 1343) - Electronic communications</li>
+                    <li>Bank fraud (18 U.S.C. &sect; 1344) - Scheme to defraud</li>
+                    <li>Extortion (18 U.S.C. &sect; 894) - Collection of extensions of credit</li>
+                    <li>Money laundering (18 U.S.C. &sect; 1956) - Concealing source of funds</li>
+                </ul>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">29.</span>
+                    This pattern of racketeering has continued for years affecting thousands of homeowners.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">30.</span>
+                    Counter-Plaintiff has been injured in business and property and is entitled to <span class="highlight">TRIPLE DAMAGES</span>, attorney's fees, and costs of investigation and litigation.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT VI<br>
+                BREACH OF CONTRACT
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">31.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">32.</span>
+                    Counter-Defendant breached by failing to actually lend money as represented, misapplying payments, charging unauthorized fees, failing to provide required notices, and accelerating without right.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT VII<br>
+                UNJUST ENRICHMENT
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">33.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">34.</span>
+                    Counter-Defendant has been unjustly enriched by creating money from Counter-Plaintiff's signature, charging interest on Counter-Plaintiff's own created value, collecting payments without providing consideration, and keeping proceeds from securitization.
+                </p>
+            </div>
+
+            <div class="template-letter__count-header">
+                COUNT VIII<br>
+                QUIET TITLE
+            </div>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">35.</span>
+                    Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">36.</span>
+                    Counter-Plaintiff is the rightful owner of the property located at <span class="template-letter__field">[PROPERTY ADDRESS]</span>. Counter-Defendant's claimed lien is void for lack of consideration, fraud in the inducement, broken chain of title, and lack of standing.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">37.</span>
+                    Counter-Plaintiff seeks a decree quieting title in their favor.
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">PRAYER FOR RELIEF</h3>
+
+                <p>WHEREFORE, Counter-Plaintiff respectfully requests that this Court:</p>
+
+                <ol type="A" style="margin-left: 2rem;">
+                    <li>Award actual damages in an amount to be proven at trial;</li>
+                    <li>Award statutory damages under FDCPA ($1,000 per violation), FCRA ($1,000 per violation), and RESPA ($2,000 per violation);</li>
+                    <li>Award TRIPLE DAMAGES under RICO;</li>
+                    <li>Award punitive damages for fraud and malicious conduct;</li>
+                    <li>Quiet title in favor of Counter-Plaintiff;</li>
+                    <li>Declare the mortgage/deed of trust void;</li>
+                    <li>Enjoin Counter-Defendant from foreclosing on the property, reporting to credit agencies, and any collection activity;</li>
+                    <li>Award attorney's fees and costs;</li>
+                    <li>Award pre- and post-judgment interest;</li>
+                    <li>Grant such other relief as the Court deems just and proper.</li>
+                </ol>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">DEMAND FOR JURY TRIAL</h3>
+
+                <p class="template-letter__paragraph">
+                    Counter-Plaintiff hereby demands a trial by jury on all issues so triable.
+                </p>
+            </div>
+
+            <div class="template-letter__signature-block">
+                <p>Respectfully submitted,</p>
+                <p>DATED: <span class="template-letter__field">[DATE]</span></p>
+
+                <div class="template-letter__signature-line"></div>
+                <p>
+                    <span class="template-letter__field">[YOUR NAME]</span><br>
+                    <span class="template-letter__field">[YOUR ADDRESS]</span><br>
+                    <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                    <span class="template-letter__field">[PHONE NUMBER]</span><br>
+                    <span class="template-letter__field">[EMAIL]</span><br>
+                    Defendant/Counter-Plaintiff Pro Se
+                </p>
+            </div>
+        </div>
+
+        <div class="criminal-section">
+            <h3>Criminal Violations Being Committed</h3>
+            <p>Counter-Defendant's actions also constitute federal crimes:</p>
+            <ul>
+                <li><strong>18 U.S.C. &sect; 1584</strong> - Involuntary servitude (20 years)</li>
+                <li><strong>18 U.S.C. &sect; 894</strong> - Extortionate credit transactions (20 years)</li>
+                <li><strong>18 U.S.C. &sect; 1341</strong> - Mail fraud (20 years per mailing)</li>
+                <li><strong>18 U.S.C. &sect; 1344</strong> - Bank fraud (30 years)</li>
+                <li><strong>18 U.S.C. &sect; 1001</strong> - False statements (5 years)</li>
+                <li><strong>18 U.S.C. &sect; 241</strong> - Conspiracy against rights (10 years)</li>
+            </ul>
+            <p style="color: #ffeb3b;"><strong>These violations create additional civil liability and support punitive damages.</strong></p>
+        </div>
+
+        <h3>Damages Calculation</h3>
+
+        <table class="damages-table">
+            <thead>
+                <tr>
+                    <th>Type of Damage</th>
+                    <th>Amount</th>
+                    <th>Basis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Payments Made</td>
+                    <td>$_______</td>
+                    <td>All payments on void debt</td>
+                </tr>
+                <tr>
+                    <td>Property Value</td>
+                    <td>$_______</td>
+                    <td>Attempted theft via foreclosure</td>
+                </tr>
+                <tr>
+                    <td>Emotional Distress</td>
+                    <td>$_______</td>
+                    <td>Stress, anxiety, suffering</td>
+                </tr>
+                <tr>
+                    <td>Credit Damage</td>
+                    <td>$_______</td>
+                    <td>7 years of damaged credit</td>
+                </tr>
+                <tr>
+                    <td>FDCPA Statutory</td>
+                    <td>$1,000+</td>
+                    <td>Per violation</td>
+                </tr>
+                <tr>
+                    <td>RESPA Statutory</td>
+                    <td>$2,000+</td>
+                    <td>Per violation</td>
+                </tr>
+                <tr>
+                    <td>RICO Triple Damages</td>
+                    <td>3x Actual</td>
+                    <td>18 U.S.C. &sect; 1964</td>
+                </tr>
+                <tr>
+                    <td>Punitive Damages</td>
+                    <td>$_______</td>
+                    <td>Willful, malicious conduct</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="strategic-box">
+            <h3>Strategic Counterclaim Tips</h3>
+            <ol>
+                <li><strong>Include everything applicable</strong> - You can always dismiss claims later</li>
+                <li><strong>Document all damages</strong> - Keep records of all harm</li>
+                <li><strong>Demand jury trial</strong> - Juries often side with homeowners over banks</li>
+                <li><strong>Use discovery aggressively</strong> - Get their internal documents</li>
+                <li><strong>Track every violation</strong> - Each letter, call, and report is potential damage</li>
+                <li><strong>Calculate damages generously</strong> - Leaves room for negotiation</li>
+                <li><strong>Include RICO if pattern exists</strong> - Triple damages are powerful leverage</li>
+                <li><strong>Remember attorney fees</strong> - Many federal statutes provide fee-shifting</li>
+            </ol>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+            <a href="/templates/phase-3/">&larr; Back to Phase 3 Templates</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Conscious Agreements - Private Educational Resource</p>
+        <p class="disclaimer">This is a private educational website. Nothing herein constitutes legal advice.</p>
+    </footer>
+</body>
+</html>

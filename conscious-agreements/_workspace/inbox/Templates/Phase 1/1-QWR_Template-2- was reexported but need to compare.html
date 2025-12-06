@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualified Written Request (QWR) Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: white;
+        }
+        
+        .header-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #f9f9f9;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .date-line {
+            margin: 20px 0;
+        }
+        
+        .recipient-block {
+            margin: 30px 0;
+        }
+        
+        .subject-line {
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        
+        .body-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        
+        .signature-block {
+            margin-top: 50px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+        }
+        
+        .cc-section {
+            margin-top: 30px;
+            font-size: 10pt;
+        }
+        
+        .instructions {
+            background: #fffacd;
+            border: 2px dashed #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #d4a017;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .legal-citation {
+            font-style: italic;
+            color: #333;
+        }
+        
+        ol, ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .important-notice {
+            background: #ffeeee;
+            border-left: 4px solid #ff0000;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        @media screen {
+            .container {
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                background: white;
+                padding: 40px;
+            }
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="instructions no-print">
+            <h3>⚠️ Instructions for Use</h3>
+            <ol>
+                <li><strong>Fill in all yellow fields</strong> with your specific information</li>
+                <li><strong>Send via Certified Mail</strong> with Return Receipt Requested</li>
+                <li><strong>Keep copies</strong> of everything including green card</li>
+                <li><strong>Calendar 30 days</strong> from mailing - servicer must respond by law</li>
+                <li><strong>This triggers RESPA protections</strong> - 12 USC 2605</li>
+            </ol>
+        </div>
+        
+        <div class="header-section">
+            <input type="text" class="form-field" placeholder="Your Full Name" id="sender_name"><br>
+            <input type="text" class="form-field" placeholder="Your Street Address" id="sender_address"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" id="sender_city_state_zip"><br>
+            <input type="text" class="form-field" placeholder="Your Phone Number" id="sender_phone"><br>
+            <input type="text" class="form-field" placeholder="Your Email (optional)" id="sender_email">
+        </div>
+        
+        <div class="date-line">
+            <input type="date" class="form-field" id="letter_date">
+        </div>
+        
+        <div class="recipient-block">
+            <strong>SENT VIA CERTIFIED MAIL #</strong> <input type="text" class="form-field" placeholder="Certified Mail Number" id="certified_number"><br><br>
+            <input type="text" class="form-field" placeholder="Servicer Name (e.g., Wells Fargo Home Mortgage)" id="servicer_name"><br>
+            <strong>Attention: Customer Service - QWR Department</strong><br>
+            <input type="text" class="form-field" placeholder="Servicer Street Address" id="servicer_address"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" id="servicer_city_state_zip">
+        </div>
+        
+        <div class="subject-line">
+            RE: QUALIFIED WRITTEN REQUEST UNDER SECTION 6 OF RESPA<br>
+            Loan Number: <input type="text" class="form-field" placeholder="Your Loan Number" id="loan_number" style="width: 200px;"><br>
+            Property Address: <input type="text" class="form-field" placeholder="Property Street Address" id="property_address" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Property City, State ZIP" id="property_city_state_zip" style="width: 300px;">
+        </div>
+        
+        <div class="body-text">
+            Dear Loan Servicer:
+        </div>
+        
+        <div class="body-text">
+            This is a <strong>Qualified Written Request</strong> ("QWR") under Section 6 of the Real Estate Settlement Procedures Act ("RESPA"), <span class="legal-citation">12 U.S.C. § 2605</span>, and its implementing Regulation X, <span class="legal-citation">12 C.F.R. § 1024.35 and § 1024.36</span>.
+        </div>
+        
+        <div class="body-text">
+            I am the borrower on the above-referenced loan. I am writing to request information and documentation regarding the servicing of my loan and to address concerns about the validity and ownership of the alleged debt.
+        </div>
+        
+        <div class="important-notice no-print">
+            <strong>⚠️ IMPORTANT:</strong> Under RESPA, you must acknowledge receipt of this request within 5 business days and provide a substantive response within 30 business days (not including weekends and holidays).
+        </div>
+        
+        <div class="body-text">
+            <strong>I REQUEST THE FOLLOWING INFORMATION AND DOCUMENTATION:</strong>
+        </div>
+        
+        <ol>
+            <li><strong>Loan History and Payment Records:</strong>
+                <ul>
+                    <li>Complete payment history from the origination of the loan to present, showing all payments received, dates received, and how payments were applied (principal, interest, escrow, fees)</li>
+                    <li>Current payoff amount with a per diem interest calculation</li>
+                    <li>Breakdown of any suspense account or unapplied funds</li>
+                </ul>
+            </li>
+            
+            <li><strong>Original Loan Documents:</strong>
+                <ul>
+                    <li>Copy of the original promissory note with all endorsements and allonges</li>
+                    <li>Copy of the deed of trust or mortgage</li>
+                    <li>Copy of the original loan application</li>
+                    <li>Copy of the HUD-1 Settlement Statement or Closing Disclosure</li>
+                    <li>Copy of the Truth in Lending Act (TILA) disclosures</li>
+                    <li>Copy of the Notice of Right to Cancel</li>
+                </ul>
+            </li>
+            
+            <li><strong>Ownership and Transfer Documentation:</strong>
+                <ul>
+                    <li>Complete chain of title showing all transfers of the promissory note</li>
+                    <li>All assignments of the deed of trust or mortgage</li>
+                    <li>Name and address of the current owner/holder of the promissory note</li>
+                    <li>Name and address of the current beneficiary of the deed of trust</li>
+                    <li>Documentation establishing your authority to service this loan</li>
+                </ul>
+            </li>
+            
+            <li><strong>Securitization Information (if applicable):</strong>
+                <ul>
+                    <li>Name of the trust that owns the loan</li>
+                    <li>Date the loan was securitized</li>
+                    <li>Copy of the Pooling and Servicing Agreement (PSA)</li>
+                    <li>Copy of the mortgage loan schedule showing my loan</li>
+                    <li>Evidence of compliance with the PSA regarding the transfer</li>
+                </ul>
+            </li>
+            
+            <li><strong>Accounting and Fees:</strong>
+                <ul>
+                    <li>Detailed breakdown of the current balance claimed</li>
+                    <li>Itemization of all fees, costs, and expenses charged to my account</li>
+                    <li>Copies of any force-placed insurance policies and premium amounts</li>
+                    <li>All escrow account analyses for the life of the loan</li>
+                    <li>Corporate advances made on the account</li>
+                </ul>
+            </li>
+            
+            <li><strong>Default and Collection (if applicable):</strong>
+                <ul>
+                    <li>All notices of default sent</li>
+                    <li>All notices of intent to accelerate</li>
+                    <li>All notices of acceleration</li>
+                    <li>Validation of the debt as required under FDCPA if you are a debt collector</li>
+                </ul>
+            </li>
+            
+            <li><strong>Loan Modification/Loss Mitigation:</strong>
+                <ul>
+                    <li>All loan modification agreements or workout agreements</li>
+                    <li>All correspondence regarding loss mitigation</li>
+                    <li>All applications for assistance and their determinations</li>
+                </ul>
+            </li>
+            
+            <li><strong>Additional Critical Information:</strong>
+                <ul>
+                    <li>Evidence of any Federal Reserve discount window transactions involving my promissory note</li>
+                    <li>Documentation of the source of funds for the original loan</li>
+                    <li>Proof of consideration provided by the lender</li>
+                    <li>All insurance policies (PMI, hazard, etc.) and claims made</li>
+                    <li>Any credit enhancements or credit default swaps on my loan</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <div class="body-text">
+            <strong>ERRORS AND INFORMATION REQUESTS UNDER 12 C.F.R. § 1024.35:</strong>
+        </div>
+        
+        <div class="body-text">
+            I believe the following errors exist with respect to the servicing of my mortgage loan:
+        </div>
+        
+        <textarea class="form-field" placeholder="Describe any errors you believe exist (e.g., incorrect payment application, unauthorized fees, improper notices, etc.)" rows="4"></textarea>
+        
+        <div class="body-text">
+            <strong>NOTICE OF ERROR RESOLUTION:</strong>
+        </div>
+        
+        <div class="body-text">
+            Pursuant to <span class="legal-citation">12 C.F.R. § 1024.35(e)</span>, you must respond to this notice of error by either:
+            <ol type="a">
+                <li>Correcting the error and providing written notification of the correction;</li>
+                <li>Conducting a reasonable investigation and providing written notification that no error occurred; or</li>
+                <li>Providing written notification that the error asserted is substantially the same as previously asserted and resolved.</li>
+            </ol>
+        </div>
+        
+        <div class="body-text">
+            <strong>STATUTORY OBLIGATIONS:</strong>
+        </div>
+        
+        <div class="body-text">
+            Please be advised of your obligations under RESPA:
+            <ul>
+                <li>You must acknowledge receipt of this QWR within 5 business days</li>
+                <li>You must provide a written response within 30 business days</li>
+                <li>During the 60-day period after receipt of this QWR, you may not report any overdue payment to any consumer reporting agency</li>
+                <li>Failure to comply with RESPA may result in actual damages, statutory damages up to $2,000, and attorney fees</li>
+            </ul>
+        </div>
+        
+        <div class="body-text">
+            <strong>PRESERVATION OF RECORDS:</strong>
+        </div>
+        
+        <div class="body-text">
+            You are hereby notified to preserve all records, documents, and other evidence relating to this loan, whether in physical or electronic form. This includes but is not limited to all documents referenced in this request, all internal communications, and all data in any system relating to this account.
+        </div>
+        
+        <div class="body-text">
+            This request is made to address my concerns about the servicing of my loan and to obtain information necessary to determine the validity of the alleged debt and your authority to collect it. Time is of the essence in your response.
+        </div>
+        
+        <div class="body-text">
+            I am exercising my rights under federal law and expect full compliance with your obligations under RESPA. Please provide actual documents, not summaries or account printouts, unless specifically requested otherwise.
+        </div>
+        
+        <div class="body-text">
+            Thank you for your prompt attention to this matter.
+        </div>
+        
+        <div class="signature-block">
+            Sincerely,<br><br>
+            <div class="signature-line"></div>
+            <input type="text" class="form-field" placeholder="Your Printed Name" id="signature_name" style="width: 300px;"><br>
+            Borrower<br>
+            Date: <input type="date" class="form-field" id="signature_date">
+        </div>
+        
+        <div class="cc-section">
+            <strong>cc:</strong><br>
+            Consumer Financial Protection Bureau<br>
+            [Your State] Attorney General<br>
+            [Your State] Department of Banking/Financial Regulation<br>
+            <input type="text" class="form-field" placeholder="Your Attorney (if applicable)" style="width: 300px;">
+        </div>
+        
+        <div class="important-notice">
+            <strong>IMPORTANT MAILING INSTRUCTIONS:</strong>
+            <ol>
+                <li>Send this letter via <strong>Certified Mail with Return Receipt Requested</strong></li>
+                <li>Keep the certified mail receipt (green card) as proof of delivery</li>
+                <li>Make copies of everything for your records</li>
+                <li>Calendar 5 business days for acknowledgment and 30 business days for response</li>
+                <li>If no response, this becomes evidence of RESPA violation</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                if (input.type !== 'button' && input.type !== 'submit') {
+                    input.value = '';
+                }
+            });
+        }
+        
+        function fillSample() {
+            document.getElementById('sender_name').value = 'John Doe';
+            document.getElementById('sender_address').value = '123 Main Street';
+            document.getElementById('sender_city_state_zip').value = 'Anytown, CA 12345';
+            document.getElementById('sender_phone').value = '(555) 123-4567';
+            document.getElementById('sender_email').value = 'johndoe@email.com';
+            document.getElementById('letter_date').value = new Date().toISOString().split('T')[0];
+            document.getElementById('servicer_name').value = 'Wells Fargo Home Mortgage';
+            document.getElementById('servicer_address').value = '1 Home Campus';
+            document.getElementById('servicer_city_state_zip').value = 'Des Moines, IA 50328';
+            document.getElementById('loan_number').value = '0123456789';
+            document.getElementById('property_address').value = '123 Main Street';
+            document.getElementById('property_city_state_zip').value = 'Anytown, CA 12345';
+            document.getElementById('certified_number').value = '7019 0140 0000 0000 0000';
+            document.getElementById('signature_name').value = 'John Doe';
+            document.getElementById('signature_date').value = new Date().toISOString().split('T')[0];
+        }
+        
+        // Auto-save form data to localStorage
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            // Load saved data
+            const saved = localStorage.getItem('qwr_' + input.id);
+            if (saved) {
+                input.value = saved;
+            }
+            
+            // Save on change
+            input.addEventListener('input', function() {
+                localStorage.setItem('qwr_' + this.id, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

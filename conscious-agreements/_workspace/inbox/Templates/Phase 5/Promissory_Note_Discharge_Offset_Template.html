@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promissory Note Discharge/Offset Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 12pt;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 2px solid #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 3px double #000;
+            background: #f9f9f9;
+        }
+        
+        .title {
+            font-size: 20pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .experimental-warning {
+            background: #ffcccc;
+            border: 3px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #cc0000;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 12pt;
+            background: #ffffcc;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #000;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            font-size: 16pt;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .promissory-note {
+            border: 3px solid #000;
+            padding: 30px;
+            margin: 30px 0;
+            background: #fffff0;
+            font-size: 14pt;
+            line-height: 2;
+        }
+        
+        .note-header {
+            text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+        
+        .legal-citations {
+            background: #e6f3ff;
+            border: 2px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 11pt;
+        }
+        
+        .accounting-entry {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .accounting-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .accounting-table th, .accounting-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .accounting-table th {
+            background: #e0e0e0;
+            font-weight: bold;
+        }
+        
+        .instructions-box {
+            background: #e6ffe6;
+            border: 2px solid #009900;
+            padding: 20px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        
+        .instructions-box h3 {
+            color: #006600;
+            margin-top: 0;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 25px;
+            background: #f0f0f0;
+            border: 2px solid #000;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #000;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #000;
+            background: #f9f9f9;
+        }
+        
+        .cover-letter {
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+        }
+        
+        .acceptance-section {
+            border: 3px solid #009900;
+            padding: 20px;
+            margin: 30px 0;
+            background: #f0fff0;
+        }
+        
+        .rejection-section {
+            border: 3px solid #cc0000;
+            padding: 20px;
+            margin: 30px 0;
+            background: #fff0f0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        .theory-explanation {
+            background: #fffacd;
+            border: 2px solid #daa520;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .discharge-stamp {
+            text-align: center;
+            font-size: 24pt;
+            font-weight: bold;
+            color: #cc0000;
+            transform: rotate(-15deg);
+            margin: 30px 0;
+            border: 5px double #cc0000;
+            padding: 20px;
+            display: inline-block;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">PROMISSORY NOTE FOR DISCHARGE/OFFSET</div>
+            <div class="subtitle">Commercial Instrument Under UCC Article 3</div>
+            <div class="subtitle">For Settlement and Discharge of Alleged Debt</div>
+        </div>
+        
+        <div class="experimental-warning no-print">
+            ⚠️ EXPERIMENTAL APPROACH - HIGH RISK ⚠️<br>
+            This strategy is based on the theory that if banks can monetize promissory notes,<br>
+            you should be able to discharge debt with your own promissory note.<br>
+            SUCCESS IS NOT GUARANTEED - LIKELY TO BE REJECTED<br>
+            Consider this a test of the system's consistency.
+        </div>
+        
+        <div class="theory-explanation">
+            <h3>The Theory:</h3>
+            <p>If banks create money by depositing your promissory note as an asset and creating offsetting liabilities (as confirmed by Federal Reserve publications), then logically:</p>
+            <ol>
+                <li>Your promissory note has value and can be monetized</li>
+                <li>A promissory note IS payment, not a promise to pay later</li>
+                <li>You should be able to discharge debt with your own promissory note</li>
+                <li>This tests whether the system applies rules consistently</li>
+            </ol>
+            <p><strong>This document creates a promissory note to discharge/offset the alleged mortgage debt, forcing them to either accept it (proving the theory) or reject it (exposing their hypocrisy).</strong></p>
+        </div>
+        
+        <div class="cover-letter">
+            <h2>COVER LETTER</h2>
+            
+            <p>Date: <input type="date" class="form-field" style="width: 150px;"></p>
+            
+            <p>To: <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"></p>
+            
+            <p>Re: Account Number: <input type="text" class="form-field" placeholder="Account/Loan Number" style="width: 200px;"></p>
+            
+            <p>Dear Sir/Madam:</p>
+            
+            <p>Enclosed please find my Promissory Note in the amount of $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"> for full settlement and discharge of the above-referenced account.</p>
+            
+            <p>As you are aware, under modern banking practice as acknowledged by the Federal Reserve in "Modern Money Mechanics" and the Bank of England in "Money Creation in the Modern Economy," banks routinely monetize promissory notes by recording them as assets and creating offsetting deposit liabilities.</p>
+            
+            <p>Since you have demonstrated that promissory notes have value and can discharge obligations (as you did with my original note), I am tendering this promissory note as payment in full for any alleged debt.</p>
+            
+            <p>Please apply this promissory note to my account immediately and provide written confirmation of discharge within 10 business days.</p>
+            
+            <p>If you refuse to accept this lawful tender of payment, please provide:</p>
+            <ol>
+                <li>Written explanation of why my promissory note lacks value while yours has value</li>
+                <li>Legal authority distinguishing between promissory notes</li>
+                <li>Admission that you provided no actual consideration for my original note</li>
+            </ol>
+            
+            <p>Your acceptance or rejection will be very instructive regarding the true nature of money creation.</p>
+            
+            <p>Sincerely,</p>
+            <p><input type="text" class="form-field" placeholder="Your Name" style="width: 300px;"></p>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <div class="promissory-note">
+            <div class="note-header">PROMISSORY NOTE</div>
+            
+            <p style="text-align: right;">
+                Date: <input type="date" class="form-field" style="width: 150px;"><br>
+                Amount: $<input type="text" class="form-field" placeholder="Amount" style="width: 200px;">
+            </p>
+            
+            <p>FOR VALUE RECEIVED, the undersigned ("Maker") promises to pay to the order of</p>
+            
+            <p style="text-align: center;">
+                <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"><br>
+                ("Payee")
+            </p>
+            
+            <p>the principal sum of <input type="text" class="form-field" placeholder="Amount in Words" style="width: 400px;"> DOLLARS ($<input type="text" class="form-field" placeholder="Amount" style="width: 150px;">)</p>
+            
+            <p>This Note is issued for the following purpose:</p>
+            <p style="text-align: center; font-weight: bold;">
+                FULL SETTLEMENT AND DISCHARGE OF ALLEGED DEBT<br>
+                Account/Loan Number: <input type="text" class="form-field" placeholder="Account Number" style="width: 200px;">
+            </p>
+            
+            <p><strong>TERMS AND CONDITIONS:</strong></p>
+            
+            <p>1. <strong>PAYMENT:</strong> This Note is payable in the same manner and medium that Payee accepts promissory notes, to wit: by deposit as an asset on Payee's books with creation of offsetting liability, as is standard banking practice.</p>
+            
+            <p>2. <strong>CONSIDERATION:</strong> The consideration for this Note is the discharge and satisfaction of all claims relating to the above-referenced account.</p>
+            
+            <p>3. <strong>NO INTEREST:</strong> This Note bears no interest, as it is tendered for immediate settlement.</p>
+            
+            <p>4. <strong>APPLICABLE LAW:</strong> This Note is issued under UCC Article 3 as adopted in <input type="text" class="form-field" placeholder="State" style="width: 150px;">.</p>
+            
+            <p>5. <strong>NEGOTIABILITY:</strong> This Note meets all requirements of negotiability under UCC § 3-104.</p>
+            
+            <p>6. <strong>ACCEPTANCE:</strong> Retention of this Note for more than 10 days constitutes acceptance and accord and satisfaction.</p>
+            
+            <p style="margin-top: 50px;">
+                _________________________________<br>
+                <input type="text" class="form-field" placeholder="Your Name (Printed)" style="width: 300px;"><br>
+                Maker<br><br>
+                
+                _________________________________<br>
+                Signature of Maker<br><br>
+                
+                Address:<br>
+                <input type="text" class="form-field" placeholder="Your Address" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;">
+            </p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">, before me personally appeared <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+            
+            <p>[NOTARY SEAL]</p>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <div class="section">
+            <h2>ACCOUNTING TREATMENT DIRECTIVE</h2>
+            
+            <p>To: Accounting Department<br>
+            From: <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;"><br>
+            Re: Proper Accounting for Promissory Note</p>
+            
+            <p>Please process the enclosed Promissory Note according to Generally Accepted Accounting Principles (GAAP) and Federal Reserve regulations:</p>
+            
+            <table class="accounting-table">
+                <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Debit</th>
+                        <th>Credit</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Promissory Note Asset</td>
+                        <td>$<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></td>
+                        <td></td>
+                        <td>Record note as asset</td>
+                    </tr>
+                    <tr>
+                        <td>Loan Payable</td>
+                        <td></td>
+                        <td>$<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></td>
+                        <td>Discharge existing obligation</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>This is the same accounting treatment you applied to my original promissory note, as per standard banking practice.</p>
+        </div>
+        
+        <div class="legal-citations">
+            <h2>LEGAL AUTHORITY</h2>
+            
+            <p><strong>UCC § 3-104 - Negotiable Instrument</strong><br>
+            This promissory note meets all requirements for a negotiable instrument.</p>
+            
+            <p><strong>UCC § 3-310 - Effect of Instrument on Obligation</strong><br>
+            An instrument accepted for an underlying obligation discharges the obligation.</p>
+            
+            <p><strong>UCC § 3-603 - Tender of Payment</strong><br>
+            Tender of payment discharges obligation to extent of amount tendered.</p>
+            
+            <p><strong>Federal Reserve: Modern Money Mechanics</strong><br>
+            "Commercial banks create checkbook money whenever they grant a loan, simply by adding new deposit dollars to accounts on their books in exchange for a borrower's IOU."</p>
+            
+            <p><strong>Bank of England Quarterly Bulletin 2014 Q1</strong><br>
+            "Whenever a bank makes a loan, it simultaneously creates a matching deposit in the borrower's bank account, thereby creating new money."</p>
+            
+            <p><strong>12 U.S.C. § 411</strong><br>
+            Federal Reserve notes are obligations - promises to pay - not payment itself.</p>
+        </div>
+        
+        <div class="acceptance-section">
+            <h2>IF ACCEPTED - DISCHARGE CONFIRMATION</h2>
+            
+            <p>Upon acceptance of this Promissory Note, please complete and return:</p>
+            
+            <div style="border: 2px solid #000; padding: 20px; margin: 20px 0;">
+                <p style="text-align: center; font-weight: bold; font-size: 16pt;">CONFIRMATION OF DISCHARGE</p>
+                
+                <p>We hereby confirm that the Promissory Note dated _______________ in the amount of $_______________ has been accepted as payment in full for Account Number _______________.</p>
+                
+                <p>The account is now PAID IN FULL and DISCHARGED.</p>
+                
+                <p>All liens, claims, and security interests are hereby RELEASED.</p>
+                
+                <p>
+                    _______________________________<br>
+                    Authorized Signature<br><br>
+                    
+                    _______________________________<br>
+                    Print Name and Title<br><br>
+                    
+                    Date: _______________
+                </p>
+            </div>
+        </div>
+        
+        <div class="rejection-section">
+            <h2>IF REJECTED - REQUIRED ADMISSIONS</h2>
+            
+            <p>If you reject this Promissory Note, you must explain and admit:</p>
+            
+            <ol>
+                <li><strong>Double Standard:</strong> Why can banks monetize promissory notes but individuals cannot?</li>
+                
+                <li><strong>Lack of Consideration:</strong> That you provided no actual consideration for my original promissory note.</li>
+                
+                <li><strong>Money Creation:</strong> That you created the "loan" amount through bookkeeping entries, not from pre-existing funds.</li>
+                
+                <li><strong>Fraud Admission:</strong> That the mortgage transaction was fraudulent as no money was actually lent.</li>
+                
+                <li><strong>Legal Distinction:</strong> The specific legal authority that allows only banks to monetize promises.</li>
+            </ol>
+            
+            <p><strong>Your rejection constitutes admission of these facts and may be used as evidence in legal proceedings.</strong></p>
+        </div>
+        
+        <div class="instructions-box no-print">
+            <h3>📋 INSTRUCTIONS FOR USE</h3>
+            
+            <p><strong>Before Sending:</strong></p>
+            <ol>
+                <li>Fill in all blanks completely</li>
+                <li>Make amount equal to alleged debt</li>
+                <li>Have promissory note notarized</li>
+                <li>Make multiple copies</li>
+                <li>Consider legal counsel review</li>
+            </ol>
+            
+            <p><strong>How to Send:</strong></p>
+            <ol>
+                <li>Send via Certified Mail, Return Receipt Requested</li>
+                <li>Include copy to: CEO, Legal Department, Accounting</li>
+                <li>Keep proof of mailing</li>
+                <li>Document any response</li>
+            </ol>
+            
+            <p><strong>Likely Responses:</strong></p>
+            <ul>
+                <li><strong>Ignore it</strong> - Most likely outcome</li>
+                <li><strong>Reject it</strong> - Good! Demand written explanation</li>
+                <li><strong>Threaten you</strong> - Document threats</li>
+                <li><strong>Accept it</strong> - Extremely unlikely but would be powerful</li>
+            </ul>
+            
+            <p><strong>Follow-Up Actions:</strong></p>
+            <ul>
+                <li>If ignored, send notice of acceptance by silence</li>
+                <li>If rejected, demand legal explanation</li>
+                <li>Use rejection as evidence of fraud</li>
+                <li>Include in court filings as evidence</li>
+            </ul>
+        </div>
+        
+        <div class="theory-explanation">
+            <h3>Why This Matters:</h3>
+            <p>This document forces the bank to confront the contradiction in their position:</p>
+            <ul>
+                <li>If promissory notes have value (as they claim when taking yours), they should accept this one</li>
+                <li>If they reject it, they admit promissory notes don't have inherent value</li>
+                <li>If notes don't have value, they provided no consideration for your mortgage</li>
+                <li>Without consideration, the mortgage contract is void</li>
+            </ul>
+            <p><strong>Either way, their response (or lack thereof) provides valuable evidence for your case.</strong></p>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(input => {
+                input.value = today.toISOString().split('T')[0];
+            });
+            
+            // Fill text fields
+            const nameFields = document.querySelectorAll('input[placeholder="Your Name"], input[placeholder="Your Name (Printed)"]');
+            nameFields.forEach(field => field.value = 'John Smith');
+            
+            const bankFields = document.querySelectorAll('input[placeholder="Bank/Servicer Name"]');
+            bankFields.forEach(field => field.value = 'Wells Fargo Bank, N.A.');
+            
+            const addressFields = document.querySelectorAll('input[placeholder="Your Address"], input[placeholder="Address"]');
+            addressFields.forEach(field => {
+                if (field.placeholder === 'Your Address') {
+                    field.value = '123 Main Street';
+                } else {
+                    field.value = '123 Corporate Way';
+                }
+            });
+            
+            const cityFields = document.querySelectorAll('input[placeholder="City, State ZIP"]');
+            cityFields.forEach(field => field.value = 'Miami, FL 33101');
+            
+            const amountFields = document.querySelectorAll('input[placeholder="Amount"]');
+            amountFields.forEach(field => field.value = '350,000.00');
+            
+            const amountWordsField = document.querySelector('input[placeholder="Amount in Words"]');
+            if (amountWordsField) amountWordsField.value = 'Three Hundred Fifty Thousand';
+            
+            const accountFields = document.querySelectorAll('input[placeholder*="Account"]');
+            accountFields.forEach(field => field.value = '1234567890');
+            
+            const stateFields = document.querySelectorAll('input[placeholder="State"]');
+            stateFields.forEach(field => field.value = 'Florida');
+            
+            const countyFields = document.querySelectorAll('input[placeholder="County"]');
+            countyFields.forEach(field => field.value = 'Miami-Dade');
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const key = 'discharge_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Removal to Federal Court - Phase 3 Templates - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .meta-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #1a237e;
+            margin-top: 0.25rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .template-letter__court-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+
+        .template-letter__section {
+            margin: 2rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .template-letter__paragraph {
+            text-indent: 2rem;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+
+        .template-letter__paragraph-number {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .template-letter__signature-block {
+            margin-top: 3rem;
+        }
+
+        .template-letter__signature-line {
+            border-bottom: 1px solid #333;
+            width: 250px;
+            margin: 2rem 0 0.5rem 0;
+        }
+
+        .federal-banner {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .federal-banner h2 {
+            margin-top: 0;
+            font-family: 'Cinzel', serif;
+        }
+
+        .deadline-critical {
+            background: #263238;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .deadline-critical h3 {
+            color: #ffeb3b;
+            margin-top: 0;
+        }
+
+        .basis-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .federal-question-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .federal-question-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+
+        .diversity-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .diversity-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+
+        .advantages-box {
+            background: #e8eaf6;
+            border: 2px solid #3f51b5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .advantages-box h3 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+
+        .procedural-box {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .procedural-box h3 {
+            margin-top: 0;
+        }
+
+        .insight-box {
+            background: #fffef0;
+            border-left: 4px solid #d4a574;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-box h4 {
+            color: #8b4513;
+            margin-top: 0;
+        }
+
+        .checklist-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .checklist-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .basis-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Conscious Agreements</a>
+        <ul class="nav-links">
+            <li><a href="/foundation/">Foundation</a></li>
+            <li><a href="/domains/">Domains</a></li>
+            <li><a href="/pathways/">Pathways</a></li>
+            <li><a href="/templates/" class="active">Templates</a></li>
+            <li><a href="/reference/">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-3/">Phase 3</a> &rsaquo;
+            <span>Notice of Removal</span>
+        </div>
+
+        <h1>Notice of Removal to Federal Court</h1>
+        <p class="subtitle">Strategic Venue Change to Federal Jurisdiction</p>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Removal Notice</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Phase</div>
+                <div class="meta-item__value">3 - Court Filings</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Filing Location</div>
+                <div class="meta-item__value">Federal Court</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Critical Deadline</div>
+                <div class="meta-item__value">30 Days</div>
+            </div>
+        </div>
+
+        <div class="federal-banner">
+            <h2>CHANGE THE BATTLEFIELD</h2>
+            <p>Moving your case from state to federal court can provide a more neutral forum, federal procedural rules, and judges with life tenure who may be less susceptible to local bank influence.</p>
+        </div>
+
+        <div class="deadline-critical">
+            <h3>CRITICAL: 30-DAY DEADLINE</h3>
+            <p><strong>You have ONLY 30 DAYS from service to remove the case to federal court.</strong></p>
+            <ul>
+                <li>Count from the date you were served with the complaint</li>
+                <li>This deadline is strictly enforced - NO EXTENSIONS</li>
+                <li>Missing the deadline means permanent waiver of removal rights</li>
+                <li>File in federal court, not state court</li>
+                <li>Must notify state court immediately after filing</li>
+            </ul>
+        </div>
+
+        <h2>Bases for Federal Jurisdiction</h2>
+
+        <div class="basis-section">
+            <div class="federal-question-box">
+                <h3>Option A: Federal Question</h3>
+                <p><strong>Use when your case involves federal law:</strong></p>
+                <ul>
+                    <li>FDCPA violations alleged</li>
+                    <li>RESPA violations alleged</li>
+                    <li>TILA violations alleged</li>
+                    <li>Constitutional violations (Due Process)</li>
+                    <li>Federal criminal statutes cited (18 USC)</li>
+                    <li>Federal banking regulations</li>
+                </ul>
+                <p><em>This is often the stronger basis for removal.</em></p>
+            </div>
+
+            <div class="diversity-box">
+                <h3>Option B: Diversity Jurisdiction</h3>
+                <p><strong>Use when parties are from different states:</strong></p>
+                <ul>
+                    <li>You and the bank are citizens of different states</li>
+                    <li>Amount in controversy exceeds $75,000</li>
+                    <li>Complete diversity required (all plaintiffs vs. all defendants)</li>
+                    <li>National banks are citizens of their main office state</li>
+                </ul>
+                <p><em>Often applies in foreclosure cases with out-of-state banks.</em></p>
+            </div>
+        </div>
+
+        <div class="advantages-box">
+            <h3>Advantages of Federal Court</h3>
+            <ul>
+                <li><strong>Neutral forum</strong> - Less local bank influence</li>
+                <li><strong>Federal judges</strong> - Life tenure, less political pressure</li>
+                <li><strong>Better procedures</strong> - More formal, structured process</li>
+                <li><strong>Broader discovery</strong> - Federal discovery rules may be more favorable</li>
+                <li><strong>Federal law expertise</strong> - Better for FDCPA, RESPA, TILA claims</li>
+                <li><strong>Jury pool</strong> - Broader geographic area</li>
+                <li><strong>Appeal to Circuit Court</strong> - Federal appellate system</li>
+            </ul>
+        </div>
+
+        <h2>Template Document</h2>
+
+        <div class="template-letter">
+            <div class="template-letter__court-header">
+                <p>UNITED STATES DISTRICT COURT</p>
+                <p><span class="template-letter__field">[SOUTHERN/NORTHERN/EASTERN/WESTERN]</span> DISTRICT OF <span class="template-letter__field">[STATE]</span></p>
+                <p><span class="template-letter__field">[DIVISION, if applicable]</span> DIVISION</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; margin: 2rem 0;">
+                <div>
+                    <span class="template-letter__field">[BANK/SERVICER NAME]</span><br>
+                    <span style="margin-left: 2rem;">Plaintiff,</span>
+                </div>
+                <div style="text-align: center; padding: 1rem;">vs.</div>
+                <div style="text-align: right;">
+                    Federal Case No. _______________<br>
+                    (State Case No. <span class="template-letter__field">[STATE CASE NUMBER]</span>)<br><br>
+                    <span class="template-letter__field">[YOUR NAME]</span><br>
+                    <span style="margin-left: 2rem;">Defendant.</span>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; font-weight: bold;">DEFENDANT'S NOTICE OF REMOVAL</h2>
+
+            <div class="template-letter__section">
+                <p class="template-letter__paragraph">
+                    TO THE UNITED STATES DISTRICT COURT FOR THE <span class="template-letter__field">[DISTRICT]</span> DISTRICT OF <span class="template-letter__field">[STATE]</span>:
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">1.</span>
+                    PLEASE TAKE NOTICE that Defendant <span class="template-letter__field">[YOUR NAME]</span> hereby removes this action from the <span class="template-letter__field">[STATE COURT NAME]</span> Court of <span class="template-letter__field">[COUNTY]</span> County, <span class="template-letter__field">[STATE]</span>, to this Court pursuant to 28 U.S.C. &sect;&sect; 1441 and 1446.
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">I. PROCEDURAL REQUIREMENTS</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">2.</span>
+                    This Notice of Removal is timely filed within thirty (30) days after Defendant's receipt of the initial pleading. Defendant was served on <span class="template-letter__field">[SERVICE DATE]</span>, and this Notice is filed on <span class="template-letter__field">[TODAY'S DATE]</span>.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">3.</span>
+                    The state court action is captioned <span class="template-letter__field">[FULL CASE CAPTION]</span>, Case No. <span class="template-letter__field">[STATE CASE NUMBER]</span>, pending in the <span class="template-letter__field">[COURT NAME]</span> Court.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">4.</span>
+                    Venue is proper in this district under 28 U.S.C. &sect; 1441(a) because this district embraces the place where the state action is pending.
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">II. BASIS FOR FEDERAL JURISDICTION - FEDERAL QUESTION</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">5.</span>
+                    This Court has original jurisdiction over this action pursuant to 28 U.S.C. &sect; 1331 (federal question jurisdiction) because:
+                </p>
+
+                <p class="template-letter__paragraph" style="margin-left: 2rem;">
+                    <strong>A. The Complaint Involves Federal Law</strong><br>
+                    Plaintiff's foreclosure action necessarily involves the resolution of substantial federal questions including validity of debt under federal banking regulations, compliance with federal mortgage servicing rules, Federal Reserve regulations regarding money creation, and constitutional due process violations.
+                </p>
+
+                <p class="template-letter__paragraph" style="margin-left: 2rem;">
+                    <strong>B. Defendant's Counterclaims Assert Federal Claims</strong><br>
+                    Defendant has asserted or will assert counterclaims under:
+                </p>
+                <ul style="margin-left: 4rem;">
+                    <li>Fair Debt Collection Practices Act (15 U.S.C. &sect; 1692 et seq.)</li>
+                    <li>Fair Credit Reporting Act (15 U.S.C. &sect; 1681 et seq.)</li>
+                    <li>Real Estate Settlement Procedures Act (12 U.S.C. &sect; 2605 et seq.)</li>
+                    <li>Truth in Lending Act (15 U.S.C. &sect; 1601 et seq.)</li>
+                    <li>RICO (18 U.S.C. &sect; 1961 et seq.)</li>
+                    <li>Constitutional violations under 42 U.S.C. &sect; 1983</li>
+                </ul>
+
+                <p class="template-letter__paragraph" style="margin-left: 2rem;">
+                    <strong>C. Federal Defenses Are Central</strong><br>
+                    Defendant's defenses include lack of consideration under federal monetary law (12 U.S.C. &sect; 411), violations of federal criminal statutes (18 U.S.C. &sect;&sect; 1584, 894, 1341), federal banking regulation violations, and constitutional due process and equal protection.
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">III. BASIS FOR FEDERAL JURISDICTION - DIVERSITY</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">6.</span>
+                    This Court also has original jurisdiction pursuant to 28 U.S.C. &sect; 1332 (diversity jurisdiction) because:
+                </p>
+
+                <p class="template-letter__paragraph" style="margin-left: 2rem;">
+                    <strong>A. Complete Diversity Exists</strong>
+                </p>
+                <ul style="margin-left: 4rem;">
+                    <li>Defendant is a citizen of <span class="template-letter__field">[YOUR STATE]</span></li>
+                    <li>Plaintiff <span class="template-letter__field">[BANK NAME]</span> is a <span class="template-letter__field">[corporation/national association]</span> incorporated in <span class="template-letter__field">[STATE OF INCORPORATION]</span> with its principal place of business in <span class="template-letter__field">[STATE OF HQ]</span></li>
+                    <li>Complete diversity of citizenship exists between all plaintiffs and all defendants</li>
+                </ul>
+
+                <p class="template-letter__paragraph" style="margin-left: 2rem;">
+                    <strong>B. Amount in Controversy Exceeds $75,000</strong>
+                </p>
+                <ul style="margin-left: 4rem;">
+                    <li>The alleged mortgage debt is $<span class="template-letter__field">[LOAN AMOUNT]</span></li>
+                    <li>The property value is $<span class="template-letter__field">[PROPERTY VALUE]</span></li>
+                    <li>Defendant's counterclaims seek damages exceeding $75,000</li>
+                </ul>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">IV. SUBSTANTIAL FEDERAL ISSUES</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">7.</span>
+                    This case involves substantial federal issues including:
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">8.</span>
+                    <strong>The Nature of Money Creation:</strong> The fundamental issue is whether banks lend pre-existing money or create money through loan origination, implicating federal banking law and Federal Reserve regulations.
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">9.</span>
+                    <strong>Federal Criminal Violations:</strong> Plaintiff's conduct allegedly violates 18 U.S.C. &sect; 1584 (Involuntary servitude), 18 U.S.C. &sect; 894 (Extortionate collection of credit), 18 U.S.C. &sect; 1341 (Mail fraud), and 18 U.S.C. &sect; 1344 (Bank fraud).
+                </p>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">10.</span>
+                    <strong>Constitutional Issues:</strong> Fifth Amendment Due Process violations, Fourteenth Amendment Equal Protection violations, Article I, Section 8 (Congressional power to coin money), and Article I, Section 10 (States cannot impair contracts).
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">V. NO PROCEDURAL DEFECTS</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">11.</span>
+                    All procedural requirements for removal have been satisfied:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>This Notice is timely (within 30 days)</li>
+                    <li>Venue is proper in this district</li>
+                    <li>All defendants consent to removal (single defendant case)</li>
+                    <li>The state court has not yet entered final judgment</li>
+                </ul>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">VI. DOCUMENTS FILED</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">12.</span>
+                    Pursuant to 28 U.S.C. &sect; 1446(a), Defendant files herewith:
+                </p>
+                <ul style="margin-left: 3rem;">
+                    <li>Copy of all process, pleadings, and orders from state court (Exhibit A)</li>
+                    <li>Civil cover sheet for federal court</li>
+                    <li>Filing fee or application to proceed in forma pauperis</li>
+                </ul>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">VII. NOTICE TO STATE COURT</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">13.</span>
+                    Defendant will promptly give written notice of this removal to all adverse parties and will file a copy of this Notice with the clerk of the state court, pursuant to 28 U.S.C. &sect; 1446(d).
+                </p>
+            </div>
+
+            <div class="template-letter__section">
+                <h3 class="template-letter__section-title">VIII. REQUEST FOR RELIEF</h3>
+
+                <p class="template-letter__paragraph">
+                    <span class="template-letter__paragraph-number">14.</span>
+                    WHEREFORE, Defendant respectfully requests that:
+                </p>
+                <ol type="A" style="margin-left: 2rem;">
+                    <li>This Court accept jurisdiction over this removed action;</li>
+                    <li>This Court docket this case and issue all appropriate orders;</li>
+                    <li>The state court be notified of removal and directed to take no further action;</li>
+                    <li>All further proceedings be conducted in this federal court;</li>
+                    <li>Such other relief as the Court deems just and proper.</li>
+                </ol>
+            </div>
+
+            <div class="template-letter__signature-block">
+                <p>Respectfully submitted,</p>
+                <p>DATED: <span class="template-letter__field">[DATE]</span></p>
+
+                <div class="template-letter__signature-line"></div>
+                <p>
+                    <span class="template-letter__field">[YOUR NAME]</span><br>
+                    <span class="template-letter__field">[YOUR ADDRESS]</span><br>
+                    <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                    <span class="template-letter__field">[PHONE NUMBER]</span><br>
+                    <span class="template-letter__field">[EMAIL]</span><br>
+                    Defendant Pro Se
+                </p>
+            </div>
+
+            <div class="template-letter__section" style="border-top: 2px solid #333; padding-top: 2rem; margin-top: 3rem;">
+                <h3 class="template-letter__section-title" style="text-align: center;">CERTIFICATE OF SERVICE</h3>
+
+                <p class="template-letter__paragraph">
+                    I hereby certify that on <span class="template-letter__field">[DATE]</span>, I served a true and correct copy of the foregoing Notice of Removal on:
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    <strong>Plaintiff's Attorney:</strong><br>
+                    <span class="template-letter__field">[ATTORNEY NAME]</span><br>
+                    <span class="template-letter__field">[LAW FIRM]</span><br>
+                    <span class="template-letter__field">[ADDRESS]</span><br>
+                    <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                    By: [ ] U.S. Mail [ ] Hand Delivery [ ] Email [ ] CM/ECF
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    <strong>State Court Clerk:</strong><br>
+                    <span class="template-letter__field">[COURT NAME]</span><br>
+                    <span class="template-letter__field">[ADDRESS]</span><br>
+                    <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                    By: [ ] Hand Delivery [ ] Certified Mail
+                </p>
+
+                <div class="template-letter__signature-line"></div>
+                <p><span class="template-letter__field">[YOUR NAME]</span></p>
+            </div>
+        </div>
+
+        <div class="procedural-box">
+            <h3>Effect of Removal</h3>
+            <p>Upon filing this Notice:</p>
+            <ol>
+                <li>State court proceedings are <strong>automatically stayed</strong></li>
+                <li>State court <strong>loses jurisdiction</strong></li>
+                <li>Federal court <strong>assumes full jurisdiction</strong></li>
+                <li>All future proceedings occur in federal court</li>
+                <li><strong>Federal rules of civil procedure apply</strong></li>
+            </ol>
+        </div>
+
+        <div class="checklist-box">
+            <h3>Critical Filing Steps</h3>
+            <ol>
+                <li><strong>File in FEDERAL court</strong> - Not state court!</li>
+                <li><strong>Pay filing fee</strong> - Currently $405 (or file IFP application)</li>
+                <li><strong>Get federal case number</strong> - Assigned upon filing</li>
+                <li><strong>Notify state court IMMEDIATELY</strong> - Same day if possible</li>
+                <li><strong>Serve all parties</strong> - Within reasonable time</li>
+                <li><strong>File proof of state court notice</strong> - With federal court</li>
+                <li><strong>Monitor for remand motion</strong> - They may try to send case back</li>
+                <li><strong>Prepare to defend removal</strong> - Have legal arguments ready</li>
+            </ol>
+        </div>
+
+        <div class="insight-box">
+            <h4>Defending Against Remand</h4>
+            <p>The opposing party may file a motion to remand (send the case back to state court). Be prepared to argue:</p>
+            <ul>
+                <li>Your federal claims are substantial, not merely defensive</li>
+                <li>Federal questions are central to the case</li>
+                <li>Diversity is complete and amount exceeds threshold</li>
+                <li>Removal was timely and procedurally correct</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+            <a href="/templates/phase-3/">&larr; Back to Phase 3 Templates</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Conscious Agreements - Private Educational Resource</p>
+        <p class="disclaimer">This is a private educational website. Nothing herein constitutes legal advice.</p>
+    </footer>
+</body>
+</html>

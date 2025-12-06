@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Criminal Violations — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .meta-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .template-letter__header {
+            background: linear-gradient(135deg, #000 0%, #d32f2f 100%);
+            color: white;
+            padding: 2rem;
+            margin: -2rem -2rem 2rem -2rem;
+            text-align: center;
+        }
+        .template-letter__header h2 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.75rem;
+        }
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .template-letter h3 {
+            font-family: 'Cinzel', serif;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .template-letter ul, .template-letter ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        .template-letter li {
+            margin: 0.5rem 0;
+        }
+        .warning-banner {
+            background: repeating-linear-gradient(45deg, #ffeb3b, #ffeb3b 10px, #000 10px, #000 20px);
+            padding: 1rem;
+            text-align: center;
+            margin: -2rem -2rem 1.5rem -2rem;
+            font-weight: bold;
+        }
+        .violation-section {
+            background: #263238;
+            color: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 2px solid #ff6b6b;
+        }
+        .violation-section h4 {
+            color: #ff6b6b;
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+        .violation-detail {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 5px solid #ff6b6b;
+        }
+        .count-number {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        .statute-number {
+            color: #ffeb3b;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .violation-title {
+            color: #ff9800;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        .prison-time {
+            background: #263238;
+            color: #ff6b6b;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        .fine-amount {
+            background: #1b5e20;
+            color: #ffeb3b;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        .misprision-warning {
+            background: #ffebee;
+            border: 2px solid #d32f2f;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .misprision-warning h4 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+        .demand-section {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .demand-section h4 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        .referral-notice {
+            background: #fff3e0;
+            border: 3px solid #ff9800;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .referral-notice h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .agency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .agency-item {
+            background: #f5f5f5;
+            padding: 0.75rem;
+            border-radius: 4px;
+            border-left: 3px solid #ff6b6b;
+        }
+        .final-warning {
+            background: #000;
+            color: #fff;
+            padding: 2rem;
+            margin: 1.5rem -2rem -2rem -2rem;
+            text-align: center;
+        }
+        .final-warning h4 {
+            color: #ff6b6b;
+            margin: 0 0 1rem 0;
+        }
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        .statute-reference {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .max-pressure-box {
+            background: #b71c1c;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .max-pressure-box h4 {
+            color: #ffeb3b;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav__inner">
+            <a href="/" class="main-nav__brand">Conscious Agreements</a>
+            <ul class="main-nav__links">
+                <li><a href="/foundation/" class="main-nav__link">Foundation</a></li>
+                <li><a href="/domains/" class="main-nav__link">Domains</a></li>
+                <li><a href="/pathways/" class="main-nav__link">Pathways</a></li>
+                <li><a href="/reference/" class="main-nav__link">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/">Templates</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/phase-2/">Phase 2</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Criminal Violations</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Notice of Criminal Violations</h1>
+                    <p class="lead">Lists specific federal crimes being committed with USC citations and penalties. Creates personal liability for anyone who continues after notice. Includes misprision of felony warning.</p>
+                </header>
+
+                <div class="template-meta">
+                    <div class="meta-item">
+                        <div class="meta-item__label">Effect</div>
+                        <div class="meta-item__value">Maximum Pressure</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Response</div>
+                        <div class="meta-item__value">10 Days</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Personal Liability</div>
+                        <div class="meta-item__value">Yes</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Send To</div>
+                        <div class="meta-item__value">All Officers</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="max-pressure-box">
+                        <h4>Maximum Impact Criminal Notice</h4>
+                        <ol style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Lists specific crimes</strong> with USC citations and penalties</li>
+                            <li><strong>Creates liability</strong> for anyone who continues after notice</li>
+                            <li><strong>Misprision warning</strong> — They must report or become criminals themselves</li>
+                            <li><strong>Evidence documented</strong> — Shows prima facie case</li>
+                            <li><strong>Referral threat</strong> — Lists agencies you'll contact</li>
+                        </ol>
+                        <p style="margin-top: 0.75rem;"><strong>Effect:</strong> Creates massive legal exposure for continued collection</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="important-box">
+                        <div class="important-box__title">When to Use This Template</div>
+                        <p>Use this template when:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li>They've ignored your Phase 1 information requests</li>
+                            <li>They continue collection after your dispute</li>
+                            <li>They fail to respond to Notice of Lack of Consideration</li>
+                            <li>You want maximum pressure before court action</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;">This is an escalation tool — use after earlier notices have been sent.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template</h2>
+
+                    <div class="template-letter">
+                        <div class="template-letter__header">
+                            <h2>NOTICE OF CRIMINAL VIOLATIONS</h2>
+                            <p style="margin: 5px 0 0 0;">FORMAL NOTICE TO CEASE CRIMINAL ACTIVITY</p>
+                            <p style="margin: 5px 0 0 0;">18 U.S.C. § 4 — MISPRISION OF FELONY WARNING</p>
+                        </div>
+
+                        <div class="warning-banner">
+                            FAILURE TO REPORT THESE CRIMES IS ITSELF A FEDERAL CRIME
+                        </div>
+
+                        <p>
+                            <span class="template-letter__field">[YOUR FULL NAME]</span><br>
+                            <span class="template-letter__field">[YOUR STREET ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                            <span class="template-letter__field">[PHONE]</span><br>
+                            <span class="template-letter__field">[EMAIL]</span>
+                        </p>
+
+                        <p><span class="template-letter__field">[DATE]</span></p>
+
+                        <p>
+                            <strong>SENT VIA CERTIFIED MAIL #</strong> <span class="template-letter__field">[CERTIFIED MAIL NUMBER]</span>
+                        </p>
+
+                        <p>
+                            <strong>TO ALL OFFICERS, DIRECTORS, AND EMPLOYEES OF:</strong><br>
+                            <span class="template-letter__field">[BANK/SERVICER NAME]</span><br>
+                            <span class="template-letter__field">[ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span>
+                        </p>
+
+                        <p><strong>ATTENTION:</strong> CEO, Board of Directors, General Counsel, Compliance Officer, All Management</p>
+
+                        <p>
+                            <strong>RE: CRIMINAL VIOLATIONS IN PROGRESS — IMMEDIATE CESSATION REQUIRED</strong><br>
+                            <strong>Loan Number:</strong> <span class="template-letter__field">[YOUR LOAN NUMBER]</span><br>
+                            <strong>Property Address:</strong> <span class="template-letter__field">[PROPERTY ADDRESS]</span>
+                        </p>
+
+                        <p><strong>TO ALL PARTIES:</strong></p>
+
+                        <p>This is formal <strong>CRIMINAL NOTICE</strong> that your organization and its agents are committing multiple federal felonies in connection with the above-referenced account. Any person who continues these activities after receiving this notice becomes personally criminally liable.</p>
+
+                        <div class="violation-section">
+                            <h4>SPECIFIC CRIMINAL VIOLATIONS BEING COMMITTED</h4>
+
+                            <div class="violation-detail">
+                                <span class="count-number">1</span>
+                                <span class="statute-number">18 U.S.C. § 1584</span>
+                                <div class="violation-title">INVOLUNTARY SERVITUDE</div>
+                                <p><strong>Your Crime:</strong> Forcing me to work for 30 years to pay a debt that doesn't legally exist because you provided no consideration for my promissory note.</p>
+                                <p><strong>Evidence:</strong></p>
+                                <ul>
+                                    <li>No proof of consideration provided despite demands</li>
+                                    <li>Continued payment demands without valid contract</li>
+                                    <li>Use of credit system coercion to force compliance</li>
+                                </ul>
+                                <div>
+                                    <span class="prison-time">UP TO 20 YEARS PRISON</span>
+                                    <span class="fine-amount">$500,000 FINE</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">2</span>
+                                <span class="statute-number">18 U.S.C. § 1581</span>
+                                <div class="violation-title">PEONAGE (DEBT SLAVERY)</div>
+                                <p><strong>Your Crime:</strong> Holding me in a condition of debt bondage through fraudulent creation of debt from my own promissory note.</p>
+                                <div>
+                                    <span class="prison-time">UP TO 20 YEARS PRISON</span>
+                                    <span class="fine-amount">$500,000 FINE</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">3</span>
+                                <span class="statute-number">18 U.S.C. § 1025</span>
+                                <div class="violation-title">PROMISSORY NOTE FRAUD</div>
+                                <p><strong>Your Crime:</strong> Making false statements about promissory notes in federal jurisdiction, claiming I owe money when my promissory note WAS the payment.</p>
+                                <div>
+                                    <span class="prison-time">UP TO 5 YEARS PRISON</span>
+                                    <span class="fine-amount">FULL RESTITUTION</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">4</span>
+                                <span class="statute-number">18 U.S.C. § 894</span>
+                                <div class="violation-title">EXTORTIONATE COLLECTION OF CREDIT</div>
+                                <p><strong>Your Crime:</strong> Using threats of foreclosure, credit damage, and financial ruin to collect on void obligation.</p>
+                                <div>
+                                    <span class="prison-time">UP TO 20 YEARS PRISON</span>
+                                    <span class="fine-amount">$1,000,000 FINE</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">5</span>
+                                <span class="statute-number">18 U.S.C. § 1341</span>
+                                <div class="violation-title">MAIL FRAUD (×<span class="template-letter__field">[NUMBER]</span> COUNTS)</div>
+                                <p><strong>Your Crime:</strong> Each monthly statement sent claiming false debt is a separate count of mail fraud.</p>
+                                <div>
+                                    <span class="prison-time">UP TO 20 YEARS PER COUNT</span>
+                                    <span class="fine-amount">$500,000 PER MAILING</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">6</span>
+                                <span class="statute-number">18 U.S.C. § 241</span>
+                                <div class="violation-title">CONSPIRACY AGAINST RIGHTS</div>
+                                <p><strong>Your Crime:</strong> Multiple parties conspiring to violate my rights through fraudulent debt scheme.</p>
+                                <p><strong>Co-Conspirators:</strong> Bank officers, servicer personnel, credit reporting agencies, foreclosure attorneys, MERS participants</p>
+                                <div>
+                                    <span class="prison-time">UP TO 10 YEARS</span>
+                                    <span class="fine-amount">$500,000 FINE</span>
+                                </div>
+                            </div>
+
+                            <div class="violation-detail">
+                                <span class="count-number">7</span>
+                                <span class="statute-number">18 U.S.C. § 1962</span>
+                                <div class="violation-title">RICO — RACKETEERING</div>
+                                <p><strong>Your Crime:</strong> Pattern of racketeering activity through mail fraud and extortion.</p>
+                                <div>
+                                    <span class="prison-time">UP TO 20 YEARS PRISON</span>
+                                    <span class="fine-amount">TRIPLE DAMAGES IN CIVIL SUIT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="misprision-warning">
+                            <h4>MISPRISION OF FELONY WARNING — 18 U.S.C. § 4</h4>
+
+                            <p><strong>TO ALL EMPLOYEES RECEIVING THIS NOTICE:</strong></p>
+
+                            <p>Federal law requires that anyone with knowledge of a felony must report it to authorities. <strong>Failure to report these crimes makes you personally liable for misprision of felony</strong>, punishable by up to 3 years in prison and fines.</p>
+
+                            <p>You have a legal duty to:</p>
+                            <ol>
+                                <li>Report these crimes to law enforcement</li>
+                                <li>Cease participation immediately</li>
+                                <li>Preserve all evidence</li>
+                            </ol>
+
+                            <p><strong>Continuing to participate after this notice makes you a criminal co-conspirator.</strong></p>
+                        </div>
+
+                        <div class="demand-section">
+                            <h4>DEMANDS TO AVOID CRIMINAL PROSECUTION</h4>
+
+                            <p>To avoid criminal referral, you must IMMEDIATELY:</p>
+
+                            <ol>
+                                <li><strong>CEASE ALL CRIMINAL ACTIVITY:</strong>
+                                    <ul>
+                                        <li>Stop all collection attempts</li>
+                                        <li>Stop all foreclosure proceedings</li>
+                                        <li>Stop all credit reporting</li>
+                                        <li>Stop all communications except compliance with this notice</li>
+                                    </ul>
+                                </li>
+
+                                <li><strong>PROVIDE WITHIN 10 DAYS:</strong>
+                                    <ul>
+                                        <li>Written acknowledgment of receipt of this notice</li>
+                                        <li>Names of all persons involved in collection</li>
+                                        <li>Proof of consideration (if you claim any exists)</li>
+                                        <li>Or admission that no consideration was provided</li>
+                                    </ul>
+                                </li>
+
+                                <li><strong>REMEDY THE CRIMES:</strong>
+                                    <ul>
+                                        <li>Mark account "Paid in Full"</li>
+                                        <li>Return all payments made</li>
+                                        <li>Clear all credit reporting</li>
+                                        <li>Provide clear title to property</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="referral-notice">
+                            <h4>CRIMINAL REFERRAL NOTICE</h4>
+
+                            <p><strong>If you do not cease criminal activity within 10 days, criminal complaints will be filed with:</strong></p>
+
+                            <div class="agency-grid">
+                                <div class="agency-item">
+                                    <strong>FBI</strong><br>
+                                    White Collar Crime Division<br>
+                                    Financial Institution Fraud Unit
+                                </div>
+                                <div class="agency-item">
+                                    <strong>Department of Justice</strong><br>
+                                    Criminal Division<br>
+                                    Fraud Section
+                                </div>
+                                <div class="agency-item">
+                                    <strong>U.S. Attorney</strong><br>
+                                    <span class="template-letter__field">[Your District]</span>
+                                </div>
+                                <div class="agency-item">
+                                    <strong>Secret Service</strong><br>
+                                    Financial Crimes Division
+                                </div>
+                                <div class="agency-item">
+                                    <strong>State Attorney General</strong><br>
+                                    Criminal Prosecution Division
+                                </div>
+                                <div class="agency-item">
+                                    <strong>County District Attorney</strong><br>
+                                    White Collar Crime Unit
+                                </div>
+                                <div class="agency-item">
+                                    <strong>Treasury Inspector General</strong><br>
+                                    Banking Fraud Investigation
+                                </div>
+                                <div class="agency-item">
+                                    <strong>Congressional Committees</strong><br>
+                                    Banking and Financial Services
+                                </div>
+                            </div>
+
+                            <p><strong>Each complaint will include:</strong></p>
+                            <ul>
+                                <li>This notice showing you were warned</li>
+                                <li>Evidence of continued crimes after warning</li>
+                                <li>Names of all individuals involved</li>
+                                <li>Request for criminal prosecution</li>
+                                <li>Request for asset forfeiture under RICO</li>
+                            </ul>
+                        </div>
+
+                        <h3>PERSONAL LIABILITY NOTICE</h3>
+
+                        <p>Every person who participates in these crimes after receiving this notice becomes <strong>PERSONALLY CRIMINALLY LIABLE</strong>. This includes:</p>
+                        <ul>
+                            <li>CEOs and executives who allow continuation</li>
+                            <li>Managers who direct criminal activity</li>
+                            <li>Employees who execute criminal acts</li>
+                            <li>Attorneys who facilitate crimes</li>
+                            <li>Third parties who assist (credit agencies, MERS, etc.)</li>
+                        </ul>
+                        <p>Corporate employment provides <strong>NO IMMUNITY</strong> from criminal prosecution.</p>
+
+                        <h3>PRESERVATION OF EVIDENCE — SPOLIATION WARNING</h3>
+
+                        <p>You are legally required to preserve ALL evidence related to these crimes. Destruction of evidence is <strong>OBSTRUCTION OF JUSTICE (18 U.S.C. § 1519)</strong> — 20 years prison.</p>
+
+                        <div class="final-warning">
+                            <h4>FINAL WARNING</h4>
+                            <p style="font-size: 1.1rem;">
+                                This is your <strong>ONLY WARNING</strong> before criminal referral.<br>
+                                You have <strong>10 DAYS</strong> to cease all criminal activity.<br>
+                                Continued crimes will result in prosecution requests for <strong>MAXIMUM SENTENCES</strong> on all counts.
+                            </p>
+                            <p style="color: #ffeb3b;">
+                                The choice is yours: Stop the crimes or face prosecution.
+                            </p>
+                        </div>
+
+                        <div style="margin: 2rem 0;">
+                            <p>
+                                All rights reserved,<br>
+                                Criminal violations reported by:
+                            </p>
+                            <div class="signature-line"></div>
+                            <p><span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                            Victim of Financial Crimes<br>
+                            Date: <span class="template-letter__field">[DATE]</span></p>
+                        </div>
+
+                        <p>
+                            <strong>cc:</strong> (for notice and evidence preservation)<br>
+                            <span class="template-letter__field">[Your Attorney]</span><br>
+                            <span class="template-letter__field">[State Attorney General]</span><br>
+                            Consumer Financial Protection Bureau<br>
+                            <span class="template-letter__field">[State Banking Commissioner]</span><br>
+                            <span class="template-letter__field">[U.S. Attorney's Office]</span><br>
+                            FBI White Collar Crime Division (to follow if no compliance)
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Post-Mailing Checklist</h2>
+
+                    <ul class="checklist">
+                        <li>Sent to CEO via Certified Mail</li>
+                        <li>Sent to Board of Directors via Certified Mail</li>
+                        <li>Sent to General Counsel via Certified Mail</li>
+                        <li>Sent to Compliance Officer via Certified Mail</li>
+                        <li>Sent to Servicer via Certified Mail</li>
+                        <li>All tracking numbers recorded</li>
+                        <li>Calendar marked: 10-day deadline</li>
+                        <li>Prepared criminal complaints for FBI, DOJ, etc.</li>
+                        <li>Evidence packet ready to send if no compliance</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Legal Citations</h2>
+
+                    <div class="statute-reference">
+                        <strong>18 U.S.C. § 1584</strong> — Involuntary servitude (20 years)<br>
+                        <strong>18 U.S.C. § 1581</strong> — Peonage (20 years)<br>
+                        <strong>18 U.S.C. § 894</strong> — Extortionate collection (20 years)<br>
+                        <strong>18 U.S.C. § 1025</strong> — Promissory note fraud (5 years)<br>
+                        <strong>18 U.S.C. § 1341</strong> — Mail fraud (20 years per count)<br>
+                        <strong>18 U.S.C. § 241</strong> — Conspiracy against rights (10 years)<br>
+                        <strong>18 U.S.C. § 1962</strong> — RICO (20 years + triple damages)<br>
+                        <strong>18 U.S.C. § 4</strong> — Misprision of felony (3 years)<br>
+                        <strong>18 U.S.C. § 1519</strong> — Obstruction of justice (20 years)
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Templates</h2>
+                    <ul>
+                        <li><a href="/templates/phase-2/notice-lack-consideration.html">Notice of Lack of Consideration</a> — Core challenge first</li>
+                        <li><a href="/templates/phase-2/notice-disputed-debt.html">Notice of Disputed Debt</a> — FDCPA protections</li>
+                        <li><a href="/templates/phase-4/">Phase 4: Criminal Complaints</a> — Follow-through if needed</li>
+                    </ul>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/templates/phase-2/notice-lack-consideration.html" class="page-nav__link">
+                    <span class="page-nav__label">Previous</span>
+                    <span class="page-nav__title">← Lack of Consideration</span>
+                </a>
+                <a href="/templates/phase-2/notice-disputed-debt.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next Template</span>
+                    <span class="page-nav__title">Disputed Debt →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Conscious Agreements Framework — Private Knowledge Base</p>
+        <p class="footer__quote">"Every person who continues after notice is personally liable."</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .phase-card {
+            display: block;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background: rgba(212, 168, 83, 0.08);
+            border-left: 4px solid var(--color-gold);
+            border-radius: 0 8px 8px 0;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .phase-card:hover {
+            background: rgba(212, 168, 83, 0.15);
+            transform: translateX(4px);
+        }
+        .phase-card__header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .phase-card__number {
+            flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--color-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+        }
+        .phase-card__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+            font-size: 1.1rem;
+        }
+        .phase-card__description {
+            margin: 0;
+            color: #555;
+        }
+        .phase-card__templates {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .timeline-box {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 4px solid #2c3e50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .timeline-box__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin: 0.75rem 0;
+        }
+        .timeline-item__time {
+            flex-shrink: 0;
+            width: 100px;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav__inner">
+            <a href="/" class="main-nav__brand">Conscious Agreements</a>
+            <ul class="main-nav__links">
+                <li><a href="/foundation/" class="main-nav__link">Foundation</a></li>
+                <li><a href="/domains/" class="main-nav__link">Domains</a></li>
+                <li><a href="/pathways/" class="main-nav__link">Pathways</a></li>
+                <li><a href="/reference/" class="main-nav__link">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Templates</span>
+            </nav>
+
+            <header>
+                <h1>Templates</h1>
+                <p class="lead">A comprehensive 7-phase document system for challenging bank claims and asserting your rights. Each phase builds on the previous, creating a strategic escalation path.</p>
+            </header>
+
+            <section>
+                <div class="important-box">
+                    <div class="important-box__title">How to Use These Templates</div>
+                    <p>These templates are <strong>starting points</strong>, not form letters. Every situation is unique.</p>
+                    <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                        <li><strong>Understand first</strong> — Read the <a href="/foundation/">Foundation</a> and relevant <a href="/domains/">Domain</a> sections</li>
+                        <li><strong>Customize</strong> — Adapt each template to your specific situation</li>
+                        <li><strong>Document</strong> — Keep copies of everything you send</li>
+                        <li><strong>Send certified</strong> — Create proof of delivery</li>
+                        <li><strong>Track deadlines</strong> — Note when responses are due</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>The 7-Phase System</h2>
+
+                <a href="/templates/phase-1/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">1</div>
+                        <div class="phase-card__title">Information Gathering & Discovery</div>
+                    </div>
+                    <p class="phase-card__description">Force disclosure of evidence, create paper trail, establish foundation for legal challenge.</p>
+                    <p class="phase-card__templates">Templates: QWR, Debt Validation, FOIA Bundle, Original Documents Request, Chain of Title Request, Privacy Act Request</p>
+                </a>
+
+                <a href="/templates/phase-2/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">2</div>
+                        <div class="phase-card__title">Affidavits & Legal Notices</div>
+                    </div>
+                    <p class="phase-card__description">Establish facts, create legal presumptions, formally notify of violations.</p>
+                    <p class="phase-card__templates">Templates: Affidavit of Truth, Notice of Lack of Consideration, Notice of Criminal Violations, Notice of Disputed Debt</p>
+                </a>
+
+                <a href="/templates/phase-3/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">3</div>
+                        <div class="phase-card__title">Court Filings & Legal Actions</div>
+                    </div>
+                    <p class="phase-card__description">Take offensive legal action, stop foreclosure, clear title.</p>
+                    <p class="phase-card__templates">Templates: Quiet Title Complaint, Motion to Dismiss, Counterclaim, Notice of Removal to Federal Court</p>
+                </a>
+
+                <a href="/templates/phase-4/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">4</div>
+                        <div class="phase-card__title">Criminal & Regulatory Complaints</div>
+                    </div>
+                    <p class="phase-card__description">Apply external pressure through law enforcement and regulators.</p>
+                    <p class="phase-card__templates">Templates: FBI Complaint, DOJ Referral, CFPB Complaint, SEC Complaint</p>
+                </a>
+
+                <a href="/templates/phase-5/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">5</div>
+                        <div class="phase-card__title">Alternative Strategies & Commercial Remedies</div>
+                    </div>
+                    <p class="phase-card__description">Test boundaries of monetary system, alternative approaches.</p>
+                    <p class="phase-card__templates">Templates: Conditional Acceptance, Promissory Note Offset, Walker Todd Affidavit, Estoppel Letter, Indemnification Demand</p>
+                </a>
+
+                <a href="/templates/phase-6/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">6</div>
+                        <div class="phase-card__title">Public Pressure & Exposure</div>
+                    </div>
+                    <p class="phase-card__description">Use public scrutiny and collective action for leverage.</p>
+                    <p class="phase-card__templates">Templates: Press Release, Congressional Petition, Class Action Joinder Notice</p>
+                </a>
+
+                <a href="/templates/phase-7/" class="phase-card">
+                    <div class="phase-card__header">
+                        <div class="phase-card__number">7</div>
+                        <div class="phase-card__title">Settlement & Resolution</div>
+                    </div>
+                    <p class="phase-card__description">Negotiate resolution or controlled exit.</p>
+                    <p class="phase-card__templates">Templates: Settlement Agreement, Deed in Lieu Agreement</p>
+                </a>
+            </section>
+
+            <section>
+                <div class="timeline-box">
+                    <div class="timeline-box__title">Suggested Timeline</div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__time">Weeks 1-2</div>
+                        <div>Phase 1: Send all information requests, create paper trail</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__time">Weeks 3-4</div>
+                        <div>Phase 2: File affidavits, send violation notices, establish disputed status</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__time">Weeks 5-8</div>
+                        <div>Phase 3: File quiet title, emergency motions if needed, counterclaims if sued</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__time">Weeks 8-12</div>
+                        <div>Phase 4: Criminal complaints, regulatory filings, build external pressure</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__time">Ongoing</div>
+                        <div>Phases 5-7: Alternative strategies, public pressure, negotiate resolution</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Selection Strategy</h2>
+
+                <div class="card" style="margin: 1rem 0;">
+                    <div class="card__title">Facing Immediate Foreclosure?</div>
+                    <p>Priority: Phase 3 (Emergency TRO) → Phase 2 (Disputed Debt Notice) → Phase 3 (Quiet Title)</p>
+                </div>
+
+                <div class="card" style="margin: 1rem 0;">
+                    <div class="card__title">Have Time to Prepare?</div>
+                    <p>Priority: All of Phase 1 → All of Phase 2 → Strategic selection from Phase 3-4</p>
+                </div>
+
+                <div class="card" style="margin: 1rem 0;">
+                    <div class="card__title">Already in Court?</div>
+                    <p>Priority: Phase 3 (Motion to Dismiss) → Phase 3 (Counterclaim) → Emergency TRO if sale scheduled</p>
+                </div>
+
+                <div class="card" style="margin: 1rem 0;">
+                    <div class="card__title">Maximum Pressure?</div>
+                    <p>Use all Phase 1-2, then select from Phase 3-4 based on their response (or non-response)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Core Principle</h2>
+
+                <div class="insight-box">
+                    <div class="insight-box__title">The Foundation</div>
+                    <p>This system is built on the principle that <a href="/foundation/money-creation/">promissory notes create money</a> in our debt-based monetary system. The goal is to expose that banks provide no <a href="/reference/terminology.html#consideration">consideration</a> for mortgages — they monetize your promissory note rather than lending pre-existing funds.</p>
+                    <p style="margin-top: 0.5rem;">Make sure you understand <a href="/domains/commerce/consideration-in-commerce.html">Consideration in Commerce</a> before using these templates.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="important-box">
+                    <div class="important-box__title">Critical Warnings</div>
+                    <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                        <li>These templates are based on theories that have had mixed reception in courts</li>
+                        <li>Success varies significantly by jurisdiction and judge</li>
+                        <li>Consider legal counsel, especially for court filings</li>
+                        <li>Document everything — their failures become your evidence</li>
+                        <li>Timing is critical — don't wait until the last minute</li>
+                        <li>Some strategies are experimental — understand the risks</li>
+                    </ul>
+                </div>
+            </section>
+
+            <nav class="page-nav">
+                <a href="/pathways/" class="page-nav__link">
+                    <span class="page-nav__label">See Also</span>
+                    <span class="page-nav__title">← Pathways</span>
+                </a>
+                <a href="/templates/phase-1/" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Start With</span>
+                    <span class="page-nav__title">Phase 1: Discovery →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Conscious Agreements Framework — Private Knowledge Base</p>
+        <p class="footer__quote">"Document everything. Their failures become your evidence."</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

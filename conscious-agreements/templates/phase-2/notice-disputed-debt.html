@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Disputed Debt — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .meta-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .template-letter__header {
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+            color: white;
+            padding: 1.5rem;
+            margin: -2rem -2rem 2rem -2rem;
+            text-align: center;
+        }
+        .template-letter__header h2 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .template-letter h3 {
+            font-family: 'Cinzel', serif;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .template-letter ul, .template-letter ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        .template-letter li {
+            margin: 0.5rem 0;
+        }
+        .shield-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .shield-box h4 {
+            color: #0d47a1;
+            margin-top: 0;
+        }
+        .notice-banner {
+            background: #ffeb3b;
+            color: #000;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 3px solid #f57f17;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .legal-protections {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legal-protections h4 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        .dispute-reasons {
+            background: #fff3e0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 2px solid #ff9800;
+        }
+        .dispute-reasons h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .reason-item {
+            background: white;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 0 6px 6px 0;
+        }
+        .credit-reporting {
+            background: #ffebee;
+            border: 3px solid #f44336;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .credit-reporting h4 {
+            color: #c62828;
+            margin-top: 0;
+        }
+        .consequences-section {
+            background: #263238;
+            color: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .consequences-section h4 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .timeline-table th {
+            background: #1976d2;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .timeline-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+        }
+        .timeline-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        .statute-reference {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .agency-notice {
+            background: #e8eaf6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 2px dashed #3f51b5;
+        }
+        .agency-notice h4 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav__inner">
+            <a href="/" class="main-nav__brand">Conscious Agreements</a>
+            <ul class="main-nav__links">
+                <li><a href="/foundation/" class="main-nav__link">Foundation</a></li>
+                <li><a href="/domains/" class="main-nav__link">Domains</a></li>
+                <li><a href="/pathways/" class="main-nav__link">Pathways</a></li>
+                <li><a href="/reference/" class="main-nav__link">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/">Templates</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/phase-2/">Phase 2</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Disputed Debt</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Notice of Disputed Debt</h1>
+                    <p class="lead">Formally disputes the entire debt under FDCPA, FCRA, and UCC. Stops collection activity, forces "disputed" notation on credit reports, and activates multiple legal protections.</p>
+                </header>
+
+                <div class="template-meta">
+                    <div class="meta-item">
+                        <div class="meta-item__label">Legal Authority</div>
+                        <div class="meta-item__value">FDCPA/FCRA/UCC</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Effect</div>
+                        <div class="meta-item__value">Stops Collection</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Credit Reporting</div>
+                        <div class="meta-item__value">Must Mark Disputed</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Validation</div>
+                        <div class="meta-item__value">30 Days Required</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="shield-box">
+                        <h4>Your Legal Shield</h4>
+                        <ol style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Stops all collection</strong> — FDCPA requires cessation</li>
+                            <li><strong>Blocks credit reporting</strong> — Must be marked disputed</li>
+                            <li><strong>Prevents foreclosure</strong> — Can't foreclose on disputed debt</li>
+                            <li><strong>Creates evidence</strong> — Shows good faith dispute</li>
+                            <li><strong>Shifts burden</strong> — They must prove valid debt</li>
+                        </ol>
+                        <p style="margin-top: 0.75rem;"><strong>Multiple laws protect you once debt is disputed!</strong></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template</h2>
+
+                    <div class="template-letter">
+                        <div class="template-letter__header">
+                            <h2>NOTICE OF DISPUTED DEBT</h2>
+                            <p style="margin: 5px 0 0 0;">FORMAL DISPUTE UNDER FDCPA, FCRA, AND UCC</p>
+                            <p style="margin: 5px 0 0 0;">ALL COLLECTION ACTIVITY MUST CEASE</p>
+                        </div>
+
+                        <p>
+                            <span class="template-letter__field">[YOUR FULL NAME]</span><br>
+                            <span class="template-letter__field">[YOUR STREET ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                            <span class="template-letter__field">[PHONE]</span><br>
+                            <span class="template-letter__field">[EMAIL]</span>
+                        </p>
+
+                        <p><span class="template-letter__field">[DATE]</span></p>
+
+                        <p>
+                            <strong>SENT VIA CERTIFIED MAIL #</strong> <span class="template-letter__field">[CERTIFIED MAIL NUMBER]</span>
+                        </p>
+
+                        <p>
+                            <span class="template-letter__field">[SERVICER/LENDER NAME]</span><br>
+                            <strong>Attention: Dispute Resolution Department</strong><br>
+                            <span class="template-letter__field">[ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span>
+                        </p>
+
+                        <p>
+                            <strong>RE: FORMAL DISPUTE OF ALLEGED DEBT</strong><br>
+                            <strong>Loan Number:</strong> <span class="template-letter__field">[YOUR LOAN NUMBER]</span><br>
+                            <strong>Property Address:</strong> <span class="template-letter__field">[PROPERTY ADDRESS]</span><br>
+                            <strong>Original Loan Amount:</strong> $<span class="template-letter__field">[AMOUNT]</span>
+                        </p>
+
+                        <p>Dear Sir/Madam:</p>
+
+                        <p>This letter constitutes <strong>FORMAL NOTICE OF DISPUTED DEBT</strong> under the Fair Debt Collection Practices Act (FDCPA), Fair Credit Reporting Act (FCRA), Uniform Commercial Code (UCC), and all other applicable laws.</p>
+
+                        <div class="notice-banner">
+                            LEGAL NOTICE<br>
+                            THE ENTIRE ALLEGED DEBT IS DISPUTED<br>
+                            ALL COLLECTION ACTIVITY MUST CEASE IMMEDIATELY<br>
+                            CONTINUING COLLECTION ON DISPUTED DEBT IS ILLEGAL
+                        </div>
+
+                        <div class="legal-protections">
+                            <h4>LEGAL PROTECTIONS ACTIVATED BY THIS DISPUTE</h4>
+                            <ol>
+                                <li><strong>FDCPA § 809(b):</strong> Collection must cease until validation provided</li>
+                                <li><strong>FCRA § 623:</strong> Must report as disputed to credit bureaus</li>
+                                <li><strong>UCC § 3-305:</strong> All defenses to payment are preserved</li>
+                                <li><strong>State Law:</strong> Cannot foreclose on genuinely disputed debt</li>
+                                <li><strong>Constitutional:</strong> Due process requires proof before taking property</li>
+                            </ol>
+                        </div>
+
+                        <div class="dispute-reasons">
+                            <h4>SPECIFIC REASONS FOR DISPUTE</h4>
+
+                            <div class="reason-item">
+                                <strong>1. LACK OF CONSIDERATION</strong><br>
+                                No actual money was lent. The bank created bookkeeping entries using my promissory note as the source of value. My promissory note WAS the payment, not a promise to pay later.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>2. FRAUD IN THE INDUCEMENT</strong><br>
+                                I was led to believe I was borrowing pre-existing money. The true nature of the transaction (exchanging my promissory note for newly created credits) was never disclosed.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>3. PROMISSORY NOTE AS PAYMENT</strong><br>
+                                In our debt-based monetary system, promissory notes ARE money. My note constituted payment in full at closing. Any additional payment would be double payment.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>4. NO PROOF OF DEBT</strong><br>
+                                You have provided no evidence that pre-existing money was lent, the bank suffered a loss, consideration was provided, or a valid debt exists.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>5. BROKEN CHAIN OF TITLE</strong><br>
+                                The note and mortgage have been separated, securitized, and transferred without proper documentation. You cannot prove ownership or right to collect.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>6. LACK OF STANDING</strong><br>
+                                You are not the original creditor and cannot prove valid assignment of the debt, possession of original note, or authority to collect.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>7. SECURITIZATION FRAUD</strong><br>
+                                If securitized, the loan was paid off by the trust. You cannot collect on a paid debt. The PSA requirements were likely violated.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>8. ACCOUNTING FRAUD</strong><br>
+                                The bank's accounting shows my note as an asset and created a matching liability. This was an exchange, not a loan. GAAP principles were violated.
+                            </div>
+
+                            <div class="reason-item">
+                                <strong>9. CRIMINAL VIOLATIONS</strong><br>
+                                Collection attempts constitute 18 U.S.C. § 1584 (involuntary servitude), 18 U.S.C. § 894 (extortionate collection), and 18 U.S.C. § 1341 (mail fraud).
+                            </div>
+                        </div>
+
+                        <h3>DEMAND FOR VALIDATION</h3>
+
+                        <p>Under FDCPA § 809, I demand complete validation including:</p>
+                        <ol>
+                            <li>Proof that pre-existing money was lent</li>
+                            <li>Evidence of consideration provided by lender</li>
+                            <li>Accounting records showing money left lender's possession</li>
+                            <li>Original wet-ink promissory note</li>
+                            <li>Complete chain of title documentation</li>
+                            <li>Authority to collect on behalf of true creditor</li>
+                            <li>Accounting of all payments and application</li>
+                            <li>Proof debt has not been discharged through securitization</li>
+                            <li>Evidence that my promissory note was not payment</li>
+                            <li>Legal authority to charge interest on money created from my note</li>
+                        </ol>
+
+                        <div class="credit-reporting">
+                            <h4>CREDIT REPORTING VIOLATIONS</h4>
+
+                            <p><strong>YOU MUST IMMEDIATELY:</strong></p>
+                            <ol>
+                                <li>Report this debt as "DISPUTED" to all credit bureaus</li>
+                                <li>Cease all negative reporting during dispute investigation</li>
+                                <li>Remove any foreclosure or default reporting</li>
+                                <li>Provide written confirmation of dispute notation</li>
+                            </ol>
+
+                            <p><strong>FAILURE TO MARK AS DISPUTED VIOLATES:</strong></p>
+                            <ul>
+                                <li>FCRA § 623 — $1,000 per violation</li>
+                                <li>Defamation per se — unlimited damages</li>
+                                <li>Slander of credit — punitive damages</li>
+                            </ul>
+                        </div>
+
+                        <h3>CEASE AND DESIST DEMAND</h3>
+
+                        <p>Effective immediately, you must:</p>
+                        <ol>
+                            <li>CEASE all collection calls</li>
+                            <li>CEASE all collection letters</li>
+                            <li>CEASE all foreclosure proceedings</li>
+                            <li>CEASE all negative credit reporting</li>
+                            <li>CEASE all attorney actions</li>
+                            <li>CEASE all court proceedings</li>
+                            <li>MARK the account as "DISPUTED"</li>
+                            <li>PROVIDE validation or discharge the debt</li>
+                        </ol>
+
+                        <h3>Response Timeline Required</h3>
+
+                        <table class="timeline-table">
+                            <thead>
+                                <tr>
+                                    <th>Action Required</th>
+                                    <th>Deadline</th>
+                                    <th>Consequence of Failure</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Acknowledge dispute</td>
+                                    <td>5 days</td>
+                                    <td>FDCPA violation</td>
+                                </tr>
+                                <tr>
+                                    <td>Mark disputed on credit</td>
+                                    <td>5 days</td>
+                                    <td>FCRA violation</td>
+                                </tr>
+                                <tr>
+                                    <td>Cease collection</td>
+                                    <td>Immediately</td>
+                                    <td>Multiple violations</td>
+                                </tr>
+                                <tr>
+                                    <td>Provide validation</td>
+                                    <td>30 days</td>
+                                    <td>Debt deemed invalid</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="consequences-section">
+                            <h4>CONSEQUENCES OF CONTINUED COLLECTION</h4>
+
+                            <p>If you continue collection on this disputed debt:</p>
+                            <ol>
+                                <li><strong>FDCPA Violations:</strong> $1,000 statutory + actual damages per violation</li>
+                                <li><strong>FCRA Violations:</strong> $1,000 per violation + punitive damages</li>
+                                <li><strong>Criminal Charges:</strong> 18 U.S.C. violations reported to FBI</li>
+                                <li><strong>Wrongful Foreclosure:</strong> Actual damages + punitive damages</li>
+                                <li><strong>Intentional Infliction of Emotional Distress:</strong> Unlimited damages</li>
+                                <li><strong>Slander of Title:</strong> Damages for clouded title</li>
+                                <li><strong>Abuse of Process:</strong> Using courts for invalid debt</li>
+                                <li><strong>RICO:</strong> Triple damages for pattern of fraud</li>
+                            </ol>
+                        </div>
+
+                        <div class="agency-notice">
+                            <h4>AGENCY NOTIFICATION</h4>
+
+                            <p>Copies of this dispute are being sent to:</p>
+                            <ul>
+                                <li>Consumer Financial Protection Bureau</li>
+                                <li><span class="template-letter__field">[State Attorney General]</span></li>
+                                <li><span class="template-letter__field">[State Banking Department]</span></li>
+                                <li>All three credit bureaus (Equifax, Experian, TransUnion)</li>
+                                <li>Office of the Comptroller of the Currency</li>
+                                <li>Federal Trade Commission</li>
+                            </ul>
+                        </div>
+
+                        <h3>RECORDING NOTICE</h3>
+
+                        <p>This Notice of Disputed Debt will be recorded in the public records to provide notice to all parties of the disputed nature of this alleged obligation. Any party proceeding against disputed debt does so at their own risk.</p>
+
+                        <p>I am willing to resolve this matter if you can provide actual proof of a valid debt. However, absent such proof, this dispute stands and all collection must cease.</p>
+
+                        <div style="margin: 2rem 0;">
+                            <p>
+                                All rights reserved, without prejudice<br>
+                                Under penalty of perjury, I declare the statements herein are true
+                            </p>
+                            <div class="signature-line"></div>
+                            <p><span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                            Alleged Borrower<br>
+                            Date: <span class="template-letter__field">[DATE]</span></p>
+                        </div>
+
+                        <p>
+                            <strong>cc:</strong> (all via Certified Mail)<br>
+                            Consumer Financial Protection Bureau<br>
+                            <span class="template-letter__field">[State Attorney General]</span><br>
+                            <span class="template-letter__field">[State Banking Department]</span><br>
+                            Equifax Information Services LLC<br>
+                            Experian Information Solutions Inc.<br>
+                            Trans Union LLC<br>
+                            <span class="template-letter__field">[Your Attorney (if applicable)]</span><br>
+                            <span class="template-letter__field">[County Recorder (for public notice)]</span>
+                        </p>
+
+                        <h3>EVIDENCE ATTACHED</h3>
+                        <ul>
+                            <li>Exhibit A: Copy of promissory note (my payment)</li>
+                            <li>Exhibit B: Federal Reserve "Modern Money Mechanics"</li>
+                            <li>Exhibit C: Bank of England "Money Creation" publication</li>
+                            <li>Exhibit D: Previous correspondence showing no proof of consideration</li>
+                            <li>Exhibit E: Criminal statutes being violated</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>After Sending This Notice</h2>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">Immediate Effects</div>
+                        <ul style="margin: 0;">
+                            <li>They must stop ALL collection — It's illegal to continue</li>
+                            <li>Check credit reports — Must show "Disputed"</li>
+                            <li>Document violations — Each contact = FDCPA violation</li>
+                        </ul>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">30-Day Validation Period</div>
+                        <ul style="margin: 0;">
+                            <li>They must provide validation or cease collection</li>
+                            <li>They likely can't validate (no consideration proof)</li>
+                            <li>Use as defense if they try foreclosure anyway</li>
+                        </ul>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">If They Violate</div>
+                        <ul style="margin: 0;">
+                            <li>File CFPB complaint</li>
+                            <li>File state AG complaint</li>
+                            <li>Consider FDCPA lawsuit ($1,000 per violation)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Post-Mailing Checklist</h2>
+
+                    <ul class="checklist">
+                        <li>Sent via Certified Mail with Return Receipt</li>
+                        <li>Copies sent to credit bureaus</li>
+                        <li>Copy sent to CFPB</li>
+                        <li>Copy sent to State AG</li>
+                        <li>All tracking numbers recorded</li>
+                        <li>Calendar marked: 5 days for acknowledgment</li>
+                        <li>Calendar marked: 30 days for validation</li>
+                        <li>Started log of any continued collection (violations)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Legal Citations</h2>
+
+                    <div class="statute-reference">
+                        <strong>15 U.S.C. § 1692g</strong> — FDCPA validation of debts<br>
+                        <strong>15 U.S.C. § 1681s-2</strong> — FCRA duties of furnishers<br>
+                        <strong>UCC § 3-305</strong> — Defenses and claims in recoupment<br>
+                        <strong>UCC § 3-501</strong> — Presentment<br>
+                        <strong>18 U.S.C. § 1341</strong> — Mail fraud
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Templates</h2>
+                    <ul>
+                        <li><a href="/templates/phase-1/debt-validation.html">Debt Validation Letter</a> — Initial 30-day validation demand</li>
+                        <li><a href="/templates/phase-2/notice-lack-consideration.html">Notice of Lack of Consideration</a> — Core challenge</li>
+                        <li><a href="/pathways/common-situations/debt-collection.html">Debt Collection Guide</a> — Complete pathway</li>
+                    </ul>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/templates/phase-2/notice-criminal-violations.html" class="page-nav__link">
+                    <span class="page-nav__label">Previous</span>
+                    <span class="page-nav__title">← Criminal Violations</span>
+                </a>
+                <a href="/templates/phase-3/" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next Phase</span>
+                    <span class="page-nav__title">Phase 3: Court Filings →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Conscious Agreements Framework — Private Knowledge Base</p>
+        <p class="footer__quote">"Disputed debt = collection must stop."</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

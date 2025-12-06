@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain of Title Request Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        .header-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #fffef0;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .instructions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+        }
+        
+        .chain-diagram {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px dashed #3f51b5;
+        }
+        
+        .chain-step {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3f51b5;
+            border-radius: 5px;
+        }
+        
+        .broken-chain-warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            color: #b71c1c;
+        }
+        
+        .legal-notice {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .body-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        
+        .signature-block {
+            margin-top: 50px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .legal-citation {
+            font-style: italic;
+            color: #333;
+        }
+        
+        .mers-alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            color: #856404;
+        }
+        
+        .securitization-box {
+            background: #e1f5fe;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #03a9f4;
+        }
+        
+        .fraud-indicators {
+            background: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #e91e63;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .timeline-table th {
+            background: #3f51b5;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .timeline-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .timeline-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="instructions no-print">
+            <h3>🔗 Why Chain of Title Matters</h3>
+            <p><strong>The chain of title is often broken, making foreclosure illegal:</strong></p>
+            <ol>
+                <li><strong>Each transfer must be documented</strong> - Missing links = no standing</li>
+                <li><strong>MERS doesn't transfer notes</strong> - Only tracks servicing rights</li>
+                <li><strong>Robo-signing created fake documents</strong> - Assignments often fraudulent</li>
+                <li><strong>Securitization deadlines missed</strong> - Notes not properly transferred to trusts</li>
+                <li><strong>Multiple claims possible</strong> - Note may have been sold multiple times</li>
+            </ol>
+        </div>
+        
+        <div class="broken-chain-warning no-print">
+            <strong>🔴 RED FLAGS TO WATCH FOR:</strong>
+            <ul>
+                <li>Assignments executed AFTER foreclosure started (fabricated)</li>
+                <li>Assignments by people no longer employed (robo-signing)</li>
+                <li>MERS claiming to transfer the note (they can't)</li>
+                <li>Gaps in the timeline (missing transfers)</li>
+                <li>Assignments from defunct companies</li>
+            </ul>
+        </div>
+        
+        <div class="header-section">
+            <input type="text" class="form-field" placeholder="Your Full Name" id="sender_name"><br>
+            <input type="text" class="form-field" placeholder="Your Street Address" id="sender_address"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" id="sender_city_state_zip"><br>
+            <input type="text" class="form-field" placeholder="Your Phone Number" id="sender_phone"><br>
+            <input type="text" class="form-field" placeholder="Your Email" id="sender_email">
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <input type="date" class="form-field" id="letter_date">
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <strong>SENT VIA CERTIFIED MAIL #</strong> <input type="text" class="form-field" placeholder="Certified Mail Number" id="certified_number"><br><br>
+            <input type="text" class="form-field" placeholder="Current Servicer/Claimed Holder" id="servicer_name"><br>
+            <strong>Attention: Legal Department</strong><br>
+            <input type="text" class="form-field" placeholder="Address" id="servicer_address"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" id="servicer_city_state_zip">
+        </div>
+        
+        <div class="body-text">
+            <strong>RE: DEMAND FOR COMPLETE CHAIN OF TITLE DOCUMENTATION</strong><br>
+            <strong>Loan Number:</strong> <input type="text" class="form-field" placeholder="Your Loan Number" id="loan_number" style="width: 200px;"><br>
+            <strong>Property Address:</strong> <input type="text" class="form-field" placeholder="Property Address" id="property_address" style="width: 400px;"><br>
+            <strong>Original Lender:</strong> <input type="text" class="form-field" placeholder="Original Lender Name" id="original_lender" style="width: 300px;">
+        </div>
+        
+        <div class="body-text">
+            Dear Sir/Madam:
+        </div>
+        
+        <div class="body-text">
+            I am the borrower on the above-referenced loan. This is a formal demand for complete documentation proving the chain of title from the original lender to the current claimed holder of my promissory note and deed of trust/mortgage.
+        </div>
+        
+        <div class="legal-notice">
+            <strong>LEGAL REQUIREMENT:</strong><br>
+            Under <span class="legal-citation">UCC § 3-301</span>, only a "holder" or person entitled to enforce can pursue collection. You must prove an unbroken chain of transfers. Any gap in the chain destroys standing to foreclose.
+        </div>
+        
+        <div class="chain-diagram no-print">
+            <h3>📊 Required Chain of Title Documentation</h3>
+            <div class="chain-step">
+                <strong>Step 1: Original Lender</strong><br>
+                → Promissory Note executed<br>
+                → Deed of Trust/Mortgage recorded
+            </div>
+            <div class="chain-step">
+                <strong>Step 2: Each Transfer</strong><br>
+                → Endorsement on Note (or allonge)<br>
+                → Assignment of Deed of Trust (recorded)<br>
+                → Date of transfer<br>
+                → Consideration paid
+            </div>
+            <div class="chain-step">
+                <strong>Step 3: Current Claimed Holder</strong><br>
+                → Final endorsement/assignment<br>
+                → Proof of possession<br>
+                → Authority to enforce
+            </div>
+        </div>
+        
+        <div class="body-text">
+            <strong class="highlight">I DEMAND THE FOLLOWING CHAIN OF TITLE DOCUMENTS:</strong>
+        </div>
+        
+        <ol>
+            <li><strong>COMPLETE TRANSFER HISTORY OF PROMISSORY NOTE:</strong>
+                <ul>
+                    <li>Original promissory note showing my signature</li>
+                    <li>Each endorsement from original lender to current holder</li>
+                    <li>Dates of each transfer</li>
+                    <li>Names and signatures of endorsers</li>
+                    <li>If endorsed in blank, proof of physical possession</li>
+                    <li>Any allonges attached to the note</li>
+                    <li>Powers of attorney for anyone signing</li>
+                </ul>
+            </li>
+            
+            <li><strong>ALL ASSIGNMENTS OF DEED OF TRUST/MORTGAGE:</strong>
+                <ul>
+                    <li>Original deed of trust/mortgage</li>
+                    <li>Every assignment from originator to current claimant</li>
+                    <li>Recording information for each assignment</li>
+                    <li>Notarization and witness information</li>
+                    <li>Corporate resolutions authorizing assignments</li>
+                </ul>
+            </li>
+            
+            <li><strong>PURCHASE AND SALE AGREEMENTS:</strong>
+                <ul>
+                    <li>All agreements for sale of the loan</li>
+                    <li>Consideration paid for each transfer</li>
+                    <li>Bills of sale</li>
+                    <li>Assumption agreements</li>
+                </ul>
+            </li>
+            
+            <li><strong>SERVICING TRANSFER DOCUMENTATION:</strong>
+                <ul>
+                    <li>All servicing transfer agreements</li>
+                    <li>Notices of servicing transfer</li>
+                    <li>Distinction between servicing rights and ownership</li>
+                    <li>Power of attorney from owner to servicer</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <div class="mers-alert">
+            <h3>⚠️ MERS (Mortgage Electronic Registration Systems) DISCLOSURE</h3>
+            <p>If MERS is or was involved with this loan, provide:</p>
+            <ul>
+                <li>MERS MIN (Mortgage Identification Number)</li>
+                <li>All MERS milestone reports</li>
+                <li>MERS transfer history</li>
+                <li>Documentation of MERS authority to assign mortgage</li>
+                <li><strong>NOTE: MERS cannot transfer the promissory note</strong> - only track servicing</li>
+                <li>Explanation of any MERS assignments of the note (likely invalid)</li>
+            </ul>
+        </div>
+        
+        <div class="securitization-box">
+            <h3>🏦 SECURITIZATION DISCLOSURE REQUIREMENTS</h3>
+            <p>If this loan was securitized (sold to a trust/investors), you must provide:</p>
+            <ol>
+                <li><strong>Trust Information:</strong>
+                    <ul>
+                        <li>Name of trust (e.g., "CWALT 2005-32")</li>
+                        <li>Date loan was supposedly transferred to trust</li>
+                        <li>Trustee name and contact information</li>
+                    </ul>
+                </li>
+                <li><strong>Pooling and Servicing Agreement (PSA):</strong>
+                    <ul>
+                        <li>Complete PSA with all exhibits</li>
+                        <li>Mortgage loan schedule showing my loan</li>
+                        <li>Proof loan met PSA requirements</li>
+                        <li>Proof transfer occurred before closing date</li>
+                    </ul>
+                </li>
+                <li><strong>Trust Transfer Documents:</strong>
+                    <ul>
+                        <li>Assignment to trust (must predate closing)</li>
+                        <li>Bailee letter if note held by servicer</li>
+                        <li>Custodian certification</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="body-text">
+            <strong>TIMELINE DOCUMENTATION REQUIRED:</strong>
+        </div>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Document Required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[Origination]</td>
+                    <td>Me</td>
+                    <td>Original Lender</td>
+                    <td>Note & Mortgage</td>
+                </tr>
+                <tr>
+                    <td>[Transfer 1]</td>
+                    <td>Original Lender</td>
+                    <td>[Next Holder]</td>
+                    <td>Endorsement & Assignment</td>
+                </tr>
+                <tr>
+                    <td>[Transfer 2]</td>
+                    <td>[Holder]</td>
+                    <td>[Next Holder]</td>
+                    <td>Endorsement & Assignment</td>
+                </tr>
+                <tr>
+                    <td>[Current]</td>
+                    <td>[Last Transfer]</td>
+                    <td>Current Claimant</td>
+                    <td>Final Documents</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="fraud-indicators">
+            <h3>🚨 Documentation Fraud Indicators</h3>
+            <p><strong>I will be examining all documents for signs of fraud including:</strong></p>
+            <ul>
+                <li><strong>Robo-signing:</strong> Signatures by "vice presidents" of multiple companies</li>
+                <li><strong>Back-dating:</strong> Assignments created after foreclosure filed</li>
+                <li><strong>Defunct entities:</strong> Assignments from companies that no longer exist</li>
+                <li><strong>Impossible timelines:</strong> Transfers after closing dates</li>
+                <li><strong>Notary fraud:</strong> Invalid notarizations, expired commissions</li>
+                <li><strong>DOCX/LPS documents:</strong> Known document mill fabrications</li>
+            </ul>
+        </div>
+        
+        <div class="body-text">
+            <strong>SPECIFIC QUESTIONS REQUIRING ANSWERS:</strong>
+        </div>
+        
+        <ol>
+            <li>Who currently holds the original promissory note?</li>
+            <li>Where is the original note physically located?</li>
+            <li>Has the note ever been lost? If so, when and how?</li>
+            <li>Was the loan securitized? If yes:
+                <ul>
+                    <li>When was it transferred to the trust?</li>
+                    <li>Did transfer occur before trust closing date?</li>
+                    <li>Was the PSA followed?</li>
+                </ul>
+            </li>
+            <li>Has MERS ever claimed to transfer the note?</li>
+            <li>Are any assignments executed by people no longer employed?</li>
+            <li>Were any documents created after default/foreclosure initiated?</li>
+            <li>What authority does the servicer have from the note holder?</li>
+        </ol>
+        
+        <div class="legal-notice">
+            <strong>LEGAL CONSEQUENCES OF BROKEN CHAIN:</strong><br>
+            Be advised that a broken chain of title has the following consequences:
+            <ul>
+                <li>No standing to foreclose</li>
+                <li>No right to collect payments</li>
+                <li>Possible quiet title action by borrower</li>
+                <li>Criminal liability for fraudulent documents</li>
+                <li>FDCPA violations if not true owner</li>
+            </ul>
+        </div>
+        
+        <div class="body-text">
+            <strong>PRODUCTION DEADLINE:</strong>
+        </div>
+        
+        <div class="body-text">
+            You have <strong class="highlight">thirty (30) days</strong> from receipt to provide ALL requested documentation proving an unbroken chain of title. Partial responses or "to be provided later" responses are not acceptable.
+        </div>
+        
+        <div class="body-text">
+            <strong>FAILURE TO PROVIDE CONSEQUENCES:</strong>
+        </div>
+        
+        <div class="body-text">
+            Your failure to provide complete chain of title documentation will be evidence that:
+            <ul>
+                <li>You lack standing to enforce the note</li>
+                <li>The chain of title is broken</li>
+                <li>You have no right to collect payments</li>
+                <li>Any foreclosure attempt would be wrongful</li>
+                <li>Documents may have been fabricated</li>
+            </ul>
+        </div>
+        
+        <div class="broken-chain-warning">
+            <strong>WARNING REGARDING FRAUDULENT DOCUMENTS:</strong><br>
+            Creating, presenting, or filing fraudulent assignments, endorsements, or other documents is a federal crime under:
+            <ul>
+                <li>18 U.S.C. § 1001 - False statements</li>
+                <li>18 U.S.C. § 1341 - Mail fraud</li>
+                <li>18 U.S.C. § 1014 - False statements to financial institution</li>
+                <li>18 U.S.C. § 514 - Fictitious obligations</li>
+            </ul>
+            Each fraudulent document is a separate felony punishable by up to 20-30 years in prison.
+        </div>
+        
+        <div class="body-text">
+            <strong>RESERVATION OF RIGHTS:</strong>
+        </div>
+        
+        <div class="body-text">
+            I reserve all rights including:
+            <ul>
+                <li>Right to challenge any assignment as fraudulent</li>
+                <li>Right to demand discovery in litigation</li>
+                <li>Right to depose all signers of assignments</li>
+                <li>Right to criminal referrals for document fraud</li>
+                <li>Right to quiet title based on broken chain</li>
+                <li>Right to damages for slander of title</li>
+            </ul>
+        </div>
+        
+        <div class="signature-block">
+            Sincerely,<br><br>
+            <div class="signature-line"></div>
+            <input type="text" class="form-field" placeholder="Your Printed Name" id="signature_name" style="width: 300px;"><br>
+            Borrower<br>
+            Date: <input type="date" class="form-field" id="signature_date">
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <strong>cc:</strong><br>
+            <input type="text" class="form-field" placeholder="Your Attorney (if applicable)" style="width: 300px;"><br>
+            Consumer Financial Protection Bureau<br>
+            <input type="text" class="form-field" placeholder="[Your State] Attorney General" style="width: 300px;"><br>
+            <input type="text" class="form-field" placeholder="County Recorder" style="width: 300px;">
+        </div>
+        
+        <div class="instructions" style="margin-top: 30px;">
+            <strong>WHAT TO LOOK FOR IN THEIR RESPONSE:</strong>
+            <ol>
+                <li><strong>Missing Links</strong> - Any gap means no standing</li>
+                <li><strong>Timing Issues</strong> - Transfers after trust closing dates</li>
+                <li><strong>Signature Problems</strong> - Same person signing for multiple entities</li>
+                <li><strong>MERS Issues</strong> - Cannot transfer notes, only servicing</li>
+                <li><strong>Recording Gaps</strong> - Assignments not recorded timely</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            document.getElementById('sender_name').value = 'John Doe';
+            document.getElementById('sender_address').value = '123 Main Street';
+            document.getElementById('sender_city_state_zip').value = 'Miami, FL 33101';
+            document.getElementById('sender_phone').value = '(555) 123-4567';
+            document.getElementById('sender_email').value = 'johndoe@email.com';
+            document.getElementById('letter_date').value = new Date().toISOString().split('T')[0];
+            document.getElementById('servicer_name').value = 'Select Portfolio Servicing';
+            document.getElementById('servicer_address').value = '3217 S. Decker Lake Dr';
+            document.getElementById('servicer_city_state_zip').value = 'Salt Lake City, UT 84119';
+            document.getElementById('loan_number').value = '0123456789';
+            document.getElementById('property_address').value = '123 Main Street, Miami, FL 33101';
+            document.getElementById('original_lender').value = 'Countrywide Home Loans';
+            document.getElementById('certified_number').value = '7019 0140 0000 0000 0000';
+            document.getElementById('signature_name').value = 'John Doe';
+            document.getElementById('signature_date').value = new Date().toISOString().split('T')[0];
+        }
+        
+        // Auto-save form data
+        const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('chain_title_' + input.id);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('chain_title_' + this.id, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBI Criminal Complaint - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.9;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #eceff1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #263238;
+            margin-top: 0.25rem;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #c62828;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .template-section {
+            margin: 2rem 0;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            color: #263238;
+            border-bottom: 2px solid #455a64;
+            padding-bottom: 0.5rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-letter__agency {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fff3e0;
+            border-bottom: 1px solid #e65100;
+            padding: 0.1rem 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        .template-letter__section {
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #263238;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .template-letter p {
+            margin: 0.75rem 0;
+            text-align: justify;
+        }
+
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .numbered-list li {
+            counter-increment: item;
+            margin: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .numbered-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #455a64;
+        }
+
+        .statute-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .statute-box__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .statute-box code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #bbdefb;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        .criminal-box {
+            background: #ffebee;
+            border-left: 4px solid #c62828;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .criminal-box__title {
+            font-family: 'Cinzel', serif;
+            color: #c62828;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .insight-box {
+            background: #fffbf0;
+            border: 1px solid #f0e6d3;
+            border-left: 4px solid #c9a227;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box__title {
+            font-family: 'Cinzel', serif;
+            color: #8b7355;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .template-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Conscious Agreements</a>
+        <ul class="nav-links">
+            <li><a href="/foundation/">Foundation</a></li>
+            <li><a href="/domains/">Domains</a></li>
+            <li><a href="/pathways/">Pathways</a></li>
+            <li><a href="/templates/" class="active">Templates</a></li>
+            <li><a href="/reference/">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="template-header">
+            <div class="template-header__category">Phase 4 &bull; Criminal Complaint</div>
+            <h1 class="template-header__title">FBI Criminal Complaint</h1>
+            <p class="template-header__subtitle">Reporting Federal Crimes to FBI White Collar Crime Division</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-4/">Phase 4</a> &rsaquo;
+            <span>FBI Criminal Complaint</span>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Criminal Complaint</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Filing Method</div>
+                <div class="meta-item__value">tips.fbi.gov / Local Field Office</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Primary Statutes</div>
+                <div class="meta-item__value">18 U.S.C. &sect;&sect; 1341, 1343, 1344, 1962</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Complexity</div>
+                <div class="meta-item__value">High</div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Critical Warning</h3>
+            <p><strong>False statements to federal law enforcement are crimes under 18 U.S.C. &sect; 1001.</strong> Every statement in this complaint must be truthful, accurate, and based on documented evidence. Review all facts carefully before submission.</p>
+            <p>The FBI receives thousands of complaints. Document everything thoroughly and follow up persistently. Maintain copies of all submissions and responses.</p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Purpose and Effect</h2>
+            <p>This template reports bank fraud, mail fraud, wire fraud, and RICO violations to the FBI White Collar Crime Division. Filing creates a permanent federal record, may initiate investigation, and demonstrates the seriousness of the documented violations.</p>
+
+            <div class="criminal-box">
+                <h4 class="criminal-box__title">Federal Crimes Being Reported</h4>
+                <ul>
+                    <li><strong>Bank Fraud (18 U.S.C. &sect; 1344):</strong> Scheme to defraud financial institution or obtain money through false pretenses</li>
+                    <li><strong>Mail Fraud (18 U.S.C. &sect; 1341):</strong> Using postal service to execute fraud scheme</li>
+                    <li><strong>Wire Fraud (18 U.S.C. &sect; 1343):</strong> Using electronic communications to execute fraud</li>
+                    <li><strong>RICO (18 U.S.C. &sect; 1962):</strong> Pattern of racketeering through enterprise</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">FBI Criminal Complaint Template</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <div class="template-letter__agency">FEDERAL BUREAU OF INVESTIGATION</div>
+                    <div>White Collar Crime Division</div>
+                    <div>Criminal Complaint - Request for Investigation</div>
+                </div>
+
+                <p><strong>Date:</strong> <span class="template-letter__field">[DATE]</span></p>
+                <p><strong>Complainant:</strong> <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span></p>
+                <p><strong>Address:</strong> <span class="template-letter__field">[YOUR ADDRESS]</span></p>
+                <p><strong>Phone:</strong> <span class="template-letter__field">[YOUR PHONE]</span></p>
+                <p><strong>Email:</strong> <span class="template-letter__field">[YOUR EMAIL]</span></p>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">I. Subjects of Complaint</div>
+
+                    <p><strong>Primary Subject:</strong></p>
+                    <p>Name: <span class="template-letter__field">[SERVICER/BANK NAME]</span><br>
+                    Address: <span class="template-letter__field">[SERVICER ADDRESS]</span><br>
+                    Role: Mortgage Servicer / Claimed Creditor</p>
+
+                    <p><strong>Additional Subjects:</strong></p>
+                    <p>Name: <span class="template-letter__field">[TRUSTEE NAME]</span><br>
+                    Role: Foreclosure Trustee</p>
+
+                    <p>Name: <span class="template-letter__field">[LAW FIRM NAME]</span><br>
+                    Role: Foreclosure Counsel</p>
+
+                    <p>Name: <span class="template-letter__field">[TRUST/REMIC NAME]</span><br>
+                    Role: Claimed Owner of Alleged Debt</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">II. Property at Issue</div>
+                    <p>Property Address: <span class="template-letter__field">[PROPERTY ADDRESS]</span></p>
+                    <p>Alleged Loan Number: <span class="template-letter__field">[LOAN NUMBER]</span></p>
+                    <p>Original Lender: <span class="template-letter__field">[ORIGINAL LENDER]</span></p>
+                    <p>Original Loan Amount: $<span class="template-letter__field">[AMOUNT]</span></p>
+                    <p>Current Claimed Balance: $<span class="template-letter__field">[CURRENT AMOUNT]</span></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">III. Summary of Criminal Violations</div>
+
+                    <p>I am reporting the following federal criminal violations committed by the above-named subjects in connection with mortgage servicing and foreclosure proceedings:</p>
+
+                    <ol class="numbered-list">
+                        <li><strong>Bank Fraud (18 U.S.C. &sect; 1344)</strong><br>
+                        The subjects have executed a scheme to defraud by claiming to own and service a debt without lawful authority, fabricating documents to support false claims, and extracting payments and property under false pretenses. The scheme involves:<br><br>
+                        <span class="template-letter__field">[DESCRIBE SPECIFIC FRAUDULENT ACTIONS - false claims of ownership, fabricated documents, forged signatures, backdated assignments, etc.]</span></li>
+
+                        <li><strong>Mail Fraud (18 U.S.C. &sect; 1341)</strong><br>
+                        The subjects have used the United States Postal Service to transmit fraudulent documents including:<br><br>
+                        <span class="template-letter__field">[LIST SPECIFIC MAILINGS - collection letters, notice of default, foreclosure notices, etc. with dates]</span></li>
+
+                        <li><strong>Wire Fraud (18 U.S.C. &sect; 1343)</strong><br>
+                        The subjects have used interstate electronic communications to execute the fraud scheme including:<br><br>
+                        <span class="template-letter__field">[DESCRIBE ELECTRONIC COMMUNICATIONS - emails, electronic document transmissions, wire transfers, etc.]</span></li>
+
+                        <li><strong>RICO Violations (18 U.S.C. &sect; 1962)</strong><br>
+                        The above-named subjects constitute an enterprise engaged in a pattern of racketeering activity including multiple predicate acts of mail fraud, wire fraud, and bank fraud. The enterprise operates as follows:<br><br>
+                        <span class="template-letter__field">[DESCRIBE HOW ENTITIES WORK TOGETHER as an enterprise - servicer, trustee, law firm, document preparation companies]</span></li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">IV. Factual Basis for Complaint</div>
+
+                    <p>The following facts support this criminal complaint:</p>
+
+                    <ol class="numbered-list">
+                        <li><strong>Lack of Standing/Authority:</strong><br>
+                        <span class="template-letter__field">[DESCRIBE - Servicer cannot produce original note, chain of title is broken, assignments were fabricated after closing date of trust, etc.]</span></li>
+
+                        <li><strong>Document Fabrication:</strong><br>
+                        <span class="template-letter__field">[DESCRIBE - Robo-signed documents, fabricated assignments, backdated endorsements, forged signatures, etc.]</span></li>
+
+                        <li><strong>False Representations:</strong><br>
+                        <span class="template-letter__field">[DESCRIBE - False statements in court filings, false verification of debt, misrepresentation of creditor status, etc.]</span></li>
+
+                        <li><strong>Failure to Respond to Lawful Requests:</strong><br>
+                        On <span class="template-letter__field">[DATE]</span>, I sent a Qualified Written Request pursuant to RESPA demanding verification of the debt and production of original documents. The servicer failed to provide adequate response within the statutory period, suggesting they cannot substantiate their claims.</li>
+
+                        <li><strong>Pattern of Conduct:</strong><br>
+                        <span class="template-letter__field">[DESCRIBE - Similar conduct affecting other homeowners, known settlement agreements, regulatory actions against servicer, etc.]</span></li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">V. Evidence Supporting This Complaint</div>
+
+                    <p>The following evidence is attached or available to support this complaint:</p>
+
+                    <ol class="numbered-list">
+                        <li>Copies of Qualified Written Requests and responses (or lack thereof)</li>
+                        <li>Copies of alleged loan documents showing inconsistencies</li>
+                        <li>Chain of title research showing gaps and irregularities</li>
+                        <li>Analysis of assignment dates vs. trust closing dates</li>
+                        <li>Examples of robo-signed or fabricated documents</li>
+                        <li>Court filings containing false statements</li>
+                        <li>Affidavit of Truth sent to subjects (unrebutted)</li>
+                        <li><span class="template-letter__field">[LIST ADDITIONAL EVIDENCE]</span></li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VI. Damages and Harm</div>
+
+                    <p>As a result of the subjects' criminal conduct, I have suffered:</p>
+
+                    <ul>
+                        <li>Threat of wrongful foreclosure and loss of property valued at $<span class="template-letter__field">[PROPERTY VALUE]</span></li>
+                        <li>Payments made to entities without lawful authority totaling approximately $<span class="template-letter__field">[AMOUNT PAID]</span></li>
+                        <li>Damage to credit rating and reputation</li>
+                        <li>Emotional distress and anxiety</li>
+                        <li>Legal fees incurred defending against fraudulent claims</li>
+                        <li><span class="template-letter__field">[ADDITIONAL DAMAGES]</span></li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VII. Request for Action</div>
+
+                    <p>Based on the foregoing, I respectfully request that the Federal Bureau of Investigation:</p>
+
+                    <ol class="numbered-list">
+                        <li>Open a criminal investigation into the subjects named herein</li>
+                        <li>Investigate the pattern of criminal conduct affecting myself and other similarly situated homeowners</li>
+                        <li>Coordinate with the Department of Justice for potential prosecution</li>
+                        <li>Preserve and secure evidence of the criminal enterprise</li>
+                        <li>Refer this matter for potential asset forfeiture proceedings</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VIII. Declaration</div>
+
+                    <p>I declare under penalty of perjury under the laws of the United States of America that the foregoing is true and correct to the best of my knowledge and belief. I understand that false statements to federal law enforcement are crimes under 18 U.S.C. &sect; 1001.</p>
+
+                    <p style="margin-top: 2rem;">
+                        <span class="template-letter__field">[YOUR SIGNATURE]</span><br><br>
+                        _________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                        Date: <span class="template-letter__field">[DATE]</span>
+                    </p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Attachments</div>
+                    <p>Exhibit A: Qualified Written Requests and Responses<br>
+                    Exhibit B: Loan Documents and Chain of Title Analysis<br>
+                    Exhibit C: Evidence of Document Fabrication<br>
+                    Exhibit D: Court Filings with False Statements<br>
+                    Exhibit E: Affidavit of Truth<br>
+                    Exhibit F: <span class="template-letter__field">[ADDITIONAL EXHIBITS]</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="statute-box">
+            <h4 class="statute-box__title">Key Federal Criminal Statutes</h4>
+            <ul>
+                <li><code>18 U.S.C. &sect; 1341</code> - Mail Fraud (up to 20 years imprisonment)</li>
+                <li><code>18 U.S.C. &sect; 1343</code> - Wire Fraud (up to 20 years imprisonment)</li>
+                <li><code>18 U.S.C. &sect; 1344</code> - Bank Fraud (up to 30 years imprisonment)</li>
+                <li><code>18 U.S.C. &sect; 1962</code> - RICO (up to 20 years per count, plus treble damages)</li>
+                <li><code>18 U.S.C. &sect; 1001</code> - False Statements (applies to your complaint too)</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 class="checklist__title">Submission Checklist</h3>
+            <ul>
+                <li>Review all facts for accuracy - false statements are federal crimes</li>
+                <li>Gather all supporting documentation</li>
+                <li>Organize exhibits clearly with labels</li>
+                <li>Make copies of everything for your records</li>
+                <li>Submit online at tips.fbi.gov or deliver to local FBI field office</li>
+                <li>Request and save confirmation/receipt number</li>
+                <li>Follow up in 30 days if no response</li>
+                <li>Document all communications with FBI</li>
+                <li>Consider concurrent filing with DOJ, CFPB, and state AG</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <h4 class="insight-box__title">Strategic Considerations</h4>
+            <p>The FBI prioritizes cases with clear evidence, significant damages, and patterns affecting multiple victims. Strengthen your complaint by documenting connections to other cases and referencing any prior regulatory actions or settlements involving the subjects.</p>
+            <p>Reference this FBI filing in your court documents to demonstrate the seriousness of the allegations and your commitment to pursuing all remedies.</p>
+        </div>
+
+        <div class="template-nav">
+            <a href="/templates/phase-4/" class="template-nav__link">&larr; Phase 4 Overview</a>
+            <a href="/templates/phase-4/doj-referral.html" class="template-nav__link">DOJ Criminal Referral &rarr;</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Conscious Agreements - Private Educational Resource</p>
+        <p class="disclaimer">This is a private educational website. Nothing herein constitutes legal advice.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 6: Public Pressure - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .phase-header {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .phase-header__number {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .phase-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .phase-overview {
+            background: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .phase-overview__title {
+            font-family: 'Cinzel', serif;
+            color: #b71c1c;
+            margin-top: 0;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .template-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .template-card__icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #b71c1c;
+            margin: 0.5rem 0;
+        }
+
+        .template-card__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .template-card__title a:hover {
+            text-decoration: underline;
+        }
+
+        .template-card__description {
+            font-family: 'Crimson Text', serif;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .template-card__meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .template-card__tag {
+            background: #ffebee;
+            color: #c62828;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .template-card__tag--media {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .template-card__tag--political {
+            background: #e8eaf6;
+            color: #3f51b5;
+        }
+
+        .template-card__tag--collective {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border: 2px solid #ff8f00;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #e65100;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .strategy-section {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .strategy-section__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .pressure-box {
+            background: #ffcdd2;
+            border-left: 4px solid #c62828;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .pressure-box__title {
+            font-family: 'Cinzel', serif;
+            color: #b71c1c;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .phase-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .phase-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .phase-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Conscious Agreements</a>
+        <ul class="nav-links">
+            <li><a href="/foundation/">Foundation</a></li>
+            <li><a href="/domains/">Domains</a></li>
+            <li><a href="/pathways/">Pathways</a></li>
+            <li><a href="/templates/" class="active">Templates</a></li>
+            <li><a href="/reference/">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="phase-header">
+            <div class="phase-header__number">Phase 6 of 7</div>
+            <h1 class="phase-header__title">Public Pressure</h1>
+            <p class="phase-header__subtitle">Media, Congress, and Collective Action</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <span>Phase 6: Public Pressure</span>
+        </div>
+
+        <div class="phase-overview">
+            <h2 class="phase-overview__title">Phase Overview</h2>
+            <p>Phase 6 moves beyond individual legal remedies to public pressure campaigns. These strategies leverage media attention, political engagement, and collective action to expose systemic fraud and create pressure for change.</p>
+            <p>Banks and servicers are sensitive to reputation damage and political scrutiny. Coordinated public pressure can be more effective than individual legal action, especially when the system is stacked against homeowners.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Important Considerations</h3>
+            <ul>
+                <li><strong>Truth Only:</strong> Never make false statements. All claims must be documented and accurate.</li>
+                <li><strong>Privacy:</strong> Consider your own privacy and that of others before going public.</li>
+                <li><strong>Defamation Risk:</strong> Ensure all statements are truthful and supported by evidence.</li>
+                <li><strong>Coordination:</strong> These strategies work best in combination with legal action.</li>
+                <li><strong>Persistence:</strong> Media and political campaigns require sustained effort.</li>
+            </ul>
+        </div>
+
+        <h2>Phase 6 Templates</h2>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F4F0;</div>
+                <h3 class="template-card__title"><a href="press-release.html">Press Release Template</a></h3>
+                <p class="template-card__description">Professional press release for local and national media exposure. Tells your story in a newsworthy format, includes key facts about money creation, and provides media contacts. Creates public record and pressure.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--media">Media</span>
+                    <span class="template-card__tag">Exposure</span>
+                    <span class="template-card__tag">Public Record</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F3DB;</div>
+                <h3 class="template-card__title"><a href="congressional-petition.html">Congressional Petition</a></h3>
+                <p class="template-card__description">Formal petition to Congress demanding investigation into mortgage fraud and money creation practices. Cites constitutional authority, lists demands, and can be signed by multiple homeowners for collective impact.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--political">Political</span>
+                    <span class="template-card__tag">Investigation</span>
+                    <span class="template-card__tag">Reform</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x2696;</div>
+                <h3 class="template-card__title"><a href="class-action-joinder.html">Class Action Joinder Notice</a></h3>
+                <p class="template-card__description">Template for organizing or joining class action litigation. Identifies eligible class members, documents claims, and provides framework for collective legal action. Strength in numbers.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--collective">Collective</span>
+                    <span class="template-card__tag">Litigation</span>
+                    <span class="template-card__tag">Class Action</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pressure-box">
+            <h4 class="pressure-box__title">Why Public Pressure Works</h4>
+            <ul>
+                <li><strong>Reputation Damage:</strong> Banks and servicers are sensitive to negative publicity</li>
+                <li><strong>Political Accountability:</strong> Elected officials respond to constituent pressure</li>
+                <li><strong>Media Spotlight:</strong> Public attention can force action where courts fail</li>
+                <li><strong>Collective Power:</strong> Individual cases become movements</li>
+                <li><strong>Document Trail:</strong> Creates permanent public record of wrongdoing</li>
+            </ul>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-section__title">Coordination Strategy</h3>
+
+            <h4>Media Campaign</h4>
+            <ul>
+                <li>Prepare press releases with all supporting documentation</li>
+                <li>Identify sympathetic journalists covering financial issues</li>
+                <li>Coordinate releases with legal filings for maximum impact</li>
+                <li>Use social media to amplify message and connect with others</li>
+                <li>Offer exclusive interviews to encourage coverage</li>
+            </ul>
+
+            <h4>Political Engagement</h4>
+            <ul>
+                <li>Research your representatives' positions on banking regulation</li>
+                <li>Schedule meetings with congressional staff</li>
+                <li>Deliver petitions with media present</li>
+                <li>Testify at public hearings when possible</li>
+                <li>Build coalitions with consumer advocacy groups</li>
+            </ul>
+
+            <h4>Collective Action</h4>
+            <ul>
+                <li>Connect with other affected homeowners in your area</li>
+                <li>Share documents and strategies</li>
+                <li>Coordinate filings for greater impact</li>
+                <li>Consider class action certification</li>
+                <li>Support each other through the process</li>
+            </ul>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-section__title">Integration with Other Phases</h3>
+            <p>Public pressure campaigns are most effective when integrated with the full Framework approach:</p>
+            <ul>
+                <li><strong>Reference Phase 1-2:</strong> Document how servicer failed to respond to proper demands</li>
+                <li><strong>Cite Phase 3:</strong> Reference pending or completed court filings</li>
+                <li><strong>Mention Phase 4:</strong> Note that regulatory/criminal complaints have been filed</li>
+                <li><strong>Use Phase 5:</strong> Show that alternative approaches were attempted</li>
+                <li><strong>Prepare for Phase 7:</strong> Public pressure often leads to settlement opportunities</li>
+            </ul>
+        </div>
+
+        <div class="phase-nav">
+            <a href="/templates/phase-5/" class="phase-nav__link">&larr; Phase 5: Alternative Strategies</a>
+            <a href="/templates/phase-7/" class="phase-nav__link">Phase 7: Settlement &rarr;</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Conscious Agreements - Private Educational Resource</p>
+        <p class="disclaimer">This is a private educational website. Nothing herein constitutes legal advice.</p>
+    </footer>
+</body>
+</html>

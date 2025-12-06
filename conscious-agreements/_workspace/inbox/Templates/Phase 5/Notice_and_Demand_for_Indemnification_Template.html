@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice and Demand for Indemnification Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 1px solid #ccc;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            background: #f9f9f9;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 120px;
+            resize: vertical;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+        
+        .section {
+            margin: 35px 0;
+            padding: 25px;
+            border-left: 4px solid #ff6b6b;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 18pt;
+            border-bottom: 2px solid #ff6b6b;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+        }
+        
+        .legal-notice {
+            background: #e8f4f8;
+            border: 2px solid #0369a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .legal-notice h3 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        .demand-box {
+            background: #ffe6e6;
+            border: 3px solid #cc0000;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .demand-box h3 {
+            color: #cc0000;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .indemnification-terms {
+            background: #e6ffe6;
+            border: 2px solid #009900;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .indemnification-terms h3 {
+            color: #006600;
+            margin-top: 0;
+        }
+        
+        .securitization-issue {
+            background: #f0f0ff;
+            border: 2px solid #6666cc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .securitization-issue h3 {
+            color: #4444aa;
+            margin-top: 0;
+        }
+        
+        .numbered-item {
+            margin: 20px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .numbered-item::before {
+            content: attr(data-number) ".";
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+            font-size: 14pt;
+            color: #ff6b6b;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 40px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+        
+        .deadline-notice {
+            background: #ff4444;
+            color: white;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255,68,68,0.3);
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #ff5252;
+        }
+        
+        .instructions-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .trap-explanation {
+            background: #fff8e1;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .trap-explanation h3 {
+            color: #f57c00;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 14pt;
+        }
+        
+        .liability-warning {
+            background: #ffcccc;
+            border: 3px solid #cc0000;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .liability-warning h3 {
+            color: #990000;
+            margin-top: 0;
+        }
+        
+        .multiple-claims-section {
+            background: #ffeaa7;
+            border: 2px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .multiple-claims-section h3 {
+            color: #e17055;
+            margin-top: 0;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">NOTICE AND DEMAND FOR INDEMNIFICATION</div>
+            <div class="subtitle">Protection from Multiple Claims on Same Note</div>
+            <div class="subtitle">Identification of Real Party in Interest</div>
+        </div>
+        
+        <div class="trap-explanation no-print">
+            <h3>🎯 Why This Document is Critical:</h3>
+            <p>In mortgage securitization, your note may have been sold multiple times to different parties. This creates the risk of multiple entities claiming the right to collect or foreclose. This document:</p>
+            <ul>
+                <li><strong>Forces identification</strong> of the true note holder</li>
+                <li><strong>Protects you</strong> from paying the wrong party</li>
+                <li><strong>Creates liability</strong> for false claims</li>
+                <li><strong>Exposes securitization fraud</strong> if note was sold multiple times</li>
+                <li><strong>Shifts risk</strong> to the party claiming to own your debt</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            NOTICE TO PRINCIPAL IS NOTICE TO AGENT<br>
+            NOTICE TO AGENT IS NOTICE TO PRINCIPAL<br>
+            This creates PERSONAL LIABILITY for false representations
+        </div>
+        
+        <div class="section">
+            <h2>PARTIES</h2>
+            
+            <p><strong>FROM:</strong><br>
+            <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Your Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Alleged Debtor/Indemnified Party")</p>
+            
+            <p><strong>TO:</strong><br>
+            <input type="text" class="form-field" placeholder="Servicer/Bank Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Alleged Creditor/Indemnitor")</p>
+            
+            <p><strong>RE:</strong> Loan/Account Number: <input type="text" class="form-field" placeholder="Account Number" style="width: 200px;"></p>
+            <p><strong>Property Address:</strong> <input type="text" class="form-field" placeholder="Property Address" style="width: 500px;"></p>
+            
+            <p><strong>DATE:</strong> <input type="date" class="form-field" style="width: 150px;"></p>
+        </div>
+        
+        <div class="section">
+            <h2>STATEMENT OF FACTS</h2>
+            
+            <div class="numbered-item" data-number="1">
+                <p>You claim to have the right to collect on the above-referenced alleged debt and/or foreclose on the above-referenced property.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="2">
+                <p>However, you have not proven that you are the actual owner and holder of the original promissory note.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="3">
+                <p>Upon information and belief, the promissory note has been sold, assigned, transferred, and/or securitized one or more times since origination.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="4">
+                <p>Multiple parties may claim ownership or rights to collect on the same note due to:</p>
+                <ul>
+                    <li>Securitization into mortgage-backed securities</li>
+                    <li>Multiple sales or assignments</li>
+                    <li>MERS registration confusion</li>
+                    <li>Lost or destroyed original note</li>
+                    <li>Separation of note from mortgage/deed of trust</li>
+                    <li>Fraudulent or defective assignments</li>
+                </ul>
+            </div>
+            
+            <div class="numbered-item" data-number="5">
+                <p>I have a legal right to pay only the true owner and holder of the note, and to be protected from multiple claims on the same obligation.</p>
+            </div>
+        </div>
+        
+        <div class="multiple-claims-section">
+            <h3>THE MULTIPLE CLAIMS PROBLEM</h3>
+            
+            <p>Due to securitization and the mortgage industry's practices, multiple parties may claim rights to my loan:</p>
+            
+            <ul>
+                <li><strong>Original Lender:</strong> <input type="text" class="form-field" placeholder="Original Lender Name" style="width: 300px;"></li>
+                <li><strong>Current Servicer:</strong> <input type="text" class="form-field" placeholder="Current Servicer" style="width: 300px;"></li>
+                <li><strong>MERS:</strong> May claim to hold legal title</li>
+                <li><strong>Trust/Trustee:</strong> <input type="text" class="form-field" placeholder="Trust Name if known" style="width: 300px;"></li>
+                <li><strong>Certificate Holders:</strong> Unknown investors in mortgage-backed securities</li>
+                <li><strong>Unknown Assignees:</strong> Parties claiming through defective assignments</li>
+            </ul>
+            
+            <p><strong>Without proper indemnification, I risk:</strong></p>
+            <ul>
+                <li>Paying the wrong party</li>
+                <li>Multiple parties demanding payment</li>
+                <li>Double liability</li>
+                <li>Multiple foreclosure actions</li>
+                <li>Clouded title from competing claims</li>
+            </ul>
+        </div>
+        
+        <div class="demand-box">
+            <h3>DEMAND FOR INDEMNIFICATION</h3>
+            
+            <p>Therefore, as a condition of any payment or acknowledgment of debt, I DEMAND that you provide:</p>
+            
+            <ol>
+                <li><strong>FULL INDEMNIFICATION</strong> against all other claims, demands, or actions by any other party claiming an interest in the alleged debt or the promissory note.</li>
+                
+                <li><strong>BOND OR INSURANCE</strong> in the amount of <strong>DOUBLE</strong> the alleged debt to protect me from claims by other parties.</li>
+                
+                <li><strong>SWORN AFFIDAVIT</strong> identifying:
+                    <ul>
+                        <li>All parties who have ever claimed ownership of the note</li>
+                        <li>Complete chain of title from origination</li>
+                        <li>All securitization transactions</li>
+                        <li>Current location of original wet-ink note</li>
+                        <li>Identity of current true owner and holder</li>
+                    </ul>
+                </li>
+                
+                <li><strong>AGREEMENT TO DEFEND</strong> me against any claims by other parties at your sole expense.</li>
+                
+                <li><strong>PERSONAL LIABILITY</strong> acceptance by corporate officers for any false claims.</li>
+            </ol>
+        </div>
+        
+        <div class="indemnification-terms">
+            <h3>INDEMNIFICATION AGREEMENT REQUIRED</h3>
+            
+            <p>The indemnification must include:</p>
+            
+            <h4>A. Scope of Indemnification</h4>
+            <ul>
+                <li>Protection from ALL claims related to the note</li>
+                <li>Coverage for all costs, damages, and attorney fees</li>
+                <li>Defense against any legal actions</li>
+                <li>Hold harmless from any liability</li>
+            </ul>
+            
+            <h4>B. Duration</h4>
+            <ul>
+                <li>Perpetual - surviving any payment or discharge</li>
+                <li>Binding on successors and assigns</li>
+                <li>Non-revocable</li>
+            </ul>
+            
+            <h4>C. Financial Backing</h4>
+            <ul>
+                <li>Bond amount: $<input type="text" class="form-field" placeholder="Double the debt amount" style="width: 150px;"></li>
+                <li>Insurance policy number: _____________</li>
+                <li>Surety company: _____________</li>
+            </ul>
+        </div>
+        
+        <div class="legal-notice">
+            <h3>LEGAL BASIS FOR DEMAND</h3>
+            
+            <p><strong>UCC § 3-305(c) - Claims to the Instrument</strong><br>
+            I am entitled to assert claims of other parties to the instrument as a defense.</p>
+            
+            <p><strong>UCC § 3-602 - Payment</strong><br>
+            Payment to a party not entitled to enforce the instrument does not discharge the obligation.</p>
+            
+            <p><strong>Common Law - Risk of Double Liability</strong><br>
+            I have the right to ensure I am paying the correct party and to be protected from multiple claims.</p>
+            
+            <p><strong>Due Process</strong><br>
+            I have the constitutional right to know who my actual creditor is before being forced to pay.</p>
+            
+            <p><strong>Real Party in Interest</strong><br>
+            Only the real party in interest has standing to collect or foreclose.</p>
+        </div>
+        
+        <div class="securitization-issue">
+            <h3>SECURITIZATION COMPLICATIONS</h3>
+            
+            <p>If this loan was securitized, additional parties may have claims:</p>
+            
+            <ul>
+                <li><strong>Depositor:</strong> Entity that sold loans to trust</li>
+                <li><strong>Sponsor:</strong> Entity that assembled loan pool</li>
+                <li><strong>Trust:</strong> REMIC trust supposedly holding loans</li>
+                <li><strong>Trustee:</strong> Bank acting as trustee</li>
+                <li><strong>Certificate Holders:</strong> Investors in MBS</li>
+                <li><strong>Servicer:</strong> Entity collecting payments</li>
+                <li><strong>Master Servicer:</strong> Oversees servicers</li>
+                <li><strong>Securities Administrator:</strong> Handles distributions</li>
+            </ul>
+            
+            <p><strong>Each may claim rights, creating multiple liability exposure without indemnification.</strong></p>
+        </div>
+        
+        <div class="deadline-notice">
+            YOU HAVE 30 DAYS TO PROVIDE INDEMNIFICATION<br>
+            Deadline: <input type="date" class="form-field" style="width: 150px; background: white; color: black;">
+        </div>
+        
+        <div class="liability-warning">
+            <h3>⚠️ WARNING: PERSONAL LIABILITY</h3>
+            
+            <p>Any person who claims right to collect without being the true owner and holder commits:</p>
+            <ul>
+                <li><strong>FRAUD</strong> - Fraudulent representation of ownership</li>
+                <li><strong>CONVERSION</strong> - Taking property without right</li>
+                <li><strong>SLANDER OF TITLE</strong> - False claims against property</li>
+                <li><strong>RICO VIOLATIONS</strong> - Pattern of fraudulent collection</li>
+                <li><strong>FDCPA VIOLATIONS</strong> - Collecting debt without authority</li>
+            </ul>
+            
+            <p class="important">Corporate officers can be held PERSONALLY LIABLE for authorizing false claims.</p>
+        </div>
+        
+        <div class="section">
+            <h2>CONSEQUENCES OF FAILURE TO INDEMNIFY</h2>
+            
+            <p>Your failure to provide the demanded indemnification within 30 days will result in:</p>
+            
+            <ol>
+                <li><strong>REFUSAL TO PAY</strong> - I will not make any payments without indemnification</li>
+                
+                <li><strong>ESTOPPEL</strong> - You will be estopped from claiming any right to collect</li>
+                
+                <li><strong>ADMISSION</strong> - Deemed admission that you are not the true owner</li>
+                
+                <li><strong>EVIDENCE</strong> - Used as evidence of fraudulent collection attempt</li>
+                
+                <li><strong>COUNTERCLAIMS</strong> - Basis for counterclaims if you attempt foreclosure</li>
+                
+                <li><strong>CRIMINAL REFERRAL</strong> - Report to law enforcement for fraud</li>
+                
+                <li><strong>QUIET TITLE</strong> - Grounds for quiet title action</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>ALTERNATIVE: IDENTIFY TRUE OWNER</h2>
+            
+            <p>If you are not the true owner and holder of the note, you must:</p>
+            
+            <ol>
+                <li>Identify the true owner and holder</li>
+                <li>Provide their name and contact information</li>
+                <li>Cease all collection efforts immediately</li>
+                <li>Correct any credit reporting</li>
+                <li>Withdraw any foreclosure proceedings</li>
+            </ol>
+            
+            <p><strong>True Owner Information (if not you):</strong></p>
+            <p>Name: _____________________________________________</p>
+            <p>Address: __________________________________________</p>
+            <p>Phone: ____________________________________________</p>
+            <p>Proof of Ownership: ________________________________</p>
+        </div>
+        
+        <div class="signature-section">
+            <h2>VERIFICATION AND SIGNATURE</h2>
+            
+            <p>I, <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, verify under penalty of perjury under the laws of <input type="text" class="form-field" placeholder="State" style="width: 150px;"> that the foregoing is true and correct.</p>
+            
+            <p>I have a good faith belief that multiple parties may claim rights to the alleged debt, and I require indemnification to protect myself from double liability.</p>
+            
+            <p>Executed on this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">.</p>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Signature</strong>
+            </p>
+            
+            <p>
+                <input type="text" class="form-field" placeholder="Your Name (Printed)" style="width: 400px;"><br>
+                <strong>Name (Printed)</strong>
+            </p>
+            
+            <p>Without prejudice, UCC 1-308</p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT (Recommended)</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">, before me personally appeared <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, known to me to be the person who executed the foregoing instrument.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="instructions-box no-print">
+            <h3>📋 INSTRUCTIONS FOR USE</h3>
+            
+            <p><strong>When to Use:</strong></p>
+            <ul>
+                <li>When unsure who really owns your loan</li>
+                <li>If loan was securitized</li>
+                <li>Multiple parties claiming rights</li>
+                <li>Before making any payment</li>
+                <li>When original note is "lost"</li>
+                <li>If MERS is involved</li>
+            </ul>
+            
+            <p><strong>How to Send:</strong></p>
+            <ol>
+                <li>Fill in all blanks completely</li>
+                <li>Calculate 30-day deadline</li>
+                <li>Have notarized</li>
+                <li>Send Certified Mail, Return Receipt</li>
+                <li>Send to: Servicer, claimed owner, MERS</li>
+                <li>Keep all receipts and copies</li>
+            </ol>
+            
+            <p><strong>Expected Responses:</strong></p>
+            <ul>
+                <li><strong>Ignore</strong> - Document for court</li>
+                <li><strong>Refuse</strong> - Admission they don't own note</li>
+                <li><strong>Partial response</strong> - Inadequate, demand full indemnification</li>
+                <li><strong>Threats</strong> - Document, shows desperation</li>
+                <li><strong>Provide indemnification</strong> - Rare but powerful</li>
+            </ul>
+            
+            <p><strong>Follow-Up:</strong></p>
+            <ol>
+                <li>After 30 days, send Notice of Default</li>
+                <li>Refuse all payments without indemnification</li>
+                <li>Use in court as defense</li>
+                <li>File quiet title if appropriate</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            const deadline = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[1].value = deadline.toISOString().split('T')[0];
+            
+            // Fill text fields
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Your Address"]').value = '123 Main Street';
+            document.querySelector('input[placeholder="City, State ZIP"]').value = 'Miami, FL 33101';
+            
+            document.querySelector('input[placeholder="Servicer/Bank Name"]').value = 'Wells Fargo Home Mortgage';
+            document.querySelectorAll('input[placeholder="Address"]')[1].value = '1 Home Campus';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[1].value = 'Des Moines, IA 50328';
+            
+            document.querySelector('input[placeholder="Account Number"]').value = '1234567890';
+            document.querySelector('input[placeholder="Property Address"]').value = '123 Main Street, Miami, FL 33101';
+            
+            document.querySelector('input[placeholder="Original Lender Name"]').value = 'Countrywide Home Loans';
+            document.querySelector('input[placeholder="Current Servicer"]').value = 'Wells Fargo Home Mortgage';
+            document.querySelector('input[placeholder="Trust Name if known"]').value = 'CWALT 2007-15';
+            
+            document.querySelector('input[placeholder="Double the debt amount"]').value = '700,000';
+            
+            // Fill name fields
+            const nameFields = document.querySelectorAll('input[placeholder="Your Name"]');
+            nameFields.forEach(field => field.value = 'John Smith');
+            
+            // Fill state and county
+            const stateFields = document.querySelectorAll('input[placeholder="State"]');
+            stateFields.forEach(field => field.value = 'Florida');
+            
+            const countyFields = document.querySelectorAll('input[placeholder="County"]');
+            countyFields.forEach(field => field.value = 'Miami-Dade');
+            
+            // Fill date parts
+            document.querySelector('input[placeholder="Day"]').value = today.getDate();
+            document.querySelector('input[placeholder="Month"]').value = today.toLocaleString('default', { month: 'long' });
+            document.querySelector('input[placeholder="Year"]').value = today.getFullYear().toString().substr(-2);
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'indemnification_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

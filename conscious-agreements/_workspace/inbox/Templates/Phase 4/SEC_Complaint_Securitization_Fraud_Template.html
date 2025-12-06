@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC Complaint Template - Securitization Fraud</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .sec-header {
+            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin: -40px -40px 30px -40px;
+            position: relative;
+            border-bottom: 5px solid #ffd700;
+        }
+        
+        .sec-seal {
+            font-size: 48pt;
+            margin-bottom: 15px;
+        }
+        
+        .sec-title {
+            font-size: 28pt;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .sec-subtitle {
+            font-size: 16pt;
+            margin: 10px 0;
+            color: #ffd700;
+        }
+        
+        .complaint-type {
+            background: #dc143c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16pt;
+            margin: 20px 0;
+            border: 3px solid #8b0000;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #004e92;
+            padding: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            background: #f5f5f5;
+            width: auto;
+            min-width: 200px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 150px;
+            resize: vertical;
+            border: 2px solid #004e92;
+            padding: 10px;
+        }
+        
+        .section {
+            margin: 35px 0;
+            padding: 25px;
+            border: 2px solid #e0e0e0;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        
+        .section h2 {
+            color: #004e92;
+            border-bottom: 3px solid #004e92;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 18pt;
+        }
+        
+        .section h3 {
+            color: #000428;
+            margin: 20px 0 15px 0;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+        
+        .securities-violation {
+            background: #fff0f0;
+            border-left: 5px solid #dc143c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .securities-violation h4 {
+            color: #8b0000;
+            margin: 0 0 10px 0;
+        }
+        
+        .remic-section {
+            background: #f0f8ff;
+            border: 2px solid #4169e1;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .remic-section h3 {
+            color: #00008b;
+            margin-top: 0;
+        }
+        
+        .fraud-scheme {
+            background: #fffacd;
+            border: 2px solid #daa520;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .fraud-scheme h3 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        
+        .investor-harm {
+            background: #ffe4e1;
+            border: 2px solid #fa8072;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .investor-harm h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+        
+        .evidence-box {
+            background: #e6ffe6;
+            border: 2px solid #228b22;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .evidence-box h3 {
+            color: #006400;
+            margin-top: 0;
+        }
+        
+        .relief-section {
+            background: #f0fff0;
+            border: 2px solid #2e8b57;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .relief-section h3 {
+            color: #2e8b57;
+            margin-top: 0;
+        }
+        
+        .instructions {
+            background: #e6e6fa;
+            border: 2px solid #4b0082;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #4b0082;
+        }
+        
+        .federal-laws {
+            background: #f5f5f5;
+            border: 2px solid #696969;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .federal-laws h3 {
+            color: #2f4f4f;
+            margin-top: 0;
+        }
+        
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-group label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            transform: scale(1.2);
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 25px;
+            background: #f0f0f0;
+            border: 3px solid #004e92;
+            border-radius: 8px;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .submission-info {
+            background: #ffefd5;
+            border: 2px solid #ff8c00;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .submission-info h3 {
+            color: #d2691e;
+            margin-top: 0;
+        }
+        
+        .whistleblower-box {
+            background: #e0ffe0;
+            border: 3px solid #32cd32;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .whistleblower-box h3 {
+            color: #228b22;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #004e92;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #000428;
+        }
+        
+        .tips-box {
+            background: #e0f7fa;
+            border: 2px solid #00acc1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .tips-box h3 {
+            color: #006064;
+            margin-top: 0;
+        }
+        
+        .statute-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .statute-table th {
+            background: #004e92;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .statute-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .statute-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="sec-header">
+            <div class="sec-seal">🏛️</div>
+            <div class="sec-title">SECURITIES FRAUD COMPLAINT</div>
+            <div class="sec-subtitle">U.S. SECURITIES AND EXCHANGE COMMISSION</div>
+            <div class="sec-subtitle">Division of Enforcement</div>
+        </div>
+        
+        <div class="complaint-type">
+            MORTGAGE-BACKED SECURITIES FRAUD & REMIC VIOLATIONS
+        </div>
+        
+        <div class="instructions no-print">
+            <h3>📊 SEC Complaint - Securities Fraud in Mortgage Securitization</h3>
+            <p><strong>What This Does:</strong></p>
+            <ol>
+                <li><strong>Securities investigation</strong> - SEC examines securitization fraud</li>
+                <li><strong>Investor protection</strong> - Addresses harm to MBS investors</li>
+                <li><strong>REMIC violations</strong> - Tax fraud implications</li>
+                <li><strong>Disgorgement</strong> - Return of illegal profits</li>
+                <li><strong>Trading suspensions</strong> - Stop fraudulent securities</li>
+            </ol>
+            <p><strong>SEC Enforcement Powers:</strong></p>
+            <ul>
+                <li>Civil penalties up to millions</li>
+                <li>Disgorgement of profits</li>
+                <li>Officer and director bars</li>
+                <li>Trading suspensions</li>
+                <li>Injunctive relief</li>
+                <li>Criminal referrals to DOJ</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>COMPLAINANT INFORMATION</h2>
+            
+            <p><strong>Name:</strong> <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"></p>
+            
+            <p><strong>Address:</strong> <input type="text" class="form-field" placeholder="Street Address" style="width: 500px;"></p>
+            
+            <p><strong>City, State, ZIP:</strong> <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"></p>
+            
+            <p><strong>Phone:</strong> <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"></p>
+            
+            <p><strong>Email:</strong> <input type="text" class="form-field" placeholder="Email Address" style="width: 300px;"></p>
+            
+            <p><strong>Relationship to Securities:</strong></p>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Homeowner whose loan was securitized</label>
+                <label><input type="checkbox"> Investor in mortgage-backed securities</label>
+                <label><input type="checkbox"> Former employee with knowledge</label>
+                <label><input type="checkbox"> Other: <input type="text" class="form-field" placeholder="Specify" style="width: 300px;"></label>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>ENTITIES INVOLVED IN SECURITIES FRAUD</h2>
+            
+            <p><strong>Securitization Sponsor/Depositor:</strong> <input type="text" class="form-field" placeholder="Bank/Entity Name" style="width: 400px;"></p>
+            
+            <p><strong>Securities Underwriter:</strong> <input type="text" class="form-field" placeholder="Underwriter Name" style="width: 400px;"></p>
+            
+            <p><strong>REMIC Trust Name:</strong> <input type="text" class="form-field" placeholder="Trust Name (e.g., CWALT 2007-15)" style="width: 400px;"></p>
+            
+            <p><strong>Trustee:</strong> <input type="text" class="form-field" placeholder="Trustee Bank Name" style="width: 400px;"></p>
+            
+            <p><strong>Master Servicer:</strong> <input type="text" class="form-field" placeholder="Servicer Name" style="width: 400px;"></p>
+            
+            <p><strong>Securities Custodian:</strong> <input type="text" class="form-field" placeholder="Custodian Name" style="width: 400px;"></p>
+            
+            <p><strong>Rating Agencies Involved:</strong></p>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Moody's</label>
+                <label><input type="checkbox"> Standard & Poor's</label>
+                <label><input type="checkbox"> Fitch</label>
+                <label><input type="checkbox"> Other: <input type="text" class="form-field" placeholder="Specify" style="width: 200px;"></label>
+            </div>
+        </div>
+        
+        <div class="fraud-scheme">
+            <h3>SECURITIZATION FRAUD SCHEME</h3>
+            
+            <p><strong>The fraudulent scheme involves:</strong></p>
+            
+            <ol>
+                <li><strong>False Representations to Investors:</strong>
+                    <ul>
+                        <li>Misrepresenting loan quality and underwriting standards</li>
+                        <li>Concealing that loans lacked proper documentation</li>
+                        <li>Hiding that no actual money was lent (lack of consideration)</li>
+                        <li>Falsely claiming loans met REMIC requirements</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Chain of Title Fraud:</strong>
+                    <ul>
+                        <li>Notes never properly transferred to trusts</li>
+                        <li>Assignments backdated to meet REMIC deadlines</li>
+                        <li>Robo-signed endorsements and assignments</li>
+                        <li>Multiple sales of same loans to different trusts</li>
+                    </ul>
+                </li>
+                
+                <li><strong>REMIC Violations:</strong>
+                    <ul>
+                        <li>Loans not transferred within 90-day window</li>
+                        <li>Defective loans not properly substituted</li>
+                        <li>Trust engaged in prohibited transactions</li>
+                        <li>False tax certifications to IRS</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Ongoing Fraud in Servicing:</strong>
+                    <ul>
+                        <li>Foreclosing without proper ownership</li>
+                        <li>Manufacturing documents to cover fraud</li>
+                        <li>Misrepresenting to investors about loan performance</li>
+                        <li>Improper use of insurance and settlement proceeds</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="remic-section">
+            <h3>REMIC TRUST VIOLATIONS</h3>
+            
+            <p><strong>Specific REMIC Requirements Violated:</strong></p>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" checked> Failed to transfer loans within 90-day startup period (26 U.S.C. § 860D)</label>
+                <label><input type="checkbox" checked> Accepted defective loans after closing date</label>
+                <label><input type="checkbox" checked> Engaged in prohibited transactions (26 U.S.C. § 860F)</label>
+                <label><input type="checkbox" checked> Failed to maintain qualified mortgage status</label>
+                <label><input type="checkbox" checked> Improper substitution of assets</label>
+                <label><input type="checkbox" checked> Failed passive investment requirement</label>
+                <label><input type="checkbox" checked> Made false certifications to IRS</label>
+            </div>
+            
+            <p><strong>Tax Implications:</strong></p>
+            <p>These violations destroy REMIC tax-exempt status, resulting in:</p>
+            <ul>
+                <li>100% penalty tax on prohibited transactions</li>
+                <li>Loss of pass-through tax treatment</li>
+                <li>Massive tax liability for trust</li>
+                <li>Fraud on IRS and investors</li>
+            </ul>
+        </div>
+        
+        <div class="securities-violation">
+            <h4>FEDERAL SECURITIES LAW VIOLATIONS</h4>
+            
+            <table class="statute-table">
+                <thead>
+                    <tr>
+                        <th>Law/Regulation</th>
+                        <th>Violation</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Section 17(a) of Securities Act</td>
+                        <td>Fraud in Offer/Sale</td>
+                        <td>Material misrepresentations in MBS offerings</td>
+                    </tr>
+                    <tr>
+                        <td>Section 10(b) of Exchange Act</td>
+                        <td>Securities Fraud</td>
+                        <td>Deceptive practices in connection with securities</td>
+                    </tr>
+                    <tr>
+                        <td>Rule 10b-5</td>
+                        <td>Fraud/Manipulation</td>
+                        <td>False statements and omissions</td>
+                    </tr>
+                    <tr>
+                        <td>Section 20(a)</td>
+                        <td>Control Person Liability</td>
+                        <td>Executives personally liable</td>
+                    </tr>
+                    <tr>
+                        <td>Sarbanes-Oxley Act</td>
+                        <td>False Certifications</td>
+                        <td>CEO/CFO false certifications</td>
+                    </tr>
+                    <tr>
+                        <td>Regulation AB</td>
+                        <td>Asset-Backed Securities</td>
+                        <td>Failed disclosure requirements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>SPECIFIC MISREPRESENTATIONS TO INVESTORS</h2>
+            
+            <h3>1. Prospectus and Offering Documents</h3>
+            <textarea class="form-field">
+The offering documents contained material misrepresentations including:
+- Claimed loans met underwriting guidelines when they did not
+- Stated loan-to-value ratios were accurate when inflated appraisals were used
+- Represented that all loans had proper documentation
+- Claimed true sales when loans never properly transferred
+- Misrepresented that consideration was provided for loans
+- Failed to disclose conflicts of interest
+- Concealed that trusts could not foreclose due to broken chains of title</textarea>
+            
+            <h3>2. Loan Quality Misrepresentations</h3>
+            <textarea class="form-field">
+The defendants misrepresented loan quality by:
+- Claiming rigorous underwriting when none existed
+- Hiding that many loans were already in default
+- Concealing predatory lending practices
+- Misrepresenting borrower creditworthiness
+- Failing to disclose that loans were fraudulently originated
+- Hiding lack of consideration (no money actually lent)</textarea>
+            
+            <h3>3. Due Diligence Fraud</h3>
+            <textarea class="form-field">
+The defendants corrupted the due diligence process by:
+- Ignoring negative due diligence findings
+- Cherry-picking loans for review
+- Pressuring due diligence firms to overlook defects
+- Waiving loans flagged as defective into pools
+- Destroying or concealing adverse reports
+- Preventing investors from conducting independent review</textarea>
+        </div>
+        
+        <div class="investor-harm">
+            <h3>HARM TO INVESTORS</h3>
+            
+            <p><strong>Investor Losses:</strong></p>
+            <ul>
+                <li>Total securities issued: $<input type="text" class="form-field" placeholder="Amount" style="width: 200px;"> billion</li>
+                <li>Investor losses: $<input type="text" class="form-field" placeholder="Amount" style="width: 200px;"> billion</li>
+                <li>Pension funds affected: <input type="text" class="form-field" placeholder="Number" style="width: 100px;"></li>
+                <li>Individual investors harmed: <input type="text" class="form-field" placeholder="Number" style="width: 100px;"></li>
+            </ul>
+            
+            <p><strong>Types of Harmed Investors:</strong></p>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Pension funds</label>
+                <label><input type="checkbox"> Mutual funds</label>
+                <label><input type="checkbox"> Insurance companies</label>
+                <label><input type="checkbox"> Foreign investors</label>
+                <label><input type="checkbox"> Individual retirees</label>
+                <label><input type="checkbox"> Government entities (Fannie/Freddie)</label>
+            </div>
+            
+            <p><strong>Ongoing Harm:</strong></p>
+            <p>Investors continue to suffer losses as trusts cannot properly foreclose due to documentation fraud, reducing recovery values and extending losses.</p>
+        </div>
+        
+        <div class="evidence-box">
+            <h3>SUPPORTING EVIDENCE</h3>
+            
+            <p><strong>Documentary Evidence Available:</strong></p>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Pooling and Servicing Agreement (PSA)</label>
+                <label><input type="checkbox"> Prospectus and offering documents</label>
+                <label><input type="checkbox"> Mortgage Loan Purchase Agreement (MLPA)</label>
+                <label><input type="checkbox"> Assignment and Assumption Agreement</label>
+                <label><input type="checkbox"> Trust reporting showing violations</label>
+                <label><input type="checkbox"> Robo-signed documents</label>
+                <label><input type="checkbox"> Chain of title analysis</label>
+                <label><input type="checkbox"> Expert analysis of REMIC violations</label>
+                <label><input type="checkbox"> Whistleblower affidavits</label>
+                <label><input type="checkbox"> Internal emails showing knowledge</label>
+                <label><input type="checkbox"> Due diligence reports</label>
+                <label><input type="checkbox"> Rating agency correspondence</label>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>PATTERN OF FRAUDULENT CONDUCT</h2>
+            
+            <p>This is not an isolated incident but part of systematic securities fraud:</p>
+            
+            <ul>
+                <li><strong>Scale:</strong> Trillions in fraudulent MBS issued</li>
+                <li><strong>Duration:</strong> Ongoing since at least 2000</li>
+                <li><strong>Coordination:</strong> Industry-wide practices</li>
+                <li><strong>Cover-up:</strong> Ongoing document fabrication</li>
+                <li><strong>Repeat Violations:</strong> Continue despite settlements</li>
+                <li><strong>Global Impact:</strong> International investors defrauded</li>
+            </ul>
+            
+            <p><strong>Previous SEC Actions (Inadequate):</strong></p>
+            <p>Prior SEC settlements have failed to stop the fraud. Companies paid fines without admitting guilt and continued fraudulent practices. Individual accountability is needed.</p>
+        </div>
+        
+        <div class="relief-section">
+            <h3>RELIEF REQUESTED</h3>
+            
+            <p>I respectfully request that the SEC:</p>
+            
+            <ol>
+                <li><strong>INVESTIGATE</strong> - Open formal investigation into securities fraud</li>
+                <li><strong>SUSPEND</strong> - Halt trading in affected securities</li>
+                <li><strong>DISGORGEMENT</strong> - Require return of all illegal profits</li>
+                <li><strong>PENALTIES</strong> - Impose maximum civil monetary penalties</li>
+                <li><strong>INJUNCTION</strong> - Prohibit future violations</li>
+                <li><strong>BAR</strong> - Ban individuals from serving as officers/directors</li>
+                <li><strong>RESCISSION</strong> - Void fraudulent securities transactions</li>
+                <li><strong>RESTITUTION</strong> - Compensate defrauded investors</li>
+                <li><strong>CRIMINAL REFERRAL</strong> - Refer to DOJ for prosecution</li>
+                <li><strong>REFORM</strong> - Require structural changes</li>
+            </ol>
+            
+            <p><strong>Specific Actions Needed:</strong></p>
+            <ul>
+                <li>Forensic audit of all mortgage-backed securities</li>
+                <li>Investigation of REMIC tax fraud</li>
+                <li>Review of all offering documents for fraud</li>
+                <li>Examination of due diligence corruption</li>
+                <li>Personal liability for executives</li>
+                <li>Clawback of bonuses from fraud</li>
+            </ul>
+        </div>
+        
+        <div class="whistleblower-box">
+            <h3>🎯 WHISTLEBLOWER PROGRAM</h3>
+            
+            <p><strong>SEC Whistleblower Awards:</strong></p>
+            <p>The SEC awards 10-30% of monetary sanctions over $1 million to whistleblowers who provide original information leading to successful enforcement.</p>
+            
+            <p><strong>Are you eligible for a whistleblower award?</strong></p>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> I have original information not known to SEC</label>
+                <label><input type="checkbox"> I have documentation of securities violations</label>
+                <label><input type="checkbox"> I am/was an employee with inside knowledge</label>
+                <label><input type="checkbox"> The fraud exceeds $1 million</label>
+            </div>
+            
+            <p>If eligible, also file Form TCR (Tip, Complaint, or Referral) for potential award.</p>
+        </div>
+        
+        <div class="section">
+            <h2>RELATED INVESTIGATIONS</h2>
+            
+            <p><strong>This complaint relates to:</strong></p>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox"> DOJ investigation into MBS fraud</label>
+                <label><input type="checkbox"> State AG investigations</label>
+                <label><input type="checkbox"> Private securities litigation</label>
+                <label><input type="checkbox"> IRS investigation of REMIC violations</label>
+                <label><input type="checkbox"> FHFA lawsuits on behalf of Fannie/Freddie</label>
+                <label><input type="checkbox"> Other: <input type="text" class="form-field" placeholder="Specify" style="width: 400px;"></label>
+            </div>
+            
+            <p><strong>Case References:</strong></p>
+            <textarea class="form-field" placeholder="List any related cases, investigations, or settlements">
+- FHFA v. Bank of America (MBS fraud)
+- DOJ RMBS Working Group investigations
+- State AG National Mortgage Settlement
+- Private MBS litigation (list cases)
+- Prior SEC enforcement actions</textarea>
+        </div>
+        
+        <div class="signature-section">
+            <h2>CERTIFICATION AND SIGNATURE</h2>
+            
+            <p>I certify that the information provided in this complaint is true and correct to the best of my knowledge and belief. I understand that providing false information to the SEC may subject me to criminal prosecution.</p>
+            
+            <p>I am willing to:</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" checked> Provide additional information</label>
+                <label><input type="checkbox" checked> Cooperate with SEC investigation</label>
+                <label><input type="checkbox" checked> Provide documents</label>
+                <label><input type="checkbox" checked> Testify if necessary</label>
+                <label><input type="checkbox" checked> Assist in identifying other witnesses</label>
+            </div>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Signature</strong>
+            </p>
+            
+            <p>
+                <input type="text" class="form-field" placeholder="Your Full Name (Printed)" style="width: 400px;"><br>
+                <strong>Name (Printed)</strong>
+            </p>
+            
+            <p>
+                <strong>Date:</strong> <input type="date" class="form-field" style="width: 150px;">
+            </p>
+        </div>
+        
+        <div class="submission-info">
+            <h3>📤 HOW TO SUBMIT TO SEC</h3>
+            
+            <p><strong>Primary Method - Online TCR System:</strong></p>
+            <ol>
+                <li>Go to: <strong>www.sec.gov/tcr</strong></li>
+                <li>Complete Form TCR (Tip, Complaint, or Referral)</li>
+                <li>Upload supporting documents</li>
+                <li>Consider whistleblower submission if eligible</li>
+                <li>Get submission confirmation number</li>
+            </ol>
+            
+            <p><strong>Alternative Submission Methods:</strong></p>
+            <ul>
+                <li><strong>Mail:</strong><br>
+                    SEC Office of Whistleblower<br>
+                    100 F Street NE<br>
+                    Washington, DC 20549-5631
+                </li>
+                <li><strong>Fax:</strong> (703) 813-9322</li>
+                <li><strong>Regional Offices:</strong> Contact nearest SEC office</li>
+            </ul>
+            
+            <p><strong>For Whistleblower Awards:</strong></p>
+            <p>File Form WB-APP if you believe you qualify for an award</p>
+        </div>
+        
+        <div class="tips-box no-print">
+            <h3>💡 Tips for Effective SEC Complaints</h3>
+            <ol>
+                <li><strong>Focus on securities fraud</strong> - Not general mortgage issues</li>
+                <li><strong>Show investor harm</strong> - SEC protects investors</li>
+                <li><strong>Document REMIC violations</strong> - Tax implications matter</li>
+                <li><strong>Include offering documents</strong> - Show misrepresentations</li>
+                <li><strong>Name specific securities</strong> - CUSIP numbers if known</li>
+                <li><strong>Identify responsible individuals</strong> - Personal liability</li>
+                <li><strong>Calculate damages</strong> - Investor losses</li>
+                <li><strong>Show pattern</strong> - Not isolated incident</li>
+                <li><strong>Reference prior actions</strong> - Show continued violations</li>
+                <li><strong>Consider whistleblower status</strong> - Potential awards</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                if (input.type !== 'checkbox') {
+                    input.value = '';
+                }
+            });
+            
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Street Address"]').value = '123 Main Street';
+            document.querySelector('input[placeholder="City, State ZIP"]').value = 'Miami, FL 33101';
+            document.querySelector('input[placeholder="Phone Number"]').value = '(555) 123-4567';
+            document.querySelector('input[placeholder="Email Address"]').value = 'johnsmith@email.com';
+            
+            // Fill entity information
+            document.querySelector('input[placeholder="Bank/Entity Name"]').value = 'Wells Fargo Bank, N.A.';
+            document.querySelector('input[placeholder="Underwriter Name"]').value = 'Goldman Sachs & Co.';
+            document.querySelector('input[placeholder*="Trust Name"]').value = 'WFMBS 2007-15';
+            document.querySelector('input[placeholder="Trustee Bank Name"]').value = 'U.S. Bank National Association';
+            document.querySelector('input[placeholder="Servicer Name"]').value = 'Wells Fargo Home Mortgage';
+            
+            // Check some boxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes[0].checked = true; // Homeowner
+            checkboxes[5].checked = true; // Moody's
+            checkboxes[6].checked = true; // S&P
+            
+            // Set date
+            const today = new Date();
+            document.querySelector('input[type="date"]').value = today.toISOString().split('T')[0];
+            
+            // Fill amounts
+            const amountFields = document.querySelectorAll('input[placeholder="Amount"]');
+            if (amountFields[0]) amountFields[0].value = '10';
+            if (amountFields[1]) amountFields[1].value = '7.5';
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'sec_' + (input.placeholder || input.id || input.name);
+            const saved = localStorage.getItem(key);
+            if (saved && input.type !== 'checkbox') input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

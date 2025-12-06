@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counterclaim Template - Turn Defense Into Offense</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            line-height: 2;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .power-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18pt;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .court-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+        }
+        
+        .court-header h1 {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+        
+        .case-caption {
+            margin: 30px 0;
+        }
+        
+        .case-caption table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .case-caption td {
+            vertical-align: top;
+            padding: 5px;
+        }
+        
+        .plaintiff-section {
+            width: 45%;
+        }
+        
+        .versus {
+            width: 10%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .defendant-section {
+            width: 45%;
+        }
+        
+        .case-number {
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            background: #fffef0;
+            line-height: 1.5;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .instructions {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #4c1d95;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: #c62828;
+            line-height: 1.6;
+        }
+        
+        .legal-section {
+            margin: 30px 0;
+        }
+        
+        .legal-section h2 {
+            font-size: 14pt;
+            text-align: center;
+            text-decoration: underline;
+            margin: 20px 0;
+        }
+        
+        .paragraph {
+            text-indent: 50px;
+            text-align: justify;
+            margin: 20px 0;
+            line-height: 2;
+        }
+        
+        .paragraph-number {
+            display: inline-block;
+            width: 50px;
+            margin-left: -50px;
+            text-align: right;
+            padding-right: 15px;
+            font-weight: bold;
+        }
+        
+        .count-header {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            border: 2px solid #333;
+        }
+        
+        .damages-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .damages-table th {
+            background: #4c1d95;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .damages-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .damages-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        .violation-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .violation-box h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .criminal-section {
+            background: #263238;
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .criminal-section h3 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+        
+        .rico-section {
+            background: #e8eaf6;
+            border: 3px solid #3f51b5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .rico-section h3 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+        
+        .prayer-relief {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .prayer-relief h2 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+        }
+        
+        .signature-block {
+            margin-top: 60px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 40px 0 5px 0;
+        }
+        
+        .respectfully {
+            margin: 30px 0;
+        }
+        
+        .certificate-service {
+            margin-top: 60px;
+            border-top: 2px solid black;
+            padding-top: 30px;
+        }
+        
+        .certificate-service h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 2;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .exhibit-list {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .exhibit-list h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+            margin-top: 0;
+        }
+        
+        .tips-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .tips-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .claim-selector {
+            background: #f3e5f5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border: 2px solid #9c27b0;
+        }
+        
+        .claim-selector h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="power-header no-print">
+            ⚔️ COUNTERCLAIM - TURN DEFENSE INTO OFFENSE ⚔️
+        </div>
+        
+        <div class="instructions no-print">
+            <h3>💪 Counterclaim Power - Sue Them Back!</h3>
+            <p><strong>What This Does:</strong></p>
+            <ol>
+                <li><strong>Flips the script</strong> - You become the plaintiff</li>
+                <li><strong>Seeks damages</strong> - They owe YOU money</li>
+                <li><strong>Creates leverage</strong> - Settlement negotiations</li>
+                <li><strong>Exposes crimes</strong> - Federal violations</li>
+                <li><strong>RICO potential</strong> - Triple damages</li>
+            </ol>
+            <p><strong>Strategic Advantages:</strong></p>
+            <ul>
+                <li>Forces them to defend</li>
+                <li>Expensive for them to fight</li>
+                <li>Discovery rights expanded</li>
+                <li>Jury trial on YOUR claims</li>
+                <li>Can survive even if foreclosure proceeds</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box no-print">
+            <strong>⚠️ TIMING & REQUIREMENTS:</strong>
+            <ul>
+                <li>File WITH your Answer to their complaint</li>
+                <li>Or within time allowed for Answer</li>
+                <li>Must serve like a new lawsuit</li>
+                <li>Creates new case within case</li>
+                <li>May need filing fee</li>
+                <li>Consider attorney for complex claims</li>
+            </ul>
+        </div>
+        
+        <div class="claim-selector no-print">
+            <h3>📋 Select Your Claims (Check All That Apply)</h3>
+            <div style="column-count: 2;">
+                <div>☑️ FDCPA Violations ($1,000 + damages)</div>
+                <div>☑️ FCRA Violations ($1,000 per)</div>
+                <div>☑️ RESPA Violations ($2,000 per)</div>
+                <div>☑️ TILA Violations (rescission)</div>
+                <div>☑️ Fraud (actual + punitive)</div>
+                <div>☑️ RICO (triple damages)</div>
+                <div>☑️ Breach of Contract</div>
+                <div>☑️ Unjust Enrichment</div>
+                <div>☑️ Quiet Title</div>
+                <div>☑️ Slander of Title</div>
+                <div>☑️ Emotional Distress</div>
+                <div>☑️ Abuse of Process</div>
+                <div>☑️ Civil Conspiracy</div>
+                <div>☑️ Negligence</div>
+            </div>
+        </div>
+        
+        <div class="court-header">
+            <h1>IN THE <input type="text" class="form-field" placeholder="CIRCUIT/DISTRICT" style="width: 150px;"> COURT</h1>
+            <h1>IN AND FOR <input type="text" class="form-field" placeholder="COUNTY NAME" style="width: 200px;"> COUNTY</h1>
+            <h1>STATE OF <input type="text" class="form-field" placeholder="STATE" style="width: 150px;"></h1>
+        </div>
+        
+        <div class="case-caption">
+            <table>
+                <tr>
+                    <td class="plaintiff-section">
+                        <input type="text" class="form-field" placeholder="BANK/SERVICER NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Plaintiff,</span>
+                    </td>
+                    <td class="versus">
+                        <br><br>vs.
+                    </td>
+                    <td class="defendant-section">
+                        <div class="case-number">
+                            Case No. <input type="text" class="form-field" placeholder="Case number" style="width: 200px;">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="defendant-section">
+                        <input type="text" class="form-field" placeholder="YOUR NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Defendant/Counter-Plaintiff.</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2 style="text-align: center; font-size: 16pt; margin: 30px 0;">
+            DEFENDANT'S ANSWER AND COUNTERCLAIM
+        </h2>
+        
+        <div class="legal-section">
+            <h2>ANSWER TO COMPLAINT</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">1.</span>
+                Defendant <input type="text" class="form-field" placeholder="Your Name" style="width: 200px;"> denies each and every allegation in Plaintiff's Complaint except those specifically admitted herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">2.</span>
+                [Respond to each paragraph of their complaint - Admit, Deny, or Insufficient Knowledge]
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>AFFIRMATIVE DEFENSES</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">3.</span>
+                Defendant asserts the following affirmative defenses:
+                <ol>
+                    <li>Lack of Standing</li>
+                    <li>Failure to State a Claim</li>
+                    <li>Lack of Consideration</li>
+                    <li>Fraud in the Inducement</li>
+                    <li>Unclean Hands</li>
+                    <li>Statute of Limitations</li>
+                    <li>Payment/Discharge</li>
+                    <li>Failure of Conditions Precedent</li>
+                    <li>Violation of FDCPA</li>
+                    <li>Violation of Due Process</li>
+                </ol>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; font-size: 16pt; margin: 40px 0; font-weight: bold;">
+            COUNTERCLAIM
+        </h2>
+        
+        <div class="legal-section">
+            <p style="text-align: center; font-style: italic;">
+                Defendant/Counter-Plaintiff <input type="text" class="form-field" placeholder="Your Name" style="width: 200px;">, 
+                for causes of action against Plaintiff/Counter-Defendant 
+                <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;"> 
+                ("Bank"), alleges as follows:
+            </p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>PARTIES AND JURISDICTION</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">4.</span>
+                Counter-Plaintiff is a natural person and resident of <input type="text" class="form-field" placeholder="County, State" style="width: 200px;">.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">5.</span>
+                Counter-Defendant is a <input type="text" class="form-field" placeholder="corporation/national association" style="width: 200px;"> engaged in the business of mortgage lending and servicing.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">6.</span>
+                This Court has jurisdiction over this counterclaim as it arises from the same transaction and occurrence as the main action.
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>GENERAL ALLEGATIONS</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">7.</span>
+                On or about <input type="date" class="form-field" style="width: 150px;">, Counter-Plaintiff executed a promissory note for $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"> believing it was a loan of pre-existing money.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">8.</span>
+                In reality, Counter-Defendant created bookkeeping entries using Counter-Plaintiff's promissory note as the source of value, providing no consideration.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">9.</span>
+                Counter-Defendant has engaged in a pattern of fraudulent conduct including:
+                <ul>
+                    <li>Misrepresenting the nature of the transaction</li>
+                    <li>Creating money from Counter-Plaintiff's signature without disclosure</li>
+                    <li>Charging interest on Counter-Plaintiff's own created value</li>
+                    <li>Falsifying documents to create standing</li>
+                    <li>Robo-signing assignments and affidavits</li>
+                    <li>Violating federal and state laws</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT I<br>
+            VIOLATION OF FAIR DEBT COLLECTION PRACTICES ACT<br>
+            (15 U.S.C. § 1692 et seq.)
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">10.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">11.</span>
+                Counter-Defendant is a "debt collector" as defined by 15 U.S.C. § 1692a(6).
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">12.</span>
+                Counter-Defendant violated FDCPA by:
+                <ul>
+                    <li>§ 1692e - Using false, deceptive, or misleading representations</li>
+                    <li>§ 1692f - Using unfair or unconscionable means</li>
+                    <li>§ 1692g - Failing to validate debt upon request</li>
+                    <li>§ 1692e(2)(A) - Falsely representing the character or legal status of debt</li>
+                    <li>§ 1692e(10) - Using false representations to collect debt</li>
+                    <li>§ 1692f(6) - Taking property when no right exists</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">13.</span>
+                As a result, Counter-Plaintiff is entitled to:
+                <ul>
+                    <li>Statutory damages up to $1,000 per violation</li>
+                    <li>Actual damages including emotional distress</li>
+                    <li>Attorney's fees and costs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT II<br>
+            VIOLATION OF FAIR CREDIT REPORTING ACT<br>
+            (15 U.S.C. § 1681 et seq.)
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">14.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">15.</span>
+                Counter-Defendant furnished false information to credit reporting agencies about Counter-Plaintiff's account.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">16.</span>
+                Counter-Defendant failed to:
+                <ul>
+                    <li>Report the debt as disputed</li>
+                    <li>Investigate disputes properly</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Notify of dispute status</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">17.</span>
+                Counter-Plaintiff suffered damages including:
+                <ul>
+                    <li>Damaged credit score</li>
+                    <li>Denial of credit</li>
+                    <li>Higher interest rates</li>
+                    <li>Emotional distress</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT III<br>
+            VIOLATION OF REAL ESTATE SETTLEMENT PROCEDURES ACT<br>
+            (12 U.S.C. § 2601 et seq.)
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">18.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">19.</span>
+                Counter-Plaintiff sent a Qualified Written Request on <input type="date" class="form-field" style="width: 150px;">.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">20.</span>
+                Counter-Defendant failed to:
+                <ul>
+                    <li>Respond within 20 business days (acknowledgment)</li>
+                    <li>Provide requested information within 30 business days</li>
+                    <li>Correct errors in the account</li>
+                    <li>Provide contact information for owner</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">21.</span>
+                Counter-Plaintiff is entitled to:
+                <ul>
+                    <li>Statutory damages of $2,000 per violation</li>
+                    <li>Actual damages</li>
+                    <li>Attorney's fees and costs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT IV<br>
+            FRAUD
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">22.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">23.</span>
+                Counter-Defendant made false representations that:
+                <ul>
+                    <li>Pre-existing money was being lent</li>
+                    <li>Counter-Defendant was risking its own assets</li>
+                    <li>Interest was justified compensation</li>
+                    <li>Counter-Defendant had standing to foreclose</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">24.</span>
+                These representations were:
+                <ul>
+                    <li>False and Counter-Defendant knew them to be false</li>
+                    <li>Made with intent to deceive</li>
+                    <li>Material to the transaction</li>
+                    <li>Relied upon by Counter-Plaintiff</li>
+                    <li>Causing damages to Counter-Plaintiff</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">25.</span>
+                Counter-Plaintiff seeks:
+                <ul>
+                    <li>Actual damages</li>
+                    <li>Punitive damages</li>
+                    <li>Rescission of the transaction</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT V<br>
+            RACKETEERING (RICO)<br>
+            (18 U.S.C. § 1961 et seq.)
+        </div>
+        
+        <div class="rico-section">
+            <h3>⚡ RICO - The Nuclear Option</h3>
+            <p><strong>Elements Required:</strong></p>
+            <ol>
+                <li>Enterprise (the bank and servicers)</li>
+                <li>Pattern of racketeering (2+ predicate acts)</li>
+                <li>Affecting interstate commerce</li>
+                <li>Causing injury to plaintiff</li>
+            </ol>
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">26.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-25 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">27.</span>
+                Counter-Defendant and its associates constitute an "enterprise" engaged in a pattern of racketeering activity.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">28.</span>
+                The predicate acts include:
+                <ul>
+                    <li>Mail fraud (18 U.S.C. § 1341) - Each mailing</li>
+                    <li>Wire fraud (18 U.S.C. § 1343) - Electronic communications</li>
+                    <li>Bank fraud (18 U.S.C. § 1344) - Scheme to defraud</li>
+                    <li>Extortion (18 U.S.C. § 894) - Collection of extensions of credit</li>
+                    <li>Money laundering (18 U.S.C. § 1956) - Concealing source of funds</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">29.</span>
+                This pattern of racketeering has continued for years affecting thousands of homeowners.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">30.</span>
+                Counter-Plaintiff has been injured in business and property and is entitled to:
+                <ul>
+                    <li><span class="highlight">TRIPLE DAMAGES</span></li>
+                    <li>Attorney's fees</li>
+                    <li>Costs of investigation and litigation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT VI<br>
+            BREACH OF CONTRACT
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">31.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">32.</span>
+                A contract existed between the parties regarding the alleged loan.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">33.</span>
+                Counter-Defendant breached by:
+                <ul>
+                    <li>Failing to actually lend money as represented</li>
+                    <li>Misapplying payments</li>
+                    <li>Charging unauthorized fees</li>
+                    <li>Failing to provide required notices</li>
+                    <li>Accelerating without right</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">34.</span>
+                Counter-Plaintiff has suffered damages as a direct result.
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT VII<br>
+            UNJUST ENRICHMENT
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">35.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">36.</span>
+                Counter-Defendant has been unjustly enriched by:
+                <ul>
+                    <li>Creating money from Counter-Plaintiff's signature</li>
+                    <li>Charging interest on Counter-Plaintiff's own created value</li>
+                    <li>Collecting payments without providing consideration</li>
+                    <li>Keeping proceeds from securitization</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">37.</span>
+                It would be inequitable for Counter-Defendant to retain these benefits.
+            </div>
+        </div>
+        
+        <div class="count-header">
+            COUNT VIII<br>
+            QUIET TITLE
+        </div>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                <span class="paragraph-number">38.</span>
+                Counter-Plaintiff re-alleges paragraphs 1-9 as if fully set forth herein.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">39.</span>
+                Counter-Plaintiff is the rightful owner of the property located at <input type="text" class="form-field" placeholder="Property Address" style="width: 400px;">.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">40.</span>
+                Counter-Defendant's claimed lien is void for:
+                <ul>
+                    <li>Lack of consideration</li>
+                    <li>Fraud in the inducement</li>
+                    <li>Broken chain of title</li>
+                    <li>Lack of standing</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">41.</span>
+                Counter-Plaintiff seeks a decree quieting title in their favor.
+            </div>
+        </div>
+        
+        <div class="criminal-section">
+            <h3>🚨 Criminal Violations Being Committed</h3>
+            <p>Counter-Defendant's actions also constitute federal crimes:</p>
+            <ul>
+                <li><strong>18 U.S.C. § 1584</strong> - Involuntary servitude (20 years)</li>
+                <li><strong>18 U.S.C. § 894</strong> - Extortionate credit transactions (20 years)</li>
+                <li><strong>18 U.S.C. § 1341</strong> - Mail fraud (20 years per mailing)</li>
+                <li><strong>18 U.S.C. § 1344</strong> - Bank fraud (30 years)</li>
+                <li><strong>18 U.S.C. § 1001</strong> - False statements (5 years)</li>
+                <li><strong>18 U.S.C. § 241</strong> - Conspiracy against rights (10 years)</li>
+            </ul>
+            <p style="color: #ffeb3b;"><strong>These violations create additional civil liability and support punitive damages.</strong></p>
+        </div>
+        
+        <div class="damages-table">
+            <h3 style="text-align: center; margin: 20px 0;">DAMAGES CALCULATION</h3>
+            <table class="damages-table">
+                <thead>
+                    <tr>
+                        <th>Type of Damage</th>
+                        <th>Amount</th>
+                        <th>Basis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Payments Made</td>
+                        <td>$<input type="text" class="form-field" placeholder="Total paid" style="width: 100px;"></td>
+                        <td>All payments on void debt</td>
+                    </tr>
+                    <tr>
+                        <td>Property Value</td>
+                        <td>$<input type="text" class="form-field" placeholder="Property value" style="width: 100px;"></td>
+                        <td>Attempted theft via foreclosure</td>
+                    </tr>
+                    <tr>
+                        <td>Emotional Distress</td>
+                        <td>$<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></td>
+                        <td>Stress, anxiety, suffering</td>
+                    </tr>
+                    <tr>
+                        <td>Credit Damage</td>
+                        <td>$<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></td>
+                        <td>7 years of damaged credit</td>
+                    </tr>
+                    <tr>
+                        <td>FDCPA Statutory</td>
+                        <td>$1,000+</td>
+                        <td>Per violation</td>
+                    </tr>
+                    <tr>
+                        <td>RESPA Statutory</td>
+                        <td>$2,000+</td>
+                        <td>Per violation</td>
+                    </tr>
+                    <tr>
+                        <td>RICO Triple Damages</td>
+                        <td>3x Actual</td>
+                        <td>18 U.S.C. § 1964</td>
+                    </tr>
+                    <tr>
+                        <td>Punitive Damages</td>
+                        <td>$<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></td>
+                        <td>Willful, malicious conduct</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="prayer-relief">
+            <h2>PRAYER FOR RELIEF</h2>
+            
+            <p>WHEREFORE, Counter-Plaintiff respectfully requests that this Court:</p>
+            
+            <ol type="A">
+                <li>Award actual damages in an amount to be proven at trial;</li>
+                
+                <li>Award statutory damages under:
+                    <ul>
+                        <li>FDCPA - $1,000 per violation</li>
+                        <li>FCRA - $1,000 per violation</li>
+                        <li>RESPA - $2,000 per violation</li>
+                    </ul>
+                </li>
+                
+                <li>Award TRIPLE DAMAGES under RICO;</li>
+                
+                <li>Award punitive damages for fraud and malicious conduct;</li>
+                
+                <li>Quiet title in favor of Counter-Plaintiff;</li>
+                
+                <li>Declare the mortgage/deed of trust void;</li>
+                
+                <li>Enjoin Counter-Defendant from:
+                    <ul>
+                        <li>Foreclosing on the property</li>
+                        <li>Reporting to credit agencies</li>
+                        <li>Any collection activity</li>
+                    </ul>
+                </li>
+                
+                <li>Award attorney's fees and costs;</li>
+                
+                <li>Award pre- and post-judgment interest;</li>
+                
+                <li>Grant such other relief as the Court deems just and proper.</li>
+            </ol>
+        </div>
+        
+        <div class="legal-section">
+            <h2>DEMAND FOR JURY TRIAL</h2>
+            
+            <div class="paragraph">
+                Counter-Plaintiff hereby demands a trial by jury on all issues so triable.
+            </div>
+        </div>
+        
+        <div class="signature-block">
+            <div class="respectfully">
+                Respectfully submitted,
+            </div>
+            
+            <div>
+                DATED: <input type="date" class="form-field" style="width: 150px;">
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name (printed)" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Your Address" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"><br>
+                <input type="text" class="form-field" placeholder="Email" style="width: 300px;"><br>
+                Defendant/Counter-Plaintiff Pro Se
+            </div>
+        </div>
+        
+        <div class="certificate-service">
+            <h3>CERTIFICATE OF SERVICE</h3>
+            
+            <p>I hereby certify that on <input type="date" class="form-field" style="width: 150px;">, I served a true and correct copy of the foregoing Answer and Counterclaim on:</p>
+            
+            <div style="margin: 20px 0;">
+                <input type="text" class="form-field" placeholder="Plaintiff's Attorney Name" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Law Firm" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br><br>
+                By: ☐ U.S. Mail ☐ Hand Delivery ☐ Email (if agreed) ☐ Court E-Filing System
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">
+            </div>
+        </div>
+        
+        <div class="exhibit-list no-print">
+            <h3>EXHIBITS TO ATTACH</h3>
+            <ol>
+                <li><strong>Exhibit A:</strong> Promissory Note</li>
+                <li><strong>Exhibit B:</strong> Mortgage/Deed of Trust</li>
+                <li><strong>Exhibit C:</strong> All correspondence with bank</li>
+                <li><strong>Exhibit D:</strong> QWR and lack of response</li>
+                <li><strong>Exhibit E:</strong> Notice of Disputed Debt</li>
+                <li><strong>Exhibit F:</strong> Evidence of robo-signing</li>
+                <li><strong>Exhibit G:</strong> Credit reports showing damage</li>
+                <li><strong>Exhibit H:</strong> Federal Reserve publications</li>
+                <li><strong>Exhibit I:</strong> Evidence of securitization</li>
+                <li><strong>Exhibit J:</strong> Criminal statute violations</li>
+            </ol>
+        </div>
+        
+        <div class="tips-box no-print">
+            <h3>💡 Strategic Counterclaim Tips</h3>
+            <ol>
+                <li><strong>Include everything</strong> - Throw the book at them</li>
+                <li><strong>Document damages</strong> - Keep all records</li>
+                <li><strong>Demand jury trial</strong> - Juries hate banks</li>
+                <li><strong>Use discovery aggressively</strong> - Get their internal docs</li>
+                <li><strong>Consider class action</strong> - Find similarly situated</li>
+                <li><strong>Publicize if allowed</strong> - Media pressure</li>
+                <li><strong>Track all violations</strong> - Each letter, call, report</li>
+                <li><strong>Calculate damages high</strong> - Room to negotiate</li>
+                <li><strong>Include RICO if pattern exists</strong> - Triple damages!</li>
+                <li><strong>Don't forget attorney fees</strong> - Many statutes provide</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill with sample data
+            const inputs = document.querySelectorAll('input.form-field');
+            const today = new Date();
+            
+            // Sample data mapping
+            document.querySelectorAll('input[placeholder*="CIRCUIT"]').forEach(el => el.value = 'CIRCUIT');
+            document.querySelectorAll('input[placeholder*="COUNTY NAME"]').forEach(el => el.value = 'MIAMI-DADE');
+            document.querySelectorAll('input[placeholder*="STATE"]').forEach(el => el.value = 'FLORIDA');
+            document.querySelectorAll('input[placeholder*="YOUR NAME"], input[placeholder*="Your Name"]').forEach(el => el.value = 'John Doe');
+            document.querySelectorAll('input[placeholder*="BANK/SERVICER NAME"], input[placeholder*="Bank Name"]').forEach(el => el.value = 'WELLS FARGO BANK, N.A.');
+            document.querySelectorAll('input[placeholder*="Amount"]').forEach(el => el.value = '350,000');
+            document.querySelectorAll('input[placeholder*="Case number"]').forEach(el => el.value = '2024-CA-001234');
+            document.querySelectorAll('input[placeholder*="Property Address"]').forEach(el => el.value = '123 Main Street, Miami, FL 33101');
+            
+            // Set dates
+            inputs.forEach(input => {
+                if (input.type === 'date' && input.value === '') {
+                    input.value = today.toISOString().split('T')[0];
+                }
+            });
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('counterclaim_' + input.placeholder);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('counterclaim_' + this.placeholder, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

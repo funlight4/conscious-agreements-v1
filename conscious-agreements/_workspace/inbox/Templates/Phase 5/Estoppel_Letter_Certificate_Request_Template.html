@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoppel Letter/Certificate Request Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 1px solid #ccc;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .title {
+            font-size: 26pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            background: #f9f9f9;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+        
+        .section {
+            margin: 35px 0;
+            padding: 25px;
+            border-left: 4px solid #2575fc;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 18pt;
+            border-bottom: 2px solid #2575fc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+        }
+        
+        .estoppel-items {
+            background: #e8f4fd;
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .estoppel-items h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        
+        .estoppel-item {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .estoppel-number {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            background: #2575fc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .legal-notice {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .legal-notice h3 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        
+        .binding-statement {
+            background: #ffebee;
+            border: 3px solid #f44336;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .binding-statement h3 {
+            color: #c62828;
+            margin-top: 0;
+        }
+        
+        .certificate-format {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .certificate-format h3 {
+            color: #2e7d32;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 40px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+        
+        .deadline-notice {
+            background: #ff5722;
+            color: white;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255,87,34,0.3);
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #1976d2;
+        }
+        
+        .instructions-box {
+            background: #e1f5fe;
+            border: 2px solid #039be5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions-box h3 {
+            color: #0277bd;
+            margin-top: 0;
+        }
+        
+        .trap-explanation {
+            background: #fff9c4;
+            border: 3px solid #f9a825;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .trap-explanation h3 {
+            color: #f57f17;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 14pt;
+        }
+        
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .financial-table th {
+            background: #2575fc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .financial-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .financial-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        .consequences-box {
+            background: #ffccbc;
+            border: 3px solid #ff5722;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .consequences-box h3 {
+            color: #d84315;
+            margin-top: 0;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">ESTOPPEL LETTER/CERTIFICATE REQUEST</div>
+            <div class="subtitle">Binding Statement of Account Status</div>
+            <div class="subtitle">Lock Them Into Their Claims</div>
+        </div>
+        
+        <div class="trap-explanation no-print">
+            <h3>🎯 The Strategic Power of Estoppel:</h3>
+            <p>This document forces the servicer/bank to provide a binding statement about your loan that they CANNOT change later. Once they certify specific facts, they are legally "estopped" (prevented) from claiming otherwise. This:</p>
+            <ul>
+                <li><strong>Locks in their position</strong> - Can't change story later</li>
+                <li><strong>Reveals discrepancies</strong> - Errors and fraud exposed</li>
+                <li><strong>Creates evidence</strong> - Binding admissions for court</li>
+                <li><strong>Prevents surprises</strong> - No hidden fees or claims</li>
+                <li><strong>Establishes facts</strong> - For negotiation or litigation</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            LEGAL NOTICE - REQUEST FOR ESTOPPEL CERTIFICATE<br>
+            Response Required Within 15 Business Days<br>
+            Failure to Respond Constitutes Agreement to Stated Facts
+        </div>
+        
+        <div class="section">
+            <h2>PARTIES</h2>
+            
+            <p><strong>FROM:</strong><br>
+            <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Your Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Borrower/Requesting Party")</p>
+            
+            <p><strong>TO:</strong><br>
+            <input type="text" class="form-field" placeholder="Servicer/Bank Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Servicer/Responding Party")</p>
+            
+            <p><strong>RE:</strong> Loan/Account Number: <input type="text" class="form-field" placeholder="Account Number" style="width: 200px;"></p>
+            <p><strong>Property Address:</strong> <input type="text" class="form-field" placeholder="Property Address" style="width: 500px;"></p>
+            <p><strong>Original Loan Date:</strong> <input type="date" class="form-field" style="width: 150px;"></p>
+            <p><strong>Original Loan Amount:</strong> $<input type="text" class="form-field" placeholder="Original Amount" style="width: 150px;"></p>
+            
+            <p><strong>DATE:</strong> <input type="date" class="form-field" style="width: 150px;"></p>
+        </div>
+        
+        <div class="section">
+            <h2>PURPOSE OF REQUEST</h2>
+            
+            <p>I hereby request an Estoppel Certificate/Letter stating the current status of the above-referenced loan account. This request is made for the following purposes:</p>
+            
+            <ul>
+                <li>Verification of actual amount owed</li>
+                <li>Confirmation of payment history</li>
+                <li>Identification of true owner of the debt</li>
+                <li>Settlement negotiations</li>
+                <li>Potential refinancing or sale</li>
+                <li>Legal proceedings preparation</li>
+                <li>Tax and accounting purposes</li>
+            </ul>
+            
+            <p><strong>This certificate will be relied upon for important financial and legal decisions. Any false or misleading information may result in liability for damages.</strong></p>
+        </div>
+        
+        <div class="estoppel-items">
+            <h3>REQUIRED ESTOPPEL CERTIFICATE INFORMATION</h3>
+            
+            <p>You must provide a sworn statement certifying the following information as of <input type="date" class="form-field" style="width: 150px;">:</p>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">1</div>
+                <h4>CURRENT BALANCE</h4>
+                <p>State the exact amounts:</p>
+                <ul>
+                    <li>Principal Balance: $_______________</li>
+                    <li>Interest Accrued: $_______________</li>
+                    <li>Late Fees: $_______________</li>
+                    <li>Other Fees: $_______________</li>
+                    <li>Escrow Balance: $_______________</li>
+                    <li>Suspense Account: $_______________</li>
+                    <li><strong>TOTAL PAYOFF AMOUNT: $_______________</strong></li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">2</div>
+                <h4>PAYMENT HISTORY</h4>
+                <p>Provide complete payment history showing:</p>
+                <ul>
+                    <li>All payments received to date</li>
+                    <li>Dates of each payment</li>
+                    <li>How each payment was applied</li>
+                    <li>Any payments in suspense</li>
+                    <li>Any returned payments</li>
+                    <li>Current payment status (current/default)</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">3</div>
+                <h4>OWNERSHIP AND AUTHORITY</h4>
+                <p>Certify under oath:</p>
+                <ul>
+                    <li>Current owner of the promissory note: _______________</li>
+                    <li>Current holder of the promissory note: _______________</li>
+                    <li>Location of original wet-ink note: _______________</li>
+                    <li>Your authority to collect (attach proof): _______________</li>
+                    <li>All assignments of the mortgage/deed (attach copies)</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">4</div>
+                <h4>INTEREST RATE INFORMATION</h4>
+                <p>State the following:</p>
+                <ul>
+                    <li>Current interest rate: _____% </li>
+                    <li>Type (Fixed/Variable): _______________</li>
+                    <li>Date of last rate change: _______________</li>
+                    <li>Index used (if variable): _______________</li>
+                    <li>Margin (if variable): _______________</li>
+                    <li>Rate cap/floor: _______________</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">5</div>
+                <h4>ESCROW ACCOUNT</h4>
+                <p>Provide detailed escrow information:</p>
+                <ul>
+                    <li>Current escrow balance: $_______________</li>
+                    <li>Monthly escrow payment: $_______________</li>
+                    <li>Property taxes paid YTD: $_______________</li>
+                    <li>Insurance paid YTD: $_______________</li>
+                    <li>Escrow analysis date: _______________</li>
+                    <li>Shortage/Surplus: $_______________</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">6</div>
+                <h4>DEFAULT STATUS</h4>
+                <p>State whether account is in default and if so:</p>
+                <ul>
+                    <li>Default date: _______________</li>
+                    <li>Default amount: $_______________</li>
+                    <li>Actions taken: _______________</li>
+                    <li>Acceleration status: _______________</li>
+                    <li>Foreclosure status: _______________</li>
+                    <li>Reinstatement amount: $_______________</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">7</div>
+                <h4>MODIFICATIONS AND AGREEMENTS</h4>
+                <p>List all loan modifications, forbearance agreements, or payment plans:</p>
+                <ul>
+                    <li>Modification date(s): _______________</li>
+                    <li>Terms changed: _______________</li>
+                    <li>Forbearance periods: _______________</li>
+                    <li>Payment arrangements: _______________</li>
+                    <li>Trial payment status: _______________</li>
+                </ul>
+            </div>
+            
+            <div class="estoppel-item">
+                <div class="estoppel-number">8</div>
+                <h4>FEES AND CHARGES</h4>
+                <p>Itemize ALL fees charged to date:</p>
+                <ul>
+                    <li>Late fees: $_______________</li>
+                    <li>NSF fees: $_______________</li>
+                    <li>Property inspection fees: $_______________</li>
+                    <li>Legal fees: $_______________</li>
+                    <li>Foreclosure costs: $_______________</li>
+                    <li>Other fees (itemize): $_______________</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-notice">
+            <h3>LEGAL EFFECT OF ESTOPPEL CERTIFICATE</h3>
+            
+            <p><strong>By providing this certificate, you are making binding representations that:</strong></p>
+            
+            <ol>
+                <li>All information provided is true, accurate, and complete</li>
+                <li>You are legally estopped from later claiming different amounts or facts</li>
+                <li>Third parties may rely on this certificate</li>
+                <li>You may be liable for damages caused by false information</li>
+                <li>This creates an enforceable agreement as to the stated facts</li>
+            </ol>
+            
+            <p><strong>Legal Authority:</strong></p>
+            <ul>
+                <li>Common law doctrine of estoppel</li>
+                <li>UCC § 3-602 - Payment and discharge</li>
+                <li>Contractual duty of good faith</li>
+                <li>State consumer protection laws</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-format">
+            <h3>REQUIRED CERTIFICATE FORMAT</h3>
+            
+            <p>The Estoppel Certificate must be:</p>
+            
+            <ol>
+                <li><strong>Sworn and Notarized</strong> - Under penalty of perjury</li>
+                <li><strong>On Company Letterhead</strong> - Official document</li>
+                <li><strong>Signed by Authorized Officer</strong> - With printed name and title</li>
+                <li><strong>Dated</strong> - As of specific date requested</li>
+                <li><strong>Complete</strong> - All requested information included</li>
+                <li><strong>With Supporting Documents</strong> - Payment history, assignments, etc.</li>
+            </ol>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <strong>SAMPLE CERTIFICATE LANGUAGE:</strong>
+            </p>
+            
+            <div style="border: 2px solid #000; padding: 20px; margin: 20px 0; background: #fff;">
+                <p style="text-align: center;"><strong>ESTOPPEL CERTIFICATE</strong></p>
+                
+                <p>The undersigned, being duly authorized, hereby certifies under penalty of perjury that the following information regarding Loan Number _______________ is true and correct as of _______________:</p>
+                
+                <p>[Include all requested information]</p>
+                
+                <p>The undersigned acknowledges that this certificate may be relied upon by the borrower and third parties, and that we are estopped from claiming contrary facts.</p>
+                
+                <p>_______________________________<br>
+                Authorized Signature<br>
+                Name: _______________<br>
+                Title: _______________<br>
+                Date: _______________</p>
+            </div>
+        </div>
+        
+        <div class="deadline-notice">
+            RESPONSE REQUIRED WITHIN 15 BUSINESS DAYS<br>
+            Deadline: <input type="date" class="form-field" style="width: 150px; background: white; color: black;">
+        </div>
+        
+        <div class="consequences-box">
+            <h3>CONSEQUENCES OF FAILURE TO RESPOND</h3>
+            
+            <p>Your failure to provide the requested Estoppel Certificate within 15 business days will result in:</p>
+            
+            <ol>
+                <li><strong>DEEMED AGREEMENT</strong> - Agreement to facts stated in this request</li>
+                <li><strong>ESTOPPEL BY SILENCE</strong> - Cannot later dispute these facts</li>
+                <li><strong>ACCOUNT CONSIDERED SATISFIED</strong> - If no balance is stated</li>
+                <li><strong>NO AUTHORITY PRESUMED</strong> - Presumption you lack authority to collect</li>
+                <li><strong>WAIVER OF CLAIMS</strong> - Waiver of any unstated claims or fees</li>
+                <li><strong>EVIDENCE FOR COURT</strong> - Used as evidence of your agreement</li>
+                <li><strong>BAD FAITH</strong> - Evidence of bad faith in servicing</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>STATEMENT OF FACTS (IF NO RESPONSE)</h2>
+            
+            <p>If you fail to respond with a proper Estoppel Certificate, the following facts will be deemed admitted and you will be estopped from claiming otherwise:</p>
+            
+            <ol>
+                <li>Current principal balance: $<input type="text" class="form-field" placeholder="Amount you believe" style="width: 150px;"></li>
+                <li>Total amount needed to satisfy loan: $<input type="text" class="form-field" placeholder="Payoff amount" style="width: 150px;"></li>
+                <li>No late fees or other charges are owed</li>
+                <li>All payments have been properly credited</li>
+                <li>No acceleration has occurred</li>
+                <li>No foreclosure proceedings are valid</li>
+                <li>You do not possess the original promissory note</li>
+                <li>You lack authority to enforce the debt</li>
+                <li>The loan may be satisfied for the stated amount</li>
+            </ol>
+        </div>
+        
+        <div class="binding-statement">
+            <h3>BINDING NATURE OF RESPONSE</h3>
+            
+            <p>YOUR RESPONSE OR FAILURE TO RESPOND CREATES A BINDING AGREEMENT</p>
+            <p>This is not a request for information - it is a request for a legally binding certificate</p>
+            <p>You will be held to any representations made or amounts stated</p>
+            <p>False statements may result in criminal and civil liability</p>
+        </div>
+        
+        <div class="signature-section">
+            <h2>VERIFICATION AND SIGNATURE</h2>
+            
+            <p>I, <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, hereby request the above Estoppel Certificate and declare under penalty of perjury that I am the borrower on the referenced loan and have the right to request this information.</p>
+            
+            <p>I intend to rely upon your response or failure to respond for important financial and legal decisions.</p>
+            
+            <p>Executed on this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">.</p>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Signature</strong>
+            </p>
+            
+            <p>
+                <input type="text" class="form-field" placeholder="Your Name (Printed)" style="width: 400px;"><br>
+                <strong>Name (Printed)</strong>
+            </p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT (Recommended)</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">, before me personally appeared <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, known to me to be the person who executed the foregoing instrument.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="instructions-box no-print">
+            <h3>📋 INSTRUCTIONS FOR USE</h3>
+            
+            <p><strong>When to Use:</strong></p>
+            <ul>
+                <li>Before making final payment</li>
+                <li>During settlement negotiations</li>
+                <li>Before refinancing or selling</li>
+                <li>When disputing amounts owed</li>
+                <li>To lock in their position</li>
+                <li>Before legal proceedings</li>
+            </ul>
+            
+            <p><strong>How to Send:</strong></p>
+            <ol>
+                <li>Fill in all blanks completely</li>
+                <li>Calculate 15 business day deadline</li>
+                <li>Have notarized</li>
+                <li>Send Certified Mail, Return Receipt</li>
+                <li>Send to: Legal department, CEO, and regular servicing</li>
+                <li>Keep all receipts and copies</li>
+            </ol>
+            
+            <p><strong>What to Expect:</strong></p>
+            <ul>
+                <li><strong>Full response</strong> - Rare but powerful</li>
+                <li><strong>Partial response</strong> - Note what's missing</li>
+                <li><strong>Refuse</strong> - Document refusal</li>
+                <li><strong>Ignore</strong> - Silence = agreement</li>
+                <li><strong>False information</strong> - Evidence of fraud</li>
+            </ul>
+            
+            <p><strong>Follow-Up Actions:</strong></p>
+            <ol>
+                <li>After 15 days, send Notice of Default/Agreement</li>
+                <li>Use their silence as agreement to your facts</li>
+                <li>Compare response to other documents</li>
+                <li>Look for discrepancies and fraud</li>
+                <li>Use in court proceedings</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            const deadline = new Date(today.getTime() + 15 * 24 * 60 * 60 * 1000);
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = '2007-03-15'; // Original loan date
+            document.querySelectorAll('input[type="date"]')[1].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[2].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[3].value = deadline.toISOString().split('T')[0];
+            
+            // Fill text fields
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Your Address"]').value = '123 Main Street';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[0].value = 'Miami, FL 33101';
+            
+            document.querySelector('input[placeholder="Servicer/Bank Name"]').value = 'Wells Fargo Home Mortgage';
+            document.querySelectorAll('input[placeholder="Address"]')[1].value = '1 Home Campus';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[1].value = 'Des Moines, IA 50328';
+            
+            document.querySelector('input[placeholder="Account Number"]').value = '1234567890';
+            document.querySelector('input[placeholder="Property Address"]').value = '123 Main Street, Miami, FL 33101';
+            document.querySelector('input[placeholder="Original Amount"]').value = '350,000.00';
+            
+            document.querySelector('input[placeholder="Amount you believe"]').value = '285,000.00';
+            document.querySelector('input[placeholder="Payoff amount"]').value = '290,000.00';
+            
+            // Fill name fields
+            const nameFields = document.querySelectorAll('input[placeholder="Your Name"]');
+            nameFields.forEach(field => field.value = 'John Smith');
+            
+            // Fill state and county
+            const stateFields = document.querySelectorAll('input[placeholder="State"]');
+            stateFields.forEach(field => field.value = 'Florida');
+            
+            const countyFields = document.querySelectorAll('input[placeholder="County"]');
+            countyFields.forEach(field => field.value = 'Miami-Dade');
+            
+            // Fill date parts
+            document.querySelector('input[placeholder="Day"]').value = today.getDate();
+            document.querySelector('input[placeholder="Month"]').value = today.toLocaleString('default', { month: 'long' });
+            document.querySelector('input[placeholder="Year"]').value = today.getFullYear().toString().substr(-2);
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const key = 'estoppel_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

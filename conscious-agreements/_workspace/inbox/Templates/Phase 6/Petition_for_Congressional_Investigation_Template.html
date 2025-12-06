@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petition for Congressional Investigation Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 2px solid #000080;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #000080 0%, #ff0000 50%, #ffffff 100%);
+            color: white;
+            border: 5px double #ffd700;
+        }
+        
+        .title {
+            font-size: 28pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 16pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .official-seal {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #ffd700;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.2);
+            font-size: 48pt;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #000080;
+            padding: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 12pt;
+            background: #f0f8ff;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 150px;
+            resize: vertical;
+            border: 2px solid #000080;
+            padding: 10px;
+        }
+        
+        .petition-body {
+            margin: 30px 0;
+            text-align: justify;
+        }
+        
+        .petition-body h2 {
+            color: #000080;
+            border-bottom: 3px solid #000080;
+            padding-bottom: 10px;
+            margin: 30px 0 20px 0;
+        }
+        
+        .whereas-clause {
+            margin: 20px 0;
+            padding-left: 40px;
+            font-style: italic;
+        }
+        
+        .whereas-clause strong {
+            color: #000080;
+            font-style: normal;
+        }
+        
+        .evidence-box {
+            background: #fff8dc;
+            border: 3px solid #daa520;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .evidence-box h3 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        
+        .demand-section {
+            background: #ffe4e1;
+            border: 3px solid #dc143c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .demand-section h3 {
+            color: #8b0000;
+            margin-top: 0;
+            text-align: center;
+            font-size: 18pt;
+        }
+        
+        .committee-list {
+            background: #e6f3ff;
+            border: 2px solid #4169e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .committee-list h3 {
+            color: #00008b;
+            margin-top: 0;
+        }
+        
+        .signature-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+        }
+        
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .signature-box {
+            border: 1px solid #666;
+            padding: 15px;
+            background: white;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid #000;
+            width: 100%;
+            margin: 20px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .constitutional-basis {
+            background: #f0f0f0;
+            border-left: 5px solid #000080;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        .action-items {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .action-items h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #000080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #000060;
+        }
+        
+        .supporting-orgs {
+            background: #f5f5dc;
+            border: 2px solid #8b7355;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .supporting-orgs h3 {
+            color: #654321;
+            margin-top: 0;
+        }
+        
+        .numbered-list {
+            counter-reset: item;
+            padding-left: 40px;
+        }
+        
+        .numbered-list li {
+            display: block;
+            margin: 15px 0;
+        }
+        
+        .numbered-list li:before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            font-weight: bold;
+            color: #000080;
+        }
+        
+        .urgent-banner {
+            background: #ff0000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="official-seal">🦅</div>
+            <div class="title">PETITION FOR CONGRESSIONAL INVESTIGATION</div>
+            <div class="subtitle">Into Systemic Mortgage Fraud and Money Creation Deception</div>
+            <div class="subtitle">We the People Demand Truth and Justice</div>
+        </div>
+        
+        <div class="urgent-banner">
+            URGENT: MILLIONS OF AMERICANS FACING ILLEGAL FORECLOSURE
+        </div>
+        
+        <div class="petition-body">
+            <h2>TO THE HONORABLE MEMBERS OF THE UNITED STATES CONGRESS</h2>
+            
+            <p>
+                We, the undersigned citizens of the United States of America, hereby petition Congress to immediately 
+                initiate a comprehensive investigation into systemic fraud in mortgage lending, the deceptive practices 
+                of money creation by banks, and the resulting illegal foreclosures affecting millions of American families.
+            </p>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Federal Reserve publications including "Modern Money Mechanics" openly admit 
+                that banks do not lend depositors' money but instead create new money through accounting entries when 
+                making loans; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> the Bank of England has confirmed in official publications that "Whenever a 
+                bank makes a loan, it simultaneously creates a matching deposit in the borrower's bank account, thereby 
+                creating new money"; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> banks systematically fail to disclose to borrowers that their promissory notes 
+                are recorded as assets and used to create the very money allegedly "lent" to them; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> this practice violates fundamental contract law requiring consideration, as 
+                banks provide nothing of value they possessed before the transaction; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> 12 U.S.C. § 411 still requires Federal Reserve Notes to be "redeemed in lawful 
+                money on demand," creating a legal paradox since the abandonment of the gold standard in 1971; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> millions of American families have lost their homes through foreclosures based 
+                on fraudulent claims of debt that may be legally void for lack of consideration; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> the securitization of mortgages has created multiple fraudulent claims on the 
+                same properties, with notes being sold multiple times in violation of basic property law; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> former Federal Reserve attorney Walker F. Todd has provided sworn testimony 
+                that what banks call "loans" are actually purchases of promissory notes through bookkeeping entries, 
+                not loans of pre-existing money;
+            </div>
+        </div>
+        
+        <div class="constitutional-basis">
+            <h3>CONSTITUTIONAL AUTHORITY</h3>
+            <p>
+                This petition is submitted pursuant to the First Amendment right "to petition the Government for a 
+                redress of grievances" and Article I, Section 8 of the Constitution, which grants Congress the power 
+                "To coin Money, regulate the Value thereof" and "To make all Laws which shall be necessary and proper 
+                for carrying into Execution the foregoing Powers."
+            </p>
+        </div>
+        
+        <div class="evidence-box">
+            <h3>DOCUMENTED EVIDENCE REQUIRING INVESTIGATION</h3>
+            <ol class="numbered-list">
+                <li>Federal Reserve admits banks create money when making loans, not lending existing funds</li>
+                <li>Banks record borrowers' promissory notes as assets while hiding this from borrowers</li>
+                <li>No consideration is provided by banks in mortgage transactions</li>
+                <li>Systematic robo-signing of fraudulent foreclosure documents</li>
+                <li>Multiple sales of the same promissory notes through securitization</li>
+                <li>MERS system used to hide true ownership and avoid recording fees</li>
+                <li>Destruction of original promissory notes to hide fraud</li>
+                <li>Mathematical impossibility of debt repayment in current monetary system</li>
+                <li>Violation of RICO statutes through pattern of mail and wire fraud</li>
+                <li>Securities fraud in mortgage-backed securities offerings</li>
+            </ol>
+        </div>
+        
+        <div class="demand-section">
+            <h3>WE THEREFORE DEMAND THAT CONGRESS</h3>
+            
+            <ol class="numbered-list">
+                <li><strong>IMMEDIATELY CONVENE</strong> special hearings on mortgage fraud and money creation</li>
+                
+                <li><strong>SUBPOENA</strong> bank executives, Federal Reserve officials, and Treasury Department 
+                personnel to testify under oath about money creation practices</li>
+                
+                <li><strong>INVESTIGATE</strong> whether mortgages are void for lack of consideration</li>
+                
+                <li><strong>EXAMINE</strong> the constitutionality of allowing private banks to create public currency</li>
+                
+                <li><strong>AUDIT</strong> the Federal Reserve's role in facilitating this fraud</li>
+                
+                <li><strong>PROSECUTE</strong> those responsible for systemic fraud under RICO and other applicable statutes</li>
+                
+                <li><strong>PROVIDE RELIEF</strong> to millions of homeowners who have been victims of fraudulent foreclosure</li>
+                
+                <li><strong>REFORM</strong> the monetary system to prevent future fraud</li>
+                
+                <li><strong>RESTORE</strong> transparency and honesty to American banking</li>
+                
+                <li><strong>PROTECT</strong> future generations from debt slavery</li>
+            </ol>
+        </div>
+        
+        <div class="committee-list">
+            <h3>RELEVANT CONGRESSIONAL COMMITTEES</h3>
+            <p><strong>This petition should be referred to:</strong></p>
+            <ul>
+                <li>House Committee on Financial Services</li>
+                <li>Senate Committee on Banking, Housing, and Urban Affairs</li>
+                <li>House Committee on the Judiciary</li>
+                <li>Senate Committee on the Judiciary</li>
+                <li>Joint Economic Committee</li>
+                <li>House Committee on Oversight and Reform</li>
+            </ul>
+        </div>
+        
+        <div class="action-items">
+            <h3>SPECIFIC LEGISLATIVE ACTIONS REQUESTED</h3>
+            
+            <ol>
+                <li><strong>The Mortgage Fraud Investigation Act</strong> - Establishing a special commission to investigate 
+                systemic fraud in mortgage lending</li>
+                
+                <li><strong>The Truth in Money Creation Act</strong> - Requiring full disclosure of how loans actually work</li>
+                
+                <li><strong>The Homeowner Protection Act</strong> - Placing moratorium on foreclosures until investigation 
+                is complete</li>
+                
+                <li><strong>The Monetary Reform Act</strong> - Reforming the Federal Reserve and money creation system</li>
+                
+                <li><strong>The Debt Justice Act</strong> - Providing relief for fraudulent debts</li>
+            </ol>
+        </div>
+        
+        <div class="petition-body">
+            <h2>THE AMERICAN PEOPLE DESERVE ANSWERS</h2>
+            
+            <p>
+                For too long, the American people have been deceived about the nature of money and debt. We have been 
+                told we are borrowers when we are actually the creators of money through our signatures. We have been 
+                threatened with foreclosure for failing to repay "loans" that were never loans at all.
+            </p>
+            
+            <p>
+                This is not a partisan issue. This affects Democrats, Republicans, and Independents alike. Every American 
+                with a mortgage has been deceived. Every American who has lost their home to foreclosure may have been 
+                illegally dispossessed.
+            </p>
+            
+            <p>
+                The evidence is clear, documented in the Federal Reserve's own publications and confirmed by banking 
+                insiders. What is lacking is the political will to confront this massive fraud. We call upon Congress 
+                to fulfill its constitutional duty to regulate money and protect the American people from systematic 
+                exploitation.
+            </p>
+        </div>
+        
+        <div class="supporting-orgs">
+            <h3>SUPPORTING ORGANIZATIONS</h3>
+            <p>This petition is supported by:</p>
+            <ul>
+                <li><input type="text" class="form-field" placeholder="Organization Name" style="width: 400px;"></li>
+                <li><input type="text" class="form-field" placeholder="Organization Name" style="width: 400px;"></li>
+                <li><input type="text" class="form-field" placeholder="Organization Name" style="width: 400px;"></li>
+                <li><input type="text" class="form-field" placeholder="Organization Name" style="width: 400px;"></li>
+                <li><input type="text" class="form-field" placeholder="Organization Name" style="width: 400px;"></li>
+            </ul>
+        </div>
+        
+        <div class="signature-section">
+            <h2>PETITION SIGNATURES</h2>
+            
+            <p><strong>Lead Petitioner:</strong></p>
+            <div style="background: #ffffcc; padding: 20px; border: 2px solid #000;">
+                <p>Name: <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"></p>
+                <p>Address: <input type="text" class="form-field" placeholder="Your Address" style="width: 500px;"></p>
+                <p>City, State, ZIP: <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"></p>
+                <p>Congressional District: <input type="text" class="form-field" placeholder="District Number" style="width: 150px;"></p>
+                <p>Email: <input type="text" class="form-field" placeholder="Email Address" style="width: 300px;"></p>
+                <p>Phone: <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"></p>
+                <div class="signature-line"></div>
+                <p>Signature</p>
+                <p>Date: <input type="date" class="form-field" style="width: 150px;"></p>
+            </div>
+            
+            <p style="margin-top: 30px;"><strong>Additional Signatures:</strong></p>
+            <div class="signature-grid">
+                <div class="signature-box">
+                    <p>Name: _______________________________</p>
+                    <p>Address: ____________________________</p>
+                    <p>City, State: ________________________</p>
+                    <div class="signature-line"></div>
+                    <p>Signature</p>
+                </div>
+                <div class="signature-box">
+                    <p>Name: _______________________________</p>
+                    <p>Address: ____________________________</p>
+                    <p>City, State: ________________________</p>
+                    <div class="signature-line"></div>
+                    <p>Signature</p>
+                </div>
+                <div class="signature-box">
+                    <p>Name: _______________________________</p>
+                    <p>Address: ____________________________</p>
+                    <p>City, State: ________________________</p>
+                    <div class="signature-line"></div>
+                    <p>Signature</p>
+                </div>
+                <div class="signature-box">
+                    <p>Name: _______________________________</p>
+                    <p>Address: ____________________________</p>
+                    <p>City, State: ________________________</p>
+                    <div class="signature-line"></div>
+                    <p>Signature</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="petition-body">
+            <h2>CERTIFICATION</h2>
+            <p>
+                I hereby certify that the signatures on this petition are genuine and were signed by persons who support 
+                this call for Congressional investigation into mortgage fraud and money creation deception.
+            </p>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line" style="width: 350px;"></div>
+                <p>Lead Petitioner Signature</p>
+                
+                <div class="signature-line" style="width: 350px;"></div>
+                <p>Date</p>
+            </div>
+        </div>
+        
+        <div class="action-items no-print">
+            <h3>📋 HOW TO USE THIS PETITION</h3>
+            
+            <ol>
+                <li><strong>Gather Signatures:</strong> Collect from affected homeowners, concerned citizens</li>
+                <li><strong>Contact Your Representatives:</strong> Find at house.gov and senate.gov</li>
+                <li><strong>Schedule Meetings:</strong> Request in-person meetings with staff</li>
+                <li><strong>Submit Copies To:</strong>
+                    <ul>
+                        <li>Your House Representative</li>
+                        <li>Both Senators from your state</li>
+                        <li>Committee Chairs listed above</li>
+                        <li>House Speaker and Senate Majority Leader</li>
+                    </ul>
+                </li>
+                <li><strong>Create Online Version:</strong> Use Change.org, MoveOn, etc.</li>
+                <li><strong>Media Outreach:</strong> Send to press with petition delivery</li>
+                <li><strong>Document Submission:</strong> Keep records of all submissions</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            
+            // Set date
+            document.querySelector('input[type="date"]').value = today.toISOString().split('T')[0];
+            
+            // Fill lead petitioner info
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Your Address"]').value = '123 Main Street';
+            document.querySelector('input[placeholder="City, State ZIP"]').value = 'Miami, FL 33101';
+            document.querySelector('input[placeholder="District Number"]').value = 'FL-27';
+            document.querySelector('input[placeholder="Email Address"]').value = 'jsmith@email.com';
+            document.querySelector('input[placeholder="Phone Number"]').value = '(555) 123-4567';
+            
+            // Fill organization names
+            const orgFields = document.querySelectorAll('input[placeholder="Organization Name"]');
+            const orgNames = [
+                'Homeowners for Honest Banking',
+                'Americans Against Foreclosure Fraud',
+                'Citizens for Monetary Reform',
+                'National Homeowners Association',
+                'Truth in Banking Coalition'
+            ];
+            orgFields.forEach((field, index) => {
+                if (orgNames[index]) field.value = orgNames[index];
+            });
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const key = 'petition_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

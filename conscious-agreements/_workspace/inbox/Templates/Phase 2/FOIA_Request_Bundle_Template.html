@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOIA Request Bundle - Multiple Agency Templates</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f4f8;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        .header-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #fffef0;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .agency-selector {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .agency-selector h2 {
+            margin-top: 0;
+        }
+        
+        .agency-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .agency-btn {
+            padding: 10px 20px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .agency-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .agency-btn.active {
+            background: #ffd700;
+            color: #333;
+        }
+        
+        .template-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .template-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .instructions {
+            background: #e8f5e9;
+            border: 2px dashed #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        
+        .important-notice {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        .body-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        
+        .signature-block {
+            margin-top: 50px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .legal-citation {
+            font-style: italic;
+            color: #333;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .agency-header {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #007bff;
+        }
+        
+        .agency-header h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .agency-address {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .fee-waiver-section {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #4169e1;
+        }
+        
+        .fee-waiver-section h3 {
+            color: #4169e1;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .highlight-box {
+            background: yellow;
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .privacy-waiver {
+            background: #ffe4e1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #ff69b4;
+        }
+        
+        .attachment-note {
+            background: #e6e6fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #9370db;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print Current Template</button>
+        <button onclick="printAll()">Print All Templates</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="agency-selector no-print">
+        <h2>📋 Select Agency for FOIA Request</h2>
+        <p>Choose the agency you want to request information from. Each has different information about your loan.</p>
+        <div class="agency-buttons">
+            <button class="agency-btn active" onclick="showAgency('fed')">Federal Reserve</button>
+            <button class="agency-btn" onclick="showAgency('occ')">OCC</button>
+            <button class="agency-btn" onclick="showAgency('fdic')">FDIC</button>
+            <button class="agency-btn" onclick="showAgency('sec')">SEC</button>
+            <button class="agency-btn" onclick="showAgency('cfpb')">CFPB</button>
+            <button class="agency-btn" onclick="showAgency('treasury')">Treasury</button>
+            <button class="agency-btn" onclick="showAgency('hud')">HUD</button>
+        </div>
+    </div>
+
+    <!-- Federal Reserve FOIA Template -->
+    <div id="fed-template" class="template-section active">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Federal Reserve System - FOIA Request</h2>
+                <p><strong>What they have:</strong> Discount window transactions, member bank transactions, your promissory note monetization records</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 Federal Reserve FOIA Instructions</h3>
+                <ol>
+                    <li>The Fed may have records of your promissory note being discounted</li>
+                    <li>They process member bank transactions at the discount window</li>
+                    <li>This could prove your note was monetized, not "loaned" money</li>
+                    <li>Response required within 20 business days</li>
+                    <li>Fee waiver likely if for personal use</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="fed_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="fed_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="fed_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="fed_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="fed_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="fed_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA CERTIFIED MAIL AND EMAIL</strong><br><br>
+                Board of Governors of the Federal Reserve System<br>
+                Attention: FOIA Office<br>
+                20th Street and Constitution Avenue NW<br>
+                Washington, DC 20551<br>
+                Email: foia-pa@frb.gov
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong><br>
+                <strong>Expedited Processing Requested</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Pursuant to the Freedom of Information Act (FOIA), <span class="legal-citation">5 U.S.C. § 552</span>, I hereby request the following records:
+            </div>
+            
+            <div class="body-text">
+                <strong>RECORDS REQUESTED:</strong>
+            </div>
+            
+            <ol>
+                <li><strong>Discount Window Transactions:</strong><br>
+                    All records of discount window transactions involving promissory note(s) associated with:
+                    <ul>
+                        <li>Loan Number: <input type="text" class="form-field" placeholder="Your Loan Number" style="width: 200px;"></li>
+                        <li>Property Address: <input type="text" class="form-field" placeholder="Property Address" style="width: 400px;"></li>
+                        <li>Borrower Name: <input type="text" class="form-field" placeholder="Your Name as on Loan" style="width: 300px;"></li>
+                        <li>Original Lender: <input type="text" class="form-field" placeholder="Original Lender Name" style="width: 300px;"></li>
+                        <li>Approximate Date: <input type="text" class="form-field" placeholder="Loan Origination Date" style="width: 200px;"></li>
+                    </ul>
+                </li>
+                
+                <li><strong>Member Bank Transactions:</strong><br>
+                    All records of transactions between <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;"> and the Federal Reserve regarding the above-referenced loan, including but not limited to:
+                    <ul>
+                        <li>Discount window advances</li>
+                        <li>Collateral pledged</li>
+                        <li>Promissory note deposits or discounting</li>
+                        <li>Credit extensions based on promissory notes</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Promissory Note Monetization:</strong><br>
+                    All records showing how promissory notes are processed, monetized, or used as collateral for creating Federal Reserve Notes or bank reserves, specifically relating to my loan.
+                </li>
+                
+                <li><strong>Bank Examination Records:</strong><br>
+                    Any examination records, reports, or correspondence regarding <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;">'s handling of mortgage loans, promissory notes, or discount window usage during the period of <input type="text" class="form-field" placeholder="Year Range" style="width: 150px;">.
+                </li>
+                
+                <li><strong>Policy Documents:</strong><br>
+                    Current policies and procedures regarding:
+                    <ul>
+                        <li>Acceptance of promissory notes as collateral</li>
+                        <li>Discount window operations</li>
+                        <li>Creation of bank reserves from promissory notes</li>
+                        <li>Federal Reserve Note issuance based on commercial paper</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="body-text">
+                <strong>TIME PERIOD:</strong> <input type="text" class="form-field" placeholder="From Date" style="width: 150px;"> to present
+            </div>
+            
+            <div class="privacy-waiver">
+                <h3>Privacy Act Waiver</h3>
+                <p>I am the borrower on the referenced loan and hereby waive any Privacy Act protections for records about me. Enclosed is a copy of my identification to verify my identity.</p>
+            </div>
+            
+            <div class="fee-waiver-section">
+                <h3>Request for Fee Waiver</h3>
+                <p>I request a waiver of all fees for this request. Disclosure of the requested information is in the public interest because:</p>
+                <ol>
+                    <li>The information will contribute significantly to public understanding of Federal Reserve operations and monetary policy</li>
+                    <li>I am seeking this information for personal use to understand how my promissory note was processed</li>
+                    <li>I am not seeking this information for commercial purposes</li>
+                    <li>I have limited financial resources and payment would cause financial hardship</li>
+                </ol>
+            </div>
+            
+            <div class="body-text">
+                <strong>EXPEDITED PROCESSING:</strong><br>
+                I request expedited processing as there is an urgent need for these records due to [<input type="text" class="form-field" placeholder="pending foreclosure/legal proceedings/time-sensitive matter" style="width: 400px;">].
+            </div>
+            
+            <div class="body-text">
+                <strong>FORMAT OF RESPONSE:</strong><br>
+                Please provide records in electronic format (PDF) via email if possible. If not, please provide paper copies.
+            </div>
+            
+            <div class="body-text">
+                If my request is denied in whole or in part, please justify all withholdings by reference to specific FOIA exemptions. Please release all segregable portions of otherwise exempt material.
+            </div>
+            
+            <div class="body-text">
+                Thank you for your consideration of this request. I look forward to your response within the statutory time period of 20 business days.
+            </div>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+            
+            <div class="attachment-note">
+                <strong>Attachments:</strong>
+                <ul>
+                    <li>Copy of Driver's License or ID</li>
+                    <li>Copy of loan documents showing borrower name (if available)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- OCC FOIA Template -->
+    <div id="occ-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Office of the Comptroller of the Currency (OCC) - FOIA Request</h2>
+                <p><strong>What they have:</strong> National bank examination reports, enforcement actions, complaints, regulatory violations</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 OCC FOIA Instructions</h3>
+                <ol>
+                    <li>OCC regulates national banks (those with "National" or "N.A." in name)</li>
+                    <li>They have examination reports showing bank practices</li>
+                    <li>May have complaints about your specific bank</li>
+                    <li>Could reveal patterns of fraudulent lending</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="occ_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="occ_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="occ_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="occ_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="occ_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="occ_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA ONLINE PORTAL AND CERTIFIED MAIL</strong><br><br>
+                Office of the Comptroller of the Currency<br>
+                Disclosure Officer<br>
+                400 7th Street SW, Suite 3E-218<br>
+                Washington, DC 20219<br>
+                Online: https://appsec.occ.gov/publicaccesslink/palMain.aspx
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong><br>
+                <strong>Bank: <input type="text" class="form-field" placeholder="National Bank Name, N.A." style="width: 300px;"></strong>
+            </div>
+            
+            <div class="body-text">
+                Dear Disclosure Officer:
+            </div>
+            
+            <div class="body-text">
+                Pursuant to the Freedom of Information Act, <span class="legal-citation">5 U.S.C. § 552</span>, I request the following records:
+            </div>
+            
+            <ol>
+                <li><strong>Bank Examination Reports:</strong><br>
+                    All examination reports, supervisory letters, and matters requiring attention (MRAs) for <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;"> related to:
+                    <ul>
+                        <li>Mortgage lending practices</li>
+                        <li>Promissory note handling</li>
+                        <li>Securitization activities</li>
+                        <li>Consumer compliance</li>
+                        <li>Fair lending</li>
+                    </ul>
+                    For the period: <input type="text" class="form-field" placeholder="Date Range" style="width: 200px;">
+                </li>
+                
+                <li><strong>Enforcement Actions:</strong><br>
+                    All formal and informal enforcement actions, consent orders, cease and desist orders, and civil money penalties against the bank.
+                </li>
+                
+                <li><strong>Consumer Complaints:</strong><br>
+                    All complaints filed against the bank regarding:
+                    <ul>
+                        <li>Mortgage lending</li>
+                        <li>Foreclosure practices</li>
+                        <li>Loan servicing</li>
+                        <li>Documentation issues</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Specific Loan Records:</strong><br>
+                    Any records relating to Loan #<input type="text" class="form-field" placeholder="Loan Number" style="width: 200px;"> including examiner findings or reviews.
+                </li>
+                
+                <li><strong>Policy Interpretations:</strong><br>
+                    OCC interpretations or guidance regarding:
+                    <ul>
+                        <li>Promissory notes as bank assets</li>
+                        <li>Money creation through lending</li>
+                        <li>Proper loan documentation requirements</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="privacy-waiver">
+                <h3>Privacy Act Waiver</h3>
+                <p>I am a customer of the above-referenced bank and waive Privacy Act protections for records about my accounts or loans.</p>
+            </div>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+
+    <!-- FDIC FOIA Template -->
+    <div id="fdic-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Federal Deposit Insurance Corporation (FDIC) - FOIA Request</h2>
+                <p><strong>What they have:</strong> State-chartered bank examination reports, deposit insurance records, bank failure information</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 FDIC FOIA Instructions</h3>
+                <ol>
+                    <li>FDIC regulates state-chartered banks that are not Federal Reserve members</li>
+                    <li>Has records of bank examinations and safety/soundness reviews</li>
+                    <li>May have information about bank's financial condition</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="fdic_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="fdic_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="fdic_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="fdic_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="fdic_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="fdic_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA EMAIL AND CERTIFIED MAIL</strong><br><br>
+                FDIC FOIA/Privacy Act Group<br>
+                550 17th Street NW<br>
+                Washington, DC 20429<br>
+                Email: efoia@fdic.gov
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Under the Freedom of Information Act, <span class="legal-citation">5 U.S.C. § 552</span>, I request:
+            </div>
+            
+            <ol>
+                <li><strong>Bank Examination Records:</strong><br>
+                    Reports of examination for <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;"> focusing on loan origination and servicing practices.
+                </li>
+                
+                <li><strong>Deposit Insurance Applications:</strong><br>
+                    Records showing the bank's representations about lending practices.
+                </li>
+                
+                <li><strong>Consumer Complaints:</strong><br>
+                    All complaints regarding mortgage lending and foreclosure practices.
+                </li>
+                
+                <li><strong>Correspondence:</strong><br>
+                    Communications between FDIC and the bank regarding lending compliance.
+                </li>
+            </ol>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+
+    <!-- SEC FOIA Template -->
+    <div id="sec-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Securities and Exchange Commission (SEC) - FOIA Request</h2>
+                <p><strong>What they have:</strong> Mortgage-backed securities filings, securitization documents, trust information</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 SEC FOIA Instructions</h3>
+                <ol>
+                    <li>SEC has records if your loan was securitized (sold to investors)</li>
+                    <li>Can provide Pooling and Servicing Agreements</li>
+                    <li>Shows if loan transfer violated securities laws</li>
+                    <li>May prove chain of title is broken</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="sec_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="sec_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="sec_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="sec_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="sec_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="sec_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA ONLINE PORTAL</strong><br><br>
+                Securities and Exchange Commission<br>
+                FOIA Office<br>
+                100 F Street NE<br>
+                Washington, DC 20549<br>
+                Online: https://www.sec.gov/foia-request
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST - SECURITIZATION RECORDS</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Under FOIA, I request records regarding the securitization of my mortgage loan:
+            </div>
+            
+            <ol>
+                <li><strong>Securitization Documents:</strong><br>
+                    All filings related to mortgage-backed securities trusts that may contain my loan:
+                    <ul>
+                        <li>Original Lender: <input type="text" class="form-field" placeholder="Lender Name" style="width: 300px;"></li>
+                        <li>Approximate Date: <input type="text" class="form-field" placeholder="Loan Date" style="width: 150px;"></li>
+                        <li>Loan Amount: $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"></li>
+                    </ul>
+                </li>
+                
+                <li><strong>Pooling and Servicing Agreements:</strong><br>
+                    PSAs for any trusts that may contain my loan, including all exhibits and schedules.
+                </li>
+                
+                <li><strong>Form 8-K and 10-K Filings:</strong><br>
+                    Related to mortgage-backed securities issued by <input type="text" class="form-field" placeholder="Trust or Issuer Name" style="width: 400px;">.
+                </li>
+                
+                <li><strong>Prospectuses and Supplements:</strong><br>
+                    For any mortgage-backed securities potentially containing my loan.
+                </li>
+                
+                <li><strong>Loan Schedules:</strong><br>
+                    Mortgage loan schedules filed with the SEC showing loan-level data.
+                </li>
+            </ol>
+            
+            <div class="important-notice">
+                <strong>Note:</strong> If the specific trust cannot be identified, please search for all trusts involving <input type="text" class="form-field" placeholder="Original Lender Name" style="width: 300px;"> as originator during <input type="text" class="form-field" placeholder="Year Range" style="width: 150px;">.
+            </div>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+
+    <!-- CFPB FOIA Template -->
+    <div id="cfpb-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Consumer Financial Protection Bureau (CFPB) - FOIA Request</h2>
+                <p><strong>What they have:</strong> Consumer complaints, examination reports, enforcement actions, mortgage market data</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 CFPB FOIA Instructions</h3>
+                <ol>
+                    <li>CFPB has extensive complaint data about mortgage servicers</li>
+                    <li>May have examination reports on your servicer</li>
+                    <li>Has enforcement action records</li>
+                    <li>Tracks patterns of abuse</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="cfpb_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="cfpb_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="cfpb_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="cfpb_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="cfpb_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="cfpb_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA EMAIL</strong><br><br>
+                Consumer Financial Protection Bureau<br>
+                Chief FOIA Officer<br>
+                1700 G Street NW<br>
+                Washington, DC 20552<br>
+                Email: FOIA@consumerfinance.gov
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear Chief FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Under FOIA, I request:
+            </div>
+            
+            <ol>
+                <li><strong>Complaint Data:</strong><br>
+                    All complaints filed against <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 300px;"> regarding:
+                    <ul>
+                        <li>Mortgage servicing</li>
+                        <li>Foreclosure practices</li>
+                        <li>Loan modification denials</li>
+                        <li>Document fraud</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Examination Reports:</strong><br>
+                    Supervisory examination reports for the servicer.
+                </li>
+                
+                <li><strong>Enforcement Actions:</strong><br>
+                    Any enforcement actions, consent orders, or civil money penalties.
+                </li>
+                
+                <li><strong>My Complaint Records:</strong><br>
+                    Any complaints I filed: Case #<input type="text" class="form-field" placeholder="If known" style="width: 200px;">
+                </li>
+                
+                <li><strong>Pattern Analysis:</strong><br>
+                    Any analysis showing patterns of violations by the servicer.
+                </li>
+            </ol>
+            
+            <div class="privacy-waiver">
+                <h3>Privacy Waiver</h3>
+                <p>I waive privacy protections for any records about complaints I have filed.</p>
+            </div>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+
+    <!-- Treasury FOIA Template -->
+    <div id="treasury-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Department of the Treasury - FOIA Request</h2>
+                <p><strong>What they have:</strong> Currency issuance records, banking policy, TARP funds, financial stability programs</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 Treasury FOIA Instructions</h3>
+                <ol>
+                    <li>Treasury oversees currency issuance and banking policy</li>
+                    <li>May have TARP or bailout records for your bank</li>
+                    <li>Has policies on Federal Reserve Note creation</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="treasury_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="treasury_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="treasury_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="treasury_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="treasury_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="treasury_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA ONLINE PORTAL</strong><br><br>
+                Department of the Treasury<br>
+                FOIA and Privacy Act Office<br>
+                1500 Pennsylvania Avenue NW<br>
+                Washington, DC 20220<br>
+                Online: https://treasury.gov/foia
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Under FOIA, I request:
+            </div>
+            
+            <ol>
+                <li><strong>Currency Creation Records:</strong><br>
+                    Documentation on how Federal Reserve Notes are created from commercial bank assets/promissory notes.
+                </li>
+                
+                <li><strong>Banking Policy:</strong><br>
+                    Policies regarding banks creating money through lending.
+                </li>
+                
+                <li><strong>TARP Records:</strong><br>
+                    If <input type="text" class="form-field" placeholder="Bank Name" style="width: 300px;"> received TARP funds, all related records.
+                </li>
+                
+                <li><strong>OCC Coordination:</strong><br>
+                    Communications with OCC regarding national bank lending practices.
+                </li>
+            </ol>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+
+    <!-- HUD FOIA Template -->
+    <div id="hud-template" class="template-section">
+        <div class="container">
+            <div class="agency-header">
+                <h2>Department of Housing and Urban Development (HUD) - FOIA Request</h2>
+                <p><strong>What they have:</strong> FHA loan records, RESPA violations, settlement statement data, fair housing complaints</p>
+            </div>
+            
+            <div class="instructions no-print">
+                <h3>📌 HUD FOIA Instructions</h3>
+                <ol>
+                    <li>HUD oversees RESPA compliance</li>
+                    <li>Has FHA loan insurance records</li>
+                    <li>Tracks fair housing and lending discrimination</li>
+                    <li>May have your settlement statement (HUD-1)</li>
+                </ol>
+            </div>
+
+            <div class="header-section">
+                <input type="text" class="form-field" placeholder="Your Full Name" id="hud_sender_name"><br>
+                <input type="text" class="form-field" placeholder="Your Street Address" id="hud_sender_address"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" id="hud_sender_city_state_zip"><br>
+                <input type="text" class="form-field" placeholder="Your Phone Number" id="hud_sender_phone"><br>
+                <input type="text" class="form-field" placeholder="Your Email" id="hud_sender_email">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="date" class="form-field" id="hud_letter_date">
+            </div>
+            
+            <div class="agency-address">
+                <strong>VIA EMAIL</strong><br><br>
+                U.S. Department of Housing and Urban Development<br>
+                Office of General Counsel<br>
+                FOIA Office<br>
+                451 7th Street SW, Room 10110<br>
+                Washington, DC 20410<br>
+                Email: foia@hud.gov
+            </div>
+            
+            <div class="body-text">
+                <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong>
+            </div>
+            
+            <div class="body-text">
+                Dear FOIA Officer:
+            </div>
+            
+            <div class="body-text">
+                Under FOIA, I request:
+            </div>
+            
+            <ol>
+                <li><strong>RESPA Violations:</strong><br>
+                    All records of RESPA violations by <input type="text" class="form-field" placeholder="Lender/Servicer Name" style="width: 300px;">.
+                </li>
+                
+                <li><strong>FHA Records:</strong><br>
+                    If my loan is FHA-insured, Case #<input type="text" class="form-field" placeholder="FHA Case Number" style="width: 200px;">, all related records.
+                </li>
+                
+                <li><strong>Settlement Statements:</strong><br>
+                    Any HUD-1 or Closing Disclosure records for my property.
+                </li>
+                
+                <li><strong>Fair Housing Complaints:</strong><br>
+                    Complaints against the lender for discriminatory practices.
+                </li>
+            </ol>
+            
+            <div class="signature-block">
+                Sincerely,<br><br>
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Printed Name" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showAgency(agency) {
+            // Hide all templates
+            const templates = document.querySelectorAll('.template-section');
+            templates.forEach(template => template.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.agency-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected template
+            document.getElementById(agency + '-template').classList.add('active');
+            
+            // Mark button as active
+            event.target.classList.add('active');
+        }
+        
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Get currently active template
+            const activeTemplate = document.querySelector('.template-section.active');
+            const prefix = activeTemplate.id.split('-')[0];
+            
+            // Fill common fields based on active template
+            const sampleData = {
+                name: 'John Doe',
+                address: '123 Main Street',
+                cityStateZip: 'Miami, FL 33101',
+                phone: '(555) 123-4567',
+                email: 'johndoe@email.com',
+                date: new Date().toISOString().split('T')[0],
+                loanNumber: '0123456789',
+                propertyAddress: '123 Main Street, Miami, FL 33101',
+                bankName: 'Wells Fargo Bank, N.A.',
+                lenderName: 'Original Mortgage Company',
+                loanDate: '2019-01-15',
+                dateRange: '2019-2024'
+            };
+            
+            // Try to fill fields for active template
+            try {
+                document.getElementById(prefix + '_sender_name').value = sampleData.name;
+                document.getElementById(prefix + '_sender_address').value = sampleData.address;
+                document.getElementById(prefix + '_sender_city_state_zip').value = sampleData.cityStateZip;
+                document.getElementById(prefix + '_sender_phone').value = sampleData.phone;
+                document.getElementById(prefix + '_sender_email').value = sampleData.email;
+                document.getElementById(prefix + '_letter_date').value = sampleData.date;
+            } catch(e) {
+                console.log('Some fields not found for template: ' + prefix);
+            }
+        }
+        
+        function printAll() {
+            // Show all templates
+            const templates = document.querySelectorAll('.template-section');
+            templates.forEach(template => {
+                template.classList.add('active');
+                template.style.pageBreakBefore = 'always';
+            });
+            
+            // Hide selector
+            document.querySelector('.agency-selector').style.display = 'none';
+            
+            // Print
+            window.print();
+            
+            // Restore original state
+            templates.forEach((template, index) => {
+                if (index > 0) template.classList.remove('active');
+                template.style.pageBreakBefore = '';
+            });
+            document.querySelector('.agency-selector').style.display = '';
+        }
+        
+        // Auto-save functionality
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('form-field')) {
+                localStorage.setItem('foia_' + e.target.id, e.target.value);
+            }
+        });
+        
+        // Load saved data
+        window.addEventListener('load', function() {
+            const inputs = document.querySelectorAll('.form-field');
+            inputs.forEach(input => {
+                const saved = localStorage.getItem('foia_' + input.id);
+                if (saved) input.value = saved;
+            });
+        });
+    </script>
+</body>
+</html>

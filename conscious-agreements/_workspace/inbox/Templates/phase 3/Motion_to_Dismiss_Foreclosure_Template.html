@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion to Dismiss Foreclosure Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            line-height: 2;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .court-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+        }
+        
+        .court-header h1 {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+        
+        .case-caption {
+            margin: 30px 0;
+        }
+        
+        .case-caption table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .case-caption td {
+            vertical-align: top;
+            padding: 5px;
+        }
+        
+        .plaintiff-section {
+            width: 45%;
+        }
+        
+        .versus {
+            width: 10%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .defendant-section {
+            width: 45%;
+        }
+        
+        .case-number {
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            background: #fffef0;
+            line-height: 1.5;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #0d47a1;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: #c62828;
+            line-height: 1.6;
+        }
+        
+        .legal-section {
+            margin: 30px 0;
+        }
+        
+        .legal-section h2 {
+            font-size: 14pt;
+            text-align: center;
+            text-decoration: underline;
+            margin: 20px 0;
+        }
+        
+        .paragraph {
+            text-indent: 50px;
+            text-align: justify;
+            margin: 20px 0;
+            line-height: 2;
+        }
+        
+        .paragraph-number {
+            display: inline-block;
+            width: 50px;
+            margin-left: -50px;
+            text-align: right;
+            padding-right: 15px;
+            font-weight: bold;
+        }
+        
+        .argument-section {
+            margin: 40px 0;
+        }
+        
+        .argument-header {
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0 20px 0;
+            text-transform: uppercase;
+            font-size: 14pt;
+        }
+        
+        .sub-argument {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        
+        .sub-argument h4 {
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 15px 0;
+        }
+        
+        .legal-standard {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #666;
+            font-style: italic;
+        }
+        
+        .case-law {
+            background: #e8f5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .case-law h4 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .defect-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .defect-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .signature-block {
+            margin-top: 60px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 40px 0 5px 0;
+        }
+        
+        .respectfully {
+            margin: 30px 0;
+        }
+        
+        .certificate-service {
+            margin-top: 60px;
+            border-top: 2px solid black;
+            padding-top: 30px;
+        }
+        
+        .certificate-service h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 2;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .exhibit-list {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .exhibit-list h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+            margin-top: 0;
+        }
+        
+        .tips-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .tips-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .grounds-list {
+            background: #f3e5f5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border: 2px solid #9c27b0;
+        }
+        
+        .grounds-list h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="instructions no-print">
+            <h3>🛡️ Motion to Dismiss - Your First Line of Defense</h3>
+            <p><strong>What This Does:</strong></p>
+            <ol>
+                <li><strong>Attacks their complaint</strong> - Points out fatal flaws</li>
+                <li><strong>Challenges standing</strong> - They must prove right to foreclose</li>
+                <li><strong>Exposes defects</strong> - Missing documents, broken chain</li>
+                <li><strong>Raises affirmative defenses</strong> - Fraud, lack of consideration</li>
+                <li><strong>Can end case immediately</strong> - If granted, case dismissed</li>
+            </ol>
+            <p><strong>When to File:</strong></p>
+            <ul>
+                <li>Within 20-30 days of being served (check local rules)</li>
+                <li>BEFORE filing an answer</li>
+                <li>Can be combined with other motions</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box no-print">
+            <strong>⚠️ CRITICAL TIMING:</strong>
+            <ul>
+                <li>File BEFORE answering complaint</li>
+                <li>Missing deadline waives these defenses</li>
+                <li>Check local rules for exact timeline</li>
+                <li>Request hearing on the motion</li>
+                <li>Be prepared to argue orally</li>
+                <li>Have all evidence organized</li>
+            </ul>
+        </div>
+        
+        <div class="court-header">
+            <h1>IN THE <input type="text" class="form-field" placeholder="CIRCUIT/DISTRICT" style="width: 150px;"> COURT</h1>
+            <h1>IN AND FOR <input type="text" class="form-field" placeholder="COUNTY NAME" style="width: 200px;"> COUNTY</h1>
+            <h1>STATE OF <input type="text" class="form-field" placeholder="STATE" style="width: 150px;"></h1>
+        </div>
+        
+        <div class="case-caption">
+            <table>
+                <tr>
+                    <td class="plaintiff-section">
+                        <input type="text" class="form-field" placeholder="BANK/SERVICER NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Plaintiff,</span>
+                    </td>
+                    <td class="versus">
+                        <br><br>vs.
+                    </td>
+                    <td class="defendant-section">
+                        <div class="case-number">
+                            Case No. <input type="text" class="form-field" placeholder="Case number" style="width: 200px;">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="defendant-section">
+                        <input type="text" class="form-field" placeholder="YOUR NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Defendant.</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2 style="text-align: center; font-size: 16pt; margin: 30px 0;">
+            DEFENDANT'S MOTION TO DISMISS COMPLAINT<br>
+            WITH PREJUDICE
+        </h2>
+        
+        <div class="legal-section">
+            <h2>INTRODUCTION</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">1.</span>
+                Defendant <input type="text" class="form-field" placeholder="Your Name" style="width: 200px;"> respectfully moves this Court to dismiss Plaintiff's Complaint with prejudice pursuant to <input type="text" class="form-field" placeholder="Rule 12(b)(1), (6)" style="width: 150px;"> of the <input type="text" class="form-field" placeholder="State/Federal" style="width: 100px;"> Rules of Civil Procedure for lack of subject matter jurisdiction, failure to state a claim upon which relief can be granted, lack of standing, and fraud.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">2.</span>
+                Plaintiff's Complaint is fatally defective as it is based on a void debt for which no consideration was provided, brought by a party lacking standing to foreclose, and founded on fraudulent representations about the nature of the underlying transaction.
+            </div>
+        </div>
+        
+        <div class="grounds-list no-print">
+            <h3>🎯 Grounds for Dismissal (Choose All That Apply)</h3>
+            <ul>
+                <li>☑️ Lack of Standing (no proof of ownership)</li>
+                <li>☑️ Failure to State a Claim (elements not met)</li>
+                <li>☑️ Lack of Subject Matter Jurisdiction</li>
+                <li>☑️ Failure to Attach Required Documents</li>
+                <li>☑️ Statute of Limitations</li>
+                <li>☑️ Unclean Hands (fraud/bad faith)</li>
+                <li>☑️ Failure to Comply with Conditions Precedent</li>
+                <li>☑️ Violation of Due Process</li>
+            </ul>
+        </div>
+        
+        <div class="legal-section">
+            <h2>STATEMENT OF FACTS</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">3.</span>
+                On or about <input type="date" class="form-field" style="width: 150px;">, Defendant executed a promissory note with <input type="text" class="form-field" placeholder="Original Lender" style="width: 300px;"> for $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;">.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">4.</span>
+                Plaintiff <input type="text" class="form-field" placeholder="Current Plaintiff" style="width: 300px;"> now claims to have the right to foreclose, but has failed to establish:
+                <ul>
+                    <li>Ownership of the promissory note</li>
+                    <li>Valid assignment of the mortgage/deed of trust</li>
+                    <li>Standing to enforce the obligation</li>
+                    <li>That any consideration was provided for the note</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">5.</span>
+                The debt has been disputed by Defendant through:
+                <ul>
+                    <li>Notice of Disputed Debt dated <input type="date" class="form-field" style="width: 150px;"></li>
+                    <li>Qualified Written Request dated <input type="date" class="form-field" style="width: 150px;"></li>
+                    <li>Notice of Lack of Consideration dated <input type="date" class="form-field" style="width: 150px;"></li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">6.</span>
+                Despite these disputes and requests for validation, Plaintiff has proceeded with foreclosure without proving:
+                <ul>
+                    <li>They are the real party in interest</li>
+                    <li>They have possession of the original note</li>
+                    <li>The chain of title is intact</li>
+                    <li>Any money was actually lent</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>MEMORANDUM OF LAW</h2>
+            
+            <div class="legal-standard">
+                <strong>Standard for Motion to Dismiss:</strong><br>
+                On a motion to dismiss, the court must accept all well-pleaded facts as true and construe them in the light most favorable to the non-moving party. However, conclusory allegations and legal conclusions are not entitled to a presumption of truth. <em>Ashcroft v. Iqbal</em>, 556 U.S. 662 (2009).
+            </div>
+        </div>
+        
+        <div class="argument-section">
+            <div class="argument-header">
+                I. PLAINTIFF LACKS STANDING TO BRING THIS ACTION
+            </div>
+            
+            <div class="sub-argument">
+                <h4>A. Plaintiff Cannot Prove Ownership of the Note</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">7.</span>
+                    To have standing to foreclose, Plaintiff must prove it owns and holds the promissory note. <em>See Carpenter v. Longan</em>, 83 U.S. 271 (1872) ("the note and mortgage are inseparable").
+                </div>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">8.</span>
+                    Plaintiff has failed to:
+                    <ul>
+                        <li>Attach the original promissory note to the Complaint</li>
+                        <li>Allege possession of the original note</li>
+                        <li>Provide a complete chain of endorsements</li>
+                        <li>Prove the note was properly transferred</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="sub-argument">
+                <h4>B. The Chain of Title is Broken</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">9.</span>
+                    The Complaint fails to establish an unbroken chain of title from the original lender to Plaintiff. Missing or defective assignments void Plaintiff's claim.
+                </div>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">10.</span>
+                    If the loan was securitized, Plaintiff must prove:
+                    <ul>
+                        <li>The loan was properly transferred to the trust</li>
+                        <li>Transfer occurred before the closing date</li>
+                        <li>All PSA requirements were met</li>
+                        <li>The trust has standing to foreclose</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="sub-argument">
+                <h4>C. MERS Lacks Authority</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">11.</span>
+                    If MERS is involved, it cannot transfer the promissory note as it is merely a registration system, not a holder of the note. MERS has no standing to assign what it does not possess.
+                </div>
+            </div>
+        </div>
+        
+        <div class="argument-section">
+            <div class="argument-header">
+                II. THE COMPLAINT FAILS TO STATE A CLAIM
+            </div>
+            
+            <div class="sub-argument">
+                <h4>A. No Valid Debt Exists - Lack of Consideration</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">12.</span>
+                    A fundamental element of any foreclosure action is the existence of a valid debt. Here, no valid debt exists because no consideration was provided for Defendant's promissory note.
+                </div>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">13.</span>
+                    Banks do not lend depositors' money or their own assets. They create bookkeeping entries using the borrower's promissory note. The Federal Reserve's "Modern Money Mechanics" and Bank of England's publications confirm banks create money when making loans.
+                </div>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">14.</span>
+                    Defendant's promissory note was the source of the funds, not a promise to repay a loan. The note constituted payment in full in our debt-based monetary system where Federal Reserve Notes are themselves debt obligations (12 U.S.C. § 411).
+                </div>
+            </div>
+            
+            <div class="sub-argument">
+                <h4>B. Failure to Allege Required Elements</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">15.</span>
+                    To state a claim for foreclosure, Plaintiff must allege:
+                    <ul>
+                        <li>Execution of a valid note and mortgage</li>
+                        <li>Default under the terms</li>
+                        <li>Compliance with all conditions precedent</li>
+                        <li>Amount owed with specificity</li>
+                        <li>Right to enforce the obligation</li>
+                    </ul>
+                </div>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">16.</span>
+                    The Complaint fails to properly allege these elements, instead relying on conclusory statements without factual support.
+                </div>
+            </div>
+            
+            <div class="sub-argument">
+                <h4>C. Violation of Conditions Precedent</h4>
+                
+                <div class="paragraph">
+                    <span class="paragraph-number">17.</span>
+                    Plaintiff has failed to comply with conditions precedent including:
+                    <ul>
+                        <li>Providing required notices under the mortgage</li>
+                        <li>Offering loss mitigation as required by law</li>
+                        <li>Validating the debt as requested</li>
+                        <li>Proving ownership before accelerating</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="argument-section">
+            <div class="argument-header">
+                III. THE DEBT IS DISPUTED AND CANNOT BE FORECLOSED
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">18.</span>
+                Under FDCPA § 809(b), collection activity must cease on disputed debts until validated. Defendant has formally disputed this debt and Plaintiff has failed to validate it.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">19.</span>
+                Foreclosing on a genuinely disputed debt violates due process. Defendant has raised substantial questions about:
+                <ul>
+                    <li>The validity of the debt</li>
+                    <li>Plaintiff's standing</li>
+                    <li>Lack of consideration</li>
+                    <li>Fraudulent inducement</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="argument-section">
+            <div class="argument-header">
+                IV. PLAINTIFF HAS UNCLEAN HANDS
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">20.</span>
+                Plaintiff comes to this Court with unclean hands, having engaged in:
+                <ul>
+                    <li>Fraudulent creation of assignments</li>
+                    <li>Robo-signing of documents</li>
+                    <li>False claims of ownership</li>
+                    <li>Violation of federal criminal statutes</li>
+                    <li>Deceptive practices in loan origination</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">21.</span>
+                One who seeks equity must do equity. Plaintiff's fraudulent conduct bars equitable relief of foreclosure.
+            </div>
+        </div>
+        
+        <div class="argument-section">
+            <div class="argument-header">
+                V. VIOLATION OF DUE PROCESS
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">22.</span>
+                Allowing foreclosure without requiring Plaintiff to prove ownership, standing, and validity of the debt violates Defendant's constitutional right to due process under the Fifth and Fourteenth Amendments.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">23.</span>
+                Defendant has a protected property interest that cannot be taken without due process of law, including the right to challenge the validity of the alleged debt and Plaintiff's authority to enforce it.
+            </div>
+        </div>
+        
+        <div class="defect-box">
+            <h3>🔍 Specific Defects in Plaintiff's Complaint</h3>
+            <ol>
+                <li><strong>No Original Note:</strong> Copy attached is insufficient</li>
+                <li><strong>Missing Assignments:</strong> Gap from <input type="text" class="form-field" placeholder="Original Lender" style="width: 200px;"> to Plaintiff</li>
+                <li><strong>No Proof of Default:</strong> Conclusory allegation only</li>
+                <li><strong>Wrong Party:</strong> <input type="text" class="form-field" placeholder="Entity" style="width: 200px;"> is servicer, not owner</li>
+                <li><strong>Conditions Not Met:</strong> No proof of required notices</li>
+                <li><strong>Amount Unclear:</strong> Inconsistent figures alleged</li>
+                <li><strong>Standing Date Wrong:</strong> Claims ownership as of <input type="date" class="form-field" style="width: 150px;"> but note dated <input type="date" class="form-field" style="width: 150px;"></li>
+                <li><strong>MERS Issues:</strong> Invalid assignment from non-holder</li>
+            </ol>
+        </div>
+        
+        <div class="case-law">
+            <h4>Key Cases Supporting Dismissal</h4>
+            <ul>
+                <li><strong><em>Carpenter v. Longan</em></strong>, 83 U.S. 271 (1872) - Note and mortgage inseparable</li>
+                <li><strong><em>Ashcroft v. Iqbal</em></strong>, 556 U.S. 662 (2009) - Plausibility standard</li>
+                <li><strong><em>Ibanez</em></strong> (Mass.) - Must prove chain of title</li>
+                <li><strong><em>Glaski</em></strong> (Cal.) - Void if PSA violated</li>
+                <li><strong>[State specific case]</strong> - <input type="text" class="form-field" placeholder="Your state's key case" style="width: 300px;"></li>
+            </ul>
+        </div>
+        
+        <div class="legal-section">
+            <h2>REQUEST FOR JUDICIAL NOTICE</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">24.</span>
+                Defendant requests this Court take judicial notice of:
+                <ul>
+                    <li>Federal Reserve publication "Modern Money Mechanics"</li>
+                    <li>Bank of England "Money Creation in the Modern Economy"</li>
+                    <li>12 U.S.C. § 411 (Federal Reserve Notes as obligations)</li>
+                    <li>Public records showing assignments were executed after this suit was filed</li>
+                    <li>MERS Terms and Conditions stating it holds no beneficial interest</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>CONCLUSION</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">25.</span>
+                For the foregoing reasons, Plaintiff's Complaint should be dismissed with prejudice as:
+                <ul>
+                    <li>Plaintiff lacks standing to bring this action</li>
+                    <li>No valid debt exists due to lack of consideration</li>
+                    <li>The Complaint fails to state a claim</li>
+                    <li>Plaintiff has unclean hands</li>
+                    <li>The debt is disputed and unvalidated</li>
+                    <li>Due process violations bar foreclosure</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">26.</span>
+                Dismissal should be WITH PREJUDICE as the defects are not curable. Plaintiff cannot manufacture standing, create consideration that never existed, or cure fraudulent conduct.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">27.</span>
+                WHEREFORE, Defendant respectfully requests that this Court:
+                <ol type="A">
+                    <li>Dismiss Plaintiff's Complaint with prejudice;</li>
+                    <li>Award Defendant costs and attorney's fees;</li>
+                    <li>Grant such other relief as the Court deems just and proper.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>REQUEST FOR ORAL ARGUMENT</h2>
+            
+            <div class="paragraph">
+                Defendant respectfully requests oral argument on this Motion as the issues raised are complex and fundamental to the administration of justice in foreclosure proceedings.
+            </div>
+        </div>
+        
+        <div class="signature-block">
+            <div class="respectfully">
+                Respectfully submitted,
+            </div>
+            
+            <div>
+                DATED: <input type="date" class="form-field" style="width: 150px;">
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name (printed)" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Your Address" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"><br>
+                <input type="text" class="form-field" placeholder="Email" style="width: 300px;"><br>
+                Defendant Pro Se
+            </div>
+        </div>
+        
+        <div class="certificate-service">
+            <h3>CERTIFICATE OF SERVICE</h3>
+            
+            <p>I hereby certify that on <input type="date" class="form-field" style="width: 150px;">, I served a true and correct copy of the foregoing Motion to Dismiss on:</p>
+            
+            <div style="margin: 20px 0;">
+                <input type="text" class="form-field" placeholder="Plaintiff's Attorney Name" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Law Firm" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br><br>
+                By: ☐ U.S. Mail ☐ Hand Delivery ☐ Email (if agreed) ☐ Court E-Filing System
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">
+            </div>
+        </div>
+        
+        <div class="exhibit-list no-print">
+            <h3>EXHIBITS TO ATTACH</h3>
+            <ol>
+                <li><strong>Exhibit A:</strong> Notice of Disputed Debt</li>
+                <li><strong>Exhibit B:</strong> Qualified Written Request</li>
+                <li><strong>Exhibit C:</strong> Notice of Lack of Consideration</li>
+                <li><strong>Exhibit D:</strong> Affidavit of Truth</li>
+                <li><strong>Exhibit E:</strong> Federal Reserve "Modern Money Mechanics"</li>
+                <li><strong>Exhibit F:</strong> Bank of England publication</li>
+                <li><strong>Exhibit G:</strong> Plaintiff's Complaint (highlighted defects)</li>
+                <li><strong>Exhibit H:</strong> Public records showing assignment dates</li>
+                <li><strong>Exhibit I:</strong> MERS Terms and Conditions</li>
+                <li><strong>Exhibit J:</strong> Evidence of robo-signing</li>
+            </ol>
+        </div>
+        
+        <div class="tips-box no-print">
+            <h3>💡 Strategic Filing Tips</h3>
+            <ol>
+                <li><strong>File immediately</strong> - Don't miss deadline (usually 20-30 days)</li>
+                <li><strong>Request hearing</strong> - Forces them to argue</li>
+                <li><strong>Attach key documents</strong> - Support your arguments</li>
+                <li><strong>Be specific</strong> - Point out exact defects in complaint</li>
+                <li><strong>Research local cases</strong> - Judges follow local precedent</li>
+                <li><strong>Consider discovery stay</strong> - Ask court to stay discovery pending ruling</li>
+                <li><strong>Prepare for opposition</strong> - They'll file response brief</li>
+                <li><strong>Draft reply brief</strong> - You get last word before hearing</li>
+                <li><strong>Practice oral argument</strong> - Be ready to argue key points</li>
+                <li><strong>Have backup plan</strong> - If denied, file answer immediately</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill with sample data
+            const inputs = document.querySelectorAll('input.form-field');
+            const today = new Date();
+            
+            // Sample data mapping
+            document.querySelectorAll('input[placeholder*="CIRCUIT"]').forEach(el => el.value = 'CIRCUIT');
+            document.querySelectorAll('input[placeholder*="COUNTY NAME"]').forEach(el => el.value = 'MIAMI-DADE');
+            document.querySelectorAll('input[placeholder*="STATE"]').forEach(el => el.value = 'FLORIDA');
+            document.querySelectorAll('input[placeholder*="YOUR NAME"], input[placeholder*="Your Name"]').forEach(el => el.value = 'John Doe');
+            document.querySelectorAll('input[placeholder*="BANK/SERVICER NAME"], input[placeholder*="Current Plaintiff"]').forEach(el => el.value = 'WELLS FARGO BANK, N.A.');
+            document.querySelectorAll('input[placeholder*="Original Lender"]').forEach(el => el.value = 'COUNTRYWIDE HOME LOANS');
+            document.querySelectorAll('input[placeholder*="Amount"]').forEach(el => el.value = '350,000');
+            document.querySelectorAll('input[placeholder*="Case number"]').forEach(el => el.value = '2024-CA-001234');
+            document.querySelectorAll('input[placeholder*="Rule"]').forEach(el => el.value = 'Rule 12(b)(1), (6)');
+            document.querySelectorAll('input[placeholder*="State/Federal"]').forEach(el => el.value = 'Florida');
+            
+            // Set dates
+            inputs.forEach(input => {
+                if (input.type === 'date' && input.value === '') {
+                    input.value = today.toISOString().split('T')[0];
+                }
+            });
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('mtd_' + input.placeholder);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('mtd_' + this.placeholder, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

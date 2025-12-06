@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlement Agreement Template - Mortgage Fraud Resolution</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 2px solid #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #000;
+            color: white;
+            border: 3px double #gold;
+        }
+        
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            font-style: italic;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #000;
+            padding: 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #ffffee;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            border: 2px solid #000;
+            padding: 10px;
+            background: white;
+        }
+        
+        .recital-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #666;
+        }
+        
+        .recital-section h2 {
+            color: #333;
+            font-size: 16pt;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .whereas-clause {
+            margin: 15px 0;
+            padding-left: 30px;
+            font-style: italic;
+        }
+        
+        .whereas-clause strong {
+            font-style: normal;
+            color: #000;
+        }
+        
+        .terms-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #e8f4fd;
+            border: 2px solid #0066cc;
+        }
+        
+        .terms-section h2 {
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .term-item {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .term-number {
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 14pt;
+        }
+        
+        .release-section {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .release-section h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .confidentiality-section {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .confidentiality-section h3 {
+            color: #c62828;
+            margin-top: 0;
+        }
+        
+        .payment-schedule {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .payment-schedule th {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .payment-schedule td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .payment-schedule tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+        }
+        
+        .signature-block {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        .consideration-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .consideration-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .warning-box {
+            background: #fff8e1;
+            border: 3px solid #ff9800;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        
+        .representations-section {
+            background: #f5f5f5;
+            border-left: 5px solid #9c27b0;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .representations-section h3 {
+            color: #6a1b9a;
+            margin-top: 0;
+        }
+        
+        .dispute-resolution {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .dispute-resolution h3 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+        
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+            text-transform: uppercase;
+        }
+        
+        .exhibit-list {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .exhibit-list h3 {
+            margin-top: 0;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">SETTLEMENT AGREEMENT AND RELEASE</div>
+            <div class="subtitle">Full and Final Resolution of All Claims</div>
+        </div>
+        
+        <div class="warning-box no-print">
+            ⚠️ IMPORTANT: Have an attorney review this agreement before signing!<br>
+            This is a binding legal document with significant consequences.
+        </div>
+        
+        <p style="text-align: center; font-weight: bold;">
+            This Settlement Agreement and Release ("Agreement") is entered into as of 
+            <input type="date" class="form-field" style="width: 150px;"> 
+            ("Effective Date") by and between:
+        </p>
+        
+        <div style="margin: 30px 0;">
+            <p><strong>BORROWER(S):</strong><br>
+            <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Co-Borrower Name (if any)" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            (collectively, "Borrower")</p>
+            
+            <p><strong>LENDER/SERVICER:</strong><br>
+            <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Lender")</p>
+        </div>
+        
+        <p>Borrower and Lender are sometimes referred to individually as a "Party" and collectively as the "Parties."</p>
+        
+        <div class="recital-section">
+            <h2>RECITALS</h2>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower executed a promissory note dated 
+                <input type="date" class="form-field" style="width: 150px;"> 
+                in the original principal amount of $<input type="text" class="form-field" placeholder="Original Amount" style="width: 150px;"> 
+                and a mortgage/deed of trust securing real property located at 
+                <input type="text" class="form-field" placeholder="Property Address" style="width: 400px;"> 
+                ("Property") with loan number <input type="text" class="form-field" placeholder="Loan Number" style="width: 200px;"> 
+                (collectively, the "Loan"); and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> disputes have arisen between the Parties regarding the validity, enforceability, and/or terms of the Loan, including but not limited to claims of lack of consideration, fraud, violation of federal and state laws, and improper lending practices ("Disputes"); and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower has asserted that the Loan is void for lack of consideration based on evidence that no actual money was lent and that Borrower's promissory note was the source of funds; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> the Parties desire to resolve all Disputes and claims between them without admitting liability and to avoid the expense, inconvenience, and uncertainty of litigation; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> the Parties have agreed to the terms set forth herein as a complete settlement of all claims;
+            </div>
+            
+            <p><strong>NOW, THEREFORE,</strong> in consideration of the mutual covenants and agreements set forth herein, and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the Parties agree as follows:</p>
+        </div>
+        
+        <div class="terms-section">
+            <h2>TERMS OF SETTLEMENT</h2>
+            
+            <div class="term-item">
+                <span class="term-number">1. LOAN SATISFACTION</span>
+                <p>Lender agrees that upon execution of this Agreement and receipt of the Settlement Payment (if any), the Loan shall be deemed satisfied and paid in full. The current balance claimed is $<input type="text" class="form-field" placeholder="Current Balance" style="width: 150px;">, which shall be reduced to $<input type="text" class="form-field" placeholder="Settlement Amount" style="width: 150px;"> ("Settlement Amount").</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">2. SETTLEMENT PAYMENT</span>
+                <p>☐ Borrower shall pay Lender the Settlement Amount of $<input type="text" class="form-field" placeholder="Payment Amount" style="width: 150px;"> as follows:</p>
+                <p>☐ Lump sum payment due within <input type="text" class="form-field" placeholder="Days" style="width: 50px;"> days of execution</p>
+                <p>☐ Installment payments according to the following schedule:</p>
+                
+                <table class="payment-schedule">
+                    <tr>
+                        <th>Payment #</th>
+                        <th>Due Date</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="date" class="form-field" style="width: 150px;"></td>
+                        <td>$<input type="text" class="form-field" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="date" class="form-field" style="width: 150px;"></td>
+                        <td>$<input type="text" class="form-field" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="date" class="form-field" style="width: 150px;"></td>
+                        <td>$<input type="text" class="form-field" style="width: 100px;"></td>
+                    </tr>
+                </table>
+                
+                <p>☐ No payment required - debt forgiven in full</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">3. RELEASE OF LIENS</span>
+                <p>Within <input type="text" class="form-field" placeholder="Number" style="width: 50px;"> business days of receiving the Settlement Payment (or execution if no payment required), Lender shall:</p>
+                <ul>
+                    <li>Execute and record a Satisfaction of Mortgage/Reconveyance of Deed of Trust</li>
+                    <li>File UCC-3 termination statements for any UCC filings</li>
+                    <li>Provide Borrower with evidence of lien release</li>
+                    <li>Return original promissory note marked "PAID IN FULL" (if available)</li>
+                </ul>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">4. CREDIT REPORTING</span>
+                <p>Lender shall, within 30 days of execution:</p>
+                <ul>
+                    <li>☐ Report the account as "Paid in Full" to all credit reporting agencies</li>
+                    <li>☐ Report the account as "Settled for Less Than Full Balance"</li>
+                    <li>☐ Delete all negative tradelines entirely</li>
+                    <li>☐ Report as agreed by Borrower: <input type="text" class="form-field" placeholder="Specify" style="width: 300px;"></li>
+                </ul>
+                <p>Lender shall provide Borrower with written confirmation of credit bureau updates.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">5. PROPERTY TITLE</span>
+                <p>Upon completion of settlement terms:</p>
+                <ul>
+                    <li>☐ Borrower retains full ownership of the Property free and clear</li>
+                    <li>☐ Property transfers to Lender via deed in lieu (separate agreement required)</li>
+                    <li>☐ Other: <input type="text" class="form-field" placeholder="Specify" style="width: 400px;"></li>
+                </ul>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">6. TAX CONSEQUENCES</span>
+                <p>☐ Lender agrees NOT to issue a 1099-C for forgiven debt</p>
+                <p>☐ Lender will issue 1099-C for $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"> in forgiven debt</p>
+                <p>Each party is responsible for their own tax obligations arising from this Agreement.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">7. DISMISSAL OF PENDING ACTIONS</span>
+                <p>Within <input type="text" class="form-field" placeholder="Number" style="width: 50px;"> days of execution, the Parties shall:</p>
+                <ul>
+                    <li>Dismiss with prejudice any pending foreclosure actions</li>
+                    <li>Dismiss with prejudice case number <input type="text" class="form-field" placeholder="Case Number" style="width: 200px;"></li>
+                    <li>Withdraw all complaints filed with regulatory agencies</li>
+                    <li>Each party bears their own attorney fees and costs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="release-section">
+            <h3>MUTUAL RELEASE OF CLAIMS</h3>
+            
+            <p><strong>8. BORROWER'S RELEASE:</strong> Except for the obligations created by this Agreement, Borrower hereby releases and forever discharges Lender and its officers, directors, employees, agents, attorneys, successors, and assigns from any and all claims, demands, actions, causes of action, damages, costs, expenses, and compensation of every kind, known or unknown, arising from or related to the Loan.</p>
+            
+            <p><strong>9. LENDER'S RELEASE:</strong> Except for the obligations created by this Agreement, Lender hereby releases and forever discharges Borrower from any and all claims, demands, actions, causes of action, damages, costs, expenses, and compensation of every kind, known or unknown, arising from or related to the Loan, including any deficiency claims.</p>
+            
+            <p><strong>10. UNKNOWN CLAIMS:</strong> The Parties acknowledge that they may discover facts different from or in addition to those currently known, and agree that this Agreement shall remain in full force and effect notwithstanding such discovery.</p>
+            
+            <p><strong>California Civil Code § 1542 Waiver</strong> (if applicable):<br>
+            The Parties expressly waive any rights under California Civil Code § 1542, which states: "A general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release, and that if known by him or her must have materially affected his or her settlement with the debtor or released party."</p>
+        </div>
+        
+        <div class="confidentiality-section">
+            <h3>CONFIDENTIALITY</h3>
+            
+            <p><strong>11. CONFIDENTIAL TERMS:</strong></p>
+            <p>☐ This Agreement and its terms are CONFIDENTIAL and shall not be disclosed except:</p>
+            <ul>
+                <li>To attorneys, accountants, or tax advisors</li>
+                <li>As required by law or court order</li>
+                <li>To enforce this Agreement</li>
+                <li>To immediate family members</li>
+            </ul>
+            
+            <p>☐ This Agreement is NOT CONFIDENTIAL and may be disclosed freely</p>
+            
+            <p><strong>Permitted Statement:</strong> If asked, parties may state only: "The matter has been resolved to the mutual satisfaction of all parties."</p>
+        </div>
+        
+        <div class="representations-section">
+            <h3>REPRESENTATIONS AND WARRANTIES</h3>
+            
+            <p><strong>12. BORROWER REPRESENTS:</strong></p>
+            <ul>
+                <li>Has full authority to enter this Agreement</li>
+                <li>Has not assigned any claims to third parties</li>
+                <li>Has read and understood this Agreement</li>
+                <li>Has been advised to consult with an attorney</li>
+                <li>Enters this Agreement voluntarily</li>
+            </ul>
+            
+            <p><strong>13. LENDER REPRESENTS:</strong></p>
+            <ul>
+                <li>Has full authority to enter this Agreement</li>
+                <li>Has authority to release all liens and claims</li>
+                <li>Will not sell or assign the Loan after this Agreement</li>
+                <li>Has provided accurate payoff information</li>
+                <li>Will comply with all terms herein</li>
+            </ul>
+        </div>
+        
+        <div class="consideration-box">
+            <h3>CONSIDERATION ACKNOWLEDGMENT</h3>
+            
+            <p><strong>14. SUFFICIENT CONSIDERATION:</strong> The Parties acknowledge that this Agreement is supported by adequate consideration, including but not limited to:</p>
+            <ul>
+                <li>Mutual release of substantial claims</li>
+                <li>Avoidance of litigation costs and uncertainty</li>
+                <li>Peace of mind and closure</li>
+                <li>Settlement payment (if applicable)</li>
+                <li>Release of liens on Property</li>
+                <li>Other valuable consideration</li>
+            </ul>
+        </div>
+        
+        <div class="dispute-resolution">
+            <h3>DISPUTE RESOLUTION</h3>
+            
+            <p><strong>15. GOVERNING LAW:</strong> This Agreement shall be governed by the laws of <input type="text" class="form-field" placeholder="State" style="width: 150px;"> without regard to conflict of law principles.</p>
+            
+            <p><strong>16. DISPUTE RESOLUTION:</strong></p>
+            <p>☐ Any disputes shall be resolved through binding arbitration under AAA rules</p>
+            <p>☐ Any disputes shall be resolved in court in <input type="text" class="form-field" placeholder="County, State" style="width: 200px;"></p>
+            
+            <p><strong>17. ATTORNEY FEES:</strong> In any action to enforce this Agreement, the prevailing party shall be entitled to recover reasonable attorney fees and costs.</p>
+        </div>
+        
+        <div class="terms-section">
+            <h2>GENERAL PROVISIONS</h2>
+            
+            <div class="term-item">
+                <span class="term-number">18. ENTIRE AGREEMENT</span>
+                <p>This Agreement constitutes the entire agreement between the Parties and supersedes all prior negotiations, representations, and agreements, whether written or oral.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">19. MODIFICATION</span>
+                <p>This Agreement may only be modified in writing signed by all Parties.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">20. SEVERABILITY</span>
+                <p>If any provision is held invalid or unenforceable, the remainder shall continue in full force and effect.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">21. NO ADMISSION</span>
+                <p>This Agreement is a compromise of disputed claims and shall not be construed as an admission of liability by any Party.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">22. COUNTERPARTS</span>
+                <p>This Agreement may be executed in counterparts, each of which shall be deemed an original. Electronic signatures shall be valid.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">23. TIME IS OF THE ESSENCE</span>
+                <p>Time is of the essence for all dates and deadlines in this Agreement.</p>
+            </div>
+        </div>
+        
+        <div class="exhibit-list">
+            <h3>EXHIBITS</h3>
+            <p>The following exhibits are attached and incorporated herein:</p>
+            <ul>
+                <li>☐ Exhibit A: Satisfaction of Mortgage form</li>
+                <li>☐ Exhibit B: Payment schedule</li>
+                <li>☐ Exhibit C: Mutual release forms</li>
+                <li>☐ Exhibit D: Dismissal stipulations</li>
+                <li>☐ Other: <input type="text" class="form-field" placeholder="Specify" style="width: 300px;"></li>
+            </ul>
+        </div>
+        
+        <div class="signature-section">
+            <h2>SIGNATURES</h2>
+            
+            <p style="font-weight: bold; text-align: center;">
+                IN WITNESS WHEREOF, the Parties have executed this Settlement Agreement and Release 
+                as of the date first written above.
+            </p>
+            
+            <div class="signature-block">
+                <p><strong>BORROWER:</strong></p>
+                
+                <p>
+                    <span class="signature-line"></span><br>
+                    <input type="text" class="form-field" placeholder="Print Name" style="width: 300px;"><br>
+                    Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+                
+                <p>
+                    <span class="signature-line"></span><br>
+                    <input type="text" class="form-field" placeholder="Print Co-Borrower Name (if any)" style="width: 300px;"><br>
+                    Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+            </div>
+            
+            <div class="signature-block">
+                <p><strong>LENDER:</strong></p>
+                
+                <p><input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"></p>
+                
+                <p>By: <span class="signature-line"></span><br>
+                Name: <input type="text" class="form-field" placeholder="Authorized Signatory Name" style="width: 300px;"><br>
+                Title: <input type="text" class="form-field" placeholder="Title" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+            </div>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENTS</h3>
+            
+            <p><strong>BORROWER ACKNOWLEDGMENT:</strong></p>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On <input type="date" class="form-field" style="width: 150px;">, before me, <input type="text" class="form-field" placeholder="Notary Name" style="width: 300px;">, Notary Public, personally appeared <input type="text" class="form-field" placeholder="Borrower Name" style="width: 300px;">, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+            
+            <p style="margin-top: 30px;"><strong>LENDER ACKNOWLEDGMENT:</strong></p>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On <input type="date" class="form-field" style="width: 150px;">, before me, <input type="text" class="form-field" placeholder="Notary Name" style="width: 300px;">, Notary Public, personally appeared <input type="text" class="form-field" placeholder="Signatory Name" style="width: 300px;">, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity for the entity identified therein.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="warning-box no-print" style="margin-top: 30px;">
+            <p>⚠️ FINAL WARNINGS:</p>
+            <ul style="text-align: left;">
+                <li>This is a BINDING LEGAL AGREEMENT</li>
+                <li>You are RELEASING SIGNIFICANT RIGHTS</li>
+                <li>Consult an attorney BEFORE signing</li>
+                <li>Make sure all terms are acceptable</li>
+                <li>Keep copies of everything</li>
+                <li>Ensure all blanks are filled or marked N/A</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[1].value = '2007-03-15';
+            
+            // Fill party information
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Co-Borrower Name (if any)"]').value = 'Jane Smith';
+            document.querySelectorAll('input[placeholder="Address"]')[0].value = '123 Main Street';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[0].value = 'Miami, FL 33101';
+            
+            document.querySelector('input[placeholder="Bank/Servicer Name"]').value = 'Wells Fargo Bank, N.A.';
+            document.querySelectorAll('input[placeholder="Address"]')[1].value = '1 Home Campus';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[1].value = 'Des Moines, IA 50328';
+            
+            // Fill loan details
+            document.querySelector('input[placeholder="Original Amount"]').value = '350,000.00';
+            document.querySelector('input[placeholder="Property Address"]').value = '123 Main Street, Miami, FL 33101';
+            document.querySelector('input[placeholder="Loan Number"]').value = '1234567890';
+            document.querySelector('input[placeholder="Current Balance"]').value = '425,000.00';
+            document.querySelector('input[placeholder="Settlement Amount"]').value = '175,000.00';
+            document.querySelector('input[placeholder="Payment Amount"]').value = '175,000.00';
+            
+            // Fill other fields
+            document.querySelector('input[placeholder="State"]').value = 'Florida';
+            document.querySelector('input[placeholder="County, State"]').value = 'Miami-Dade County, Florida';
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'settlement_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

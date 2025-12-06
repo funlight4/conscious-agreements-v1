@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Action Joinder Notice Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 3px solid #8b0000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #8b0000 0%, #ff6b6b 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .title {
+            font-size: 32pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 18pt;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .alert-banner {
+            background: #ffeb3b;
+            color: #000;
+            border: 3px solid #f44336;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            animation: flash 2s infinite;
+        }
+        
+        @keyframes flash {
+            0%, 100% { background: #ffeb3b; }
+            50% { background: #fff59d; }
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #8b0000;
+            padding: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            background: #fff0f0;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 150px;
+            resize: vertical;
+            border: 2px solid #8b0000;
+            padding: 10px;
+        }
+        
+        .eligibility-box {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .eligibility-box h2 {
+            color: #2e7d32;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .claims-section {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .claims-section h3 {
+            color: #6a1b9a;
+            margin-top: 0;
+        }
+        
+        .damages-box {
+            background: #fff8e1;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .damages-box h3 {
+            color: #f57c00;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .joinder-form {
+            background: #e3f2fd;
+            border: 3px solid #2196f3;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .joinder-form h2 {
+            color: #1565c0;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .checkbox-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .checkbox-group label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            transform: scale(1.2);
+        }
+        
+        .benefits-section {
+            background: #f0f4c3;
+            border: 2px solid #827717;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .benefits-section h3 {
+            color: #558b2f;
+            margin-top: 0;
+        }
+        
+        .attorney-info {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .attorney-info h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 40px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #8b0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #660000;
+        }
+        
+        .evidence-list {
+            background: #fce4ec;
+            border: 2px solid #e91e63;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .evidence-list h3 {
+            color: #c2185b;
+            margin-top: 0;
+        }
+        
+        .timeline-section {
+            background: #f5f5f5;
+            border-left: 5px solid #ff5722;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .timeline-section h3 {
+            color: #d84315;
+            margin-top: 0;
+        }
+        
+        .faq-section {
+            background: #fffde7;
+            border: 2px solid #f9a825;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .faq-section h3 {
+            color: #f57f17;
+            margin-top: 0;
+        }
+        
+        .faq-item {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .faq-item h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .important-notice {
+            background: #ffccbc;
+            border: 3px solid #ff5722;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">CLASS ACTION NOTICE</div>
+            <div class="subtitle">Join the Fight Against Mortgage Fraud</div>
+            <div class="subtitle">Strength in Numbers • Justice for All</div>
+        </div>
+        
+        <div class="alert-banner">
+            ⚠️ ATTENTION HOMEOWNERS ⚠️<br>
+            YOU MAY BE ENTITLED TO SIGNIFICANT COMPENSATION
+        </div>
+        
+        <div class="eligibility-box">
+            <h2>ARE YOU ELIGIBLE TO JOIN?</h2>
+            
+            <p><strong>You may be eligible if you:</strong></p>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Have or had a mortgage from a major bank</label>
+                <label><input type="checkbox"> Were not told your promissory note creates the money</label>
+                <label><input type="checkbox"> Were not informed the bank provides no consideration</label>
+                <label><input type="checkbox"> Have faced foreclosure or threat of foreclosure</label>
+                <label><input type="checkbox"> Had your loan securitized without clear disclosure</label>
+                <label><input type="checkbox"> Experienced robo-signing or document fraud</label>
+                <label><input type="checkbox"> Were charged fees and interest on money you created</label>
+                <label><input type="checkbox"> Lost your home to foreclosure</label>
+                <label><input type="checkbox"> Are current on payments but want justice</label>
+            </div>
+            
+            <p style="text-align: center; font-weight: bold; color: #2e7d32;">
+                If you checked ANY box above, you may be eligible to join this action!
+            </p>
+        </div>
+        
+        <div class="claims-section">
+            <h3>LEGAL CLAIMS BEING PURSUED</h3>
+            
+            <ol>
+                <li><strong>FRAUD</strong> - Banks misrepresented that they were lending money when they were creating it from your signature</li>
+                
+                <li><strong>LACK OF CONSIDERATION</strong> - Contracts are void because banks provided nothing of value</li>
+                
+                <li><strong>RICO VIOLATIONS</strong> - Pattern of racketeering activity through mail and wire fraud</li>
+                
+                <li><strong>UNJUST ENRICHMENT</strong> - Banks profited from money created by borrowers' signatures</li>
+                
+                <li><strong>BREACH OF FIDUCIARY DUTY</strong> - Failed to disclose material facts about money creation</li>
+                
+                <li><strong>VIOLATION OF TRUTH IN LENDING ACT</strong> - Failed to make required disclosures</li>
+                
+                <li><strong>UNFAIR AND DECEPTIVE PRACTICES</strong> - Systematic deception of consumers</li>
+                
+                <li><strong>CONVERSION</strong> - Unlawfully taking property created by borrowers</li>
+                
+                <li><strong>SECURITIZATION FRAUD</strong> - Multiple sales of same notes, breaking chain of title</li>
+                
+                <li><strong>QUIET TITLE</strong> - Clear clouds on property titles from fraudulent claims</li>
+            </ol>
+        </div>
+        
+        <div class="damages-box">
+            <h3>POTENTIAL DAMAGES AND RELIEF</h3>
+            
+            <ul style="font-size: 14pt;">
+                <li>💰 <strong>Return of all payments made</strong></li>
+                <li>🏠 <strong>Clear title to your property</strong></li>
+                <li>📄 <strong>Void mortgage for lack of consideration</strong></li>
+                <li>💸 <strong>Treble damages under RICO</strong></li>
+                <li>⚖️ <strong>Punitive damages for fraud</strong></li>
+                <li>💳 <strong>Restoration of credit</strong></li>
+                <li>🛡️ <strong>Injunction against foreclosure</strong></li>
+                <li>📊 <strong>Disgorgement of illegal profits</strong></li>
+                <li>🔄 <strong>Reformation of entire mortgage system</strong></li>
+            </ul>
+            
+            <p style="text-align: center; font-size: 16pt; font-weight: bold; color: #f57c00;">
+                ESTIMATED VALUE: $100,000 - $1,000,000+ PER HOMEOWNER
+            </p>
+        </div>
+        
+        <div class="joinder-form">
+            <h2>JOIN THE CLASS ACTION</h2>
+            
+            <p><strong>Lead Plaintiff Information:</strong></p>
+            <p>Name: <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"></p>
+            <p>Address: <input type="text" class="form-field" placeholder="Property Address" style="width: 500px;"></p>
+            <p>City, State, ZIP: <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"></p>
+            <p>Phone: <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"></p>
+            <p>Email: <input type="text" class="form-field" placeholder="Email Address" style="width: 300px;"></p>
+            
+            <p><strong>Mortgage Information:</strong></p>
+            <p>Original Lender: <input type="text" class="form-field" placeholder="Original Lender Name" style="width: 400px;"></p>
+            <p>Current Servicer: <input type="text" class="form-field" placeholder="Current Servicer" style="width: 400px;"></p>
+            <p>Loan Amount: $<input type="text" class="form-field" placeholder="Original Loan Amount" style="width: 150px;"></p>
+            <p>Loan Date: <input type="date" class="form-field" style="width: 150px;"></p>
+            <p>Account Number: <input type="text" class="form-field" placeholder="Loan/Account Number" style="width: 200px;"></p>
+            
+            <p><strong>Status:</strong></p>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Current on payments</label>
+                <label><input type="checkbox"> Behind on payments</label>
+                <label><input type="checkbox"> In foreclosure</label>
+                <label><input type="checkbox"> Already lost home</label>
+                <label><input type="checkbox"> Loan modification</label>
+                <label><input type="checkbox"> Bankruptcy</label>
+            </div>
+            
+            <p><strong>Damages Suffered:</strong></p>
+            <textarea class="form-field" placeholder="Describe your damages: payments made, home loss, credit damage, emotional distress, etc."></textarea>
+        </div>
+        
+        <div class="evidence-list">
+            <h3>EVIDENCE TO GATHER</h3>
+            
+            <p><strong>Please collect and preserve:</strong></p>
+            <ul>
+                <li>Original loan documents and promissory note</li>
+                <li>All correspondence from lender/servicer</li>
+                <li>Payment history and records</li>
+                <li>Foreclosure notices if applicable</li>
+                <li>Evidence of robo-signing or fraud</li>
+                <li>Recording documents from county</li>
+                <li>Qualified Written Request responses</li>
+                <li>Any notices sent to bank</li>
+                <li>Credit reports showing damage</li>
+                <li>Financial records of losses</li>
+            </ul>
+        </div>
+        
+        <div class="benefits-section">
+            <h3>BENEFITS OF JOINING</h3>
+            
+            <ul>
+                <li><strong>NO UPFRONT COSTS</strong> - Attorneys work on contingency</li>
+                <li><strong>STRENGTH IN NUMBERS</strong> - Collective action more powerful</li>
+                <li><strong>EXPERT LEGAL TEAM</strong> - Experienced attorneys handling case</li>
+                <li><strong>SHARE RESOURCES</strong> - Pool evidence and expertise</li>
+                <li><strong>NATIONAL ATTENTION</strong> - Media coverage of class action</li>
+                <li><strong>PRECEDENT SETTING</strong> - Change the system for everyone</li>
+                <li><strong>SUPPORT NETWORK</strong> - Connect with other victims</li>
+                <li><strong>MAXIMUM RECOVERY</strong> - Larger damages in class action</li>
+            </ul>
+        </div>
+        
+        <div class="attorney-info">
+            <h3>LEGAL REPRESENTATION</h3>
+            
+            <p><strong>Lead Counsel:</strong></p>
+            <p>Firm Name: <input type="text" class="form-field" placeholder="Law Firm Name" style="width: 400px;"></p>
+            <p>Attorney: <input type="text" class="form-field" placeholder="Lead Attorney Name" style="width: 300px;"></p>
+            <p>Address: <input type="text" class="form-field" placeholder="Address" style="width: 500px;"></p>
+            <p>Phone: <input type="text" class="form-field" placeholder="Phone" style="width: 200px;"></p>
+            <p>Email: <input type="text" class="form-field" placeholder="Email" style="width: 300px;"></p>
+            <p>Website: <input type="text" class="form-field" placeholder="Website" style="width: 400px;"></p>
+            
+            <p style="margin-top: 20px;"><strong>Fee Structure:</strong> Contingency - No fee unless we win. Typical fee: 33% of recovery.</p>
+        </div>
+        
+        <div class="timeline-section">
+            <h3>EXPECTED TIMELINE</h3>
+            
+            <ul>
+                <li><strong>Phase 1 (Now - 3 months):</strong> Gathering class members and evidence</li>
+                <li><strong>Phase 2 (3-6 months):</strong> Filing class action complaint</li>
+                <li><strong>Phase 3 (6-12 months):</strong> Class certification proceedings</li>
+                <li><strong>Phase 4 (12-18 months):</strong> Discovery and depositions</li>
+                <li><strong>Phase 5 (18-24 months):</strong> Settlement negotiations or trial</li>
+                <li><strong>Phase 6 (24-36 months):</strong> Distribution of awards</li>
+            </ul>
+            
+            <p><strong>Note:</strong> Timeline may vary. Some cases settle quickly, others take years.</p>
+        </div>
+        
+        <div class="faq-section">
+            <h3>FREQUENTLY ASKED QUESTIONS</h3>
+            
+            <div class="faq-item">
+                <h4>Q: Do I need to pay anything upfront?</h4>
+                <p>A: No. This is a contingency case - attorneys only get paid if we win.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: Can I join if I'm current on my mortgage?</h4>
+                <p>A: Yes! You're still a victim of fraud even if you're paying.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: Will this affect my credit?</h4>
+                <p>A: Part of the relief sought includes credit restoration.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: Can the bank retaliate?</h4>
+                <p>A: Retaliation would strengthen our case and add damages.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: What if I already lost my home?</h4>
+                <p>A: You may be entitled to significant monetary damages.</p>
+            </div>
+        </div>
+        
+        <div class="signature-section">
+            <h2>AUTHORIZATION TO JOIN CLASS ACTION</h2>
+            
+            <p>I hereby authorize the above-named attorneys to represent me in the class action against mortgage lenders for fraud, lack of consideration, and related claims. I understand this is a contingency arrangement with no upfront costs.</p>
+            
+            <p>I verify under penalty of perjury that the information provided above is true and correct.</p>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Signature</strong>
+            </p>
+            
+            <p>
+                <input type="text" class="form-field" placeholder="Print Name" style="width: 400px;"><br>
+                <strong>Name (Printed)</strong>
+            </p>
+            
+            <p>Date: <input type="date" class="form-field" style="width: 150px;"></p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this _____ day of _______________, 20_____, before me personally appeared _______________, known to me to be the person who executed the foregoing instrument.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="important-notice">
+            <p style="font-size: 14pt;">TIME IS LIMITED - STATUTES OF LIMITATIONS APPLY</p>
+            <p>Join NOW to Protect Your Rights!</p>
+            <p>Contact us immediately at:</p>
+            <p>Phone: <input type="text" class="form-field" placeholder="Contact Phone" style="width: 200px;"></p>
+            <p>Email: <input type="text" class="form-field" placeholder="Contact Email" style="width: 300px;"></p>
+            <p>Website: <input type="text" class="form-field" placeholder="Website URL" style="width: 400px;"></p>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = '2007-06-15';
+            document.querySelectorAll('input[type="date"]')[1].value = today.toISOString().split('T')[0];
+            
+            // Fill personal info
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Property Address"]').value = '123 Main Street';
+            document.querySelector('input[placeholder="City, State ZIP"]').value = 'Miami, FL 33101';
+            document.querySelector('input[placeholder="Phone Number"]').value = '(555) 123-4567';
+            document.querySelector('input[placeholder="Email Address"]').value = 'jsmith@email.com';
+            
+            // Fill mortgage info
+            document.querySelector('input[placeholder="Original Lender Name"]').value = 'Countrywide Home Loans';
+            document.querySelector('input[placeholder="Current Servicer"]').value = 'Bank of America';
+            document.querySelector('input[placeholder="Original Loan Amount"]').value = '350,000';
+            document.querySelector('input[placeholder="Loan/Account Number"]').value = '1234567890';
+            
+            // Fill attorney info
+            document.querySelector('input[placeholder="Law Firm Name"]').value = 'Justice for Homeowners Law Group';
+            document.querySelector('input[placeholder="Lead Attorney Name"]').value = 'Attorney Jane Doe, Esq.';
+            document.querySelectorAll('input[placeholder="Address"]')[1].value = '100 Justice Way, Suite 500';
+            document.querySelectorAll('input[placeholder="Phone"]')[1].value = '(800) 555-HELP';
+            document.querySelectorAll('input[placeholder="Email"]')[1].value = 'info@justicehomeowners.com';
+            document.querySelector('input[placeholder="Website"]').value = 'www.mortgageclassaction.com';
+            
+            // Fill contact info
+            document.querySelector('input[placeholder="Contact Phone"]').value = '(800) 555-HELP';
+            document.querySelector('input[placeholder="Contact Email"]').value = 'join@mortgageclassaction.com';
+            document.querySelector('input[placeholder="Website URL"]').value = 'www.mortgageclassaction.com';
+            
+            // Check some boxes
+            document.querySelectorAll('input[type="checkbox"]')[0].checked = true;
+            document.querySelectorAll('input[type="checkbox"]')[1].checked = true;
+            document.querySelectorAll('input[type="checkbox"]')[2].checked = true;
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'class_action_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

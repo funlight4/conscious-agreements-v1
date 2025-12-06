@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Progression Flowchart - Banking Fraud Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        
+        /* Legend */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Flowchart Container */
+        .flowchart {
+            position: relative;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+        
+        /* Timeline Track */
+        .timeline-track {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 20px 0;
+            min-height: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-label {
+            position: absolute;
+            left: -10px;
+            background: #2d3748;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            white-space: nowrap;
+            z-index: 2;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            height: 3px;
+            background: linear-gradient(90deg, #cbd5e0 0%, #667eea 100%);
+            top: 50%;
+            left: 100px;
+            right: 20px;
+            z-index: 0;
+        }
+        
+        /* Phase Containers */
+        .phases-container {
+            display: flex;
+            gap: 30px;
+            position: relative;
+            padding-left: 120px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        
+        .phase {
+            flex-shrink: 0;
+            width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .phase-header {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        
+        .phase-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .phase-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .phase-3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .phase-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .phase-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+        
+        /* Document Cards */
+        .doc-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .doc-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .doc-type {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .type-request { background: #bee3f8; color: #2c5282; }
+        .type-notice { background: #fed7d7; color: #742a2a; }
+        .type-affidavit { background: #c6f6d5; color: #22543d; }
+        .type-complaint { background: #feebc8; color: #7b341e; }
+        .type-court { background: #e9d8fd; color: #44337a; }
+        .type-demand { background: #feb2b2; color: #742a2a; }
+        
+        .doc-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        
+        .doc-details {
+            font-size: 0.85em;
+            color: #718096;
+        }
+        
+        .doc-timeline {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+        }
+        
+        /* Arrows */
+        .arrow {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid #667eea;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            z-index: 1;
+        }
+        
+        /* Decision Points */
+        .decision-point {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .decision-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .decision-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .option-path {
+            background: white;
+            color: #2d3748;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .option-path:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .path-defensive { border-left: 5px solid #f56565; }
+        .path-offensive { border-left: 5px solid #48bb78; }
+        .path-settlement { border-left: 5px solid #4299e1; }
+        
+        /* Outcome Boxes */
+        .outcome-box {
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .outcome-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .outcome-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .outcome-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #48bb78;
+        }
+        
+        /* Critical Path Highlight */
+        .critical-path {
+            background: #fff5f5;
+            border: 2px dashed #fc8181;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .critical-title {
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        /* Interactive Elements */
+        .expand-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+        
+        .expand-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .details-panel {
+            display: none;
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .details-panel.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Month Timeline */
+        .month-timeline {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+        
+        .month-item {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+            position: relative;
+            padding: 10px;
+        }
+        
+        .month-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .month-label {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .month-item::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+        }
+        
+        .month-item:last-child::after {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .phases-container {
+                flex-direction: column;
+                padding-left: 20px;
+            }
+            
+            .phase {
+                width: 100%;
+            }
+            
+            .arrow {
+                display: none;
+            }
+            
+            .timeline-track {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Document Progression Flowchart</h1>
+        <p class="subtitle">Your Strategic Path Through Banking Fraud Challenge</p>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color type-request"></div>
+                <span>Request Documents</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color type-notice"></div>
+                <span>Notices</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color type-affidavit"></div>
+                <span>Affidavits</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color type-complaint"></div>
+                <span>Complaints</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color type-court"></div>
+                <span>Court Documents</span>
+            </div>
+        </div>
+        
+        <!-- Month Timeline -->
+        <div class="month-timeline">
+            <div class="month-item">
+                <span class="month-number">1</span>
+                <span class="month-label">Discovery</span>
+            </div>
+            <div class="month-item">
+                <span class="month-number">2</span>
+                <span class="month-label">Position</span>
+            </div>
+            <div class="month-item">
+                <span class="month-number">3</span>
+                <span class="month-label">Escalation</span>
+            </div>
+            <div class="month-item">
+                <span class="month-number">4</span>
+                <span class="month-label">Action</span>
+            </div>
+            <div class="month-item">
+                <span class="month-number">5+</span>
+                <span class="month-label">Resolution</span>
+            </div>
+        </div>
+        
+        <!-- Main Flowchart -->
+        <div class="flowchart">
+            <!-- Phase 1: Information Gathering -->
+            <div class="phases-container">
+                <div class="phase">
+                    <div class="phase-header phase-1">
+                        PHASE 1: Information Gathering
+                        <br><small>Weeks 1-4</small>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-request">REQUEST</span>
+                        <span class="doc-timeline">Day 1</span>
+                        <div class="doc-title">Qualified Written Request (QWR)</div>
+                        <div class="doc-details">RESPA - 30 day response required</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Purpose:</strong> Obtain complete loan documentation<br>
+                            <strong>Send to:</strong> Loan servicer<br>
+                            <strong>Key items:</strong> Payment history, chain of title, securitization docs
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-request">REQUEST</span>
+                        <span class="doc-timeline">Day 1-3</span>
+                        <div class="doc-title">Debt Validation Letter</div>
+                        <div class="doc-details">FDCPA - If debt collector involved</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Purpose:</strong> Force proof of valid debt<br>
+                            <strong>Timeline:</strong> Within 30 days of first contact<br>
+                            <strong>Effect:</strong> Stops collection during validation
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-request">REQUEST</span>
+                        <span class="doc-timeline">Week 1</span>
+                        <div class="doc-title">FOIA Requests Bundle</div>
+                        <div class="doc-details">Fed, OCC, FDIC, SEC, CFPB</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Targets:</strong> Federal Reserve, OCC, FDIC, SEC<br>
+                            <strong>Seeking:</strong> Discount window activity, complaints, audits<br>
+                            <strong>Timeline:</strong> 20 business days typically
+                        </div>
+                    </div>
+                    
+                    <div class="arrow"></div>
+                </div>
+                
+                <!-- Phase 2: Establishing Position -->
+                <div class="phase">
+                    <div class="phase-header phase-2">
+                        PHASE 2: Establishing Position
+                        <br><small>Weeks 4-8</small>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-affidavit">AFFIDAVIT</span>
+                        <span class="doc-timeline">Week 4</span>
+                        <div class="doc-title">Affidavit of Truth</div>
+                        <div class="doc-details">Sworn statement - Notarized</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Contains:</strong> Facts about money creation<br>
+                            <strong>States:</strong> Promissory note IS payment<br>
+                            <strong>Record at:</strong> County recorder
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-notice">NOTICE</span>
+                        <span class="doc-timeline">Week 5</span>
+                        <div class="doc-title">Notice of Lack of Consideration</div>
+                        <div class="doc-details">To CEO & Board - 30 day cure</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Demands:</strong> Proof of consideration<br>
+                            <strong>Or:</strong> Mark account paid in full<br>
+                            <strong>Warning:</strong> Criminal violations listed
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-notice">NOTICE</span>
+                        <span class="doc-timeline">Week 6</span>
+                        <div class="doc-title">Notice of Criminal Violations</div>
+                        <div class="doc-details">Specific USC violations cited</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Lists:</strong> 18 USC 1025, 1584, 894, 1341<br>
+                            <strong>Effect:</strong> Puts bank on legal notice<br>
+                            <strong>Creates:</strong> Liability for continued acts
+                        </div>
+                    </div>
+                    
+                    <div class="arrow"></div>
+                </div>
+                
+                <!-- Phase 3: Escalation -->
+                <div class="phase">
+                    <div class="phase-header phase-3">
+                        PHASE 3: Default & Escalation
+                        <br><small>Weeks 8-12</small>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-notice">NOTICE</span>
+                        <span class="doc-timeline">Day 31</span>
+                        <div class="doc-title">Notice of Default</div>
+                        <div class="doc-details">Bank failed to prove consideration</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>Effect:</strong> Documents admission of fraud<br>
+                            <strong>Creates:</strong> Estoppel against bank<br>
+                            <strong>Next:</strong> Criminal complaints
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-complaint">COMPLAINT</span>
+                        <span class="doc-timeline">Week 9</span>
+                        <div class="doc-title">Criminal Complaints Bundle</div>
+                        <div class="doc-details">FBI, DOJ, US Attorney, State AG</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>FBI:</strong> Banking fraud, mail fraud<br>
+                            <strong>DOJ:</strong> Slavery, peonage, rights violations<br>
+                            <strong>US Attorney:</strong> Local federal prosecution<br>
+                            <strong>State AG:</strong> State law violations
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card" onclick="toggleDetails(this)">
+                        <span class="doc-type type-complaint">COMPLAINT</span>
+                        <span class="doc-timeline">Week 10</span>
+                        <div class="doc-title">Regulatory Complaints</div>
+                        <div class="doc-details">CFPB, OCC, Federal Reserve</div>
+                        <button class="expand-btn">See Details ↓</button>
+                        <div class="details-panel">
+                            <strong>CFPB:</strong> Consumer protection<br>
+                            <strong>OCC:</strong> National bank violations<br>
+                            <strong>Effect:</strong> Regulatory investigation pressure
+                        </div>
+                    </div>
+                    
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decision Point -->
+        <div class="decision-point">
+            <div class="decision-title">⚡ CRITICAL DECISION POINT</div>
+            <p>Bank's Response Determines Path Forward</p>
+            <div class="decision-options">
+                <div class="option-path path-settlement">
+                    <strong>Path A: Settlement</strong>
+                    <p>Bank offers resolution</p>
+                </div>
+                <div class="option-path path-defensive">
+                    <strong>Path B: They Sue</strong>
+                    <p>Foreclosure initiated</p>
+                </div>
+                <div class="option-path path-offensive">
+                    <strong>Path C: You Sue</strong>
+                    <p>Offensive litigation</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Path Branches -->
+        <div class="flowchart">
+            <div class="phases-container">
+                <!-- Settlement Path -->
+                <div class="phase">
+                    <div class="phase-header phase-4">
+                        PATH A: Settlement Documents
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-demand">DEMAND</span>
+                        <div class="doc-title">Settlement Demand Letter</div>
+                        <div class="doc-details">Full discharge + damages</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-demand">AGREEMENT</span>
+                        <div class="doc-title">Accord & Satisfaction</div>
+                        <div class="doc-details">Complete resolution document</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-demand">AGREEMENT</span>
+                        <div class="doc-title">Non-Disclosure Agreement</div>
+                        <div class="doc-details">If they want silence</div>
+                    </div>
+                </div>
+                
+                <!-- Defensive Path -->
+                <div class="phase">
+                    <div class="phase-header phase-5">
+                        PATH B: Defensive Litigation
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <span class="doc-timeline">20-30 days</span>
+                        <div class="doc-title">Answer & Affirmative Defenses</div>
+                        <div class="doc-details">Lack of consideration, fraud</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Counterclaim</div>
+                        <div class="doc-details">Fraud, slavery, RICO</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Discovery Demands</div>
+                        <div class="doc-details">Interrogatories, RFP, RFA</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Jury Trial Demand</div>
+                        <div class="doc-details">Constitutional right</div>
+                    </div>
+                </div>
+                
+                <!-- Offensive Path -->
+                <div class="phase">
+                    <div class="phase-header phase-1">
+                        PATH C: Offensive Litigation
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Quiet Title Complaint</div>
+                        <div class="doc-details">Clear property ownership</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Civil RICO Complaint</div>
+                        <div class="doc-details">Triple damages + fees</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">18 USC 1595 Slavery Action</div>
+                        <div class="doc-details">Private right - no prosecutor</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-court">COURT</span>
+                        <div class="doc-title">Emergency TRO/Injunction</div>
+                        <div class="doc-details">Stop foreclosure immediately</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Critical Path Summary -->
+        <div class="critical-path">
+            <div class="critical-title">🚨 Critical Success Path</div>
+            <ol>
+                <li><strong>Week 1:</strong> Send QWR + FOIA requests immediately</li>
+                <li><strong>Week 4:</strong> File Affidavit of Truth + Notice of Lack of Consideration</li>
+                <li><strong>Day 31:</strong> Send Notice of Default when no consideration proven</li>
+                <li><strong>Week 9:</strong> File criminal complaints with all agencies</li>
+                <li><strong>Week 12:</strong> Initiate litigation or accept settlement</li>
+            </ol>
+            <p style="margin-top: 15px;"><strong>⚠️ Never miss the 30-day deadlines - they're statutory!</strong></p>
+        </div>
+        
+        <!-- Outcome Box -->
+        <div class="outcome-box">
+            <div class="outcome-title">🎯 Potential Outcomes</div>
+            <div class="outcome-list">
+                <div class="outcome-item">
+                    <strong>Best Case:</strong>
+                    <p>Full debt discharge + return of all payments + damages</p>
+                </div>
+                <div class="outcome-item">
+                    <strong>Good Case:</strong>
+                    <p>Principal reduction + clear title + no deficiency</p>
+                </div>
+                <div class="outcome-item">
+                    <strong>Settlement:</strong>
+                    <p>Loan modification + reduced payments + keep property</p>
+                </div>
+                <div class="outcome-item">
+                    <strong>Defensive Win:</strong>
+                    <p>Foreclosure dismissed + time to reorganize</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Supporting Documents Timeline -->
+        <div class="flowchart" style="margin-top: 40px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">📁 Supporting Documents Throughout Process</h2>
+            
+            <div class="phases-container">
+                <div class="phase">
+                    <div class="phase-header phase-2">
+                        Continuous Documentation
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">ONGOING</span>
+                        <div class="doc-title">Evidence Log</div>
+                        <div class="doc-details">Track every document/communication</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">ONGOING</span>
+                        <div class="doc-title">Violation Matrix</div>
+                        <div class="doc-details">Map each act to criminal statute</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">ONGOING</span>
+                        <div class="doc-title">Damage Calculations</div>
+                        <div class="doc-details">Update with each new violation</div>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header phase-3">
+                        Public Pressure Documents
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-notice">PUBLIC</span>
+                        <div class="doc-title">Press Release</div>
+                        <div class="doc-details">Media exposure of fraud</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-notice">POLITICAL</span>
+                        <div class="doc-title">Congressional Letters</div>
+                        <div class="doc-details">Representative & Senator</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-notice">PUBLIC</span>
+                        <div class="doc-title">Social Media Campaign</div>
+                        <div class="doc-details">Build public support</div>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header phase-4">
+                        Protective Documents
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">PROTECT</span>
+                        <div class="doc-title">Asset Protection Trust</div>
+                        <div class="doc-details">Before confrontation</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">PROTECT</span>
+                        <div class="doc-title">Power of Attorney</div>
+                        <div class="doc-details">If detained/incapacitated</div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <span class="doc-type type-affidavit">PROTECT</span>
+                        <div class="doc-title">Recording Transcripts</div>
+                        <div class="doc-details">All calls/meetings documented</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleDetails(element) {
+            const panel = element.querySelector('.details-panel');
+            const btn = element.querySelector('.expand-btn');
+            
+            if (panel.classList.contains('show')) {
+                panel.classList.remove('show');
+                btn.textContent = 'See Details ↓';
+            } else {
+                panel.classList.add('show');
+                btn.textContent = 'Hide Details ↑';
+            }
+        }
+        
+        // Add hover effect to show connections
+        document.querySelectorAll('.doc-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#667eea';
+                this.style.borderWidth = '3px';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#e2e8f0';
+                this.style.borderWidth = '2px';
+            });
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('.option-path').forEach(option => {
+            option.addEventListener('click', function() {
+                const pathType = this.classList.contains('path-settlement') ? 'A' :
+                               this.classList.contains('path-defensive') ? 'B' : 'C';
+                
+                // Visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Scroll to relevant path section
+                window.scrollBy({
+                    top: 400,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

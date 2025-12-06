@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Action Joinder Notice - Phase 6 - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .template-header__breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .template-header__breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .template-header__breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .template-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .template-intro {
+            background: #fff8e1;
+            border-left: 4px solid #f57c00;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .template-intro__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #e65100;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .meta-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .meta-item__label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #b71c1c;
+        }
+
+        .template-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #2c1810;
+            border-bottom: 2px solid #b71c1c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-letter {
+            background: white;
+            border: 1px solid #d4c4a8;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .template-letter__header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #b71c1c;
+        }
+
+        .template-letter__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #b71c1c;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .template-letter__subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #5d4037;
+            margin: 0;
+        }
+
+        .template-letter__field {
+            background: #fff8e1;
+            padding: 0.15rem 0.4rem;
+            border-bottom: 1px dashed #8b4513;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: #c62828;
+        }
+
+        .template-letter__section {
+            margin: 2rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #b71c1c;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .eligibility-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .eligibility-box__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .eligibility-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .eligibility-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(46, 125, 50, 0.2);
+        }
+
+        .eligibility-list li:last-child {
+            border-bottom: none;
+        }
+
+        .eligibility-list li::before {
+            content: "☐";
+            position: absolute;
+            left: 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .claims-section {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .claims-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #6a1b9a;
+            margin: 0 0 1rem 0;
+        }
+
+        .claims-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: claims;
+        }
+
+        .claims-list li {
+            padding: 0.75rem 0 0.75rem 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(156, 39, 176, 0.2);
+            counter-increment: claims;
+        }
+
+        .claims-list li:last-child {
+            border-bottom: none;
+        }
+
+        .claims-list li::before {
+            content: counter(claims) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #9c27b0;
+        }
+
+        .claims-list li strong {
+            color: #6a1b9a;
+        }
+
+        .damages-box {
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .damages-box__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #f57c00;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .damages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .damages-list li {
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .joinder-form-section {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .joinder-form-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #1565c0;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group__label {
+            font-weight: 600;
+            color: #1565c0;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem 1.5rem;
+        }
+
+        .form-grid p {
+            margin: 0.25rem 0;
+        }
+
+        .status-checkboxes {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .status-checkboxes label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evidence-section {
+            background: #fce4ec;
+            border: 2px solid #e91e63;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .evidence-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #c2185b;
+            margin: 0 0 1rem 0;
+        }
+
+        .evidence-list {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .evidence-list li {
+            padding: 0.25rem 0;
+        }
+
+        .benefits-section {
+            background: #f0f4c3;
+            border: 2px solid #827717;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .benefits-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #558b2f;
+            margin: 0 0 1rem 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .benefits-list li {
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .benefits-list li strong {
+            color: #558b2f;
+        }
+
+        .attorney-section {
+            background: white;
+            border: 2px solid #333;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .attorney-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .timeline-section {
+            background: #f5f5f5;
+            border-left: 5px solid #ff5722;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #d84315;
+            margin: 0 0 1rem 0;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .timeline-list li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-list li strong {
+            color: #d84315;
+        }
+
+        .faq-section {
+            background: #fffde7;
+            border: 2px solid #f9a825;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .faq-section__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #f57f17;
+            margin: 0 0 1rem 0;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .faq-item__question {
+            font-weight: 700;
+            color: #e65100;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .faq-item__answer {
+            margin: 0;
+            color: #5d4037;
+        }
+
+        .signature-block {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .signature-block__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #2c1810;
+            margin: 0 0 1rem 0;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #333;
+            width: 300px;
+            margin: 2rem 0 0.25rem 0;
+        }
+
+        .signature-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .notary-block {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #666;
+            background: #fafafa;
+        }
+
+        .notary-block__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+        }
+
+        .important-notice {
+            background: #ffccbc;
+            border: 2px solid #ff5722;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .important-notice p {
+            margin: 0.5rem 0;
+        }
+
+        .important-notice strong {
+            color: #d84315;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #2c1810;
+            margin: 0 0 1rem 0;
+        }
+
+        .checklist__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist__list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checklist__list li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist__list li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box__title {
+            font-weight: 700;
+            color: #e65100;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .statute-reference {
+            background: #f3e5f5;
+            border: 1px solid #9c27b0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .statute-reference__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #6a1b9a;
+            margin: 0 0 1rem 0;
+        }
+
+        .statute-reference__list {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .statute-reference__list li {
+            padding: 0.25rem 0;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            margin-top: 3rem;
+            border-radius: 4px;
+        }
+
+        .template-nav__link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #b71c1c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+
+        .template-nav__link--disabled {
+            color: #999;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .template-header {
+                padding: 2rem 1rem;
+            }
+
+            .template-header__title {
+                font-size: 1.75rem;
+            }
+
+            .template-content {
+                padding: 0 1rem 3rem;
+            }
+
+            .template-letter {
+                padding: 1.5rem;
+            }
+
+            .template-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="template-header">
+        <nav class="template-header__nav">
+            <div class="template-header__breadcrumb">
+                <a href="/">Home</a>
+                <span>→</span>
+                <a href="/templates/">Templates</a>
+                <span>→</span>
+                <a href="/templates/phase-6/">Phase 6</a>
+                <span>→</span>
+                <span>Class Action Joinder</span>
+            </div>
+        </nav>
+        <h1 class="template-header__title">Class Action Joinder Notice</h1>
+        <p class="template-header__subtitle">Join the Fight Against Mortgage Fraud - Strength in Numbers</p>
+    </header>
+
+    <main class="template-content">
+        <div class="template-intro">
+            <h2 class="template-intro__title">When to Use This Template</h2>
+            <p>This template is used to join or organize a class action lawsuit against mortgage lenders for systematic fraud. Class actions allow many plaintiffs with similar claims to pursue justice collectively, sharing resources and legal representation while maximizing potential recovery.</p>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Document Type</div>
+                <div class="meta-item__value">Joinder Notice</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Risk Level</div>
+                <div class="meta-item__value">Strategic</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Phase</div>
+                <div class="meta-item__value">6 - Public Pressure</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Notarization</div>
+                <div class="meta-item__value">Recommended</div>
+            </div>
+        </div>
+
+        <section class="template-section">
+            <h2 class="template-section__title">Template Document</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <h3 class="template-letter__title">Class Action Notice</h3>
+                    <p class="template-letter__subtitle">Join the Fight Against Mortgage Fraud</p>
+                </div>
+
+                <div class="eligibility-box">
+                    <h4 class="eligibility-box__title">ARE YOU ELIGIBLE TO JOIN?</h4>
+                    <p><strong>You may be eligible if you:</strong></p>
+                    <ul class="eligibility-list">
+                        <li>Have or had a mortgage from a major bank</li>
+                        <li>Were not told your promissory note creates the money</li>
+                        <li>Were not informed the bank provides no consideration</li>
+                        <li>Have faced foreclosure or threat of foreclosure</li>
+                        <li>Had your loan securitized without clear disclosure</li>
+                        <li>Experienced robo-signing or document fraud</li>
+                        <li>Were charged fees and interest on money you created</li>
+                        <li>Lost your home to foreclosure</li>
+                        <li>Are current on payments but want justice</li>
+                    </ul>
+                    <p style="text-align: center; font-weight: bold; color: #2e7d32; margin-top: 1rem;">
+                        If you checked ANY box above, you may be eligible to join this action!
+                    </p>
+                </div>
+
+                <div class="claims-section">
+                    <h4 class="claims-section__title">LEGAL CLAIMS BEING PURSUED</h4>
+                    <ol class="claims-list">
+                        <li><strong>FRAUD</strong> - Banks misrepresented that they were lending money when they were creating it from your signature</li>
+                        <li><strong>LACK OF CONSIDERATION</strong> - Contracts are void because banks provided nothing of value</li>
+                        <li><strong>RICO VIOLATIONS</strong> - Pattern of racketeering activity through mail and wire fraud</li>
+                        <li><strong>UNJUST ENRICHMENT</strong> - Banks profited from money created by borrowers' signatures</li>
+                        <li><strong>BREACH OF FIDUCIARY DUTY</strong> - Failed to disclose material facts about money creation</li>
+                        <li><strong>VIOLATION OF TRUTH IN LENDING ACT</strong> - Failed to make required disclosures</li>
+                        <li><strong>UNFAIR AND DECEPTIVE PRACTICES</strong> - Systematic deception of consumers</li>
+                        <li><strong>CONVERSION</strong> - Unlawfully taking property created by borrowers</li>
+                        <li><strong>SECURITIZATION FRAUD</strong> - Multiple sales of same notes, breaking chain of title</li>
+                        <li><strong>QUIET TITLE</strong> - Clear clouds on property titles from fraudulent claims</li>
+                    </ol>
+                </div>
+
+                <div class="damages-box">
+                    <h4 class="damages-box__title">POTENTIAL DAMAGES AND RELIEF</h4>
+                    <ul class="damages-list">
+                        <li><strong>Return of all payments made</strong></li>
+                        <li><strong>Clear title to your property</strong></li>
+                        <li><strong>Void mortgage for lack of consideration</strong></li>
+                        <li><strong>Treble damages under RICO</strong></li>
+                        <li><strong>Punitive damages for fraud</strong></li>
+                        <li><strong>Restoration of credit</strong></li>
+                        <li><strong>Injunction against foreclosure</strong></li>
+                        <li><strong>Disgorgement of illegal profits</strong></li>
+                        <li><strong>Reformation of entire mortgage system</strong></li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <h4 class="template-letter__section-title">JOINDER FORM</h4>
+
+                    <div class="joinder-form-section">
+                        <h5 class="joinder-form-section__title">JOIN THE CLASS ACTION</h5>
+
+                        <div class="form-group">
+                            <span class="form-group__label">Plaintiff Information:</span>
+                            <div class="form-grid">
+                                <p>Name: <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span></p>
+                                <p>Address: <span class="template-letter__field">[PROPERTY ADDRESS]</span></p>
+                                <p>City, State, ZIP: <span class="template-letter__field">[CITY, STATE ZIP]</span></p>
+                                <p>Phone: <span class="template-letter__field">[PHONE NUMBER]</span></p>
+                                <p>Email: <span class="template-letter__field">[EMAIL ADDRESS]</span></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-group__label">Mortgage Information:</span>
+                            <div class="form-grid">
+                                <p>Original Lender: <span class="template-letter__field">[ORIGINAL LENDER NAME]</span></p>
+                                <p>Current Servicer: <span class="template-letter__field">[CURRENT SERVICER]</span></p>
+                                <p>Loan Amount: $<span class="template-letter__field">[ORIGINAL LOAN AMOUNT]</span></p>
+                                <p>Loan Date: <span class="template-letter__field">[LOAN ORIGINATION DATE]</span></p>
+                                <p>Account Number: <span class="template-letter__field">[LOAN/ACCOUNT NUMBER]</span></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-group__label">Current Status:</span>
+                            <div class="status-checkboxes">
+                                <label>☐ Current on payments</label>
+                                <label>☐ Behind on payments</label>
+                                <label>☐ In foreclosure</label>
+                                <label>☐ Already lost home</label>
+                                <label>☐ Loan modification</label>
+                                <label>☐ Bankruptcy</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-group__label">Damages Suffered:</span>
+                            <p><span class="template-letter__field">[DESCRIBE YOUR DAMAGES: payments made, home loss, credit damage, emotional distress, financial hardship, etc.]</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="evidence-section">
+                    <h4 class="evidence-section__title">EVIDENCE TO GATHER</h4>
+                    <p><strong>Please collect and preserve:</strong></p>
+                    <ul class="evidence-list">
+                        <li>Original loan documents and promissory note</li>
+                        <li>All correspondence from lender/servicer</li>
+                        <li>Payment history and records</li>
+                        <li>Foreclosure notices if applicable</li>
+                        <li>Evidence of robo-signing or fraud</li>
+                        <li>Recording documents from county</li>
+                        <li>Qualified Written Request responses</li>
+                        <li>Any notices sent to bank</li>
+                        <li>Credit reports showing damage</li>
+                        <li>Financial records of losses</li>
+                    </ul>
+                </div>
+
+                <div class="benefits-section">
+                    <h4 class="benefits-section__title">BENEFITS OF JOINING</h4>
+                    <ul class="benefits-list">
+                        <li><strong>NO UPFRONT COSTS</strong> - Attorneys work on contingency</li>
+                        <li><strong>STRENGTH IN NUMBERS</strong> - Collective action more powerful</li>
+                        <li><strong>EXPERT LEGAL TEAM</strong> - Experienced attorneys handling case</li>
+                        <li><strong>SHARE RESOURCES</strong> - Pool evidence and expertise</li>
+                        <li><strong>NATIONAL ATTENTION</strong> - Media coverage of class action</li>
+                        <li><strong>PRECEDENT SETTING</strong> - Change the system for everyone</li>
+                        <li><strong>SUPPORT NETWORK</strong> - Connect with other victims</li>
+                        <li><strong>MAXIMUM RECOVERY</strong> - Larger damages in class action</li>
+                    </ul>
+                </div>
+
+                <div class="attorney-section">
+                    <h4 class="attorney-section__title">LEGAL REPRESENTATION</h4>
+                    <p><strong>Lead Counsel:</strong></p>
+                    <div class="form-grid">
+                        <p>Firm Name: <span class="template-letter__field">[LAW FIRM NAME]</span></p>
+                        <p>Attorney: <span class="template-letter__field">[LEAD ATTORNEY NAME, ESQ.]</span></p>
+                        <p>Address: <span class="template-letter__field">[FIRM ADDRESS]</span></p>
+                        <p>Phone: <span class="template-letter__field">[FIRM PHONE]</span></p>
+                        <p>Email: <span class="template-letter__field">[FIRM EMAIL]</span></p>
+                        <p>Website: <span class="template-letter__field">[FIRM WEBSITE]</span></p>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Fee Structure:</strong> Contingency - No fee unless we win. Typical fee: 33% of recovery.</p>
+                </div>
+
+                <div class="timeline-section">
+                    <h4 class="timeline-section__title">EXPECTED TIMELINE</h4>
+                    <ul class="timeline-list">
+                        <li><strong>Phase 1 (0-3 months):</strong> Gathering class members and evidence</li>
+                        <li><strong>Phase 2 (3-6 months):</strong> Filing class action complaint</li>
+                        <li><strong>Phase 3 (6-12 months):</strong> Class certification proceedings</li>
+                        <li><strong>Phase 4 (12-18 months):</strong> Discovery and depositions</li>
+                        <li><strong>Phase 5 (18-24 months):</strong> Settlement negotiations or trial</li>
+                        <li><strong>Phase 6 (24-36 months):</strong> Distribution of awards</li>
+                    </ul>
+                    <p><strong>Note:</strong> Timeline may vary. Some cases settle quickly, others take years.</p>
+                </div>
+
+                <div class="faq-section">
+                    <h4 class="faq-section__title">FREQUENTLY ASKED QUESTIONS</h4>
+
+                    <div class="faq-item">
+                        <p class="faq-item__question">Q: Do I need to pay anything upfront?</p>
+                        <p class="faq-item__answer">A: No. This is a contingency case - attorneys only get paid if we win.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-item__question">Q: Can I join if I'm current on my mortgage?</p>
+                        <p class="faq-item__answer">A: Yes! You're still a victim of fraud even if you're paying.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-item__question">Q: Will this affect my credit?</p>
+                        <p class="faq-item__answer">A: Part of the relief sought includes credit restoration.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-item__question">Q: Can the bank retaliate?</p>
+                        <p class="faq-item__answer">A: Retaliation would strengthen our case and add damages.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <p class="faq-item__question">Q: What if I already lost my home?</p>
+                        <p class="faq-item__answer">A: You may be entitled to significant monetary damages.</p>
+                    </div>
+                </div>
+
+                <div class="signature-block">
+                    <h4 class="signature-block__title">AUTHORIZATION TO JOIN CLASS ACTION</h4>
+
+                    <p>I hereby authorize the above-named attorneys to represent me in the class action against mortgage lenders for fraud, lack of consideration, and related claims. I understand this is a contingency arrangement with no upfront costs.</p>
+
+                    <p>I verify under penalty of perjury that the information provided above is true and correct.</p>
+
+                    <div class="signature-line"></div>
+                    <p class="signature-label">Signature</p>
+
+                    <p>Name (Printed): <span class="template-letter__field">[PRINT NAME]</span></p>
+                    <p>Date: <span class="template-letter__field">[DATE]</span></p>
+                </div>
+
+                <div class="notary-block">
+                    <h4 class="notary-block__title">NOTARY ACKNOWLEDGMENT</h4>
+                    <p>State of <span class="template-letter__field">[STATE]</span></p>
+                    <p>County of <span class="template-letter__field">[COUNTY]</span></p>
+
+                    <p>On this _____ day of _______________, 20_____, before me personally appeared _______________, known to me to be the person who executed the foregoing instrument.</p>
+
+                    <p style="margin-top: 1.5rem;">_______________________________<br>
+                    Notary Public<br>
+                    My Commission Expires: _____________</p>
+                </div>
+
+                <div class="important-notice">
+                    <p><strong>TIME IS LIMITED - STATUTES OF LIMITATIONS APPLY</strong></p>
+                    <p>Join NOW to Protect Your Rights!</p>
+                    <p><strong>Contact:</strong></p>
+                    <p>Phone: <span class="template-letter__field">[CONTACT PHONE]</span></p>
+                    <p>Email: <span class="template-letter__field">[CONTACT EMAIL]</span></p>
+                    <p>Website: <span class="template-letter__field">[WEBSITE URL]</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="template-section">
+            <h2 class="template-section__title">Filing Checklist</h2>
+
+            <div class="checklist">
+                <h3 class="checklist__title">Before Submitting</h3>
+                <ul class="checklist__list">
+                    <li>Review eligibility criteria and confirm you qualify</li>
+                    <li>Complete all personal and mortgage information fields</li>
+                    <li>Gather all supporting evidence and documentation</li>
+                    <li>Review the legal claims and understand the basis</li>
+                    <li>Verify attorney/law firm information if joining existing action</li>
+                    <li>Sign and date the authorization section</li>
+                    <li>Consider notarization for added weight</li>
+                    <li>Keep copies of all documents submitted</li>
+                    <li>Note statute of limitations deadlines</li>
+                    <li>Prepare damage documentation and estimates</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="warning-box">
+            <p class="warning-box__title">Important Considerations</p>
+            <p>Class action joinder is a strategic decision. Joining a class action means you typically cannot pursue individual claims for the same issues. Consult with an attorney about whether joining a class action or pursuing individual litigation is more advantageous for your specific situation. Class members typically receive smaller individual awards but benefit from shared costs and expertise.</p>
+        </div>
+
+        <section class="template-section">
+            <h2 class="template-section__title">Legal Foundation</h2>
+
+            <div class="statute-reference">
+                <h3 class="statute-reference__title">Relevant Legal Authorities</h3>
+                <ul class="statute-reference__list">
+                    <li><strong>Federal Rule of Civil Procedure 23</strong> - Class action requirements and certification</li>
+                    <li><strong>18 U.S.C. § 1961-1968</strong> - RICO (Racketeer Influenced and Corrupt Organizations Act)</li>
+                    <li><strong>15 U.S.C. § 1601 et seq.</strong> - Truth in Lending Act (TILA)</li>
+                    <li><strong>12 U.S.C. § 2601 et seq.</strong> - Real Estate Settlement Procedures Act (RESPA)</li>
+                    <li><strong>15 U.S.C. § 1692 et seq.</strong> - Fair Debt Collection Practices Act (FDCPA)</li>
+                    <li><strong>State Consumer Protection Statutes</strong> - Unfair and deceptive practices laws</li>
+                    <li><strong>Common Law</strong> - Fraud, unjust enrichment, conversion, breach of fiduciary duty</li>
+                </ul>
+            </div>
+        </section>
+
+        <nav class="template-nav">
+            <a href="/templates/phase-6/congressional-petition.html" class="template-nav__link">
+                ← Congressional Petition
+            </a>
+            <a href="/templates/phase-6/" class="template-nav__link">
+                Phase 6 Overview
+            </a>
+            <a href="/templates/phase-7/" class="template-nav__link">
+                Phase 7: Settlement →
+            </a>
+        </nav>
+    </main>
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deed in Lieu Agreement Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 3px solid #4b0082;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #4b0082 0%, #8b008b 100%);
+            color: white;
+        }
+        
+        .title {
+            font-size: 26pt;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            font-style: italic;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #4b0082;
+            padding: 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            background: #f9f0ff;
+            min-width: 150px;
+        }
+        
+        textarea.form-field {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            border: 2px solid #4b0082;
+            padding: 10px;
+            background: white;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border: 3px solid #c62828;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .info-box h3 {
+            color: #0d47a1;
+            margin-top: 0;
+        }
+        
+        .benefits-box {
+            background: #e8f5e9;
+            border: 2px solid #43a047;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .benefits-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .recitals-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid #4b0082;
+        }
+        
+        .recitals-section h2 {
+            color: #4b0082;
+            font-size: 18pt;
+            margin-bottom: 15px;
+        }
+        
+        .whereas-clause {
+            margin: 15px 0;
+            padding-left: 30px;
+            font-style: italic;
+        }
+        
+        .whereas-clause strong {
+            font-style: normal;
+            color: #4b0082;
+        }
+        
+        .terms-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f5f0ff;
+            border: 2px solid #4b0082;
+        }
+        
+        .terms-section h2 {
+            color: #4b0082;
+            margin-bottom: 20px;
+        }
+        
+        .term-item {
+            margin: 25px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #8b008b;
+        }
+        
+        .term-number {
+            font-weight: bold;
+            color: #4b0082;
+            font-size: 14pt;
+        }
+        
+        .conditions-section {
+            background: #fff8e1;
+            border: 3px solid #f9a825;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .conditions-section h3 {
+            color: #f57f17;
+            margin-top: 0;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+        }
+        
+        .signature-block {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #6a0dad;
+        }
+        
+        .property-description {
+            background: #f0f0f0;
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .property-description h3 {
+            margin-top: 0;
+        }
+        
+        .consideration-section {
+            background: #fff3e0;
+            border: 2px solid #ef6c00;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .consideration-section h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .release-section {
+            background: #fce4ec;
+            border: 2px solid #c2185b;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .release-section h3 {
+            color: #880e4f;
+            margin-top: 0;
+        }
+        
+        .important {
+            font-weight: bold;
+            color: #d32f2f;
+            text-transform: uppercase;
+        }
+        
+        .checkbox-item {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">DEED IN LIEU OF FORECLOSURE AGREEMENT</div>
+            <div class="subtitle">Voluntary Transfer to Avoid Foreclosure</div>
+            <div class="subtitle">Full Satisfaction of Debt</div>
+        </div>
+        
+        <div class="warning-box">
+            ⚠️ CRITICAL WARNING ⚠️<br>
+            You are voluntarily transferring ownership of your property!<br>
+            This is permanent and cannot be easily undone.<br>
+            CONSULT AN ATTORNEY BEFORE SIGNING!
+        </div>
+        
+        <p style="text-align: center; font-weight: bold; font-size: 14pt;">
+            This Deed in Lieu of Foreclosure Agreement ("Agreement") is entered into as of<br>
+            <input type="date" class="form-field" style="width: 150px;"> ("Effective Date")
+        </p>
+        
+        <p><strong>BETWEEN:</strong></p>
+        
+        <div style="margin: 20px 0; padding: 20px; background: #f9f9f9;">
+            <p><strong>BORROWER/GRANTOR:</strong><br>
+            <input type="text" class="form-field" placeholder="Your Full Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Co-Borrower Name (if any)" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Current Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            (collectively, "Borrower" or "Grantor")</p>
+            
+            <p><strong>LENDER/GRANTEE:</strong><br>
+            <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"><br>
+            <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+            ("Lender" or "Grantee")</p>
+        </div>
+        
+        <div class="property-description">
+            <h3>PROPERTY DESCRIPTION</h3>
+            
+            <p><strong>Street Address:</strong><br>
+            <input type="text" class="form-field" placeholder="Property Street Address" style="width: 500px;"><br>
+            <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"></p>
+            
+            <p><strong>Legal Description:</strong><br>
+            <textarea class="form-field" placeholder="Enter complete legal description from deed (Lot, Block, Subdivision, etc.)"></textarea></p>
+            
+            <p><strong>Tax Parcel Number:</strong> <input type="text" class="form-field" placeholder="APN/Parcel Number" style="width: 200px;"></p>
+            
+            <p>(hereinafter referred to as the "Property")</p>
+        </div>
+        
+        <div class="recitals-section">
+            <h2>RECITALS</h2>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower executed a promissory note dated <input type="date" class="form-field" style="width: 150px;"> 
+                in the original principal amount of $<input type="text" class="form-field" placeholder="Original Loan Amount" style="width: 150px;"> 
+                secured by a mortgage/deed of trust on the Property, with loan number 
+                <input type="text" class="form-field" placeholder="Loan Number" style="width: 200px;"> (the "Loan"); and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower is in default under the terms of the Loan, with a current claimed balance of 
+                $<input type="text" class="form-field" placeholder="Current Balance" style="width: 150px;">, 
+                and Lender has the right to foreclose; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower has requested that Lender accept a deed to the Property in lieu of foreclosure; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Lender has agreed to accept the deed in full satisfaction of the debt and to release Borrower from all obligations under the Loan; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> Borrower acknowledges that questions have been raised regarding the validity of the original loan transaction, including potential lack of consideration, but agrees to this resolution to avoid litigation and obtain closure; and
+            </div>
+            
+            <div class="whereas-clause">
+                <strong>WHEREAS,</strong> both parties desire to avoid the time, expense, and uncertainty of foreclosure proceedings;
+            </div>
+            
+            <p style="margin-top: 20px;"><strong>NOW, THEREFORE,</strong> in consideration of the mutual covenants and agreements contained herein, and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the parties agree as follows:</p>
+        </div>
+        
+        <div class="terms-section">
+            <h2>TERMS AND CONDITIONS</h2>
+            
+            <div class="term-item">
+                <span class="term-number">1. CONVEYANCE OF PROPERTY</span>
+                <p>Borrower agrees to execute and deliver to Lender a <input type="text" class="form-field" placeholder="Warranty/Grant/Quitclaim" style="width: 150px;"> Deed conveying all of Borrower's right, title, and interest in the Property to Lender.</p>
+                
+                <p>The deed shall be delivered on or before <input type="date" class="form-field" style="width: 150px;"> ("Delivery Date").</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">2. FULL SATISFACTION OF DEBT</span>
+                <p>Upon receipt and recording of the deed, Lender agrees that:</p>
+                <ul>
+                    <li>The Loan shall be deemed PAID IN FULL</li>
+                    <li>No deficiency judgment will be sought</li>
+                    <li>Borrower is released from ALL personal liability</li>
+                    <li>All obligations under the Note and Mortgage/Deed of Trust are discharged</li>
+                </ul>
+                
+                <p class="important">This is a FULL SATISFACTION - no money is owed after deed delivery!</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">3. CONSIDERATION</span>
+                <p>The consideration for this Agreement includes:</p>
+                <ul>
+                    <li>☐ Cash payment from Lender to Borrower: $<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></li>
+                    <li>☐ Moving/relocation assistance: $<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></li>
+                    <li>☐ Forgiveness of debt exceeding property value</li>
+                    <li>☐ Avoidance of foreclosure and its consequences</li>
+                    <li>☐ Release from all liability</li>
+                    <li>☐ Other: <input type="text" class="form-field" placeholder="Specify" style="width: 300px;"></li>
+                </ul>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">4. PROPERTY CONDITION</span>
+                <p>Borrower represents that the Property is being conveyed in the following condition:</p>
+                <div class="checkbox-item">
+                    <input type="checkbox"> Free of all personal property (broom clean)
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> All keys, garage door openers, and access devices provided
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> No intentional damage or waste
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> All fixtures and improvements intact
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> Utilities active through <input type="date" class="form-field" style="width: 150px;">
+                </div>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">5. POSSESSION AND OCCUPANCY</span>
+                <p>☐ Borrower shall vacate the Property on or before <input type="date" class="form-field" style="width: 150px;"></p>
+                <p>☐ Borrower may remain as tenant until <input type="date" class="form-field" style="width: 150px;"> at rent of $<input type="text" class="form-field" placeholder="Rent" style="width: 100px;">/month</p>
+                <p>☐ Other arrangement: <input type="text" class="form-field" placeholder="Specify" style="width: 400px;"></p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">6. TAX CONSEQUENCES</span>
+                <p><strong>1099-C Cancellation of Debt:</strong></p>
+                <p>☐ Lender WILL NOT issue a 1099-C (no cancelled debt reported)</p>
+                <p>☐ Lender WILL issue a 1099-C for cancelled debt of $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"></p>
+                
+                <p><strong>Note:</strong> Consult a tax advisor. You may qualify for insolvency or qualified principal residence exclusions.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">7. CREDIT REPORTING</span>
+                <p>Lender agrees to report to credit bureaus as:</p>
+                <p>☐ "Deed in lieu of foreclosure"</p>
+                <p>☐ "Paid in full - account closed"</p>
+                <p>☐ "Settled - less than full balance"</p>
+                <p>☐ Delete tradeline entirely</p>
+                <p>☐ As agreed: <input type="text" class="form-field" placeholder="Specify" style="width: 300px;"></p>
+                
+                <p>Reporting shall be completed within 30 days of deed recording.</p>
+            </div>
+        </div>
+        
+        <div class="conditions-section">
+            <h3>CONDITIONS PRECEDENT</h3>
+            
+            <p>This Agreement is contingent upon:</p>
+            
+            <ol>
+                <li><strong>Clear Title:</strong> Title search showing no liens superior to Lender's lien</li>
+                <li><strong>No Other Encumbrances:</strong> No judgments, tax liens, or HOA liens exceeding $<input type="text" class="form-field" placeholder="Amount" style="width: 100px;"></li>
+                <li><strong>Property Inspection:</strong> Satisfactory inspection by Lender</li>
+                <li><strong>Insurance:</strong> Property insurance maintained until transfer</li>
+                <li><strong>Voluntary Transfer:</strong> No duress or coercion</li>
+                <li><strong>Corporate Approval:</strong> Lender's internal approval obtained</li>
+            </ol>
+            
+            <p>If conditions are not met by <input type="date" class="form-field" style="width: 150px;">, this Agreement becomes void.</p>
+        </div>
+        
+        <div class="release-section">
+            <h3>MUTUAL RELEASE</h3>
+            
+            <p><strong>8. BORROWER'S RELEASE:</strong><br>
+            Upon recording of the deed, Borrower releases Lender from all claims related to the Loan, the Property, and the lending relationship, known or unknown.</p>
+            
+            <p><strong>9. LENDER'S RELEASE:</strong><br>
+            Upon recording of the deed, Lender releases Borrower from all obligations under the Loan, including any deficiency, and waives all rights to seek payment.</p>
+            
+            <p><strong>10. WAIVER OF UNKNOWN CLAIMS:</strong><br>
+            Both parties waive any claims that may be discovered in the future related to this transaction.</p>
+        </div>
+        
+        <div class="benefits-box">
+            <h3>BENEFITS OF DEED IN LIEU</h3>
+            
+            <p><strong>For Borrower:</strong></p>
+            <ul>
+                <li>Avoids foreclosure on credit report</li>
+                <li>No deficiency judgment risk</li>
+                <li>Possible cash for keys payment</li>
+                <li>Controlled move-out timeline</li>
+                <li>Complete debt discharge</li>
+                <li>Closure and fresh start</li>
+            </ul>
+            
+            <p><strong>For Lender:</strong></p>
+            <ul>
+                <li>Avoids foreclosure costs</li>
+                <li>Faster property acquisition</li>
+                <li>Property in better condition</li>
+                <li>No redemption period</li>
+                <li>Reduced legal expenses</li>
+            </ul>
+        </div>
+        
+        <div class="terms-section">
+            <h2>ADDITIONAL PROVISIONS</h2>
+            
+            <div class="term-item">
+                <span class="term-number">11. BANKRUPTCY</span>
+                <p>Borrower represents that:</p>
+                <div class="checkbox-item">
+                    <input type="checkbox"> No bankruptcy has been filed in the last 120 days
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> No bankruptcy is contemplated
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox"> Will not file bankruptcy to delay transfer
+                </div>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">12. WARRANTIES</span>
+                <p>Borrower warrants:</p>
+                <ul>
+                    <li>Full authority to transfer the Property</li>
+                    <li>No undisclosed liens or encumbrances</li>
+                    <li>No undisclosed leases or tenancies</li>
+                    <li>No environmental contamination known</li>
+                    <li>Compliance with all laws and regulations</li>
+                </ul>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">13. INDEMNIFICATION</span>
+                <p>Borrower agrees to indemnify Lender for:</p>
+                <ul>
+                    <li>Any false representations</li>
+                    <li>Undisclosed liens or claims</li>
+                    <li>Environmental issues not disclosed</li>
+                    <li>Claims by tenants or occupants</li>
+                </ul>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">14. CONFIDENTIALITY</span>
+                <p>☐ This Agreement and its terms are CONFIDENTIAL</p>
+                <p>☐ This Agreement may be disclosed freely</p>
+                
+                <p>If confidential, permitted disclosures include: attorneys, accountants, tax advisors, and as required by law.</p>
+            </div>
+            
+            <div class="term-item">
+                <span class="term-number">15. COSTS AND FEES</span>
+                <p>☐ Each party bears their own costs</p>
+                <p>☐ Lender pays all transfer costs and recording fees</p>
+                <p>☐ Costs split as follows: <input type="text" class="form-field" placeholder="Specify" style="width: 400px;"></p>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>IMPORTANT INFORMATION</h3>
+            
+            <p><strong>Right to Cancel:</strong> Some states provide a right to cancel within a certain period. Check your state law.</p>
+            
+            <p><strong>Tax Advice:</strong> The IRS may consider forgiven debt as income. Consult a tax professional about:</p>
+            <ul>
+                <li>Mortgage Forgiveness Debt Relief Act</li>
+                <li>Insolvency exception</li>
+                <li>Qualified principal residence exception</li>
+                <li>Form 982 filing requirements</li>
+            </ul>
+            
+            <p><strong>Legal Counsel:</strong> You have the right to consult an attorney before signing. This is a significant legal transaction.</p>
+        </div>
+        
+        <div class="signature-section">
+            <h2>SIGNATURES</h2>
+            
+            <p style="text-align: center; font-weight: bold;">
+                By signing below, the parties acknowledge they have read, understood, and agree to all terms of this Agreement.
+            </p>
+            
+            <div class="signature-block">
+                <p><strong>BORROWER/GRANTOR:</strong></p>
+                
+                <p>
+                    <span class="signature-line"></span><br>
+                    <input type="text" class="form-field" placeholder="Print Name" style="width: 300px;"><br>
+                    Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+                
+                <p>
+                    <span class="signature-line"></span><br>
+                    <input type="text" class="form-field" placeholder="Print Co-Borrower Name (if any)" style="width: 300px;"><br>
+                    Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+            </div>
+            
+            <div class="signature-block">
+                <p><strong>LENDER/GRANTEE:</strong></p>
+                
+                <p><input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 400px;"></p>
+                
+                <p>By: <span class="signature-line"></span><br>
+                Name: <input type="text" class="form-field" placeholder="Authorized Signatory Name" style="width: 300px;"><br>
+                Title: <input type="text" class="form-field" placeholder="Title" style="width: 300px;"><br>
+                Date: <input type="date" class="form-field" style="width: 150px;">
+                </p>
+            </div>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENTS</h3>
+            
+            <p><strong>BORROWER/GRANTOR ACKNOWLEDGMENT:</strong></p>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On <input type="date" class="form-field" style="width: 150px;">, before me, <input type="text" class="form-field" placeholder="Notary Name" style="width: 300px;">, Notary Public, personally appeared <input type="text" class="form-field" placeholder="Borrower Name(s)" style="width: 400px;">, who proved to me on the basis of satisfactory evidence to be the person(s) whose name(s) is/are subscribed to the within instrument and acknowledged to me that he/she/they executed the same in his/her/their authorized capacity(ies).</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+            
+            <p style="margin-top: 30px;"><strong>LENDER/GRANTEE ACKNOWLEDGMENT:</strong></p>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On <input type="date" class="form-field" style="width: 150px;">, before me, <input type="text" class="form-field" placeholder="Notary Name" style="width: 300px;">, Notary Public, personally appeared <input type="text" class="form-field" placeholder="Signatory Name" style="width: 300px;">, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity for the entity identified therein.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+        </div>
+        
+        <div class="warning-box" style="margin-top: 30px;">
+            <p>⚠️ FINAL CHECKLIST - Before Signing:</p>
+            <ul style="text-align: left;">
+                <li>Have you consulted an attorney?</li>
+                <li>Do you understand you're giving up ownership?</li>
+                <li>Is the debt fully discharged?</li>
+                <li>Are move-out terms acceptable?</li>
+                <li>Have you considered tax consequences?</li>
+                <li>Is credit reporting specified?</li>
+                <li>Do you have alternative housing arranged?</li>
+                <li>Are all personal belongings removed/planned?</li>
+                <li>Do you have copies of everything?</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            const today = new Date();
+            const futureDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+            
+            // Set dates
+            document.querySelectorAll('input[type="date"]')[0].value = today.toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]')[1].value = '2007-03-15';
+            document.querySelectorAll('input[type="date"]')[2].value = futureDate.toISOString().split('T')[0];
+            
+            // Fill party information
+            document.querySelector('input[placeholder="Your Full Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Co-Borrower Name (if any)"]').value = 'Jane Smith';
+            document.querySelector('input[placeholder="Current Address"]').value = '456 New Street';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[0].value = 'Miami, FL 33102';
+            
+            document.querySelector('input[placeholder="Bank/Servicer Name"]').value = 'Wells Fargo Bank, N.A.';
+            document.querySelectorAll('input[placeholder="Address"]')[1].value = '1 Home Campus';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[1].value = 'Des Moines, IA 50328';
+            
+            // Fill property information
+            document.querySelector('input[placeholder="Property Street Address"]').value = '123 Main Street';
+            document.querySelectorAll('input[placeholder="City, State ZIP"]')[2].value = 'Miami, FL 33101';
+            document.querySelector('input[placeholder="APN/Parcel Number"]').value = '12-34-56-789';
+            
+            // Fill loan details
+            document.querySelector('input[placeholder="Original Loan Amount"]').value = '350,000.00';
+            document.querySelector('input[placeholder="Loan Number"]').value = '1234567890';
+            document.querySelector('input[placeholder="Current Balance"]').value = '425,000.00';
+            
+            // Check some boxes
+            document.querySelectorAll('input[type="checkbox"]')[0].checked = true;
+            document.querySelectorAll('input[type="checkbox"]')[1].checked = true;
+            document.querySelectorAll('input[type="checkbox"]')[2].checked = true;
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field, textarea.form-field');
+        inputs.forEach(input => {
+            const key = 'deed_in_lieu_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

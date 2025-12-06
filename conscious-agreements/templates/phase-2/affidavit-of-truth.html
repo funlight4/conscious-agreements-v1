@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affidavit of Truth — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .meta-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .template-letter__header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px double #333;
+        }
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .template-letter h3 {
+            font-family: 'Cinzel', serif;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .template-letter ul, .template-letter ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        .template-letter li {
+            margin: 0.5rem 0;
+        }
+        .statement-box {
+            background: #fffef0;
+            border: 2px solid #ffd700;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+        .statement-number {
+            font-weight: bold;
+            color: var(--color-gold-dark);
+        }
+        .notary-section {
+            border: 3px double #333;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .notary-section h4 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        .legal-maxim {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        .perjury-warning {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .perjury-warning__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #c62828;
+            margin-bottom: 0.5rem;
+        }
+        .definitions-box {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #3f51b5;
+            border-radius: 0 8px 8px 0;
+        }
+        .definitions-box h4 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+        .definition-item {
+            background: white;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        .statute-reference {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="main-nav__inner">
+            <a href="/" class="main-nav__brand">Conscious Agreements</a>
+            <ul class="main-nav__links">
+                <li><a href="/foundation/" class="main-nav__link">Foundation</a></li>
+                <li><a href="/domains/" class="main-nav__link">Domains</a></li>
+                <li><a href="/pathways/" class="main-nav__link">Pathways</a></li>
+                <li><a href="/reference/" class="main-nav__link">Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/">Templates</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/phase-2/">Phase 2</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Affidavit of Truth</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Affidavit of Truth</h1>
+                    <p class="lead">A sworn statement establishing facts about money creation and your promissory note. If unrebutted within 30 days, stands as truth in court. Creates legal presumptions in your favor.</p>
+                </header>
+
+                <div class="template-meta">
+                    <div class="meta-item">
+                        <div class="meta-item__label">Requirement</div>
+                        <div class="meta-item__value">Must Be Notarized</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Rebuttal Period</div>
+                        <div class="meta-item__value">30 Days</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Effect</div>
+                        <div class="meta-item__value">Creates Legal Facts</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Record At</div>
+                        <div class="meta-item__value">County Recorder</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="legal-maxim">
+                        <strong>Legal Maxim:</strong> "An unrebutted affidavit stands as truth in commerce."<br>
+                        <strong>Legal Maxim:</strong> "He who does not deny, admits."<br>
+                        <strong>Legal Maxim:</strong> "A matter must be expressed to be resolved."
+                    </div>
+                </section>
+
+                <section>
+                    <div class="insight-box">
+                        <div class="insight-box__title">Power of an Affidavit</div>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Unrebutted affidavits stand as truth</strong> in commerce and law</li>
+                            <li><strong>Creates presumption of fact</strong> that opponent must overcome</li>
+                            <li><strong>Admissible as evidence</strong> in court proceedings</li>
+                            <li><strong>Perjury penalties</strong> give it serious weight</li>
+                            <li><strong>Record at county recorder</strong> for public notice</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="perjury-warning">
+                        <div class="perjury-warning__title">Perjury Warning</div>
+                        <p>This affidavit is signed under penalty of perjury. False statements are punishable by fines and imprisonment under 18 U.S.C. § 1621. <strong>Only state facts you know to be true.</strong> Do not guess or speculate. Every statement must be within your personal knowledge.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template</h2>
+
+                    <div class="template-letter">
+                        <div class="template-letter__header">
+                            <h2 style="margin: 0; font-size: 24pt; text-transform: uppercase; letter-spacing: 2px;">AFFIDAVIT OF TRUTH</h2>
+                            <p style="margin: 10px 0 0 0;">Regarding: Money Creation Through Promissory Notes</p>
+                            <p style="margin: 5px 0 0 0;">In Support of: Challenge to Alleged Debt</p>
+                        </div>
+
+                        <p>
+                            State of <span class="template-letter__field">[YOUR STATE]</span><br>
+                            County of <span class="template-letter__field">[YOUR COUNTY]</span>
+                        </p>
+
+                        <p>
+                            I, <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span>, being first duly sworn upon oath, depose and state as follows:
+                        </p>
+
+                        <h3>AFFIANT IDENTIFICATION</h3>
+                        <ol>
+                            <li>I am over the age of eighteen (18) years and competent to testify.</li>
+                            <li>I have personal knowledge of the facts stated herein.</li>
+                            <li>All facts stated herein are true, correct, and complete to the best of my knowledge and belief.</li>
+                            <li>I am the borrower/mortgagor on the loan referenced herein.</li>
+                        </ol>
+
+                        <div class="definitions-box">
+                            <h4>DEFINITIONS USED IN THIS AFFIDAVIT</h4>
+
+                            <div class="definition-item">
+                                <strong>Promissory Note:</strong> A negotiable instrument containing an unconditional written promise to pay a determinate sum of money, as defined in UCC § 3-104.
+                            </div>
+
+                            <div class="definition-item">
+                                <strong>Federal Reserve Note:</strong> The paper currency of the United States, which per 12 U.S.C. § 411 are "obligations of the United States."
+                            </div>
+
+                            <div class="definition-item">
+                                <strong>Consideration:</strong> Something of value given in exchange for a promise or performance, required for a valid contract.
+                            </div>
+
+                            <div class="definition-item">
+                                <strong>Money Creation:</strong> The process by which currency enters circulation through the banking system.
+                            </div>
+                        </div>
+
+                        <h3>STATEMENT OF FACTS</h3>
+
+                        <p style="text-align: center; font-weight: bold; text-transform: uppercase; margin: 2rem 0;">
+                            I have standing to make these statements as the creator of the promissory note in question.
+                        </p>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">1.</span> On or about <span class="template-letter__field">[LOAN DATE]</span>, I executed a promissory note in the amount of $<span class="template-letter__field">[LOAN AMOUNT]</span> with <span class="template-letter__field">[ORIGINAL LENDER NAME]</span>.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">2.</span> At the time of signing, I believed I was borrowing pre-existing money from the lender's assets or deposits.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">3.</span> I have since learned through research and federal publications that banks do not lend depositors' money or their own assets when making loans.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">4.</span> According to the Federal Reserve Bank of Chicago's publication "Modern Money Mechanics," commercial banks create new money when they make loans.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">5.</span> The Bank of England's 2014 publication "Money Creation in the Modern Economy" states: "Whenever a bank makes a loan, it simultaneously creates a matching deposit in the borrower's bank account, thereby creating new money."</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">6.</span> My promissory note is a negotiable instrument under UCC § 3-104, having value as an asset.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">7.</span> Upon information and belief, the lender deposited my promissory note as an asset on their books and created a corresponding liability (deposit) in my account.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">8.</span> The alleged "loan" was actually an exchange of my promissory note (an asset with value) for credits in my account.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">9.</span> Federal Reserve Notes themselves are evidence of promissory obligations, as stated in 12 U.S.C. § 411.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">10.</span> In our current monetary system, where all currency consists of promises to pay, my promissory note constitutes payment, not a loan to be repaid.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">11.</span> The lender provided no consideration from their own assets for my promissory note.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">12.</span> The lender never disclosed that they would:
+                                <ul>
+                                    <li>Deposit my promissory note as an asset</li>
+                                    <li>Create new money from my signature</li>
+                                    <li>Not lend me pre-existing money</li>
+                                    <li>Effectively exchange my note for credits</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">13.</span> Had I known the true nature of this transaction, I would have understood that:
+                                <ul>
+                                    <li>I was providing the value (my promissory note)</li>
+                                    <li>The lender was merely processing my note</li>
+                                    <li>No pre-existing money was lent</li>
+                                    <li>I was essentially paying for the property with my promissory note</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">14.</span> The lender has or will potentially:
+                                <ul>
+                                    <li>Sell my note for profit</li>
+                                    <li>Securitize my note for additional profit</li>
+                                    <li>Collect insurance if I default</li>
+                                    <li>Receive tax benefits from any loss</li>
+                                    <li>All while claiming I owe them money</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">15.</span> Under the principle that promissory notes ARE payment in our debt-based monetary system, I have already paid for the property in full with my promissory note.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">16.</span> Any demand for additional payment, without the lender having provided consideration, constitutes:
+                                <ul>
+                                    <li>Lack of consideration making the contract void</li>
+                                    <li>Unjust enrichment</li>
+                                    <li>Fraud in the inducement</li>
+                                    <li>Violation of Truth in Lending Act</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">17.</span> I never agreed to create money for the bank's benefit while also paying interest on my own creation.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">18.</span> The current monetary system operates on the principle that all money is created from debt, specifically from promissory notes like mine.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">19.</span> If my promissory note was discounted at the Federal Reserve discount window under 12 U.S.C. § 347, it was directly monetized into Federal Reserve Notes.</p>
+                        </div>
+
+                        <div class="statement-box">
+                            <p><span class="statement-number">20.</span> I reserve all rights and defenses under law, including but not limited to:
+                                <ul>
+                                    <li>Lack of consideration</li>
+                                    <li>Fraud in the factum</li>
+                                    <li>Fraud in the inducement</li>
+                                    <li>Failure of consideration</li>
+                                    <li>Accord and satisfaction</li>
+                                    <li>Payment already made via promissory note</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <h3>CLAIMS AND DEMANDS</h3>
+
+                        <p>Based upon the foregoing facts, I claim and demand:</p>
+                        <ol>
+                            <li>The alleged debt is satisfied by my promissory note which constituted payment.</li>
+                            <li>No lawful debt exists as no consideration was provided by the lender.</li>
+                            <li>Any foreclosure action lacks standing as the debt is disputed and potentially void.</li>
+                            <li>All negative credit reporting must cease immediately.</li>
+                            <li>The lender must either:
+                                <ul>
+                                    <li>Prove they provided consideration from their own assets, OR</li>
+                                    <li>Return my promissory note marked "PAID IN FULL", OR</li>
+                                    <li>Provide the deed to the property free and clear</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>OPPORTUNITY TO REBUT</h3>
+
+                        <p>Any party claiming an interest adverse to the claims made in this affidavit has <strong>thirty (30) days</strong> from receipt to rebut any statement herein, point-by-point, with specificity, under oath, with supporting evidence. Failure to rebut shall constitute agreement with and admission of all statements herein.</p>
+
+                        <h3>RESERVATION OF RIGHTS</h3>
+
+                        <p>I reserve all rights without prejudice to any of my rights. I do not waive any rights or defenses, all of which are expressly reserved. This affidavit is made without prejudice UCC 1-308.</p>
+
+                        <p style="margin-top: 2rem;">Further affiant sayeth naught.</p>
+
+                        <p>
+                            DATED this <span class="template-letter__field">[DAY]</span> day of <span class="template-letter__field">[MONTH]</span>, <span class="template-letter__field">[YEAR]</span>.
+                        </p>
+
+                        <div style="margin: 2rem 0;">
+                            <div class="signature-line"></div>
+                            <p><span class="template-letter__field">[YOUR PRINTED NAME]</span>, Affiant</p>
+                        </div>
+
+                        <div class="notary-section">
+                            <h4>Notary Acknowledgment</h4>
+
+                            <p style="font-style: italic;">
+                                State of <span class="template-letter__field">[STATE]</span><br>
+                                County of <span class="template-letter__field">[COUNTY]</span>
+                            </p>
+
+                            <p style="font-style: italic;">
+                                Subscribed and sworn to (or affirmed) before me this _____ day of _____________, 20___,
+                                by <span class="template-letter__field">[AFFIANT'S NAME]</span>, who proved to me on the basis of satisfactory evidence to be the person who appeared before me.
+                            </p>
+
+                            <div style="margin-top: 2rem;">
+                                <div class="signature-line"></div>
+                                <p>Notary Public</p>
+                                <p>My Commission Expires: _________________</p>
+                                <p>[NOTARY SEAL]</p>
+                            </div>
+                        </div>
+
+                        <h3>CERTIFICATE OF SERVICE</h3>
+
+                        <p>I hereby certify that a true and correct copy of this Affidavit of Truth has been sent via Certified Mail, Return Receipt Requested, to the following parties:</p>
+
+                        <ul>
+                            <li><span class="template-letter__field">[Current Servicer Name and Address]</span></li>
+                            <li><span class="template-letter__field">[Original Lender (if different)]</span></li>
+                            <li><span class="template-letter__field">[Alleged Note Holder (if known)]</span></li>
+                            <li>County Recorder (for public record)</li>
+                        </ul>
+
+                        <p>Certified Mail Numbers:</p>
+                        <ul>
+                            <li>#<span class="template-letter__field">[Tracking Number]</span></li>
+                            <li>#<span class="template-letter__field">[Tracking Number]</span></li>
+                            <li>#<span class="template-letter__field">[Tracking Number]</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Post-Execution Instructions</h2>
+
+                    <ul class="checklist">
+                        <li>Have affidavit notarized — REQUIRED for legal effect</li>
+                        <li>Record at county recorder's office for public notice</li>
+                        <li>Send certified mail to all parties claiming interest</li>
+                        <li>Keep original in safe place</li>
+                        <li>Calendar 30 days for rebuttal period</li>
+                        <li>If no rebuttal, document their acquiescence</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>What Happens After 30 Days</h2>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">If No Rebuttal</div>
+                        <p>All statements in the affidavit are deemed admitted and stand as unrebutted truth. Create a "Notice of Default and Dishonor" documenting their failure to rebut.</p>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">If Generic Denial</div>
+                        <p>A generic denial without point-by-point rebuttal under oath is not sufficient. Their failure to properly rebut still results in the affidavit standing.</p>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">If Proper Rebuttal</div>
+                        <p>Analyze their rebuttal carefully. If they claim consideration was provided, demand proof. Often their "rebuttal" will actually help your case by revealing more.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Legal Citations</h2>
+
+                    <div class="statute-reference">
+                        <strong>UCC § 3-104</strong> — Negotiable instruments defined<br>
+                        <strong>UCC § 1-308</strong> — Reservation of rights<br>
+                        <strong>12 U.S.C. § 411</strong> — Federal Reserve Notes as obligations<br>
+                        <strong>12 U.S.C. § 347</strong> — Discount window operations<br>
+                        <strong>18 U.S.C. § 1621</strong> — Perjury penalties
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Templates</h2>
+                    <ul>
+                        <li><a href="/templates/phase-2/notice-lack-consideration.html">Notice of Lack of Consideration</a> — The core challenge</li>
+                        <li><a href="/templates/phase-2/notice-disputed-debt.html">Notice of Disputed Debt</a> — Activates FDCPA protections</li>
+                        <li><a href="/templates/phase-1/qwr.html">Qualified Written Request</a> — Information demand</li>
+                    </ul>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/templates/phase-2/" class="page-nav__link">
+                    <span class="page-nav__label">Back to</span>
+                    <span class="page-nav__title">← Phase 2</span>
+                </a>
+                <a href="/templates/phase-2/notice-lack-consideration.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next Template</span>
+                    <span class="page-nav__title">Lack of Consideration →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Conscious Agreements Framework — Private Knowledge Base</p>
+        <p class="footer__quote">"An unrebutted affidavit stands as truth in commerce."</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

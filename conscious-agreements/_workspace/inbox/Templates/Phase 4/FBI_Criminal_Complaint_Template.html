@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBI Criminal Complaint Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .fbi-header {
+            background: #003366;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: -40px -40px 30px -40px;
+            position: relative;
+        }
+        
+        .fbi-seal {
+            font-size: 36pt;
+            margin-bottom: 10px;
+        }
+        
+        .fbi-title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .fbi-subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+        }
+        
+        .classification {
+            background: #ffeb3b;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            border: 2px solid #f57f17;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12pt;
+            background: #f9f9f9;
+            width: auto;
+            min-width: 200px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 16pt;
+        }
+        
+        .section h3 {
+            color: #1a237e;
+            margin: 20px 0 10px 0;
+            font-size: 14pt;
+        }
+        
+        .criminal-statute {
+            background: #ffebee;
+            border-left: 5px solid #c62828;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .criminal-statute h4 {
+            color: #c62828;
+            margin: 0 0 10px 0;
+        }
+        
+        .evidence-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .evidence-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .warning-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #0d47a1;
+        }
+        
+        .victim-info {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+        
+        .suspect-info {
+            background: #ffebee;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #f44336;
+        }
+        
+        .suspect-info h3 {
+            color: #b71c1c;
+        }
+        
+        .crime-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .crime-table th {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .crime-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .crime-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #f5f5f5;
+            border: 2px solid #333;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 300px;
+            margin: 30px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #004080;
+        }
+        
+        .tips-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .tips-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .priority-marker {
+            display: inline-block;
+            background: #f44336;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="fbi-header">
+            <div class="fbi-seal">⚖️</div>
+            <div class="fbi-title">CRIMINAL COMPLAINT</div>
+            <div class="fbi-subtitle">TO: FEDERAL BUREAU OF INVESTIGATION</div>
+            <div class="fbi-subtitle">WHITE COLLAR CRIME DIVISION</div>
+        </div>
+        
+        <div class="classification">
+            FOR OFFICIAL USE - MORTGAGE FRAUD / BANK FRAUD / RICO INVESTIGATION
+        </div>
+        
+        <div class="instructions no-print">
+            <h3>🚨 FBI Criminal Complaint - Federal Law Enforcement</h3>
+            <p><strong>What This Does:</strong></p>
+            <ol>
+                <li><strong>Initiates federal investigation</strong> - FBI white collar crime unit</li>
+                <li><strong>Creates criminal record</strong> - Permanent federal documentation</li>
+                <li><strong>Potential prosecution</strong> - DOJ may take case</li>
+                <li><strong>Personal liability</strong> - Bank employees face charges</li>
+                <li><strong>Massive leverage</strong> - Banks fear criminal investigations</li>
+            </ol>
+            <p><strong>Submission Methods:</strong></p>
+            <ul>
+                <li>Online: FBI Tips Portal (tips.fbi.gov)</li>
+                <li>Local FBI Office: Hand deliver</li>
+                <li>Mail: FBI Headquarters, Washington DC</li>
+                <li>Phone: 1-800-CALL-FBI</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box no-print">
+            <h3>⚠️ Important Considerations</h3>
+            <ul>
+                <li>This is a CRIMINAL complaint - serious allegations</li>
+                <li>False statements to FBI are federal crimes (18 USC 1001)</li>
+                <li>Be accurate and truthful in all statements</li>
+                <li>Attach all supporting evidence</li>
+                <li>Consider having attorney review</li>
+                <li>Keep copies of everything submitted</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>COMPLAINANT INFORMATION</h2>
+            
+            <p>
+                <strong>Full Name:</strong> <input type="text" class="form-field" placeholder="Your Full Legal Name" style="width: 400px;"><br><br>
+                <strong>Address:</strong> <input type="text" class="form-field" placeholder="Street Address" style="width: 500px;"><br><br>
+                <strong>City, State, ZIP:</strong> <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br><br>
+                <strong>Phone:</strong> <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"><br><br>
+                <strong>Email:</strong> <input type="text" class="form-field" placeholder="Email Address" style="width: 300px;"><br><br>
+                <strong>Date of Birth:</strong> <input type="date" class="form-field" style="width: 150px;"><br><br>
+                <strong>SSN (last 4):</strong> <input type="text" class="form-field" placeholder="XXXX" style="width: 100px;" maxlength="4">
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>COMPLAINT SUMMARY</h2>
+            
+            <p>I am filing this criminal complaint against <input type="text" class="form-field" placeholder="Bank/Servicer Name" style="width: 300px;"> and its employees/agents for engaging in a criminal conspiracy involving mortgage fraud, bank fraud, mail fraud, wire fraud, racketeering (RICO), and other federal crimes in connection with a fraudulent mortgage loan and subsequent illegal foreclosure proceedings.</p>
+            
+            <p><strong>Property Address:</strong> <input type="text" class="form-field" placeholder="Property Address" style="width: 500px;"></p>
+            
+            <p><strong>Loan Number:</strong> <input type="text" class="form-field" placeholder="Loan Number" style="width: 200px;"></p>
+            
+            <p><strong>Original Loan Date:</strong> <input type="date" class="form-field" style="width: 150px;"></p>
+            
+            <p><strong>Original Loan Amount:</strong> $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"></p>
+        </div>
+        
+        <div class="suspect-info">
+            <h3>SUSPECTS/DEFENDANTS</h3>
+            
+            <p><strong>Primary Suspect (Bank/Corporation):</strong></p>
+            <p>
+                <strong>Name:</strong> <input type="text" class="form-field" placeholder="Bank/Servicer Full Legal Name" style="width: 400px;"><br><br>
+                <strong>Type:</strong> <input type="text" class="form-field" placeholder="National Association/Corporation" style="width: 300px;"><br><br>
+                <strong>Headquarters:</strong> <input type="text" class="form-field" placeholder="Corporate Address" style="width: 500px;"><br><br>
+                <strong>State of Incorporation:</strong> <input type="text" class="form-field" placeholder="State" style="width: 150px;">
+            </p>
+            
+            <p><strong>Individual Suspects (if known):</strong></p>
+            <p>
+                <strong>Name:</strong> <input type="text" class="form-field" placeholder="CEO/President Name" style="width: 300px;"><br><br>
+                <strong>Title:</strong> <input type="text" class="form-field" placeholder="Title/Position" style="width: 200px;"><br><br>
+                <strong>Name:</strong> <input type="text" class="form-field" placeholder="Other Employee Name" style="width: 300px;"><br><br>
+                <strong>Title:</strong> <input type="text" class="form-field" placeholder="Title/Position" style="width: 200px;">
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>FEDERAL CRIMES ALLEGED</h2>
+            
+            <table class="crime-table">
+                <thead>
+                    <tr>
+                        <th>Federal Statute</th>
+                        <th>Crime</th>
+                        <th>Maximum Penalty</th>
+                        <th>How Violated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>18 U.S.C. § 1344</td>
+                        <td>Bank Fraud</td>
+                        <td>30 years + $1M fine</td>
+                        <td>Scheme to defraud via false loan documents</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1341</td>
+                        <td>Mail Fraud</td>
+                        <td>20 years</td>
+                        <td>Each mailing in furtherance of scheme</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1343</td>
+                        <td>Wire Fraud</td>
+                        <td>20 years</td>
+                        <td>Electronic communications in scheme</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1962</td>
+                        <td>RICO</td>
+                        <td>20 years + forfeiture</td>
+                        <td>Pattern of racketeering activity</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1014</td>
+                        <td>False Statements</td>
+                        <td>30 years</td>
+                        <td>False statements to federal agency</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1001</td>
+                        <td>False Statements</td>
+                        <td>5 years</td>
+                        <td>Material false statements</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 894</td>
+                        <td>Extortionate Credit</td>
+                        <td>20 years</td>
+                        <td>Collection through extortion</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1584</td>
+                        <td>Involuntary Servitude</td>
+                        <td>20 years</td>
+                        <td>Debt bondage/peonage</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 371</td>
+                        <td>Conspiracy</td>
+                        <td>5 years</td>
+                        <td>Conspiracy to commit fraud</td>
+                    </tr>
+                    <tr>
+                        <td>18 U.S.C. § 1956</td>
+                        <td>Money Laundering</td>
+                        <td>20 years</td>
+                        <td>Concealing source of funds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>DETAILED STATEMENT OF FACTS</h2>
+            
+            <h3>A. THE FRAUDULENT LOAN ORIGINATION</h3>
+            
+            <p>On or about <input type="date" class="form-field" style="width: 150px;">, I entered into what I believed was a legitimate mortgage loan with <input type="text" class="form-field" placeholder="Original Lender" style="width: 300px;">. I was led to believe that the lender was loaning me pre-existing money from their deposits or capital.</p>
+            
+            <p><strong>The fraud:</strong> In reality, no pre-existing money was lent. The bank created bookkeeping entries using my promissory note as the source of funds. This constitutes:</p>
+            
+            <ul>
+                <li>Bank fraud - misrepresenting the nature of the transaction</li>
+                <li>Mail fraud - sending fraudulent loan documents through mail</li>
+                <li>Wire fraud - electronic transfer of fraudulently created "funds"</li>
+                <li>False statements - claiming money was being "lent"</li>
+            </ul>
+            
+            <h3>B. THE MONEY CREATION FRAUD</h3>
+            
+            <p>Evidence shows that banks do not lend depositors' money or their own capital. Instead:</p>
+            
+            <ol>
+                <li>My promissory note was deposited as an ASSET on the bank's books</li>
+                <li>The bank created a matching LIABILITY (deposit) in my account</li>
+                <li>No money moved from any existing account to fund the loan</li>
+                <li>My signature literally created the money</li>
+                <li>The bank then charged me interest on money I created</li>
+            </ol>
+            
+            <p>This is confirmed by:</p>
+            <ul>
+                <li>Federal Reserve publication "Modern Money Mechanics"</li>
+                <li>Bank of England "Money Creation in the Modern Economy"</li>
+                <li>Multiple Federal Reserve officials' statements</li>
+                <li>Banking accounting practices (GAAP)</li>
+            </ul>
+            
+            <h3>C. THE SECURITIZATION FRAUD</h3>
+            
+            <p>After origination, the loan was allegedly:</p>
+            
+            <ol>
+                <li>Sold into a mortgage-backed security pool</li>
+                <li>The note and mortgage were separated (illegal)</li>
+                <li>Multiple parties claim ownership without proof</li>
+                <li>Original note was destroyed or "lost"</li>
+                <li>Assignments were robo-signed (fraudulent)</li>
+                <li>MERS was used to hide true ownership</li>
+            </ol>
+            
+            <h3>D. THE FORECLOSURE FRAUD</h3>
+            
+            <p>The suspects are now attempting foreclosure through:</p>
+            
+            <ul>
+                <li>False claims of ownership (no original note)</li>
+                <li>Fraudulent assignments created after-the-fact</li>
+                <li>Robo-signed affidavits (perjury)</li>
+                <li>Claiming standing they don't possess</li>
+                <li>Refusing to validate the debt when requested</li>
+                <li>Violating federal and state laws</li>
+            </ul>
+            
+            <h3>E. THE RICO ENTERPRISE</h3>
+            
+            <p>This is not an isolated incident but part of a pattern affecting millions of Americans:</p>
+            
+            <ul>
+                <li>Systematic fraud in loan origination</li>
+                <li>Widespread robo-signing operations</li>
+                <li>Coordinated document fabrication</li>
+                <li>Pattern of mail and wire fraud</li>
+                <li>Ongoing criminal enterprise</li>
+                <li>Billions in illegal profits</li>
+            </ul>
+        </div>
+        
+        <div class="criminal-statute">
+            <h4>18 U.S.C. § 1344 - BANK FRAUD</h4>
+            <p>"Whoever knowingly executes, or attempts to execute, a scheme or artifice—</p>
+            <ol>
+                <li>to defraud a financial institution; or</li>
+                <li>to obtain any of the moneys, funds, credits, assets, securities, or other property owned by, or under the custody or control of, a financial institution, by means of false or fraudulent pretenses, representations, or promises"</li>
+            </ol>
+            <p><strong>Penalty:</strong> Up to 30 years imprisonment and $1,000,000 fine</p>
+            <p><strong>How violated:</strong> Creating money from borrower's signature without disclosure, charging interest on borrower's own created value</p>
+        </div>
+        
+        <div class="criminal-statute">
+            <h4>18 U.S.C. § 1962 - RICO VIOLATIONS</h4>
+            <p>Pattern of racketeering activity involving:</p>
+            <ul>
+                <li>Two or more predicate acts</li>
+                <li>Within 10 years</li>
+                <li>Related to the enterprise</li>
+                <li>Affecting interstate commerce</li>
+            </ul>
+            <p><strong>Predicate acts here include:</strong> Mail fraud, wire fraud, bank fraud, extortion, money laundering</p>
+            <p><strong>The enterprise:</strong> Bank, servicers, MERS, foreclosure mills, robo-signers</p>
+        </div>
+        
+        <div class="evidence-box">
+            <h3>📎 EVIDENCE ATTACHED</h3>
+            <ol>
+                <li><strong>Exhibit A:</strong> Promissory Note showing my signature created the alleged debt</li>
+                <li><strong>Exhibit B:</strong> Mortgage/Deed of Trust with fraudulent terms</li>
+                <li><strong>Exhibit C:</strong> Qualified Written Request showing refusal to validate</li>
+                <li><strong>Exhibit D:</strong> Evidence of robo-signing (notary fraud)</li>
+                <li><strong>Exhibit E:</strong> Broken chain of title documents</li>
+                <li><strong>Exhibit F:</strong> Federal Reserve "Modern Money Mechanics"</li>
+                <li><strong>Exhibit G:</strong> Bank of England "Money Creation" publication</li>
+                <li><strong>Exhibit H:</strong> MERS assignments showing fraud</li>
+                <li><strong>Exhibit I:</strong> Foreclosure documents with false claims</li>
+                <li><strong>Exhibit J:</strong> Pattern evidence - similar crimes against others</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>DAMAGES AND HARM</h2>
+            
+            <p>As a result of these crimes, I have suffered:</p>
+            
+            <ul>
+                <li>Payments made on fraudulent debt: $<input type="text" class="form-field" placeholder="Total Paid" style="width: 150px;"></li>
+                <li>Threat of losing home valued at: $<input type="text" class="form-field" placeholder="Property Value" style="width: 150px;"></li>
+                <li>Destroyed credit rating lasting 7+ years</li>
+                <li>Emotional distress and mental anguish</li>
+                <li>Legal fees and costs: $<input type="text" class="form-field" placeholder="Legal Costs" style="width: 150px;"></li>
+                <li>Lost business/employment opportunities</li>
+                <li>Physical health impacts from stress</li>
+            </ul>
+            
+            <p><strong>Pattern victims:</strong> Research indicates this same fraud has been perpetrated against millions of Americans, constituting the largest financial crime in history.</p>
+        </div>
+        
+        <div class="section">
+            <h2>REQUEST FOR INVESTIGATION AND ACTION</h2>
+            
+            <p>I respectfully request that the FBI:</p>
+            
+            <ol>
+                <li><span class="priority-marker">URGENT</span> <strong>Open immediate investigation</strong> into these federal crimes</li>
+                <li><strong>Coordinate with DOJ</strong> for criminal prosecution</li>
+                <li><strong>Preserve evidence</strong> through seizure warrants if necessary</li>
+                <li><strong>Interview witnesses</strong> including bank employees</li>
+                <li><strong>Subpoena records</strong> showing money creation fraud</li>
+                <li><strong>Stop ongoing crimes</strong> including foreclosure proceedings</li>
+                <li><strong>Investigate RICO enterprise</strong> and pattern of crimes</li>
+                <li><strong>Coordinate with other agencies</strong> (SEC, FDIC, OCC, CFPB)</li>
+                <li><strong>Consider whistleblower testimony</strong> from bank insiders</li>
+                <li><strong>Pursue asset forfeiture</strong> of criminal proceeds</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>WITNESS INFORMATION</h2>
+            
+            <p>The following individuals have information relevant to this investigation:</p>
+            
+            <p>
+                <strong>Name:</strong> <input type="text" class="form-field" placeholder="Witness Name" style="width: 300px;"><br><br>
+                <strong>Relationship:</strong> <input type="text" class="form-field" placeholder="How they know about crimes" style="width: 400px;"><br><br>
+                <strong>Contact:</strong> <input type="text" class="form-field" placeholder="Phone/Email" style="width: 300px;">
+            </p>
+            
+            <p>
+                <strong>Name:</strong> <input type="text" class="form-field" placeholder="Witness Name" style="width: 300px;"><br><br>
+                <strong>Relationship:</strong> <input type="text" class="form-field" placeholder="How they know about crimes" style="width: 400px;"><br><br>
+                <strong>Contact:</strong> <input type="text" class="form-field" placeholder="Phone/Email" style="width: 300px;">
+            </p>
+        </div>
+        
+        <div class="signature-section">
+            <h2>COMPLAINANT'S DECLARATION</h2>
+            
+            <p>I declare under penalty of perjury under the laws of the United States of America that the foregoing is true and correct to the best of my knowledge and belief. I understand that making false statements to federal law enforcement is a crime punishable under 18 U.S.C. § 1001.</p>
+            
+            <p>I am willing to:</p>
+            <ul>
+                <li>☑️ Testify before a grand jury</li>
+                <li>☑️ Provide additional evidence</li>
+                <li>☑️ Cooperate with investigation</li>
+                <li>☑️ Assist in identifying other victims</li>
+                <li>☑️ Testify at trial if necessary</li>
+            </ul>
+            
+            <p>
+                <strong>Signature:</strong> <span class="signature-line"></span><br>
+                <strong>Printed Name:</strong> <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;"><br>
+                <strong>Date:</strong> <input type="date" class="form-field" style="width: 150px;">
+            </p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT (Recommended)</h3>
+            
+            <p>State of <input type="text" class="form-field" placeholder="State" style="width: 150px;"><br>
+            County of <input type="text" class="form-field" placeholder="County" style="width: 150px;"></p>
+            
+            <p>On this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">, before me personally appeared <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity.</p>
+            
+            <p>
+                <strong>Notary Signature:</strong> _______________________________<br>
+                <strong>Notary Stamp/Seal:</strong><br><br><br>
+                <strong>My Commission Expires:</strong> _______________________________
+            </p>
+        </div>
+        
+        <div class="tips-box no-print">
+            <h3>📮 Submission Instructions</h3>
+            <ol>
+                <li><strong>Make multiple copies</strong> - Keep originals</li>
+                <li><strong>Submit online first</strong> - FBI Tips Portal (tips.fbi.gov)</li>
+                <li><strong>Follow up with local FBI office</strong> - Hand deliver copy</li>
+                <li><strong>Send certified mail</strong> - To FBI headquarters</li>
+                <li><strong>Contact your Congressman</strong> - Request oversight</li>
+                <li><strong>File with IC3</strong> - Internet Crime Complaint Center</li>
+                <li><strong>Document everything</strong> - Keep submission receipts</li>
+                <li><strong>Be persistent</strong> - Follow up regularly</li>
+                <li><strong>Consider media</strong> - If no action taken</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Sample data for demonstration
+            document.querySelector('input[placeholder="Your Full Legal Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Street Address"]').value = '123 Main Street';
+            document.querySelector('input[placeholder="City, State ZIP"]').value = 'Miami, FL 33101';
+            document.querySelector('input[placeholder="Phone Number"]').value = '(555) 123-4567';
+            document.querySelector('input[placeholder="Email Address"]').value = 'johnsmith@email.com';
+            document.querySelector('input[placeholder="Bank/Servicer Name"]').value = 'Wells Fargo Bank, N.A.';
+            document.querySelector('input[placeholder="Property Address"]').value = '123 Main Street, Miami, FL 33101';
+            document.querySelector('input[placeholder="Loan Number"]').value = '0123456789';
+            document.querySelector('input[placeholder="Amount"]').value = '350,000';
+            
+            // Set dates
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            const today = new Date();
+            dateInputs.forEach(input => {
+                if (input.value === '') {
+                    input.value = today.toISOString().split('T')[0];
+                }
+            });
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('fbi_' + input.placeholder);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('fbi_' + this.placeholder, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

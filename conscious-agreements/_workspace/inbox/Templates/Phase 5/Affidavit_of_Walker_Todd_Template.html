@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affidavit of Walker Todd - Expert Testimony</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: 2px solid #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #000;
+            color: white;
+        }
+        
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            margin: 10px 0;
+            color: #ffd700;
+        }
+        
+        .expert-box {
+            background: #f0f8ff;
+            border: 3px solid #1e3a8a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .expert-box h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        
+        .credentials {
+            background: #fff9e6;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .credentials h3 {
+            color: #d4af37;
+            margin-top: 0;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 2px solid #333;
+            padding: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 12pt;
+            background: #ffffcc;
+            min-width: 150px;
+        }
+        
+        .section {
+            margin: 35px 0;
+            padding: 25px;
+            border-left: 4px solid #1e3a8a;
+            background: #f9f9f9;
+        }
+        
+        .section h2 {
+            color: #1e3a8a;
+            font-size: 18pt;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .numbered-item {
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .numbered-item::before {
+            content: attr(data-number) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14pt;
+            color: #1e3a8a;
+        }
+        
+        .legal-citation {
+            background: #f0f0f0;
+            border-left: 3px solid #666;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .exhibit-reference {
+            background: #e6ffe6;
+            border: 2px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .exhibit-reference h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f5f5f5;
+            border: 2px solid #000;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid black;
+            width: 350px;
+            margin: 40px 0 5px 0;
+            display: inline-block;
+        }
+        
+        .notary-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #000;
+            background: #fafafa;
+        }
+        
+        .case-caption {
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .use-instructions {
+            background: #ffe6e6;
+            border: 2px solid #cc0000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .use-instructions h3 {
+            color: #cc0000;
+            margin-top: 0;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #1e40af;
+        }
+        
+        .walker-todd-bio {
+            background: #e8f4f8;
+            border: 2px solid #0369a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .walker-todd-bio h3 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .emphasis {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="title">AFFIDAVIT OF WALKER F. TODD</div>
+            <div class="subtitle">Expert Testimony on Banking and Money Creation</div>
+            <div class="subtitle">Former Federal Reserve Attorney</div>
+        </div>
+        
+        <div class="important-note">
+            This affidavit template is based on actual testimony and writings of Walker F. Todd,<br>
+            former attorney for the Federal Reserve Banks of New York and Cleveland.<br>
+            Customize with your specific case details while preserving the expert opinions.
+        </div>
+        
+        <div class="walker-todd-bio">
+            <h3>About Walker F. Todd</h3>
+            <ul>
+                <li><strong>20+ years</strong> with Federal Reserve System</li>
+                <li><strong>Attorney</strong> for Federal Reserve Bank of Cleveland (1985-1994)</li>
+                <li><strong>Attorney</strong> for Federal Reserve Bank of New York (1994-1998)</li>
+                <li><strong>Research Fellow</strong> at American Institute for Economic Research</li>
+                <li><strong>Expert</strong> on central banking, monetary policy, and financial history</li>
+                <li><strong>Author</strong> of numerous articles on banking and monetary systems</li>
+                <li><strong>J.D.</strong> from Boston University School of Law</li>
+                <li><strong>M.A.</strong> in Economic History from Columbia University</li>
+            </ul>
+        </div>
+        
+        <div class="case-caption">
+            <p>IN THE _______________ COURT</p>
+            <p>IN AND FOR _______________ COUNTY</p>
+            <p>STATE OF _______________</p>
+            <br>
+            <p>_______________ [Your Name],<br>
+            Plaintiff/Defendant,</p>
+            <p>vs.</p>
+            <p>_______________ [Bank Name],<br>
+            Defendant/Plaintiff.</p>
+            <br>
+            <p>Case No. _______________</p>
+        </div>
+        
+        <div class="section">
+            <h2>AFFIDAVIT OF WALKER F. TODD</h2>
+            
+            <p>STATE OF _______________<br>
+            COUNTY OF _______________</p>
+            
+            <p>WALKER F. TODD, being first duly sworn, deposes and says:</p>
+            
+            <div class="numbered-item" data-number="1">
+                <p>I am over 18 years of age and competent to testify. I have personal knowledge of the matters stated herein.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="2">
+                <p>I worked as an attorney for the Federal Reserve System for over 20 years, including positions at the Federal Reserve Banks of Cleveland (1985-1994) and New York (1994-1998). My duties included research, analysis, and legal opinions on banking practices, monetary policy, and the creation of money through the lending process.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="3">
+                <p>I have studied monetary systems, banking practices, and the mechanics of money creation for over 35 years. I have written extensively on these topics and am recognized as an expert in the field.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>EXPERT OPINION ON MONEY CREATION</h2>
+            
+            <div class="numbered-item" data-number="4">
+                <p><strong>Banks Do Not Lend Their Own Money or Depositors' Money.</strong> It is a common misconception that banks lend out their depositors' money or their own capital. This is categorically false. When a bank makes a loan, it creates new money through accounting entries.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="5">
+                <p><strong>The Loan Creation Process.</strong> When a borrower signs a promissory note, the bank does the following:</p>
+                <ol style="margin-left: 20px;">
+                    <li>Records the promissory note as an asset on its books</li>
+                    <li>Creates a matching deposit liability in the borrower's account</li>
+                    <li>The deposit is new money that did not exist before</li>
+                    <li>No money is transferred from any existing account</li>
+                </ol>
+            </div>
+            
+            <div class="numbered-item" data-number="6">
+                <p><strong>Federal Reserve Confirmation.</strong> The Federal Reserve has publicly acknowledged this process. In their publication "Modern Money Mechanics," they state: <em>"Of course, banks do not really pay out loans from the money they receive as deposits. If they did this, no additional money would be created."</em></p>
+            </div>
+            
+            <div class="numbered-item" data-number="7">
+                <p><strong>No Consideration Provided.</strong> In the traditional sense of contract law, the bank provides no consideration for the borrower's promissory note. The bank does not give up anything of value that it possessed before the transaction. Instead, it monetizes the borrower's promise to pay.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>THE BORROWER'S PROMISSORY NOTE</h2>
+            
+            <div class="numbered-item" data-number="8">
+                <p><strong>The Note as the Source of Funds.</strong> The borrower's promissory note is not merely evidence of a debt. It is the actual source of the funds that appear to be "loaned" to the borrower. The borrower's signature creates the value.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="9">
+                <p><strong>Accounting Treatment.</strong> Under Generally Accepted Accounting Principles (GAAP), the bank must record the promissory note as an asset. Simultaneously, it creates a deposit liability. This is not a loan in any traditional sense - it is an exchange of assets.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="10">
+                <p><strong>The Deception.</strong> Banks do not disclose to borrowers that:</p>
+                <ul style="margin-left: 20px;">
+                    <li>The borrower's signature creates the money</li>
+                    <li>No pre-existing money is lent</li>
+                    <li>The bank risks nothing of its own</li>
+                    <li>The promissory note will be sold or securitized</li>
+                    <li>The transaction is an exchange, not a loan</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>LEGAL IMPLICATIONS</h2>
+            
+            <div class="numbered-item" data-number="11">
+                <p><strong>Lack of Full Disclosure.</strong> The failure to disclose the true nature of the transaction constitutes a material omission that voids informed consent. Borrowers cannot make informed decisions without understanding that they are creating the money, not borrowing it.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="12">
+                <p><strong>Consideration in Contract Law.</strong> A valid contract requires consideration - something of value given by each party. Since the bank gives nothing of value that it possessed before the transaction, there is arguably no valid consideration, which would void the contract.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="13">
+                <p><strong>RICO Implications.</strong> The systematic nature of this deception across the banking industry, combined with the use of mail and wire communications to perpetrate it, potentially constitutes a pattern of racketeering activity under the Racketeer Influenced and Corrupt Organizations Act (RICO).</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>SECURITIZATION AND MERS</h2>
+            
+            <div class="numbered-item" data-number="14">
+                <p><strong>Separation of Note and Mortgage.</strong> It is a fundamental principle of mortgage law that the note and mortgage must remain together. When banks securitize loans through MERS (Mortgage Electronic Registration Systems) or otherwise, they often separate the note from the mortgage, which voids the security interest.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="15">
+                <p><strong>Multiple Sales.</strong> Through securitization, the same promissory note is often sold multiple times to different investors. This is securities fraud and creates competing claims that cloud title.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="16">
+                <p><strong>Destruction of Original Notes.</strong> To hide the multiple sales and the true nature of the transactions, original promissory notes are routinely destroyed. Banks then claim the notes are "lost" when challenged to produce them.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>FEDERAL RESERVE OPERATIONS</h2>
+            
+            <div class="numbered-item" data-number="17">
+                <p><strong>The Discount Window.</strong> Banks can take borrowers' promissory notes to the Federal Reserve's discount window and exchange them for Federal Reserve Notes (currency). This proves that promissory notes have monetary value and are treated as money by the Federal Reserve System.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="18">
+                <p><strong>Fractional Reserve Lending.</strong> Through fractional reserve banking, banks can lend many times more than their deposits. A promissory note for $100,000 can result in the creation of $900,000 or more in new money through the multiplier effect.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="19">
+                <p><strong>Interest on Created Money.</strong> Banks charge interest on money they create from nothing. The borrower must repay not only the principal (which the borrower created) but also interest, which requires obtaining money created by other borrowers' debts. This makes systemic debt mathematically inevitable.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>SPECIFIC CASE APPLICATION</h2>
+            
+            <div class="numbered-item" data-number="20">
+                <p>Based on my review of the documents in this case involving <input type="text" class="form-field" placeholder="Your Name" style="width: 200px;"> and <input type="text" class="form-field" placeholder="Bank Name" style="width: 200px;">, it is my expert opinion that:</p>
+                <ul style="margin-left: 20px;">
+                    <li>The bank provided no lawful consideration for the promissory note</li>
+                    <li>The money was created from the borrower's signature</li>
+                    <li>The true nature of the transaction was not disclosed</li>
+                    <li>The mortgage/deed of trust is void for lack of consideration</li>
+                    <li>The bank cannot demonstrate any actual loss if the loan is not repaid</li>
+                </ul>
+            </div>
+            
+            <div class="numbered-item" data-number="21">
+                <p><strong>Industry-Wide Practice.</strong> These practices are not unique to this bank. They represent standard operating procedure throughout the banking industry. This systemic fraud has resulted in the largest transfer of wealth in human history.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>CONCLUSION</h2>
+            
+            <div class="numbered-item" data-number="22">
+                <p>It is my professional opinion, based on my decades of experience within the Federal Reserve System and my extensive study of banking practices, that what is commonly called a "loan" is not a loan at all. It is the purchase of a promissory note by creating bookkeeping entries. The borrower is the creditor, and the bank is the debtor in the initial transaction.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="23">
+                <p>The entire mortgage system, as currently practiced, is based on deception, lack of disclosure, and absence of real consideration. Courts that allow foreclosures without requiring proof of consideration are enabling this fraud.</p>
+            </div>
+            
+            <div class="numbered-item" data-number="24">
+                <p>I am available to testify in court regarding these matters and to answer any questions about banking practices, money creation, and the Federal Reserve System.</p>
+            </div>
+        </div>
+        
+        <div class="exhibit-reference">
+            <h4>EXHIBITS REFERENCED</h4>
+            <ul>
+                <li>Exhibit A: Federal Reserve - "Modern Money Mechanics"</li>
+                <li>Exhibit B: Bank of England - "Money Creation in the Modern Economy"</li>
+                <li>Exhibit C: Excerpt from "The Creature from Jekyll Island" by G. Edward Griffin</li>
+                <li>Exhibit D: 12 U.S.C. § 411 - Federal Reserve Notes as Obligations</li>
+                <li>Exhibit E: UCC § 3-104 - Negotiable Instruments</li>
+                <li>Exhibit F: Sample bank accounting entries showing money creation</li>
+            </ul>
+        </div>
+        
+        <div class="signature-section">
+            <p>FURTHER AFFIANT SAYETH NOT.</p>
+            
+            <p>I declare under penalty of perjury under the laws of the United States of America that the foregoing is true and correct based on my professional knowledge, experience, and expertise.</p>
+            
+            <p>Executed on this <input type="text" class="form-field" placeholder="Day" style="width: 50px;"> day of <input type="text" class="form-field" placeholder="Month" style="width: 100px;">, 20<input type="text" class="form-field" placeholder="Year" style="width: 50px;">.</p>
+            
+            <p>
+                <span class="signature-line"></span><br>
+                <strong>Walker F. Todd</strong><br>
+                Former Attorney, Federal Reserve System<br>
+                Expert Witness on Banking and Monetary Systems
+            </p>
+        </div>
+        
+        <div class="notary-section">
+            <h3>NOTARY ACKNOWLEDGMENT</h3>
+            
+            <p>State of _______________<br>
+            County of ______________</p>
+            
+            <p>On this _____ day of _______________, 20_____, before me personally appeared Walker F. Todd, known to me to be the person who executed the foregoing instrument, and acknowledged that he executed the same as his free act and deed.</p>
+            
+            <p>
+                _______________________________<br>
+                Notary Public<br>
+                My Commission Expires: _____________
+            </p>
+            
+            <p>[NOTARY SEAL]</p>
+        </div>
+        
+        <div class="use-instructions no-print">
+            <h3>📋 How to Use This Affidavit</h3>
+            
+            <ol>
+                <li><strong>Customize Case Details:</strong> Fill in your specific case information while preserving the expert testimony</li>
+                <li><strong>Attach as Exhibit:</strong> Include in court filings, responses, and motions</li>
+                <li><strong>Reference in Arguments:</strong> Cite specific paragraphs in your legal arguments</li>
+                <li><strong>Submit with Other Evidence:</strong> Combine with your QWR, conditional acceptance, etc.</li>
+                <li><strong>Use for Discovery:</strong> Demand bank respond to expert's points</li>
+                <li><strong>Motion Support:</strong> Attach to motions to dismiss or for summary judgment</li>
+            </ol>
+            
+            <p><strong>Note:</strong> While based on Walker Todd's actual positions and expertise, you may want to attempt to contact him or similar experts for a personalized affidavit for your case.</p>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill sample data
+            document.querySelector('input[placeholder="Your Name"]').value = 'John Smith';
+            document.querySelector('input[placeholder="Bank Name"]').value = 'Wells Fargo Bank, N.A.';
+            
+            // Fill date parts
+            const today = new Date();
+            document.querySelector('input[placeholder="Day"]').value = today.getDate();
+            document.querySelector('input[placeholder="Month"]').value = today.toLocaleString('default', { month: 'long' });
+            document.querySelector('input[placeholder="Year"]').value = today.getFullYear().toString().substr(-2);
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const key = 'walker_' + (input.placeholder || input.type);
+            const saved = localStorage.getItem(key);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem(key, this.value);
+            });
+        });
+    </script>
+</body>
+</html>

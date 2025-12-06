@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Fraud Defense System - Strategic Flowchart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .flowchart {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 30px;
+            overflow-x: auto;
+        }
+        
+        .phase-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            min-width: 1200px;
+            margin-bottom: 40px;
+        }
+        
+        .phase {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+        }
+        
+        .phase-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .phase-description {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .document-box {
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .document-box:hover {
+            background: #e8f4fd;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .document-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 12px;
+        }
+        
+        .document-name {
+            font-size: 14px;
+            color: #333;
+            margin-top: 3px;
+        }
+        
+        .arrow {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #667eea;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #667eea;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        
+        .decision-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .decision-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .decision-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .option-button {
+            padding: 10px 20px;
+            border: 2px solid #ffc107;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option-button:hover {
+            background: #ffc107;
+            color: white;
+        }
+        
+        .timeline {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 100px;
+        }
+        
+        .timeline-action {
+            flex: 1;
+            margin-left: 20px;
+        }
+        
+        .legend {
+            background: #e8f4fd;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .legend-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .info-panel {
+            position: fixed;
+            top: 50%;
+            right: -400px;
+            transform: translateY(-50%);
+            width: 380px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .info-panel.active {
+            right: 20px;
+        }
+        
+        .info-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .info-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .info-content {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .critical-path {
+            background: #ffebee;
+            border: 3px solid #f44336;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .critical-path-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .success-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+        
+        .warning-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff9800;
+        }
+        
+        .danger-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f44336;
+        }
+        
+        @media (max-width: 768px) {
+            .phase-container {
+                flex-direction: column;
+                min-width: auto;
+            }
+            
+            .arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗺️ Mortgage Fraud Defense System Flowchart</h1>
+        <p class="subtitle">Strategic Navigation Through 30 Documents</p>
+        
+        <div class="decision-box">
+            <div class="decision-title">🎯 STARTING POINT: What's Your Current Situation?</div>
+            <div class="decision-options">
+                <button class="option-button" onclick="showPath('current')">Current on Payments</button>
+                <button class="option-button" onclick="showPath('behind')">Behind on Payments</button>
+                <button class="option-button" onclick="showPath('foreclosure')">Facing Foreclosure</button>
+                <button class="option-button" onclick="showPath('post')">Post-Foreclosure</button>
+            </div>
+        </div>
+        
+        <div class="flowchart">
+            <div class="phase-container">
+                <!-- Phase 1 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 1: Information Gathering</div>
+                        <div class="phase-description">Build Your Evidence Arsenal</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc1')">
+                        <span class="success-indicator" title="Start Here"></span>
+                        <div class="document-number">Doc #1-2</div>
+                        <div class="document-name">QWR & Validation</div>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc3')">
+                        <div class="document-number">Doc #3-4</div>
+                        <div class="document-name">FOIA & TILA</div>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc5')">
+                        <div class="document-number">Doc #5-6</div>
+                        <div class="document-name">Accounting & Chain</div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 2: Legal Notices</div>
+                        <div class="phase-description">Establish Your Position</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc7')">
+                        <div class="document-number">Doc #7-8</div>
+                        <div class="document-name">Affidavits</div>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc9')">
+                        <div class="document-number">Doc #9</div>
+                        <div class="document-name">Notice of Disputes</div>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc10')">
+                        <span class="warning-indicator" title="Time Sensitive"></span>
+                        <div class="document-number">Doc #10</div>
+                        <div class="document-name">Rescission</div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 3: Court Filings</div>
+                        <div class="phase-description">Legal Offensive</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc11')">
+                        <span class="danger-indicator" title="Foreclosure Defense"></span>
+                        <div class="document-number">Doc #11</div>
+                        <div class="document-name">Quiet Title</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc12')">
+                        <div class="document-number">Doc #12</div>
+                        <div class="document-name">Motion to Dismiss</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc13')">
+                        <div class="document-number">Doc #13-14</div>
+                        <div class="document-name">Discovery & Removal</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc15')">
+                        <div class="document-number">Doc #15</div>
+                        <div class="document-name">Emergency Motion</div>
+                    </div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 4: Criminal/Regulatory</div>
+                        <div class="phase-description">External Pressure</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc16')">
+                        <div class="document-number">Doc #16-17</div>
+                        <div class="document-name">FBI & SEC</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc18')">
+                        <div class="document-number">Doc #18</div>
+                        <div class="document-name">CFPB Complaint</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc19')">
+                        <div class="document-number">Doc #19-20</div>
+                        <div class="document-name">OCC & State AG</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="decision-box">
+                <div class="decision-title">⚡ DECISION POINT: Are They Responding/Negotiating?</div>
+                <div class="decision-options">
+                    <button class="option-button" onclick="showPath('negotiate')">Yes - Go to Settlement</button>
+                    <button class="option-button" onclick="showPath('escalate')">No - Continue Escalation</button>
+                </div>
+            </div>
+            
+            <div class="phase-container">
+                <!-- Phase 5 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 5: Alternative Strategies</div>
+                        <div class="phase-description">Creative Approaches</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc21')">
+                        <div class="document-number">Doc #21</div>
+                        <div class="document-name">Promissory Note Discharge</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc22')">
+                        <div class="document-number">Doc #22</div>
+                        <div class="document-name">Conditional Acceptance</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc23')">
+                        <span class="success-indicator" title="Powerful"></span>
+                        <div class="document-number">Doc #23</div>
+                        <div class="document-name">Walker Todd Affidavit</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc24')">
+                        <div class="document-number">Doc #24-25</div>
+                        <div class="document-name">Indemnification & Estoppel</div>
+                    </div>
+                </div>
+                
+                <!-- Phase 6 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 6: Public Pressure</div>
+                        <div class="phase-description">Expose & Organize</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc26')">
+                        <div class="document-number">Doc #26</div>
+                        <div class="document-name">Press Release</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc27')">
+                        <div class="document-number">Doc #27</div>
+                        <div class="document-name">Congressional Petition</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc28')">
+                        <span class="success-indicator" title="Strength in Numbers"></span>
+                        <div class="document-number">Doc #28</div>
+                        <div class="document-name">Class Action</div>
+                    </div>
+                </div>
+                
+                <!-- Phase 7 -->
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-title">Phase 7: Resolution</div>
+                        <div class="phase-description">Settlement & Closure</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc29')">
+                        <span class="success-indicator" title="Victory"></span>
+                        <div class="document-number">Doc #29</div>
+                        <div class="document-name">Settlement Agreement</div>
+                    </div>
+                    <div class="document-box" onclick="showInfo('doc30')">
+                        <span class="warning-indicator" title="Last Resort"></span>
+                        <div class="document-number">Doc #30</div>
+                        <div class="document-name">Deed in Lieu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="critical-path">
+            <div class="critical-path-title">🚨 CRITICAL PATH FOR IMMEDIATE FORECLOSURE</div>
+            <ol>
+                <li><strong>Doc #11:</strong> File Quiet Title Complaint - Immediately</li>
+                <li><strong>Doc #15:</strong> Emergency Motion to Stay - Within 24 hours</li>
+                <li><strong>Doc #14:</strong> Notice of Removal to Federal Court - If in state court</li>
+                <li><strong>Doc #1-2:</strong> Send QWR and Validation - Creates violations</li>
+                <li><strong>Doc #10:</strong> Notice of Rescission - If within time limits</li>
+                <li><strong>Doc #16:</strong> FBI Criminal Complaint - Adds pressure</li>
+                <li><strong>Doc #26:</strong> Press Release - Public pressure</li>
+                <li><strong>Doc #29:</strong> Settlement Negotiations - When they crack</li>
+            </ol>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-header">⏱️ Suggested Timeline</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 1-7</div>
+                <div class="timeline-action">
+                    <strong>Information Blast:</strong> Send all Phase 1 documents (QWR, Validation, FOIA, TILA requests)
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 8-30</div>
+                <div class="timeline-action">
+                    <strong>Legal Foundation:</strong> File Phase 2 notices and affidavits while waiting for responses
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 31-60</div>
+                <div class="timeline-action">
+                    <strong>Escalation:</strong> Based on responses (or lack thereof), file court documents and regulatory complaints
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 61-90</div>
+                <div class="timeline-action">
+                    <strong>Alternative Pressure:</strong> Deploy Phase 5 creative strategies and begin public pressure
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 91-120</div>
+                <div class="timeline-action">
+                    <strong>Maximum Pressure:</strong> All documents deployed, press coverage, class action forming
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-time">Day 120+</div>
+                <div class="timeline-action">
+                    <strong>Resolution:</strong> Negotiate settlement from position of strength
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-title">📊 Understanding the Indicators</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4caf50;"></div>
+                <span><strong>Green:</strong> High success rate / Critical document</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff9800;"></div>
+                <span><strong>Orange:</strong> Time-sensitive / Conditional use</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f44336;"></div>
+                <span><strong>Red:</strong> Emergency use / Foreclosure defense</span>
+            </div>
+        </div>
+        
+        <div class="decision-box" style="background: #e8f5e9; border-color: #4caf50;">
+            <div class="decision-title" style="color: #2e7d32;">✅ SUCCESS METRICS</div>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>Immediate Win:</strong> Foreclosure stopped or delayed</li>
+                <li><strong>Short-term Win:</strong> Negotiations opened, payments suspended</li>
+                <li><strong>Medium Win:</strong> Principal reduction, loan modification</li>
+                <li><strong>Major Win:</strong> Debt eliminated, clear title</li>
+                <li><strong>Ultimate Win:</strong> Compensation received, systemic change</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Info Panel -->
+    <div id="infoPanel" class="info-panel">
+        <button class="info-close" onclick="closeInfo()">×</button>
+        <div class="info-title" id="infoTitle">Document Information</div>
+        <div class="info-content" id="infoContent">
+            Select a document to see details...
+        </div>
+    </div>
+    
+    <script>
+        const documentInfo = {
+            doc1: {
+                title: "QWR & Validation Request",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Forces lender to provide proof of debt and account information.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Immediately upon default or dispute</li>
+                        <li>Before any other action</li>
+                        <li>Creates RESPA violations if ignored</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Essential foundation</p>
+                    <h3>Response Time:</h3>
+                    <p>20-60 days required by law</p>
+                `
+            },
+            doc3: {
+                title: "FOIA & TILA Requests",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Obtains government records and loan disclosures.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Alongside QWR</li>
+                        <li>To find regulatory violations</li>
+                        <li>To get internal communications</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐ Reveals hidden information</p>
+                `
+            },
+            doc5: {
+                title: "Forensic Accounting & Chain of Title",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Demands complete accounting and ownership proof.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>When payments disputed</li>
+                        <li>Securitization suspected</li>
+                        <li>Multiple claimants</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐ Exposes fraud</p>
+                `
+            },
+            doc7: {
+                title: "Affidavits",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Sworn statements challenging debt validity.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>After Phase 1 responses</li>
+                        <li>To establish legal position</li>
+                        <li>Before court action</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐ Creates legal record</p>
+                `
+            },
+            doc11: {
+                title: "Quiet Title Complaint",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Court action to clear property title.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>When facing foreclosure</li>
+                        <li>Ownership disputed</li>
+                        <li>To force bank to prove claim</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Stops foreclosure</p>
+                    <h3>Cost:</h3>
+                    <p>Filing fees required</p>
+                `
+            },
+            doc15: {
+                title: "Emergency Motion to Stay",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Immediate court order to stop foreclosure sale.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Sale date set</li>
+                        <li>Within 48 hours of sale</li>
+                        <li>EMERGENCY ONLY</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Last-minute save</p>
+                `
+            },
+            doc16: {
+                title: "Criminal Complaints",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Reports fraud to FBI and SEC.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Clear evidence of fraud</li>
+                        <li>Robo-signing found</li>
+                        <li>False documents</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐ Creates fear</p>
+                `
+            },
+            doc23: {
+                title: "Walker Todd Affidavit",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Expert testimony from former Fed attorney.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Court proceedings</li>
+                        <li>Settlement negotiations</li>
+                        <li>Proving no consideration</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Devastating evidence</p>
+                `
+            },
+            doc26: {
+                title: "Press Release",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Public exposure of bank fraud.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>After building case</li>
+                        <li>Bank won't negotiate</li>
+                        <li>Need public support</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐ Public pressure</p>
+                `
+            },
+            doc28: {
+                title: "Class Action Joinder",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Join with other victims for collective action.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Similar victims found</li>
+                        <li>Pattern of fraud</li>
+                        <li>Strength in numbers</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Maximum leverage</p>
+                `
+            },
+            doc29: {
+                title: "Settlement Agreement",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Final resolution and release.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>Bank ready to deal</li>
+                        <li>Terms acceptable</li>
+                        <li>Want closure</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐⭐⭐ Victory</p>
+                `
+            },
+            doc30: {
+                title: "Deed in Lieu",
+                content: `
+                    <h3>Purpose:</h3>
+                    <p>Voluntary property transfer to avoid foreclosure.</p>
+                    <h3>When to Use:</h3>
+                    <ul>
+                        <li>No equity in property</li>
+                        <li>Can't afford payments</li>
+                        <li>Want clean break</li>
+                    </ul>
+                    <h3>Power Level:</h3>
+                    <p>⭐⭐⭐ Strategic retreat</p>
+                `
+            }
+        };
+        
+        function showInfo(docId) {
+            const info = documentInfo[docId] || documentInfo.doc1;
+            document.getElementById('infoTitle').innerHTML = info.title;
+            document.getElementById('infoContent').innerHTML = info.content;
+            document.getElementById('infoPanel').classList.add('active');
+        }
+        
+        function closeInfo() {
+            document.getElementById('infoPanel').classList.remove('active');
+        }
+        
+        function showPath(situation) {
+            let message = '';
+            
+            switch(situation) {
+                case 'current':
+                    message = `
+                        <h3>📍 Path for Current Borrowers:</h3>
+                        <ol>
+                            <li><strong>Start with Phase 1</strong> - All information requests</li>
+                            <li><strong>Skip to Phase 5</strong> - Try alternative payment methods</li>
+                            <li><strong>Build evidence</strong> - Document everything</li>
+                            <li><strong>Prepare for future</strong> - Have documents ready</li>
+                        </ol>
+                        <p><strong>Goal:</strong> Principal reduction or debt elimination</p>
+                    `;
+                    break;
+                    
+                case 'behind':
+                    message = `
+                        <h3>📍 Path for Behind on Payments:</h3>
+                        <ol>
+                            <li><strong>Immediately:</strong> Phase 1 all documents</li>
+                            <li><strong>Week 2:</strong> Phase 2 notices</li>
+                            <li><strong>Month 2:</strong> Phase 4 complaints</li>
+                            <li><strong>Monitor:</strong> Watch for foreclosure filing</li>
+                            <li><strong>Negotiate:</strong> From position of strength</li>
+                        </ol>
+                        <p><strong>Goal:</strong> Loan modification or settlement</p>
+                    `;
+                    break;
+                    
+                case 'foreclosure':
+                    message = `
+                        <h3>🚨 Emergency Foreclosure Defense:</h3>
+                        <ol>
+                            <li><strong>TODAY:</strong> File Quiet Title (Doc 11)</li>
+                            <li><strong>TODAY:</strong> Emergency Stay Motion (Doc 15)</li>
+                            <li><strong>TOMORROW:</strong> All Phase 1 docs</li>
+                            <li><strong>WEEK 1:</strong> Criminal complaints</li>
+                            <li><strong>WEEK 2:</strong> Press release</li>
+                        </ol>
+                        <p><strong>Goal:</strong> Stop sale, force negotiation</p>
+                    `;
+                    break;
+                    
+                case 'post':
+                    message = `
+                        <h3>📍 Post-Foreclosure Actions:</h3>
+                        <ol>
+                            <li><strong>Wrongful foreclosure suit</strong></li>
+                            <li><strong>Criminal complaints</strong> - Doc 16-20</li>
+                            <li><strong>Press exposure</strong> - Doc 26</li>
+                            <li><strong>Class action</strong> - Doc 28</li>
+                            <li><strong>Demand damages</strong></li>
+                        </ol>
+                        <p><strong>Goal:</strong> Compensation and justice</p>
+                    `;
+                    break;
+                    
+                case 'negotiate':
+                    message = `
+                        <h3>✅ Moving to Settlement:</h3>
+                        <p>Great! They're willing to talk. Now:</p>
+                        <ol>
+                            <li>Review Doc 29 (Settlement Agreement)</li>
+                            <li>Know your bottom line</li>
+                            <li>Get everything in writing</li>
+                            <li>Don't accept first offer</li>
+                            <li>Consider tax implications</li>
+                        </ol>
+                    `;
+                    break;
+                    
+                case 'escalate':
+                    message = `
+                        <h3>⚡ Escalation Required:</h3>
+                        <p>They're not responding. Time to increase pressure:</p>
+                        <ol>
+                            <li>File all criminal complaints</li>
+                            <li>Release to media</li>
+                            <li>Contact politicians</li>
+                            <li>Organize other victims</li>
+                            <li>Prepare for court battle</li>
+                        </ol>
+                    `;
+                    break;
+            }
+            
+            alert(message.replace(/<[^>]*>/g, ''));
+        }
+        
+        // Add click instructions
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Flowchart loaded. Click on any document box for details!');
+        });
+    </script>
+</body>
+</html>

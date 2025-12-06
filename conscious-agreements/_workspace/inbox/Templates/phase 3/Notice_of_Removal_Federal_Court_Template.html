@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Removal to Federal Court Template</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .form-field { border: none !important; background: transparent !important; }
+            input, textarea { border: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            line-height: 2;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            background: white;
+            padding: 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .federal-header {
+            background: #1a237e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+        
+        .federal-seal {
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+        
+        .court-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+        }
+        
+        .court-header h1 {
+            font-size: 14pt;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .case-caption {
+            margin: 30px 0;
+        }
+        
+        .case-caption table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .case-caption td {
+            vertical-align: top;
+            padding: 5px;
+        }
+        
+        .plaintiff-section {
+            width: 45%;
+        }
+        
+        .versus {
+            width: 10%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .defendant-section {
+            width: 45%;
+        }
+        
+        .case-numbers {
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .form-field {
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 2px 5px;
+            font-family: 'Times New Roman', serif;
+            font-size: 14pt;
+            background: #fffef0;
+            line-height: 1.5;
+        }
+        
+        input.form-field {
+            width: 300px;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            border: 3px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #0d47a1;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: #c62828;
+            line-height: 1.6;
+        }
+        
+        .basis-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .basis-box h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+        
+        .legal-section {
+            margin: 30px 0;
+        }
+        
+        .legal-section h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .paragraph {
+            text-indent: 50px;
+            text-align: justify;
+            margin: 20px 0;
+            line-height: 2;
+        }
+        
+        .paragraph-number {
+            display: inline-block;
+            width: 50px;
+            margin-left: -50px;
+            text-align: right;
+            padding-right: 15px;
+            font-weight: bold;
+        }
+        
+        .jurisdiction-section {
+            background: #e8eaf6;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #3f51b5;
+        }
+        
+        .jurisdiction-section h3 {
+            color: #1a237e;
+            margin-top: 0;
+        }
+        
+        .federal-question-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .federal-question-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .diversity-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .diversity-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .procedural-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .procedural-section h3 {
+            margin-top: 0;
+        }
+        
+        .signature-block {
+            margin-top: 60px;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 300px;
+            margin: 40px 0 5px 0;
+        }
+        
+        .respectfully {
+            margin: 30px 0;
+        }
+        
+        .certificate-service {
+            margin-top: 60px;
+            border-top: 2px solid black;
+            padding-top: 30px;
+        }
+        
+        .certificate-service h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 2;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .button-bar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .exhibit-list {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .exhibit-list h3 {
+            text-align: center;
+            font-size: 14pt;
+            text-decoration: underline;
+            margin-top: 0;
+        }
+        
+        .tips-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        
+        .tips-box h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        
+        .timeline-critical {
+            background: #263238;
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .timeline-critical h3 {
+            color: #ffeb3b;
+            margin-top: 0;
+        }
+        
+        .advantages-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .advantages-box h3 {
+            color: #4c1d95;
+            margin-top: 0;
+        }
+        
+        @media screen {
+            .page-break {
+                margin: 40px 0;
+                border-top: 3px dashed #ccc;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-bar no-print">
+        <button onclick="window.print()">Print/Save as PDF</button>
+        <button onclick="clearForm()">Clear Form</button>
+        <button onclick="fillSample()">Load Sample</button>
+    </div>
+    
+    <div class="container">
+        <div class="federal-header no-print">
+            <div class="federal-seal">⚖️</div>
+            NOTICE OF REMOVAL TO FEDERAL COURT<br>
+            CHANGE THE BATTLEFIELD - FEDERAL JURISDICTION
+        </div>
+        
+        <div class="instructions no-print">
+            <h3>🏛️ Federal Removal - Strategic Venue Change</h3>
+            <p><strong>What This Does:</strong></p>
+            <ol>
+                <li><strong>Moves case to federal court</strong> - Away from local bias</li>
+                <li><strong>Federal judges</strong> - Often more neutral</li>
+                <li><strong>Federal procedures</strong> - Different rules may help</li>
+                <li><strong>Broader discovery</strong> - Federal discovery rules</li>
+                <li><strong>Appeal options</strong> - Federal circuit courts</li>
+            </ol>
+            <p><strong>Two Main Bases:</strong></p>
+            <ul>
+                <li><strong>Federal Question:</strong> Case involves federal law</li>
+                <li><strong>Diversity:</strong> Parties from different states + $75,000+</li>
+            </ul>
+        </div>
+        
+        <div class="timeline-critical no-print">
+            <h3>⏰ CRITICAL: 30-DAY DEADLINE</h3>
+            <p><strong>You have ONLY 30 DAYS from service to remove!</strong></p>
+            <ul>
+                <li>Count from when you were served</li>
+                <li>Missing deadline = waiver of right</li>
+                <li>No extensions typically granted</li>
+                <li>File in federal court, not state</li>
+                <li>Must notify state court immediately</li>
+            </ul>
+        </div>
+        
+        <div class="basis-box no-print">
+            <h3>📋 Choose Your Basis for Removal</h3>
+            <p><strong>Federal Question Jurisdiction (Best):</strong></p>
+            <ul>
+                <li>☑️ FDCPA violations alleged</li>
+                <li>☑️ RESPA violations alleged</li>
+                <li>☑️ TILA violations alleged</li>
+                <li>☑️ Constitutional violations (Due Process)</li>
+                <li>☑️ Criminal statutes cited (18 USC)</li>
+            </ul>
+            <p><strong>Diversity Jurisdiction:</strong></p>
+            <ul>
+                <li>☑️ You and bank in different states</li>
+                <li>☑️ Amount exceeds $75,000</li>
+                <li>☑️ Complete diversity required</li>
+            </ul>
+        </div>
+        
+        <div class="court-header">
+            <h1>UNITED STATES DISTRICT COURT</h1>
+            <h1><input type="text" class="form-field" placeholder="SOUTHERN/NORTHERN/EASTERN/WESTERN" style="width: 200px;"> DISTRICT OF <input type="text" class="form-field" placeholder="STATE" style="width: 150px;"></h1>
+            <h1><input type="text" class="form-field" placeholder="DIVISION (if applicable)" style="width: 200px;"> DIVISION</h1>
+        </div>
+        
+        <div class="case-caption">
+            <table>
+                <tr>
+                    <td class="plaintiff-section">
+                        <input type="text" class="form-field" placeholder="BANK/SERVICER NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Plaintiff,</span>
+                    </td>
+                    <td class="versus">
+                        <br><br>vs.
+                    </td>
+                    <td class="defendant-section">
+                        <div class="case-numbers">
+                            Federal Case No. _______________<br>
+                            (State Case No. <input type="text" class="form-field" placeholder="State case number" style="width: 150px;">)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="defendant-section">
+                        <input type="text" class="form-field" placeholder="YOUR NAME" style="width: 100%;"><br>
+                        <span style="margin-left: 50px;">Defendant.</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2 style="text-align: center; font-size: 16pt; margin: 30px 0; font-weight: bold;">
+            DEFENDANT'S NOTICE OF REMOVAL
+        </h2>
+        
+        <div class="legal-section">
+            <div class="paragraph">
+                TO THE UNITED STATES DISTRICT COURT FOR THE <input type="text" class="form-field" placeholder="District" style="width: 200px;"> DISTRICT OF <input type="text" class="form-field" placeholder="State" style="width: 150px;">:
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">1.</span>
+                PLEASE TAKE NOTICE that Defendant <input type="text" class="form-field" placeholder="Your Name" style="width: 200px;"> hereby removes this action from the <input type="text" class="form-field" placeholder="State Court Name" style="width: 300px;"> Court of <input type="text" class="form-field" placeholder="County" style="width: 150px;"> County, <input type="text" class="form-field" placeholder="State" style="width: 100px;">, to this Court pursuant to 28 U.S.C. §§ 1441 and 1446.
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>I. PROCEDURAL REQUIREMENTS</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">2.</span>
+                This Notice of Removal is timely filed within thirty (30) days after Defendant's receipt of the initial pleading. Defendant was served on <input type="date" class="form-field" style="width: 150px;">, and this Notice is filed on <input type="date" class="form-field" style="width: 150px;">.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">3.</span>
+                The state court action is captioned <input type="text" class="form-field" placeholder="Full case caption" style="width: 400px;">, Case No. <input type="text" class="form-field" placeholder="State case number" style="width: 150px;">, pending in the <input type="text" class="form-field" placeholder="Court name" style="width: 300px;"> Court.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">4.</span>
+                Venue is proper in this district under 28 U.S.C. § 1441(a) because this district embraces the place where the state action is pending.
+            </div>
+        </div>
+        
+        <div class="federal-question-box">
+            <h3>OPTION A: FEDERAL QUESTION JURISDICTION</h3>
+            <p><strong>Use if your case involves federal law claims/defenses</strong></p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>II. BASIS FOR FEDERAL JURISDICTION - FEDERAL QUESTION</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">5.</span>
+                This Court has original jurisdiction over this action pursuant to 28 U.S.C. § 1331 (federal question jurisdiction) because:
+            </div>
+            
+            <div class="paragraph" style="margin-left: 50px;">
+                <strong>A. The Complaint Alleges Violations of Federal Law</strong><br>
+                Plaintiff's foreclosure action necessarily involves the resolution of substantial federal questions including:
+                <ul>
+                    <li>Validity of debt under federal banking regulations</li>
+                    <li>Compliance with federal mortgage servicing rules</li>
+                    <li>Federal Reserve regulations regarding money creation</li>
+                    <li>Constitutional due process violations</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph" style="margin-left: 50px;">
+                <strong>B. Defendant's Counterclaims Assert Federal Claims</strong><br>
+                Defendant has asserted or will assert counterclaims under:
+                <ul>
+                    <li>Fair Debt Collection Practices Act (15 U.S.C. § 1692 et seq.)</li>
+                    <li>Fair Credit Reporting Act (15 U.S.C. § 1681 et seq.)</li>
+                    <li>Real Estate Settlement Procedures Act (12 U.S.C. § 2605 et seq.)</li>
+                    <li>Truth in Lending Act (15 U.S.C. § 1601 et seq.)</li>
+                    <li>RICO (18 U.S.C. § 1961 et seq.)</li>
+                    <li>Constitutional violations under 42 U.S.C. § 1983</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph" style="margin-left: 50px;">
+                <strong>C. Federal Defenses Are Central</strong><br>
+                Defendant's defenses include:
+                <ul>
+                    <li>Lack of consideration under federal monetary law (12 U.S.C. § 411)</li>
+                    <li>Violations of federal criminal statutes (18 U.S.C. § 1584, 894, 1341)</li>
+                    <li>Federal banking regulation violations</li>
+                    <li>Constitutional due process and equal protection</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="diversity-box">
+            <h3>OPTION B: DIVERSITY JURISDICTION</h3>
+            <p><strong>Use if parties are from different states and amount exceeds $75,000</strong></p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>III. BASIS FOR FEDERAL JURISDICTION - DIVERSITY</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">6.</span>
+                This Court has original jurisdiction over this action pursuant to 28 U.S.C. § 1332 (diversity jurisdiction) because:
+            </div>
+            
+            <div class="paragraph" style="margin-left: 50px;">
+                <strong>A. Complete Diversity Exists</strong><br>
+                <ul>
+                    <li>Defendant is a citizen of <input type="text" class="form-field" placeholder="Your state" style="width: 150px;"></li>
+                    <li>Plaintiff <input type="text" class="form-field" placeholder="Bank name" style="width: 200px;"> is a <input type="text" class="form-field" placeholder="corporation/national association" style="width: 200px;"> incorporated in <input type="text" class="form-field" placeholder="State of incorporation" style="width: 150px;"> with its principal place of business in <input type="text" class="form-field" placeholder="State of HQ" style="width: 150px;"></li>
+                    <li>Complete diversity of citizenship exists between all plaintiffs and all defendants</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph" style="margin-left: 50px;">
+                <strong>B. Amount in Controversy Exceeds $75,000</strong><br>
+                <ul>
+                    <li>The alleged mortgage debt is $<input type="text" class="form-field" placeholder="Amount" style="width: 150px;"></li>
+                    <li>The property value is $<input type="text" class="form-field" placeholder="Property value" style="width: 150px;"></li>
+                    <li>Defendant's counterclaims seek damages exceeding $75,000</li>
+                    <li>The amount in controversy clearly exceeds the jurisdictional minimum</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>IV. SUBSTANTIAL FEDERAL ISSUES</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">7.</span>
+                This case involves substantial federal issues including:
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">8.</span>
+                <strong>The Nature of Money Creation:</strong> The fundamental issue is whether banks lend pre-existing money or create money through loan origination, implicating federal banking law and Federal Reserve regulations.
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">9.</span>
+                <strong>Federal Criminal Violations:</strong> Plaintiff's conduct allegedly violates:
+                <ul>
+                    <li>18 U.S.C. § 1584 - Involuntary servitude</li>
+                    <li>18 U.S.C. § 894 - Extortionate collection of credit</li>
+                    <li>18 U.S.C. § 1341 - Mail fraud</li>
+                    <li>18 U.S.C. § 1344 - Bank fraud</li>
+                </ul>
+            </div>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">10.</span>
+                <strong>Constitutional Issues:</strong>
+                <ul>
+                    <li>Fifth Amendment Due Process violations</li>
+                    <li>Fourteenth Amendment Equal Protection violations</li>
+                    <li>Article I, Section 8 - Congressional power to coin money</li>
+                    <li>Article I, Section 10 - States cannot impair contracts</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>V. NO PROCEDURAL DEFECTS</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">11.</span>
+                All procedural requirements for removal have been satisfied:
+                <ul>
+                    <li>This Notice is timely (within 30 days)</li>
+                    <li>Venue is proper in this district</li>
+                    <li>All defendants consent to removal (single defendant case)</li>
+                    <li>The state court has not yet entered final judgment</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>VI. DOCUMENTS FILED</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">12.</span>
+                Pursuant to 28 U.S.C. § 1446(a), Defendant files herewith:
+                <ul>
+                    <li>Copy of all process, pleadings, and orders from state court (Exhibit A)</li>
+                    <li>Civil cover sheet for federal court</li>
+                    <li>Filing fee or application to proceed in forma pauperis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-section">
+            <h2>VII. NOTICE TO STATE COURT</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">13.</span>
+                Defendant will promptly give written notice of this removal to all adverse parties and will file a copy of this Notice with the clerk of the state court, pursuant to 28 U.S.C. § 1446(d).
+            </div>
+        </div>
+        
+        <div class="procedural-section">
+            <h3>Effect of Removal</h3>
+            <p>Upon filing this Notice:</p>
+            <ol>
+                <li>State court proceedings are automatically stayed</li>
+                <li>State court loses jurisdiction</li>
+                <li>Federal court assumes full jurisdiction</li>
+                <li>All future proceedings occur in federal court</li>
+                <li>Federal rules of civil procedure apply</li>
+            </ol>
+        </div>
+        
+        <div class="legal-section">
+            <h2>VIII. REQUEST FOR RELIEF</h2>
+            
+            <div class="paragraph">
+                <span class="paragraph-number">14.</span>
+                WHEREFORE, Defendant respectfully requests that:
+                <ol type="A">
+                    <li>This Court accept jurisdiction over this removed action;</li>
+                    <li>This Court docket this case and issue all appropriate orders;</li>
+                    <li>The state court be notified of removal and directed to take no further action;</li>
+                    <li>All further proceedings be conducted in this federal court;</li>
+                    <li>Such other relief as the Court deems just and proper.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="signature-block">
+            <div class="respectfully">
+                Respectfully submitted,
+            </div>
+            
+            <div>
+                DATED: <input type="date" class="form-field" style="width: 150px;">
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name (printed)" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Your Address" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br>
+                <input type="text" class="form-field" placeholder="Phone Number" style="width: 200px;"><br>
+                <input type="text" class="form-field" placeholder="Email" style="width: 300px;"><br>
+                Defendant Pro Se
+            </div>
+        </div>
+        
+        <div class="certificate-service">
+            <h3>CERTIFICATE OF SERVICE</h3>
+            
+            <p>I hereby certify that on <input type="date" class="form-field" style="width: 150px;">, I served a true and correct copy of the foregoing Notice of Removal on:</p>
+            
+            <div style="margin: 20px 0;">
+                <strong>Plaintiff's Attorney:</strong><br>
+                <input type="text" class="form-field" placeholder="Attorney Name" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Law Firm" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br><br>
+                By: ☐ U.S. Mail ☐ Hand Delivery ☐ Email ☐ CM/ECF (Federal E-Filing)
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <strong>State Court Clerk:</strong><br>
+                <input type="text" class="form-field" placeholder="Court Name" style="width: 400px;"><br>
+                <input type="text" class="form-field" placeholder="Address" style="width: 500px;"><br>
+                <input type="text" class="form-field" placeholder="City, State ZIP" style="width: 300px;"><br><br>
+                By: ☐ Hand Delivery ☐ Certified Mail
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <div class="signature-line"></div>
+                <input type="text" class="form-field" placeholder="Your Name" style="width: 300px;">
+            </div>
+        </div>
+        
+        <div class="procedural-section no-print">
+            <h3>NOTICE TO STATE COURT (Separate Document)</h3>
+            <p style="text-align: center; font-weight: bold;">
+                [File this separately with state court]
+            </p>
+            <p>
+                TO THE CLERK OF <input type="text" class="form-field" placeholder="State Court" style="width: 300px;">:
+            </p>
+            <p>
+                PLEASE TAKE NOTICE that the above-captioned action has been removed to the United States District Court for the <input type="text" class="form-field" placeholder="District" style="width: 200px;"> District of <input type="text" class="form-field" placeholder="State" style="width: 150px;"> pursuant to 28 U.S.C. §§ 1441 and 1446.
+            </p>
+            <p>
+                Under 28 U.S.C. § 1446(d), the state court is directed to proceed no further in this action and to forward any pending motions and the court file to the federal court.
+            </p>
+        </div>
+        
+        <div class="advantages-box no-print">
+            <h3>✨ Federal Court Advantages</h3>
+            <ul>
+                <li><strong>Neutral forum</strong> - Less local bank influence</li>
+                <li><strong>Federal judges</strong> - Life tenure, less political pressure</li>
+                <li><strong>Better procedures</strong> - More formal, structured</li>
+                <li><strong>Broader discovery</strong> - Federal discovery rules</li>
+                <li><strong>Federal law expertise</strong> - Better for federal claims</li>
+                <li><strong>Jury pool</strong> - Broader geographic area</li>
+                <li><strong>Appeal to Circuit Court</strong> - Federal appellate system</li>
+            </ul>
+        </div>
+        
+        <div class="exhibit-list no-print">
+            <h3>EXHIBITS TO ATTACH</h3>
+            <ol>
+                <li><strong>Exhibit A:</strong> Complete state court file
+                    <ul>
+                        <li>Original complaint</li>
+                        <li>Summons</li>
+                        <li>All filed motions</li>
+                        <li>All court orders</li>
+                        <li>Your answer/counterclaim</li>
+                        <li>Any other filed documents</li>
+                    </ul>
+                </li>
+                <li><strong>Civil Cover Sheet</strong> (JS 44 form)</li>
+                <li><strong>Filing fee</strong> ($402 as of 2024) or IFP application</li>
+            </ol>
+        </div>
+        
+        <div class="tips-box no-print">
+            <h3>💡 Critical Filing Steps</h3>
+            <ol>
+                <li><strong>File in FEDERAL court</strong> - Not state court!</li>
+                <li><strong>Pay filing fee</strong> - $402 (or file IFP)</li>
+                <li><strong>Get case number</strong> - Federal case number assigned</li>
+                <li><strong>Notify state court immediately</strong> - Same day</li>
+                <li><strong>Serve all parties</strong> - Within reasonable time</li>
+                <li><strong>File proof of state court notice</strong> - With federal court</li>
+                <li><strong>Monitor for remand motion</strong> - They may try to send back</li>
+                <li><strong>Prepare to defend removal</strong> - Have arguments ready</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function clearForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+        
+        function fillSample() {
+            // Fill with sample data
+            const inputs = document.querySelectorAll('input.form-field');
+            const today = new Date();
+            const serviceDate = new Date(today.getTime() - 10 * 24 * 60 * 60 * 1000); // 10 days ago
+            
+            // Sample data mapping
+            document.querySelectorAll('input[placeholder*="SOUTHERN"]').forEach(el => el.value = 'SOUTHERN');
+            document.querySelectorAll('input[placeholder*="STATE"]').forEach(el => el.value = 'FLORIDA');
+            document.querySelectorAll('input[placeholder*="DIVISION"]').forEach(el => el.value = 'MIAMI');
+            document.querySelectorAll('input[placeholder*="YOUR NAME"], input[placeholder*="Your Name"]').forEach(el => el.value = 'John Doe');
+            document.querySelectorAll('input[placeholder*="BANK/SERVICER NAME"], input[placeholder*="Bank name"]').forEach(el => el.value = 'WELLS FARGO BANK, N.A.');
+            document.querySelectorAll('input[placeholder*="State case number"]').forEach(el => el.value = '2024-CA-001234');
+            document.querySelectorAll('input[placeholder*="County"]').forEach(el => el.value = 'Miami-Dade');
+            document.querySelectorAll('input[placeholder*="Amount"]').forEach(el => el.value = '350,000');
+            document.querySelectorAll('input[placeholder*="Property value"]').forEach(el => el.value = '450,000');
+            
+            // Set dates
+            inputs.forEach(input => {
+                if (input.type === 'date' && input.value === '') {
+                    input.value = today.toISOString().split('T')[0];
+                }
+            });
+        }
+        
+        // Auto-save functionality
+        const inputs = document.querySelectorAll('input.form-field');
+        inputs.forEach(input => {
+            const saved = localStorage.getItem('removal_' + input.placeholder);
+            if (saved) input.value = saved;
+            
+            input.addEventListener('input', function() {
+                localStorage.setItem('removal_' + this.placeholder, this.value);
+            });
+        });
+    </script>
+</body>
+</html>
