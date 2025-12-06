@@ -28,64 +28,127 @@ The problem: Most people have "agreed" to things they don't understand, using te
 
 ```
 conscious-agreements/
-├── CLAUDE.md              ← You are here
-├── README.md              ← Human overview
-├── index.html             ← Landing page
+├── CLAUDE.md                 ← You are here (Claude instructions)
+├── README.md                 ← Human overview
+├── index.html                ← Landing page
 │
 ├── assets/
 │   ├── css/
-│   │   ├── shared.css     ← Core styles (Parchment theme)
-│   │   └── components.css ← Reusable component styles
+│   │   └── shared.css        ← Core styles (Parchment theme) - SINGLE SOURCE
 │   └── js/
-│       └── main.js        ← Navigation, interactions
+│       ├── components.js     ← Shared header/footer components (mega-menu nav)
+│       └── main.js           ← Navigation, mobile menu, interactions
 │
-├── foundation/            ← CORE CONCEPTS (read/build these first)
+├── foundation/               ← CORE CONCEPTS (read/build these first)
 │   ├── index.html
 │   ├── what-is-agreement.html
 │   ├── conscious-unconscious.html
 │   ├── how-you-energize.html
 │   ├── covert-contracts.html
-│   └── healthy-agreements.html
+│   ├── healthy-agreements.html
+│   └── money-creation/       ← How money is created through signatures
+│       ├── index.html
+│       ├── how-money-is-created.html
+│       ├── promissory-notes.html
+│       └── the-system.html
 │
-├── domains/               ← SPECIFIC AGREEMENT AREAS
+├── domains/                  ← SPECIFIC AGREEMENT AREAS
 │   ├── index.html
-│   ├── governance/        ← Citizenship, jurisdiction, statutes
-│   ├── commerce/          ← Contracts, UCC, transactions
-│   ├── property/          ← Ownership, titles, trusts
-│   └── identity/          ← Person, legal fiction, names
+│   ├── governance/           ← Citizenship, jurisdiction, statutes
+│   ├── commerce/             ← Contracts, UCC, negotiable instruments
+│   │   ├── index.html
+│   │   ├── negotiable-instruments.html
+│   │   ├── consideration-in-commerce.html
+│   │   ├── signatures-and-liability.html
+│   │   └── holders-and-enforcement.html
+│   ├── property/             ← Ownership, titles, trusts
+│   └── identity/             ← Person, legal fiction, names
+│       ├── index.html
+│       ├── the-name.html
+│       ├── person-and-individual.html
+│       ├── private-public.html
+│       └── citizenship.html
 │
-├── pathways/              ← PRACTICAL NAVIGATION
+├── pathways/                 ← PRACTICAL NAVIGATION
 │   ├── index.html
 │   ├── examining-agreement.html
 │   ├── responding-to-claims.html
 │   ├── asking-right-questions.html
 │   └── common-situations/
+│       ├── index.html
+│       ├── mortgage-challenge.html
+│       └── debt-collection.html
 │
-├── reference/             ← LOOKUP MATERIALS
+├── reference/                ← LOOKUP MATERIALS
 │   ├── index.html
-│   ├── definitions/       ← Key Black's Law terms (HTML)
-│   ├── blacks-law-4th.md  ← Full dictionary (Claude reference)
-│   └── key-documents/
+│   └── terminology.html      ← Key Black's Law terms
 │
-├── templates/             ← PRACTICAL TEMPLATES
-│   ├── index.html
-│   ├── response-letters/
-│   └── notices/
+├── templates/                ← 7-PHASE DOCUMENT SYSTEM
+│   ├── index.html            ← Overview of all phases
+│   ├── phase-1/              ← Discovery (QWR, Debt Validation, FOIA, etc.)
+│   ├── phase-2/              ← Challenge (Notices, Affidavits)
+│   ├── phase-3/              ← Court Filings (Motion to Dismiss, Quiet Title)
+│   ├── phase-4/              ← Complaints (FBI, DOJ, CFPB, SEC)
+│   ├── phase-5/              ← Alternatives (Conditional Acceptance, Offset)
+│   ├── phase-6/              ← Public Pressure (Press, Congressional, Class Action)
+│   └── phase-7/              ← Settlement (Agreement, Deed in Lieu)
 │
-├── claude-reference/      ← CLAUDE-OPTIMIZED SUMMARIES
-│   ├── FRAMEWORK.md       ← The philosophical lens
-│   ├── NAVIGATION.md      ← Site structure & content map
-│   ├── foundation.md      ← Foundation concepts summary
-│   ├── domains.md         ← Domain summaries
-│   ├── pathways.md        ← Pathway summaries
-│   └── key-definitions.md ← Critical Black's Law terms
+├── claude-reference/         ← CLAUDE-OPTIMIZED REFERENCE MATERIALS
+│   ├── FRAMEWORK.md          ← The philosophical lens
+│   ├── NAVIGATION.md         ← Site structure & content map
+│   ├── key-definitions.md    ← Critical Black's Law terms
+│   ├── BlacksLaw-4th-ed/     ← Complete Black's Law Dictionary (A-Z .md files)
+│   ├── UCC/                  ← Uniform Commercial Code reference
+│   └── Brandon Joe Williams/ ← ContractKiller framework & analysis
 │
-└── _workspace/            ← NOT DEPLOYED - Working area
-    ├── inbox/             ← Drop unorganized files here
-    ├── processing/        ← Files being worked on
-    ├── sources/           ← Original source documents
-    └── research-notes/    ← Research and drafting
+└── _workspace/               ← NOT DEPLOYED - Working area
+    ├── inbox/                ← Drop unorganized files here
+    ├── processing/           ← Files being worked on
+    └── README.md             ← Workspace instructions
 ```
+
+---
+
+## Architecture: JavaScript Components
+
+### How the Header/Footer Work
+
+All 70 HTML pages use a **JavaScript component system** for shared navigation:
+
+```html
+<!-- Every page has these placeholders -->
+<body>
+    <div id="site-header"></div>
+
+    <main class="content">
+        <!-- Page-specific content -->
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+```
+
+**components.js** contains:
+- `renderNavigation()` — Returns the full mega-menu HTML
+- `renderFooter()` — Returns the footer HTML
+- `initComponents()` — Injects both into placeholder divs
+
+**main.js** contains:
+- `initComponents()` call on DOMContentLoaded
+- `initMobileMenu()` — Hamburger menu for mobile
+- `initNavigation()` — Active page highlighting
+- `initSmoothScrolling()` — Anchor link behavior
+
+### To Update Navigation Site-Wide
+
+Edit **only** `/assets/js/components.js` — changes apply to all pages automatically.
+
+### To Update Styles Site-Wide
+
+Edit **only** `/assets/css/shared.css` — all pages reference this single file.
 
 ---
 
@@ -94,7 +157,7 @@ conscious-agreements/
 ### Content Flow
 
 ```
-Foundation (the lens) → Domains (where agreements live) → Pathways (how to navigate) → Reference (lookup)
+Foundation (the lens) → Domains (where agreements live) → Pathways (how to navigate) → Templates (practical docs)
 ```
 
 Always ensure Foundation content is solid before building Domain-specific content. The reframe must come first.
@@ -103,24 +166,99 @@ Always ensure Foundation content is solid before building Domain-specific conten
 
 1. **Check inbox**: Look in `_workspace/inbox/` for files to process
 2. **Understand context**: Read relevant `/claude-reference/*.md` files first
-3. **Process in workspace**: Work in `_workspace/processing/`
-4. **Create HTML**: Build page in appropriate content folder
-5. **Update references**: Update relevant `/claude-reference/*.md` summaries
-6. **Update navigation**: Ensure index pages link to new content
+3. **Create HTML**: Build page in appropriate content folder using the standard template
+4. **Add to navigation**: Update `components.js` to include new page in mega-menu
+5. **Update index pages**: Ensure section index pages link to new content
 
-### When Asked to Explain or Analyze
+### Standard Page Template
 
-1. **Use the framework**: Apply the conscious/unconscious agreement lens
-2. **Check definitions**: Verify term meanings against Black's Law 4th
-3. **Identify the agreement**: What is actually being claimed/consented to?
-4. **Consider energizing**: How is the person participating in this agreement?
-5. **Explore options**: What pathways exist for conscious choice?
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Page Title] — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/section/">Section</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Page Title</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Page Title</h1>
+                    <p class="lead">Brief description of page content.</p>
+                </header>
+
+                <section>
+                    <!-- Content sections -->
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/prev-page.html" class="page-nav__link">
+                    <span class="page-nav__label">Previous</span>
+                    <span class="page-nav__title">← Previous Page</span>
+                </a>
+                <a href="/next-page.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next</span>
+                    <span class="page-nav__title">Next Page →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
+```
+
+---
+
+## CSS Component Classes
+
+### Layout
+- `.content` — Main content wrapper
+- `.container` — Max-width centered container
+- `.grid`, `.grid--2`, `.grid--3` — Grid layouts
+
+### Cards & Boxes
+- `.card`, `.card--highlight` — Content cards
+- `.section-card` — Clickable section navigation cards
+- `.definition-box` — Black's Law definitions
+- `.insight-box` — Key insights (gold border)
+- `.important-box` — Warnings/important notes
+
+### Navigation
+- `.main-nav` — Top navigation bar
+- `.mega-menu` — Dropdown mega-menu
+- `.breadcrumb` — Breadcrumb trail
+- `.page-nav` — Previous/Next links
+
+### Typography
+- `.lead` — Larger intro paragraph
+- `blockquote` — Styled quotes
+- `.card__title`, `.card__text`, `.card__label` — Card typography
 
 ---
 
 ## Black's Law Dictionary Integration
 
-The file `reference/blacks-law-4th.md` contains the complete Black's Law Dictionary 4th Edition. It's too large to load in context but essential for term lookup.
+The `/claude-reference/BlacksLaw-4th-ed/` folder contains the complete Black's Law Dictionary 4th Edition split into A-Z markdown files.
 
 ### Most Critical Terms to Know
 
@@ -141,87 +279,24 @@ When encountering legal documents or situations, always verify term definitions.
 
 ---
 
-## HTML/CSS Conventions
-
-### Visual Theme: "Grounded Clarity"
-
-Adapted from Erlandia's Paradise Parchment style — scholarly, warm, authoritative without being cold.
-
-- **Background**: Warm parchment with subtle sky gradient at top
-- **Typography**: Cinzel (headers), Crimson Text (body), JetBrains Mono (definitions/technical)
-- **Accent**: Gold (#d4a853, #b8860b) for emphasis and links
-- **Ink**: Dark blue-gray (#2c3e50) for readability
-
-### Page Structure
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Page Title] — Conscious Agreements</title>
-    <link rel="stylesheet" href="/assets/css/shared.css">
-</head>
-<body>
-    <nav class="main-nav"><!-- Consistent navigation --></nav>
-    
-    <main class="content">
-        <nav class="breadcrumb"><!-- Breadcrumb trail --></nav>
-        <article>
-            <!-- Page content -->
-        </article>
-        <nav class="page-nav"><!-- Prev/Next links --></nav>
-    </main>
-    
-    <footer><!-- Consistent footer --></footer>
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
-```
-
-### File Naming
-
-- Use lowercase with hyphens: `contract-basics.html`
-- No spaces in filenames
-- Index pages: `index.html` in each folder
-- Templates: `[purpose]-template.[ext]`
-
----
-
-## Claude Reference Files
-
-The `/claude-reference/` folder contains markdown summaries optimized for Claude consumption:
-
-- **FRAMEWORK.md** — The philosophical lens (read this first for any new conversation)
-- **NAVIGATION.md** — Complete site map with page summaries
-- **[topic].md** — Synthesized summaries of each content section
-
-These files should be:
-- Concise (summaries, not full articles)
-- Cross-referenced (link related concepts)
-- Updated when HTML content changes
-
----
-
 ## Deployment
 
 - **Platform**: Cloudflare Pages
-- **Build**: None (static HTML)
-- **Excluded**: `_workspace/` folder (not deployed)
-- **Access**: Private URL shared with specific people
+- **Build Output Directory**: `conscious-agreements` (the folder, not root)
+- **Build Command**: None (static HTML)
+- **Excluded**: `_workspace/` folder (working area, not for public)
+- **Access**: Private URL
 
-### What's NOT Deployed
+### Local Development
 
-The `_workspace/` folder stays in GitHub but is excluded from Cloudflare Pages deployment. This is the working area for processing new content.
+```bash
+# Start local server (from conscious-agreements folder)
+cd conscious-agreements
+python3 -m http.server 8080
 
-To exclude, add to Cloudflare Pages settings or use `_headers` file:
+# Then open: http://localhost:8080
+# In Codespaces: Use the Ports tab to open port 8080
 ```
-/_workspace/*
-  X-Robots-Tag: noindex
-```
-
-Or configure in Cloudflare dashboard under Build settings → Root directory.
 
 ---
 
@@ -238,7 +313,7 @@ Or configure in Cloudflare dashboard under Build settings → Root directory.
 
 - **Empowering**, not conspiratorial
 - **Clear**, not legalistic
-- **Grounded**, not mystical (save that for Erlandia proper)
+- **Grounded**, not mystical
 - **Practical**, with philosophical foundation
 
 ### Avoid
@@ -247,24 +322,6 @@ Or configure in Cloudflare dashboard under Build settings → Root directory.
 - Combative framing (us vs. them)
 - Absolute claims about legal outcomes
 - Advice (this is education, not legal counsel)
-
----
-
-## Quick Reference Commands
-
-```bash
-# Start local server for preview
-python -m http.server 8000
-
-# Or with Node
-npx serve .
-
-# Check for broken links
-npx linkinator . --recurse
-
-# Format markdown files
-npx prettier --write "**/*.md"
-```
 
 ---
 
