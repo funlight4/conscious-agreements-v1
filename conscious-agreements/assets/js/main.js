@@ -4,26 +4,105 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize components first (header/footer)
+    initComponents();
+
+    // Then initialize interactive features
     initNavigation();
+    initMobileMenu();
     initSmoothScrolling();
     initDefinitionHighlight();
 });
 
 /**
- * Navigation - highlight current page
+ * Navigation - highlight current page in menu
  */
 function initNavigation() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.main-nav__link');
-    
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
+        if (!href) return;
+
         // Match exact path or parent section
-        if (href === currentPath || 
-            (href !== '/' && currentPath.startsWith(href))) {
+        if (href === currentPath ||
+            (href !== '/' && currentPath.startsWith(href.replace(/\/$/, '')))) {
             link.classList.add('main-nav__link--active');
         }
     });
+
+    // Also highlight links in mega-menus for current page
+    const megaMenuLinks = document.querySelectorAll('.mega-menu__list a');
+    megaMenuLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+            link.style.color = 'var(--gold-deep)';
+            link.style.fontWeight = '600';
+        }
+    });
+}
+
+/**
+ * Mobile menu initialization
+ */
+function initMobileMenu() {
+    const toggle = document.querySelector('.main-nav__toggle');
+    const nav = document.querySelector('.main-nav__links');
+    const items = document.querySelectorAll('.main-nav__item');
+
+    if (toggle && nav) {
+        // Toggle main menu
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('is-open');
+            toggle.textContent = nav.classList.contains('is-open') ? '✕' : '☰';
+        });
+
+        // Toggle submenus on mobile
+        items.forEach(item => {
+            const link = item.querySelector('.main-nav__link');
+            const megaMenu = item.querySelector('.mega-menu');
+
+            if (link && megaMenu) {
+                link.addEventListener('click', (e) => {
+                    // Only prevent default on mobile when there's a mega menu
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        // Close other open menus
+                        items.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('is-open');
+                            }
+                        });
+
+                        // Toggle this menu
+                        item.classList.toggle('is-open');
+                    }
+                });
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.main-nav')) {
+                nav.classList.remove('is-open');
+                toggle.textContent = '☰';
+                items.forEach(item => item.classList.remove('is-open'));
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                nav.classList.remove('is-open');
+                toggle.textContent = '☰';
+                items.forEach(item => item.classList.remove('is-open'));
+            }
+        });
+    }
 }
 
 /**
@@ -32,20 +111,25 @@ function initNavigation() {
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(targetId);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Update URL without scrolling
+                history.pushState(null, null, targetId);
             }
         });
     });
 }
 
 /**
- * Definition highlight - when linking to definitions, 
+ * Definition highlight - when linking to definitions,
  * briefly highlight them
  */
 function initDefinitionHighlight() {
@@ -67,27 +151,27 @@ function initDefinitionHighlight() {
 function generateBreadcrumb() {
     const path = window.location.pathname;
     const parts = path.split('/').filter(p => p);
-    
+
     const breadcrumb = document.querySelector('.breadcrumb');
     if (!breadcrumb || parts.length === 0) return;
-    
+
     let html = '<a href="/">Home</a>';
     let currentPath = '';
-    
+
     parts.forEach((part, index) => {
         currentPath += '/' + part;
         const isLast = index === parts.length - 1;
         const name = formatBreadcrumbName(part);
-        
+
         html += '<span class="breadcrumb__separator">→</span>';
-        
+
         if (isLast) {
             html += `<span>${name}</span>`;
         } else {
             html += `<a href="${currentPath}/">${name}</a>`;
         }
     });
-    
+
     breadcrumb.innerHTML = html;
 }
 
@@ -113,11 +197,11 @@ function formatBreadcrumbName(segment) {
 function searchDefinitions(query) {
     const definitions = document.querySelectorAll('.definition-box');
     const results = [];
-    
+
     definitions.forEach(def => {
         const term = def.querySelector('.definition-box__term')?.textContent || '';
         const meaning = def.querySelector('.definition-box__meaning')?.textContent || '';
-        
+
         if (term.toLowerCase().includes(query.toLowerCase()) ||
             meaning.toLowerCase().includes(query.toLowerCase())) {
             results.push({
@@ -126,16 +210,21 @@ function searchDefinitions(query) {
             });
         }
     });
-    
+
     return results;
 }
 
 /**
- * Mobile menu toggle (for future implementation)
+ * Page transition effect (optional enhancement)
  */
-function toggleMobileMenu() {
-    const nav = document.querySelector('.main-nav__links');
-    if (nav) {
-        nav.classList.toggle('main-nav__links--open');
+function initPageTransitions() {
+    // Add fade-in class to main content
+    const main = document.querySelector('main');
+    if (main) {
+        main.style.opacity = '0';
+        main.style.transition = 'opacity 0.3s ease';
+        requestAnimationFrame(() => {
+            main.style.opacity = '1';
+        });
     }
 }

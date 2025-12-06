@@ -252,7 +252,7 @@ dd {
 .main-nav {
     background: var(--parchment);
     border-bottom: var(--border-subtle);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-lg);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -274,6 +274,7 @@ dd {
     color: var(--gold-deep);
     text-decoration: none;
     border: none;
+    flex-shrink: 0;
 }
 
 .main-nav__brand:hover {
@@ -283,26 +284,186 @@ dd {
 
 .main-nav__links {
     display: flex;
-    gap: var(--space-lg);
+    gap: 0;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+.main-nav__item {
+    position: relative;
+}
+
 .main-nav__link {
     font-family: var(--font-sans);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--ink-medium);
     text-decoration: none;
-    padding: var(--space-xs) 0;
+    padding: var(--space-md) var(--space-md);
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 .main-nav__link:hover,
 .main-nav__link--active {
     color: var(--gold-deep);
     border-bottom-color: var(--gold);
+}
+
+.main-nav__arrow {
+    font-size: 0.6rem;
+    transition: transform 0.2s ease;
+}
+
+.main-nav__item:hover .main-nav__arrow {
+    transform: rotate(180deg);
+}
+
+/* Mega Menu Dropdown */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--parchment);
+    border: 1px solid var(--stone-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+    padding: var(--space-lg);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 200;
+}
+
+.mega-menu--wide {
+    min-width: 700px;
+    left: 0;
+    transform: none;
+}
+
+.mega-menu--templates {
+    min-width: 800px;
+    right: 0;
+    left: auto;
+    transform: none;
+}
+
+.main-nav__item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mega-menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+.mega-menu__section {
+    min-width: 180px;
+}
+
+.mega-menu__title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--stone-light);
+}
+
+.mega-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu__list li {
+    margin: 0;
+}
+
+.mega-menu__list a {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--ink-medium);
+    padding: 0.35rem 0;
+    text-decoration: none;
+    border: none;
+    transition: color 0.15s ease;
+}
+
+.mega-menu__list a:hover {
+    color: var(--gold-deep);
+    border: none;
+}
+
+.mega-menu__overview {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold-deep);
+    padding: 0.35rem 0;
+    margin-bottom: 0.25rem;
+    text-decoration: none;
+    border: none;
+}
+
+.mega-menu__overview:hover {
+    color: var(--gold);
+    border: none;
+}
+
+/* Templates mega-menu specific */
+.mega-menu__phases {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.mega-menu__phase {
+    min-width: 0;
+}
+
+.mega-menu__phase-title {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--ink-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mega-menu__phase-num {
+    color: var(--gold-deep);
+}
+
+/* Mobile menu toggle */
+.main-nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--ink-medium);
+    cursor: pointer;
+    padding: var(--space-sm);
+}
+
+.main-nav__toggle:hover {
+    color: var(--gold-deep);
 }
 
 /* Breadcrumb */
@@ -591,24 +752,109 @@ dd {
 }
 
 /* --- Responsive --- */
+@media (max-width: 1024px) {
+    .mega-menu--templates {
+        min-width: 600px;
+    }
+
+    .mega-menu__phases {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .mega-menu--wide,
+    .mega-menu--templates {
+        position: fixed;
+        left: var(--space-md);
+        right: var(--space-md);
+        min-width: auto;
+        max-width: none;
+        transform: none;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .mega-menu__phases {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 16px;
     }
-    
-    .main-nav__links {
-        display: none; /* TODO: Add mobile menu */
+
+    .main-nav__toggle {
+        display: block;
     }
-    
+
+    .main-nav__links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--parchment);
+        border-top: var(--border-subtle);
+        box-shadow: var(--shadow-medium);
+        flex-direction: column;
+        padding: var(--space-md);
+    }
+
+    .main-nav__links.is-open {
+        display: flex;
+    }
+
+    .main-nav__item {
+        border-bottom: var(--border-subtle);
+    }
+
+    .main-nav__link {
+        padding: var(--space-md);
+        justify-content: space-between;
+    }
+
+    .mega-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: var(--space-md);
+        display: none;
+        background: var(--parchment-dark);
+    }
+
+    .main-nav__item.is-open .mega-menu {
+        display: block;
+    }
+
+    .mega-menu--wide,
+    .mega-menu--templates {
+        position: static;
+        min-width: auto;
+        max-height: none;
+    }
+
+    .mega-menu__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mega-menu__phases {
+        grid-template-columns: 1fr;
+    }
+
     .page-nav {
         flex-direction: column;
         gap: var(--space-md);
     }
-    
+
     .page-nav__link {
         max-width: 100%;
     }
-    
+
     .page-nav__link--next {
         text-align: left;
     }
