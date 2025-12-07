@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Conditional Acceptance - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #5d4037 0%, #795548 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.9;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #efebe9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #4e342e;
+            margin-top: 0.25rem;
+        }
+
+        .strategy-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .strategy-box__title {
+            color: #2e7d32;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .template-section {
+            margin: 2rem 0;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            color: #4e342e;
+            border-bottom: 2px solid #795548;
+            padding-bottom: 0.5rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-letter__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fff3e0;
+            border-bottom: 1px solid #e65100;
+            padding: 0.1rem 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        .template-letter__section {
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #4e342e;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .template-letter p {
+            margin: 0.75rem 0;
+            text-align: justify;
+        }
+
+        .condition-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .condition-box__number {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .condition-box__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #0d47a1;
+            display: inline;
+        }
+
+        .statute-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .statute-box__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .statute-box code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #bbdefb;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border: 2px solid #ff8f00;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #e65100;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .consequences-box {
+            background: #ffebee;
+            border-left: 4px solid #c62828;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .consequences-box__title {
+            font-family: 'Cinzel', serif;
+            color: #c62828;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .insight-box {
+            background: #fffbf0;
+            border: 1px solid #f0e6d3;
+            border-left: 4px solid #c9a227;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box__title {
+            font-family: 'Cinzel', serif;
+            color: #8b7355;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .template-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="template-header">
+            <div class="template-header__category">Phase 5 &bull; Alternative Strategy</div>
+            <h1 class="template-header__title">Notice of Conditional Acceptance</h1>
+            <p class="template-header__subtitle">Acceptance Upon Proof of Claim</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-5/">Phase 5</a> &rsaquo;
+            <span>Conditional Acceptance</span>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Commercial Notice</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Strategy</div>
+                <div class="meta-item__value">"Yes, But..." Approach</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Primary Effect</div>
+                <div class="meta-item__value">Burden Shift</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Response Period</div>
+                <div class="meta-item__value">30 Days</div>
+            </div>
+        </div>
+
+        <div class="strategy-box">
+            <h3 class="strategy-box__title">The Strategic Trap</h3>
+            <p>This document agrees to pay the debt - <strong>but only</strong> if they can prove certain basic facts. Since they typically cannot prove these facts (because no actual money was lent from pre-existing funds), they are trapped:</p>
+            <ul>
+                <li><strong>If they provide proof:</strong> You'll pay (but they can't provide it)</li>
+                <li><strong>If they can't provide proof:</strong> Admits no valid debt exists</li>
+                <li><strong>If they ignore it:</strong> Tacit acceptance of your conditions</li>
+                <li><strong>If they proceed without proof:</strong> Violation of your acceptance terms</li>
+            </ul>
+            <p><strong>This shifts burden of proof to them while appearing cooperative.</strong></p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Purpose and Effect</h2>
+            <p>A conditional acceptance is a contract law concept. By accepting their claim conditionally, you avoid outright refusal (which can be used against you) while requiring them to substantiate what they claim. This creates a documented record of their inability to prove the foundation of their claim.</p>
+            <p>The conditions focus on fundamental elements of contract law: consideration, standing, ownership, and disclosure - all areas where traditional lending claims are weakest.</p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Notice of Conditional Acceptance Template</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <div class="template-letter__title">NOTICE OF CONDITIONAL ACCEPTANCE</div>
+                    <div>Acceptance Upon Proof of Claim</div>
+                </div>
+
+                <p><strong>Date:</strong> <span class="template-letter__field">[DATE]</span></p>
+
+                <p><strong>FROM:</strong><br>
+                <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span><br>
+                <span class="template-letter__field">[YOUR ADDRESS]</span><br>
+                <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                ("Alleged Debtor")</p>
+
+                <p><strong>TO:</strong><br>
+                <span class="template-letter__field">[SERVICER/BANK NAME]</span><br>
+                <span class="template-letter__field">[ADDRESS]</span><br>
+                <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                ("Alleged Creditor")</p>
+
+                <p><strong>RE:</strong> Alleged Account/Loan Number: <span class="template-letter__field">[ACCOUNT NUMBER]</span></p>
+
+                <hr style="margin: 2rem 0;">
+
+                <p style="text-align: center; font-weight: bold;">
+                    NOTICE TO PRINCIPAL IS NOTICE TO AGENT<br>
+                    NOTICE TO AGENT IS NOTICE TO PRINCIPAL
+                </p>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">I. Statement of Conditional Acceptance</div>
+
+                    <p>I, <span class="template-letter__field">[YOUR NAME]</span>, hereby provide this Notice of Conditional Acceptance regarding the above-referenced alleged debt.</p>
+
+                    <p style="font-weight: bold; font-size: 1.2rem; text-align: center; margin: 1.5rem 0;">
+                        I AM WILLING TO PAY ANY LAWFUL DEBT THAT I OWE.
+                    </p>
+
+                    <p>However, I require verification of certain facts before I can determine whether a lawful debt exists. I hereby CONDITIONALLY ACCEPT your claim upon your ability to provide verified proof of the following conditions:</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">II. Conditions That Must Be Proven</div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">1</span>
+                        <span class="condition-box__title">PROOF OF CONSIDERATION</span>
+                        <p>Provide verified proof that you gave adequate consideration for the alleged debt. Specifically:</p>
+                        <ul>
+                            <li>Identify the specific account from which funds were transferred to fund the loan</li>
+                            <li>Provide certified copies of the accounting ledger showing money leaving your account</li>
+                            <li>Prove that you risked or lost something of value</li>
+                            <li>Show that you had the funds BEFORE making the loan</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">2</span>
+                        <span class="condition-box__title">PROOF OF LOSS</span>
+                        <p>Provide verified proof that you suffered an actual loss. Specifically:</p>
+                        <ul>
+                            <li>Show reduction in your assets when loan was made</li>
+                            <li>Prove you cannot recover if I don't pay</li>
+                            <li>Demonstrate actual damages, not speculative</li>
+                            <li>Provide audited financial statements showing loss</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">3</span>
+                        <span class="condition-box__title">PROOF OF OWNERSHIP</span>
+                        <p>Provide verified proof that you own the alleged debt. Specifically:</p>
+                        <ul>
+                            <li>Produce the original "wet-ink" promissory note</li>
+                            <li>Provide complete chain of title from origination</li>
+                            <li>Show all assignments and transfers with dates</li>
+                            <li>Prove note and mortgage were never separated</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">4</span>
+                        <span class="condition-box__title">PROOF OF AUTHORITY</span>
+                        <p>Provide verified proof of your authority to collect. Specifically:</p>
+                        <ul>
+                            <li>Corporate charter authorizing lending in this state</li>
+                            <li>License to operate as lender/servicer</li>
+                            <li>Power of attorney if collecting for another</li>
+                            <li>Proof of standing to enforce the note</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">5</span>
+                        <span class="condition-box__title">PROOF OF ACCOUNTING</span>
+                        <p>Provide verified proof of proper accounting. Specifically:</p>
+                        <ul>
+                            <li>Show how the loan was booked under GAAP</li>
+                            <li>Explain whether my note was recorded as an asset</li>
+                            <li>Clarify if offsetting liabilities were created</li>
+                            <li>Confirm no money was created from my signature</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">6</span>
+                        <span class="condition-box__title">PROOF OF NO SECURITIZATION DEFECTS</span>
+                        <p>Provide verified proof regarding securitization. Specifically:</p>
+                        <ul>
+                            <li>Swear under oath the loan was never securitized, OR</li>
+                            <li>If securitized, provide all documentation</li>
+                            <li>Name the trust and provide Pooling and Servicing Agreement</li>
+                            <li>Prove compliance with REMIC requirements and trust closing date</li>
+                        </ul>
+                    </div>
+
+                    <div class="condition-box">
+                        <span class="condition-box__number">7</span>
+                        <span class="condition-box__title">PROOF OF DISCLOSURE</span>
+                        <p>Provide verified proof of full disclosure. Specifically:</p>
+                        <ul>
+                            <li>Show where you disclosed how money would be created</li>
+                            <li>Point to disclosure that funds came from bookkeeping entries</li>
+                            <li>Provide notice that my note would be treated as an asset</li>
+                            <li>Explain why these material facts were not disclosed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="template-letter__section" style="background: #ffebee; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.2rem;">YOU HAVE 30 DAYS TO PROVIDE THIS PROOF</strong><br>
+                    Deadline: <span class="template-letter__field">[DATE + 30 DAYS]</span>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">III. Upon Your Proof, I Will</div>
+                    <ol>
+                        <li>Immediately pay any lawful debt proven to exist</li>
+                        <li>Provide payment in full within 30 days of verification</li>
+                        <li>Cease all challenges to the validity of the debt</li>
+                        <li>Acknowledge the debt as valid and enforceable</li>
+                        <li>Cooperate fully with reasonable payment arrangements</li>
+                    </ol>
+                    <p style="font-weight: bold; text-align: center;">I am ready, willing, and able to pay any lawful debt upon proof of your claim.</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">IV. Failure to Provide Proof</div>
+                    <p>Your failure to provide the requested proof within 30 days constitutes:</p>
+                    <ol>
+                        <li><strong>Admission</strong> that no lawful debt exists</li>
+                        <li><strong>Admission</strong> that no consideration was provided</li>
+                        <li><strong>Admission</strong> that you lack standing to collect</li>
+                        <li><strong>Agreement</strong> to cease all collection efforts</li>
+                        <li><strong>Agreement</strong> to mark any credit reporting as "Paid/Satisfied"</li>
+                        <li><strong>Estoppel</strong> from future claims on this matter</li>
+                        <li><strong>Evidence</strong> of fraudulent collection attempts</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">V. Affidavit Requirement</div>
+                    <p>All proofs must be provided via sworn affidavit by a competent witness with first-hand knowledge. The affiant must:</p>
+                    <ul>
+                        <li>Have personal knowledge of the facts sworn to</li>
+                        <li>Be competent to testify</li>
+                        <li>Swear under penalty of perjury</li>
+                        <li>Provide their full name and title</li>
+                        <li>Attach all supporting documentation</li>
+                    </ul>
+                    <p><strong>Unsworn statements, form letters, or computer-generated responses are not acceptable.</strong></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VI. Reservation of Rights</div>
+                    <p>I reserve all rights, remedies, and defenses available at law and equity, including but not limited to:</p>
+                    <ul>
+                        <li>The right to challenge jurisdiction</li>
+                        <li>The right to dispute the debt</li>
+                        <li>The right to discovery</li>
+                        <li>The right to jury trial</li>
+                        <li>The right to counterclaim</li>
+                        <li>All constitutional rights</li>
+                    </ul>
+                    <p>This conditional acceptance is not an admission of any debt or waiver of any rights.</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Verification</div>
+                    <p>I verify under penalty of perjury that I am ready, willing, and able to pay any lawful debt upon proof of the above conditions.</p>
+
+                    <p style="margin-top: 2rem;">
+                        Executed on this <span class="template-letter__field">[DAY]</span> day of <span class="template-letter__field">[MONTH]</span>, <span class="template-letter__field">[YEAR]</span>.
+                    </p>
+
+                    <p style="margin-top: 2rem;">
+                        <span class="template-letter__field">[YOUR SIGNATURE]</span><br><br>
+                        _________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                        Without Prejudice, UCC 1-308
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="statute-box">
+            <h4 class="statute-box__title">Legal Basis for Conditions</h4>
+            <ul>
+                <li><strong>Consideration:</strong> Every contract requires consideration. <em>Hamer v. Sidway</em>, 124 N.Y. 538 (1891)</li>
+                <li><strong>Standing:</strong> Only real party in interest has standing. <em>Sprint Communications v. APCC Services</em>, 554 U.S. 269 (2008)</li>
+                <li><strong>Burden of Proof:</strong> Party asserting claim must prove it. <em>Campbell v. United States</em>, 365 U.S. 85 (1961)</li>
+                <li><strong>Full Disclosure:</strong> Material facts must be disclosed. <em>Twomey v. Mitchum, Jones & Templeton</em>, 262 Cal.App.2d 690 (1968)</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Why They Can't Provide This Proof</h3>
+            <p>Banks create money when they make loans - they don't lend pre-existing money. This is confirmed by:</p>
+            <ul>
+                <li><strong>Federal Reserve:</strong> "Banks create money when they make loans"</li>
+                <li><strong>Bank of England:</strong> "Banks create deposits when they make loans"</li>
+            </ul>
+            <p>Since no money was actually lent from pre-existing funds (it was created through bookkeeping entries), they cannot prove consideration, loss, or proper disclosure. This conditional acceptance exposes this fundamental issue.</p>
+        </div>
+
+        <div class="checklist">
+            <h3 class="checklist__title">Sending Checklist</h3>
+            <ul>
+                <li>Fill in all blanks completely</li>
+                <li>Calculate 30-day deadline accurately</li>
+                <li>Consider having notarized for added weight</li>
+                <li>Send via Certified Mail, Return Receipt Requested</li>
+                <li>Send copies to: Legal department, CEO, Servicer</li>
+                <li>Keep copies of everything including mailing receipts</li>
+                <li>Calendar the 30-day deadline for follow-up</li>
+                <li>Prepare Notice of Default for non-response</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <h4 class="insight-box__title">Expected Responses and Next Steps</h4>
+            <ul>
+                <li><strong>They ignore it:</strong> Document non-response, send Notice of Default after 30 days</li>
+                <li><strong>Form letter reply:</strong> Not valid per your terms; point out inadequacy in follow-up</li>
+                <li><strong>Threats or acceleration:</strong> Document, remain calm - shows desperation</li>
+                <li><strong>Partial response:</strong> Point out what's missing; demand complete response</li>
+                <li><strong>They cannot provide proof:</strong> You win! Document and use in negotiations/court</li>
+            </ul>
+        </div>
+
+        <div class="template-nav">
+            <a href="/templates/phase-5/" class="template-nav__link">&larr; Phase 5 Overview</a>
+            <a href="/templates/phase-5/estoppel-certificate.html" class="template-nav__link">Estoppel Certificate &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

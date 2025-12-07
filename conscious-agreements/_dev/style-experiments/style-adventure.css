@@ -1,0 +1,835 @@
+/**
+ * ADVENTURE STYLE
+ * Fun, discovery-oriented, journey-based
+ * Think: treasure map meets friendly guide
+ * Erlandia-inspired adventure approach
+ */
+
+/* ============================================
+   CUSTOM FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    /* Adventure Color Palette */
+    --color-bg: #fef9f3;
+    --color-bg-alt: #fff5e6;
+    --color-bg-card: #ffffff;
+    --color-bg-dark: #2d3748;
+
+    /* Primary: Deep Teal (trustworthy adventure) */
+    --color-primary: #1a5f7a;
+    --color-primary-light: #2980b9;
+    --color-primary-dark: #145374;
+
+    /* Accent: Treasure Gold */
+    --color-gold: #d4a853;
+    --color-gold-light: #f4d799;
+    --color-gold-dark: #b8860b;
+
+    /* Success: Discovery Green */
+    --color-success: #27ae60;
+    --color-success-light: #a8e6cf;
+
+    /* Warning: Compass Coral */
+    --color-warning: #e07a5f;
+    --color-warning-light: #ffd5c8;
+
+    /* Text */
+    --color-text: #2d3748;
+    --color-text-muted: #5a6578;
+    --color-text-light: #8896a8;
+
+    /* Borders & Decorative */
+    --color-border: #e2d5c3;
+    --color-border-light: #f0e8db;
+
+    /* Fonts */
+    --font-display: 'Fredericka the Great', cursive;
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-handwritten: 'Caveat', cursive;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-glow: 0 0 20px rgba(212, 168, 83, 0.3);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    background: var(--color-bg);
+    /* Subtle paper texture effect */
+    background-image:
+        radial-gradient(ellipse at top left, rgba(212, 168, 83, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(26, 95, 122, 0.05) 0%, transparent 50%);
+}
+
+/* ============================================
+   NAVIGATION - Adventure Header
+   ============================================ */
+.main-nav {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    border-bottom: 4px solid var(--color-gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.main-nav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-nav__brand {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--color-gold);
+    text-decoration: none;
+    padding: var(--space-md) 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.main-nav__brand:hover {
+    transform: scale(1.02);
+}
+
+.main-nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.main-nav__links {
+    display: flex;
+    list-style: none;
+    gap: var(--space-xs);
+}
+
+.main-nav__link {
+    display: block;
+    padding: var(--space-md) var(--space-lg);
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.main-nav__link:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+.main-nav__link--active {
+    color: var(--color-gold);
+    background: rgba(212, 168, 83, 0.15);
+}
+
+.main-nav__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: var(--color-gold);
+    border-radius: 2px;
+}
+
+/* ============================================
+   CONTENT LAYOUT
+   ============================================ */
+.content {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+/* ============================================
+   BREADCRUMB - Path Trail
+   ============================================ */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-handwritten);
+    font-size: 1.1rem;
+}
+
+.breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-gold-dark);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.breadcrumb__separator {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+/* ============================================
+   HERO - Adventure Start
+   ============================================ */
+.hero {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+    padding: var(--space-2xl);
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    border-radius: var(--radius-xl);
+    border: 3px dashed var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '🧭';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    opacity: 0.3;
+    transform: rotate(15deg);
+}
+
+.hero__badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    color: white;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+    text-shadow: 2px 2px 0 var(--color-gold-light);
+}
+
+.hero__subtitle {
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: var(--space-2xl) 0 var(--space-md);
+    line-height: 1.3;
+}
+
+h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+h2::before {
+    content: '⚡';
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary-dark);
+}
+
+h4 {
+    font-size: 1.15rem;
+}
+
+p {
+    margin-bottom: var(--space-lg);
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    line-height: 1.8;
+    font-weight: 500;
+    padding: var(--space-lg);
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-gold);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--color-gold-dark);
+    text-decoration-style: solid;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+blockquote {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg) var(--space-xl);
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, #fff 100%);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--color-gold);
+    font-family: var(--font-handwritten);
+    font-size: 1.4rem;
+    color: var(--color-text);
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+
+blockquote::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--color-gold);
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    opacity: 0.5;
+}
+
+ul, ol {
+    margin: var(--space-md) 0 var(--space-lg) var(--space-xl);
+}
+
+li {
+    margin-bottom: var(--space-sm);
+}
+
+li::marker {
+    color: var(--color-gold);
+}
+
+/* ============================================
+   GRID LAYOUTS
+   ============================================ */
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.grid--2 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* ============================================
+   SECTION CARDS - Path Markers
+   ============================================ */
+.section-card {
+    display: block;
+    padding: var(--space-xl);
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-gold) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.section-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-card:hover::before {
+    transform: scaleX(1);
+}
+
+.section-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    display: block;
+}
+
+.section-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.section-card__description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================
+   CARDS - Info Cards
+   ============================================ */
+.card {
+    padding: var(--space-lg);
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.card--highlight {
+    background: linear-gradient(135deg, #fff 0%, var(--color-bg-alt) 100%);
+    border-color: var(--color-gold);
+    border-width: 2px;
+}
+
+.card__label {
+    font-family: var(--font-handwritten);
+    font-size: 1rem;
+    color: var(--color-gold-dark);
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.card__title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.card__text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================
+   DEFINITION BOX - Treasure Chest
+   ============================================ */
+.definition-box {
+    padding: var(--space-xl);
+    background: linear-gradient(145deg, #fff 0%, var(--color-bg-alt) 100%);
+    border: 3px solid var(--color-gold);
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+    position: relative;
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.definition-box::before {
+    content: '📜';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 1.8rem;
+    background: var(--color-bg);
+    padding: 0 var(--space-sm);
+}
+
+.definition-box__term {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.definition-box__source {
+    font-family: var(--font-handwritten);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.definition-box__meaning {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    background: rgba(0,0,0,0.03);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-primary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   INSIGHT BOX - Discovery Moment
+   ============================================ */
+.insight-box {
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-success-light) 0%, #e8f8ef 100%);
+    border: 2px solid var(--color-success);
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+    position: relative;
+}
+
+.insight-box::before {
+    content: '💡';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-size: 1.5rem;
+    background: var(--color-bg);
+    padding: 0 var(--space-sm);
+}
+
+.insight-box__title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-success);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.insight-box p {
+    margin: 0;
+    color: var(--color-text);
+}
+
+/* ============================================
+   IMPORTANT BOX - Warning Sign
+   ============================================ */
+.important-box {
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-warning-light) 0%, #fff5f2 100%);
+    border: 2px solid var(--color-warning);
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+    position: relative;
+}
+
+.important-box::before {
+    content: '⚠️';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-size: 1.5rem;
+    background: var(--color-bg);
+    padding: 0 var(--space-sm);
+}
+
+.important-box__title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-warning);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.important-box p {
+    margin: 0;
+}
+
+/* ============================================
+   PAGE NAVIGATION - Journey Markers
+   ============================================ */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 3px dashed var(--color-border);
+}
+
+.page-nav__link {
+    text-decoration: none;
+    color: inherit;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.page-nav__link:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-alt);
+    transform: translateY(-2px);
+}
+
+.page-nav__label {
+    font-family: var(--font-handwritten);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: block;
+}
+
+.page-nav__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.page-nav__link--next {
+    text-align: right;
+}
+
+/* ============================================
+   FOOTER - Camp Base
+   ============================================ */
+.footer {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    margin-top: var(--space-3xl);
+    color: rgba(255,255,255,0.9);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+}
+
+.footer__text {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
+    opacity: 0.9;
+}
+
+.footer__quote {
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--color-gold);
+}
+
+/* ============================================
+   SPECIAL ELEMENTS
+   ============================================ */
+
+/* Step Markers */
+.step-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    margin-right: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Path Indicator */
+.path-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-gold);
+    margin: var(--space-lg) 0;
+}
+
+.path-indicator__icon {
+    font-size: 1.5rem;
+}
+
+.path-indicator__text {
+    font-family: var(--font-handwritten);
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+/* Fun Fact */
+.fun-fact {
+    background: linear-gradient(135deg, #e8f4f8 0%, #fff 100%);
+    border: 2px dashed var(--color-primary-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    position: relative;
+}
+
+.fun-fact::before {
+    content: '🎯';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 1.3rem;
+    background: var(--color-bg);
+    padding: 0 var(--space-xs);
+}
+
+.fun-fact__label {
+    font-family: var(--font-handwritten);
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+/* Section spacing */
+section {
+    margin-bottom: var(--space-2xl);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .main-nav__toggle {
+        display: block;
+    }
+
+    .main-nav__links {
+        display: none;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-nav {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .page-nav__link--next {
+        text-align: left;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.hero__badge {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle hover animations */
+.section-card:hover .section-card__icon {
+    animation: float 1s ease-in-out infinite;
+}

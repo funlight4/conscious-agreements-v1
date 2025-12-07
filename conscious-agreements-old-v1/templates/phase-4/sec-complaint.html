@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC Securities Fraud Complaint - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.9;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #0d47a1;
+            margin-top: 0.25rem;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-box__title {
+            color: #0d47a1;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border: 2px solid #ff8f00;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #e65100;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .template-section {
+            margin: 2rem 0;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.5rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-letter__agency {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fff3e0;
+            border-bottom: 1px solid #e65100;
+            padding: 0.1rem 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        .template-letter__section {
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #0d47a1;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .template-letter p {
+            margin: 0.75rem 0;
+            text-align: justify;
+        }
+
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .numbered-list li {
+            counter-increment: item;
+            margin: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .numbered-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        .statute-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .statute-box__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .statute-box code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #bbdefb;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        .securities-box {
+            background: #e8eaf6;
+            border-left: 4px solid #3f51b5;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .securities-box__title {
+            font-family: 'Cinzel', serif;
+            color: #283593;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .whistleblower-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .whistleblower-box__title {
+            color: #2e7d32;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .insight-box {
+            background: #fffbf0;
+            border: 1px solid #f0e6d3;
+            border-left: 4px solid #c9a227;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box__title {
+            font-family: 'Cinzel', serif;
+            color: #8b7355;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .template-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="template-header">
+            <div class="template-header__category">Phase 4 &bull; Securities Complaint</div>
+            <h1 class="template-header__title">SEC Securities Fraud Complaint</h1>
+            <p class="template-header__subtitle">Reporting MBS Fraud and REMIC Violations to the SEC</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-4/">Phase 4</a> &rsaquo;
+            <span>SEC Securities Complaint</span>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Securities Fraud Report</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Filing Method</div>
+                <div class="meta-item__value">sec.gov/tcr</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Primary Focus</div>
+                <div class="meta-item__value">MBS / REMIC Violations</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Potential Award</div>
+                <div class="meta-item__value">10-30% of Sanctions</div>
+            </div>
+        </div>
+
+        <div class="whistleblower-box">
+            <h3 class="whistleblower-box__title">SEC Whistleblower Program</h3>
+            <p>If your information leads to SEC enforcement action with sanctions exceeding $1 million, you may be eligible for an award of <strong>10-30% of the monetary sanctions</strong> collected.</p>
+            <p>To qualify for whistleblower protection and potential awards:</p>
+            <ul>
+                <li>Your information must be original (not derived solely from public sources)</li>
+                <li>Information must lead to successful enforcement action</li>
+                <li>File Form TCR (Tip, Complaint, or Referral) for award eligibility</li>
+                <li>Consider consulting with a whistleblower attorney before filing</li>
+            </ul>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Purpose and Effect</h2>
+            <p>This template reports securities fraud related to mortgage-backed securities (MBS) and Real Estate Mortgage Investment Conduit (REMIC) violations to the SEC. These complaints address the securitization process that affects investors in mortgage-backed securities and may have tax implications under IRC &sect; 860.</p>
+
+            <div class="securities-box">
+                <h4 class="securities-box__title">Types of Securities Violations</h4>
+                <ul>
+                    <li><strong>REMIC Trust Violations:</strong> Failure to properly transfer mortgages into trusts before closing dates</li>
+                    <li><strong>Prospectus Fraud:</strong> Misrepresentations about loan quality in offering documents</li>
+                    <li><strong>Chain of Title Fraud:</strong> Securities claiming ownership of loans never properly transferred</li>
+                    <li><strong>Investor Fraud:</strong> Misrepresentations to MBS investors about underlying collateral</li>
+                    <li><strong>Tax Fraud:</strong> REMIC trusts losing tax-exempt status due to improper transfers</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Understanding Securitization</h3>
+            <p>Mortgage securitization involves selling mortgages into trusts that issue securities to investors. These trusts (REMICs) have strict requirements:</p>
+            <ul>
+                <li>Mortgages must be transferred into the trust before the closing date (typically 90 days after formation)</li>
+                <li>Transfers must comply with the Pooling and Servicing Agreement (PSA)</li>
+                <li>The trust cannot accept new mortgages after the closing date without losing tax-exempt status</li>
+                <li>Backdated assignments suggest the mortgage was never properly transferred</li>
+            </ul>
+            <p>Violations of these requirements affect both investor rights and the validity of foreclosure claims.</p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">SEC Complaint Template</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <div class="template-letter__agency">SECURITIES AND EXCHANGE COMMISSION</div>
+                    <div>Office of the Whistleblower</div>
+                    <div>Tip, Complaint, or Referral (TCR)</div>
+                </div>
+
+                <p><strong>Filing Method:</strong> sec.gov/tcr (online submission recommended)</p>
+                <p><strong>Date:</strong> <span class="template-letter__field">[DATE]</span></p>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">I. Complainant Information</div>
+                    <p><strong>Name:</strong> <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span></p>
+                    <p><strong>Address:</strong> <span class="template-letter__field">[YOUR ADDRESS]</span></p>
+                    <p><strong>Phone:</strong> <span class="template-letter__field">[YOUR PHONE]</span></p>
+                    <p><strong>Email:</strong> <span class="template-letter__field">[YOUR EMAIL]</span></p>
+                    <p><strong>Whistleblower Award Sought:</strong> Yes / No</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">II. Subjects of Complaint</div>
+
+                    <p><strong>Primary Subject - Securitization Trust:</strong></p>
+                    <p>Trust Name: <span class="template-letter__field">[REMIC/TRUST NAME, e.g., "CWABS 2006-BC5"]</span></p>
+                    <p>Trustee: <span class="template-letter__field">[TRUSTEE NAME, e.g., "Bank of New York Mellon"]</span></p>
+                    <p>Depositor: <span class="template-letter__field">[DEPOSITOR NAME]</span></p>
+                    <p>Servicer: <span class="template-letter__field">[SERVICER NAME]</span></p>
+                    <p>Trust Closing Date: <span class="template-letter__field">[CLOSING DATE from PSA]</span></p>
+
+                    <p><strong>Securities Involved:</strong></p>
+                    <p>CUSIP Numbers (if known): <span class="template-letter__field">[CUSIP NUMBERS]</span></p>
+                    <p>Approximate Value of Securities: <span class="template-letter__field">[ESTIMATED VALUE]</span></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">III. Summary of Securities Violations</div>
+
+                    <p>I am reporting securities fraud and REMIC violations involving mortgage-backed securities issued by <span class="template-letter__field">[TRUST NAME]</span>. The violations include:</p>
+
+                    <ol class="numbered-list">
+                        <li><strong>Failure to Transfer Mortgages Before Trust Closing Date</strong><br>
+                        The mortgage on my property (Loan No. <span class="template-letter__field">[LOAN NUMBER]</span>) was purportedly transferred to the trust via an assignment dated <span class="template-letter__field">[ASSIGNMENT DATE]</span>, which is after the trust closing date of <span class="template-letter__field">[CLOSING DATE]</span>.<br><br>
+                        Under the Pooling and Servicing Agreement and IRC &sect; 860D, the trust cannot accept mortgages after the closing date. This suggests either:<br>
+                        (a) The mortgage was never properly transferred to the trust, or<br>
+                        (b) The assignment was backdated to conceal the failure to transfer</li>
+
+                        <li><strong>Securities Fraud - False Representations to Investors</strong><br>
+                        Investors in securities issued by this trust were told their securities were backed by properly transferred mortgage loans. The failure to properly transfer mortgages means:<br>
+                        - Securities are not backed by the represented collateral<br>
+                        - The trust's claimed ownership of mortgages is fraudulent<br>
+                        - Investors have been defrauded</li>
+
+                        <li><strong>REMIC Tax Violations</strong><br>
+                        The acceptance of mortgages after the closing date violates IRC &sect; 860D requirements for REMIC status. This may result in:<br>
+                        - Loss of tax-exempt status for the trust<br>
+                        - Significant tax liability for the trust and investors<br>
+                        - Additional securities fraud for failing to disclose tax risks</li>
+
+                        <li><strong>Document Fabrication</strong><br>
+                        To conceal the failure to properly transfer mortgages, the subjects have fabricated documents including:<br>
+                        <span class="template-letter__field">[DESCRIBE - backdated assignments, robo-signed documents, forged endorsements]</span></li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">IV. Factual Basis</div>
+
+                    <p><strong>A. My Mortgage and the Trust</strong></p>
+                    <ul>
+                        <li>Property Address: <span class="template-letter__field">[PROPERTY ADDRESS]</span></li>
+                        <li>Original Lender: <span class="template-letter__field">[ORIGINAL LENDER]</span></li>
+                        <li>Original Loan Date: <span class="template-letter__field">[LOAN DATE]</span></li>
+                        <li>Original Loan Amount: $<span class="template-letter__field">[AMOUNT]</span></li>
+                        <li>Trust Claiming Ownership: <span class="template-letter__field">[TRUST NAME]</span></li>
+                        <li>Trust Closing Date (per PSA): <span class="template-letter__field">[CLOSING DATE]</span></li>
+                    </ul>
+
+                    <p><strong>B. Chain of Title Irregularities</strong></p>
+                    <p>Analysis of the recorded chain of title reveals:</p>
+                    <ul>
+                        <li>Assignment from <span class="template-letter__field">[ASSIGNOR]</span> to <span class="template-letter__field">[ASSIGNEE]</span> dated <span class="template-letter__field">[DATE]</span> - <span class="template-letter__field">[DESCRIBE IRREGULARITY]</span></li>
+                        <li>Assignment to trust dated <span class="template-letter__field">[DATE]</span> - after trust closing date of <span class="template-letter__field">[CLOSING DATE]</span></li>
+                        <li><span class="template-letter__field">[ADDITIONAL CHAIN OF TITLE ISSUES]</span></li>
+                    </ul>
+
+                    <p><strong>C. Pooling and Servicing Agreement Violations</strong></p>
+                    <p>The PSA for <span class="template-letter__field">[TRUST NAME]</span> requires:</p>
+                    <ul>
+                        <li>All mortgages must be transferred before the closing date</li>
+                        <li>Original notes must be delivered to the trustee with proper endorsements</li>
+                        <li>Assignments must be in recordable form</li>
+                    </ul>
+                    <p>Evidence suggests these requirements were not met for my mortgage and potentially thousands of others in the pool.</p>
+
+                    <p><strong>D. Prospectus Misrepresentations</strong></p>
+                    <p>The prospectus and offering documents for securities issued by this trust represented:</p>
+                    <ul>
+                        <li>That mortgages would be properly transferred to the trust</li>
+                        <li>That the trust would have valid ownership of the collateral</li>
+                        <li>That REMIC requirements would be satisfied</li>
+                    </ul>
+                    <p>These representations appear to have been false for my mortgage and potentially many others.</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">V. Evidence</div>
+
+                    <ol class="numbered-list">
+                        <li><strong>Chain of Title Documents:</strong> Recorded assignments showing transfer dates after trust closing</li>
+                        <li><strong>Pooling and Servicing Agreement:</strong> <span class="template-letter__field">[SOURCE - SEC EDGAR filing, etc.]</span></li>
+                        <li><strong>Prospectus/Offering Documents:</strong> <span class="template-letter__field">[SOURCE]</span></li>
+                        <li><strong>Robo-Signing Evidence:</strong> Documents bearing signatures of known robo-signers</li>
+                        <li><strong>QWR Responses:</strong> Servicer's failure to document proper chain of title</li>
+                        <li><strong>Expert Analysis:</strong> <span class="template-letter__field">[IF AVAILABLE - forensic document analysis, chain of title report]</span></li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VI. Scope and Impact</div>
+
+                    <p>This complaint involves:</p>
+                    <ul>
+                        <li><strong>Securities Value:</strong> The trust <span class="template-letter__field">[TRUST NAME]</span> issued securities with initial principal balance of approximately $<span class="template-letter__field">[AMOUNT - available in SEC filings]</span></li>
+                        <li><strong>Investor Impact:</strong> Investors holding these securities may have been defrauded regarding the collateral backing their investments</li>
+                        <li><strong>Tax Implications:</strong> REMIC violations may result in substantial tax liability</li>
+                        <li><strong>Pattern of Conduct:</strong> Similar violations likely affect thousands of mortgages across multiple securitization trusts</li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VII. Securities Laws Violated</div>
+
+                    <ul>
+                        <li><strong>Securities Act of 1933, &sect; 17(a):</strong> Fraud in the offer or sale of securities</li>
+                        <li><strong>Securities Exchange Act of 1934, &sect; 10(b) and Rule 10b-5:</strong> Fraud in connection with securities transactions</li>
+                        <li><strong>IRC &sect; 860D:</strong> REMIC qualification requirements</li>
+                        <li><strong>Sarbanes-Oxley Act:</strong> If public companies were involved in the fraud</li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VIII. Requested Action</div>
+
+                    <ol class="numbered-list">
+                        <li>Investigate the securitization practices of <span class="template-letter__field">[TRUST NAME]</span> and related trusts</li>
+                        <li>Examine whether mortgages were properly transferred before trust closing dates</li>
+                        <li>Investigate document fabrication and backdating</li>
+                        <li>Bring enforcement action for securities fraud</li>
+                        <li>Require disgorgement of profits from fraudulent securities sales</li>
+                        <li>Refer tax violations to the IRS for REMIC compliance review</li>
+                        <li>Coordinate with DOJ for potential criminal prosecution</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">IX. Declaration</div>
+
+                    <p>I declare under penalty of perjury under the laws of the United States that the information provided herein is true and correct to the best of my knowledge and belief. I am providing this information voluntarily and understand that the SEC may share this information with other agencies.</p>
+
+                    <p>I [am / am not] seeking an award under the SEC Whistleblower Program. I understand that to be eligible for an award, I must provide original information that leads to successful enforcement action with sanctions exceeding $1 million.</p>
+
+                    <p style="margin-top: 2rem;">
+                        <span class="template-letter__field">[YOUR SIGNATURE]</span><br><br>
+                        _________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                        Date: <span class="template-letter__field">[DATE]</span>
+                    </p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Attachments</div>
+                    <p>Exhibit A: Chain of Title Documents and Analysis<br>
+                    Exhibit B: Pooling and Servicing Agreement (relevant sections)<br>
+                    Exhibit C: Assignment Documents Showing Post-Closing Dates<br>
+                    Exhibit D: Evidence of Document Irregularities<br>
+                    Exhibit E: QWR Correspondence<br>
+                    Exhibit F: <span class="template-letter__field">[ADDITIONAL EXHIBITS]</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="statute-box">
+            <h4 class="statute-box__title">Key Securities Statutes</h4>
+            <ul>
+                <li><code>15 U.S.C. &sect; 77q(a)</code> - Securities Act &sect; 17(a): Fraudulent interstate transactions</li>
+                <li><code>15 U.S.C. &sect; 78j(b)</code> - Exchange Act &sect; 10(b): Manipulative and deceptive devices</li>
+                <li><code>17 C.F.R. &sect; 240.10b-5</code> - Rule 10b-5: Employment of manipulative devices</li>
+                <li><code>26 U.S.C. &sect; 860D</code> - IRC REMIC qualification requirements</li>
+                <li><code>15 U.S.C. &sect; 78u-6</code> - SEC Whistleblower provisions</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3 class="info-box__title">Finding Trust Information</h3>
+            <p>To identify the trust and obtain relevant documents:</p>
+            <ul>
+                <li><strong>SEC EDGAR:</strong> Search sec.gov/edgar for prospectus and PSA filings</li>
+                <li><strong>Bloomberg Terminal:</strong> Access through libraries or financial institutions</li>
+                <li><strong>County Records:</strong> Check recorded assignments for trust name</li>
+                <li><strong>Servicer Correspondence:</strong> Look for trust name in statements or notices</li>
+                <li><strong>Court Filings:</strong> Foreclosure complaints often name the trust</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 class="checklist__title">Filing Checklist</h3>
+            <ul>
+                <li>Identify the securitization trust claiming ownership of your mortgage</li>
+                <li>Obtain the Pooling and Servicing Agreement from SEC EDGAR</li>
+                <li>Document the trust closing date from the PSA</li>
+                <li>Obtain recorded assignments showing transfer dates</li>
+                <li>Compare assignment dates to trust closing date</li>
+                <li>Document any robo-signing or document irregularities</li>
+                <li>Decide whether to seek whistleblower award</li>
+                <li>Consider consulting whistleblower attorney for large cases</li>
+                <li>File at sec.gov/tcr</li>
+                <li>Save confirmation and all correspondence</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <h4 class="insight-box__title">Strategic Considerations</h4>
+            <p>SEC complaints regarding securitization fraud address the investor side of the mortgage fraud. This creates pressure from a different direction than consumer protection complaints and may affect the trust's ability to pursue foreclosure if the trust cannot prove valid ownership.</p>
+            <p>The whistleblower program provides financial incentive for reporting large-scale fraud. If your research reveals patterns affecting many mortgages across a trust, the potential award could be substantial.</p>
+        </div>
+
+        <div class="template-nav">
+            <a href="/templates/phase-4/cfpb-complaint.html" class="template-nav__link">&larr; CFPB Consumer Complaint</a>
+            <a href="/templates/phase-5/" class="template-nav__link">Phase 5: Alternative Strategies &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

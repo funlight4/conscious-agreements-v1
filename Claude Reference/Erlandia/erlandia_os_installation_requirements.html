@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erlandia OS - Installation Requirements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4a574;
+            --gold-light: #e8c9a0;
+            --gold-dark: #b8956a;
+            --deep-purple: #1a1025;
+            --mid-purple: #2d1f3d;
+            --light-purple: #4a3660;
+            --soft-lavender: #a89cc8;
+            --white: #fefefe;
+            --off-white: #f5f3f7;
+            --success: #4ecdc4;
+            --success-dark: #3db5ad;
+            --warning: #ffd93d;
+            --minimum: #6c9bcf;
+            --recommended: #9b72cf;
+            --optimal: #d4a574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--deep-purple);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Subtle background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(155, 114, 207, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(45, 31, 61, 0.5) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .header-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .header h1 span {
+            color: var(--gold);
+        }
+
+        .header-subtitle {
+            font-size: 1.15rem;
+            color: var(--soft-lavender);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: var(--soft-lavender);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .nav-tab:hover {
+            border-color: rgba(212, 165, 116, 0.4);
+            color: var(--white);
+        }
+
+        .nav-tab.active {
+            background: rgba(212, 165, 116, 0.15);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0 80px;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(45, 31, 61, 0.4);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .intro-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .intro-section p {
+            color: var(--soft-lavender);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .intro-analogy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .analogy-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--soft-lavender);
+        }
+
+        .analogy-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .analogy-icon.software {
+            background: rgba(108, 155, 207, 0.2);
+            border: 1px solid rgba(108, 155, 207, 0.4);
+        }
+
+        .analogy-icon.consciousness {
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid rgba(212, 165, 116, 0.4);
+        }
+
+        .analogy-arrow {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        /* Requirements Grid */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .requirement-card {
+            background: rgba(45, 31, 61, 0.5);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .requirement-card.minimum::before {
+            background: linear-gradient(90deg, var(--minimum), rgba(108, 155, 207, 0.3));
+        }
+
+        .requirement-card.recommended::before {
+            background: linear-gradient(90deg, var(--recommended), rgba(155, 114, 207, 0.3));
+        }
+
+        .requirement-card.optimal::before {
+            background: linear-gradient(90deg, var(--optimal), rgba(212, 165, 116, 0.3));
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .minimum .card-icon {
+            background: rgba(108, 155, 207, 0.2);
+            border: 1px solid rgba(108, 155, 207, 0.4);
+        }
+
+        .recommended .card-icon {
+            background: rgba(155, 114, 207, 0.2);
+            border: 1px solid rgba(155, 114, 207, 0.4);
+        }
+
+        .optimal .card-icon {
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid rgba(212, 165, 116, 0.4);
+        }
+
+        .card-title-group h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .minimum .card-title-group h3 { color: var(--minimum); }
+        .recommended .card-title-group h3 { color: var(--recommended); }
+        .optimal .card-title-group h3 { color: var(--optimal); }
+
+        .card-title-group span {
+            font-size: 0.85rem;
+            color: var(--soft-lavender);
+            font-weight: 300;
+        }
+
+        .card-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .requirements-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.95rem;
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+
+        .req-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.7rem;
+        }
+
+        .minimum .req-check {
+            background: rgba(108, 155, 207, 0.2);
+            color: var(--minimum);
+            border: 1px solid rgba(108, 155, 207, 0.4);
+        }
+
+        .recommended .req-check {
+            background: rgba(155, 114, 207, 0.2);
+            color: var(--recommended);
+            border: 1px solid rgba(155, 114, 207, 0.4);
+        }
+
+        .optimal .req-check {
+            background: rgba(212, 165, 116, 0.2);
+            color: var(--optimal);
+            border: 1px solid rgba(212, 165, 116, 0.4);
+        }
+
+        .req-text {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .req-text strong {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .enables-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: auto;
+        }
+
+        .enables-section h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--soft-lavender);
+            margin-bottom: 10px;
+        }
+
+        .enables-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .enables-tag {
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .minimum .enables-tag {
+            background: rgba(108, 155, 207, 0.15);
+            color: var(--minimum);
+            border: 1px solid rgba(108, 155, 207, 0.3);
+        }
+
+        .recommended .enables-tag {
+            background: rgba(155, 114, 207, 0.15);
+            color: var(--recommended);
+            border: 1px solid rgba(155, 114, 207, 0.3);
+        }
+
+        .optimal .enables-tag {
+            background: rgba(212, 165, 116, 0.15);
+            color: var(--optimal);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        /* Categories Section */
+        .categories-section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--soft-lavender);
+            font-weight: 300;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: rgba(45, 31, 61, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: rgba(212, 165, 116, 0.3);
+            background: rgba(45, 31, 61, 0.6);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .category-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: var(--soft-lavender);
+            font-weight: 300;
+        }
+
+        /* Compatibility Check Section */
+        .compatibility-section {
+            background: linear-gradient(135deg, rgba(45, 31, 61, 0.6) 0%, rgba(26, 16, 37, 0.8) 100%);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .compatibility-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .compatibility-section p {
+            color: var(--soft-lavender);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            font-weight: 300;
+        }
+
+        .check-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--deep-purple);
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            text-decoration: none;
+        }
+
+        .check-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        .check-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Not Meeting Requirements Section */
+        .not-ready-section {
+            background: rgba(45, 31, 61, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .not-ready-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .not-ready-section > p {
+            color: var(--soft-lavender);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            font-weight: 300;
+        }
+
+        .conflicts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .conflict-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 3px solid var(--warning);
+        }
+
+        .conflict-card h4 {
+            color: var(--warning);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .conflict-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .honor-note {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .honor-note p {
+            color: var(--soft-lavender);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .honor-note p strong {
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        /* Deep Dive Links */
+        .deep-dive-section {
+            margin-bottom: 60px;
+        }
+
+        .deep-dive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .deep-dive-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: rgba(45, 31, 61, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .deep-dive-link:hover {
+            border-color: rgba(212, 165, 116, 0.4);
+            background: rgba(45, 31, 61, 0.6);
+            transform: translateX(4px);
+        }
+
+        .deep-dive-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .deep-dive-text h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .deep-dive-text span {
+            color: var(--soft-lavender);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        .deep-dive-arrow {
+            margin-left: auto;
+            color: var(--gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .deep-dive-link:hover .deep-dive-arrow {
+            opacity: 1;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin-bottom: 60px;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .comparison-table th {
+            background: rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--soft-lavender);
+        }
+
+        .comparison-table th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+
+        .comparison-table th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+
+        .comparison-table td {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-table td:first-child {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .table-tier {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .table-tier.minimum {
+            background: rgba(108, 155, 207, 0.2);
+            color: var(--minimum);
+        }
+
+        .table-tier.recommended {
+            background: rgba(155, 114, 207, 0.2);
+            color: var(--recommended);
+        }
+
+        .table-tier.optimal {
+            background: rgba(212, 165, 116, 0.2);
+            color: var(--optimal);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            color: var(--soft-lavender);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--soft-lavender);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 0 30px;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-analogy {
+                flex-direction: column;
+            }
+
+            .compatibility-section {
+                padding: 32px 24px;
+            }
+
+            .not-ready-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                System Requirements
+            </div>
+            <h1>Erlandia <span>OS</span> Requirements</h1>
+            <p class="header-subtitle">Ensure you're ready for your journey of accelerated evolution and the pathway to Paradise on Earth.</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active">Overview</button>
+            <button class="nav-tab">Minimum</button>
+            <button class="nav-tab">Recommended</button>
+            <button class="nav-tab">Optimal</button>
+            <button class="nav-tab">Compatibility Check</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Introduction -->
+            <section class="intro-section">
+                <h2>Before You Install</h2>
+                <p>Just like software requires certain hardware to run properly, the Erlandia Operating System requires certain consciousness "hardware" to function optimally. These requirements help ensure a smooth journey and set appropriate expectations for your transformation experience.</p>
+                
+                <div class="intro-analogy">
+                    <div class="analogy-item">
+                        <div class="analogy-icon software">💻</div>
+                        <span>Software needs CPU, RAM, GPU</span>
+                    </div>
+                    <span class="analogy-arrow">↔</span>
+                    <div class="analogy-item">
+                        <div class="analogy-icon consciousness">✨</div>
+                        <span>Erlandia OS needs Mindset, Experience, Commitment, Values</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Requirements Grid -->
+            <section class="requirements-grid">
+                <!-- Minimum -->
+                <div class="requirement-card minimum">
+                    <div class="card-header">
+                        <div class="card-icon">🌱</div>
+                        <div class="card-title-group">
+                            <h3>Minimum</h3>
+                            <span>Can begin the journey</span>
+                        </div>
+                    </div>
+                    <p class="card-description">The bare essentials to start. You can begin your transformation, though progress may be slower and some concepts may require revisiting.</p>
+                    
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Choice to Learn:</strong> Ready to learn and grow</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Life-Serving Direction:</strong> Ready to make your life better and healthier</span>
+                        </li>
+                    </ul>
+
+                    <div class="enables-section">
+                        <h4>This Enables</h4>
+                        <div class="enables-list">
+                            <span class="enables-tag">Fundamentals 1</span>
+                            <span class="enables-tag">Basic Concepts</span>
+                            <span class="enables-tag">Entry Programs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended -->
+                <div class="requirement-card recommended">
+                    <div class="card-header">
+                        <div class="card-icon">🌿</div>
+                        <div class="card-title-group">
+                            <h3>Recommended</h3>
+                            <span>Smooth optimal experience</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Optimal setup for meaningful transformation. Concepts integrate naturally, progress flows steadily, and deeper teachings become accessible.</p>
+                    
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Active Growth Orientation:</strong> Regularly thinking about becoming a better person</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Prior Development Work:</strong> Have engaged with other personal growth programs</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Expanded Impact:</strong> Interested in creating win-win situations</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Non-Coercive Orientation:</strong> Don't use power-over dynamics</span>
+                        </li>
+                    </ul>
+
+                    <div class="enables-section">
+                        <h4>This Enables</h4>
+                        <div class="enables-list">
+                            <span class="enables-tag">All Fundamentals</span>
+                            <span class="enables-tag">Paradise Paths</span>
+                            <span class="enables-tag">Deep Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimal -->
+                <div class="requirement-card optimal">
+                    <div class="card-header">
+                        <div class="card-icon">🌳</div>
+                        <div class="card-title-group">
+                            <h3>Optimal / Pro</h3>
+                            <span>Full power unlocked</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Maximum capability for deep transformation and service. Rapid integration, mastery-level access, and readiness for leadership and teaching roles.</p>
+                    
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Extensive Background:</strong> Have studied extensively with coaches and mentors</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Purpose Alignment:</strong> Living your current purpose daily</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Teaching Readiness:</strong> Desire to help others transform</span>
+                        </li>
+                        <li>
+                            <span class="req-check">✓</span>
+                            <span class="req-text"><strong>Full Commitment:</strong> Ready for Erlandia as primary framework</span>
+                        </li>
+                    </ul>
+
+                    <div class="enables-section">
+                        <h4>This Enables</h4>
+                        <div class="enables-list">
+                            <span class="enables-tag">Mastery Programs</span>
+                            <span class="enables-tag">Certifications</span>
+                            <span class="enables-tag">Paradise Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section class="categories-section">
+                <div class="section-header">
+                    <h2>Requirement Categories</h2>
+                    <p>The four dimensions of consciousness "hardware" that determine your Erlandia OS experience</p>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🧠</div>
+                        <h3>Mindset</h3>
+                        <p>Your orientation toward growth, learning, and change. Are you open to new perspectives?</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📚</div>
+                        <h3>Experience</h3>
+                        <p>Your background in personal development work. What foundation have you already built?</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎯</div>
+                        <h3>Commitment</h3>
+                        <p>Your level of dedication to transformation. How much are you willing to invest in yourself?</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💎</div>
+                        <h3>Values</h3>
+                        <p>Your orientation toward life-serving approaches. Do you seek mutual benefit over domination?</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compatibility Check -->
+            <section class="compatibility-section">
+                <h2>Check Your Compatibility</h2>
+                <p>Not sure if you meet the requirements? Use our compatibility assessment to discover your current readiness level and get personalized recommendations.</p>
+                <a href="#" class="check-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                    </svg>
+                    Take Compatibility Assessment
+                </a>
+            </section>
+
+            <!-- Not Meeting Requirements -->
+            <section class="not-ready-section">
+                <h2>What If I Don't Meet the Requirements?</h2>
+                <p>The Erlandia OS is designed to work with your current state of consciousness. If you don't yet meet the minimum requirements, here's what may happen and why it matters:</p>
+
+                <div class="conflicts-grid">
+                    <div class="conflict-card">
+                        <h4>⚠️ Not Ready to Learn</h4>
+                        <p>Without openness to learning, the teachings cannot install. You may find yourself resisting concepts, dismissing insights, or unable to apply the fundamentals. The OS requires a learning-ready state to function.</p>
+                    </div>
+                    <div class="conflict-card">
+                        <h4>⚠️ Not Life-Serving Direction</h4>
+                        <p>If your current approach isn't oriented toward making life better, the OS will conflict with existing patterns. This creates internal friction rather than flow, and may amplify existing dysfunction before resolution.</p>
+                    </div>
+                    <div class="conflict-card">
+                        <h4>⚠️ Power-Over Dynamics</h4>
+                        <p>The Erlandia OS replaces punishment with healthy boundaries. If you're still operating from coercion and force, the teachings will feel contradictory to your current approach and won't integrate properly.</p>
+                    </div>
+                    <div class="conflict-card">
+                        <h4>⚠️ No Growth Orientation</h4>
+                        <p>Without genuine desire for growth, engagement with the material will be superficial. Real transformation requires active participation in your own evolution, not passive consumption of information.</p>
+                    </div>
+                </div>
+
+                <div class="honor-note">
+                    <p>This isn't about judgment—it's about <strong>honoring your choice</strong>. By clearly understanding where you are, you can make an empowered decision about whether now is the right time for this journey. You can always return when you're ready.</p>
+                </div>
+            </section>
+
+            <!-- Deep Dive Links -->
+            <section class="deep-dive-section">
+                <div class="section-header">
+                    <h2>Learn More</h2>
+                    <p>Explore detailed explanations of each requirement level</p>
+                </div>
+
+                <div class="deep-dive-grid">
+                    <a href="#" class="deep-dive-link">
+                        <div class="deep-dive-icon">📖</div>
+                        <div class="deep-dive-text">
+                            <h4>Why These Requirements?</h4>
+                            <span>The philosophy behind conscious prerequisites</span>
+                        </div>
+                        <span class="deep-dive-arrow">→</span>
+                    </a>
+                    <a href="#" class="deep-dive-link">
+                        <div class="deep-dive-icon">🔬</div>
+                        <div class="deep-dive-text">
+                            <h4>Detailed Minimum Requirements</h4>
+                            <span>Everything needed to begin your journey</span>
+                        </div>
+                        <span class="deep-dive-arrow">→</span>
+                    </a>
+                    <a href="#" class="deep-dive-link">
+                        <div class="deep-dive-icon">⚡</div>
+                        <div class="deep-dive-text">
+                            <h4>Upgrading Your Readiness</h4>
+                            <span>How to prepare if you're not quite ready</span>
+                        </div>
+                        <span class="deep-dive-arrow">→</span>
+                    </a>
+                    <a href="#" class="deep-dive-link">
+                        <div class="deep-dive-icon">🎓</div>
+                        <div class="deep-dive-text">
+                            <h4>Pro-Level Requirements Explained</h4>
+                            <span>What mastery readiness really means</span>
+                        </div>
+                        <span class="deep-dive-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="comparison-section">
+                <div class="section-header">
+                    <h2>Quick Comparison</h2>
+                    <p>At-a-glance view of what each level requires and enables</p>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Minimum</th>
+                            <th>Recommended</th>
+                            <th>Optimal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Learning Orientation</td>
+                            <td>Ready to learn</td>
+                            <td>Actively seeking growth</td>
+                            <td>Committed to mastery</td>
+                        </tr>
+                        <tr>
+                            <td>Prior Experience</td>
+                            <td>None required</td>
+                            <td>Some personal development</td>
+                            <td>Extensive coaching/mentorship</td>
+                        </tr>
+                        <tr>
+                            <td>Purpose Alignment</td>
+                            <td>Wants better life</td>
+                            <td>Creating win-win situations</td>
+                            <td>Living purpose daily</td>
+                        </tr>
+                        <tr>
+                            <td>Program Access</td>
+                            <td>Entry level</td>
+                            <td>Full curriculum</td>
+                            <td>Mastery & certification</td>
+                        </tr>
+                        <tr>
+                            <td>Expected Progress</td>
+                            <td>Gradual, may revisit</td>
+                            <td>Steady integration</td>
+                            <td>Rapid embodiment</td>
+                        </tr>
+                        <tr>
+                            <td>Ideal For</td>
+                            <td><span class="table-tier minimum">Beginners</span></td>
+                            <td><span class="table-tier recommended">Practitioners</span></td>
+                            <td><span class="table-tier optimal">Future Teachers</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">Erlandia</div>
+            <p>Your Journey of Accelerated Evolution and the Pathway to Paradise on Earth</p>
+            <div class="footer-links">
+                <a href="#">About Erlandia OS</a>
+                <a href="#">Programs</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple tab functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

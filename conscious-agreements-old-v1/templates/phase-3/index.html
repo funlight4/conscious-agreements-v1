@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 3: Court Filings & Legal Actions - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .phase-header {
+            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .phase-header__number {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .phase-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .phase-overview {
+            background: #e8eaf6;
+            border-left: 4px solid #3f51b5;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .phase-overview__title {
+            font-family: 'Cinzel', serif;
+            color: #1a237e;
+            margin-top: 0;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .template-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .template-card__icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #1a237e;
+            margin: 0.5rem 0;
+        }
+
+        .template-card__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .template-card__title a:hover {
+            text-decoration: underline;
+        }
+
+        .template-card__description {
+            font-family: 'Crimson Text', serif;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .template-card__meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .template-card__tag {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .template-card__tag--offensive {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .template-card__tag--defensive {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .template-card__tag--strategic {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #c62828;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .prerequisites-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .prerequisites-box__title {
+            color: #e65100;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .strategy-section {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .strategy-section__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .phase-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .phase-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .phase-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="phase-header">
+            <div class="phase-header__number">Phase 3 of 7</div>
+            <h1 class="phase-header__title">Court Filings & Legal Actions</h1>
+            <p class="phase-header__subtitle">Taking Offensive and Defensive Positions in Court</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <span>Phase 3: Court Filings</span>
+        </div>
+
+        <div class="phase-overview">
+            <h2 class="phase-overview__title">Phase Overview</h2>
+            <p>Phase 3 represents the transition from administrative remedies to formal legal proceedings. After completing discovery (Phase 1) and establishing your position through affidavits and notices (Phase 2), you now have the documented foundation to take formal legal action.</p>
+            <p>These templates can be used both offensively (filing your own claims) and defensively (responding to foreclosure or collection actions). The choice of which to use depends on your specific situation and timing.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Critical Legal Warnings</h3>
+            <ul>
+                <li><strong>Court Filing Deadlines:</strong> Court documents have strict filing deadlines. Missing a deadline can result in default judgment against you.</li>
+                <li><strong>Jurisdiction Matters:</strong> Court rules vary by state and even by county. Verify local requirements before filing.</li>
+                <li><strong>Professional Review:</strong> These templates are educational. Consider consultation with a legal professional before filing court documents.</li>
+                <li><strong>Service Requirements:</strong> All court documents must be properly served on opposing parties according to court rules.</li>
+                <li><strong>Filing Fees:</strong> Court filings typically require payment of filing fees, though fee waivers may be available.</li>
+            </ul>
+        </div>
+
+        <div class="prerequisites-box">
+            <h3 class="prerequisites-box__title">Before Using These Templates</h3>
+            <p>Ensure you have completed the following from earlier phases:</p>
+            <ul>
+                <li>Sent and documented all Phase 1 discovery requests (QWR, Debt Validation, FOIA, etc.)</li>
+                <li>Filed your Affidavit of Truth and Notice of Lack of Consideration (Phase 2)</li>
+                <li>Established a documented record of the opposing party's failure to rebut your positions</li>
+                <li>Gathered all evidence supporting your claims</li>
+                <li>Researched local court rules and procedures</li>
+            </ul>
+        </div>
+
+        <h2>Phase 3 Templates</h2>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-card__icon">&#x2696;</div>
+                <h3 class="template-card__title"><a href="quiet-title.html">Quiet Title Complaint</a></h3>
+                <p class="template-card__description">The most powerful offensive action. Files a lawsuit to establish clear ownership of your property and remove all clouds on title created by fraudulent claims.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--offensive">Offensive</span>
+                    <span class="template-card__tag">Civil Complaint</span>
+                    <span class="template-card__tag">Property Rights</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F6AB;</div>
+                <h3 class="template-card__title"><a href="tro-injunction.html">Emergency TRO / Injunction Motion</a></h3>
+                <p class="template-card__description">Emergency motion to halt foreclosure proceedings immediately. Seeks temporary restraining order and preliminary injunction to preserve the status quo while litigation proceeds.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--defensive">Defensive</span>
+                    <span class="template-card__tag">Emergency Filing</span>
+                    <span class="template-card__tag">Foreclosure Defense</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F6E1;</div>
+                <h3 class="template-card__title"><a href="motion-to-dismiss.html">Motion to Dismiss Foreclosure</a></h3>
+                <p class="template-card__description">Your first line of defense when sued for foreclosure. Attacks the complaint for lack of standing, failure to state a claim, and other fatal defects. Must be filed before answering the complaint.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--defensive">Defensive</span>
+                    <span class="template-card__tag">Motion Practice</span>
+                    <span class="template-card__tag">Standing Challenge</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x2694;</div>
+                <h3 class="template-card__title"><a href="counterclaim.html">Counterclaim Template</a></h3>
+                <p class="template-card__description">Turn defense into offense. Filed with your Answer, this template lets you sue back for FDCPA, FCRA, RESPA, TILA violations, fraud, RICO, and other claims. Includes damages calculation.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--offensive">Offensive</span>
+                    <span class="template-card__tag">Federal Claims</span>
+                    <span class="template-card__tag">Triple Damages</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F3DB;</div>
+                <h3 class="template-card__title"><a href="notice-of-removal.html">Notice of Removal to Federal Court</a></h3>
+                <p class="template-card__description">Strategic venue change to move case from state to federal court. Use when you have federal claims/defenses or diversity jurisdiction. Must be filed within 30 days of service.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--strategic">Strategic</span>
+                    <span class="template-card__tag">Federal Court</span>
+                    <span class="template-card__tag">30-Day Deadline</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-section__title">Strategic Considerations</h3>
+
+            <h4>Offensive vs. Defensive Posture</h4>
+            <ul>
+                <li><strong>Offensive (You file first):</strong> Quiet Title Complaint puts you in control. You're the plaintiff seeking relief. Best used before foreclosure is filed.</li>
+                <li><strong>Defensive (Responding to foreclosure):</strong> Motion to Dismiss and Counterclaim filed in response to their complaint. You defend while also asserting claims against them.</li>
+            </ul>
+
+            <h4>Timing Matters</h4>
+            <ul>
+                <li><strong>Motion to Dismiss:</strong> Must be filed BEFORE your Answer to preserve certain defenses</li>
+                <li><strong>Counterclaim:</strong> Filed WITH your Answer or separately with leave of court</li>
+                <li><strong>TRO/Injunction:</strong> Emergency filing when immediate action needed to stop foreclosure</li>
+                <li><strong>Removal:</strong> Must be filed within 30 days of service - NO EXCEPTIONS</li>
+            </ul>
+
+            <h4>Building Your Case</h4>
+            <p>All these templates reference evidence gathered in Phase 1 and positions established in Phase 2. The strength of your court filings depends entirely on the documentary foundation you've built. Key exhibits include:</p>
+            <ul>
+                <li>Unanswered QWRs and debt validation requests</li>
+                <li>Your Affidavit of Truth (unrebutted)</li>
+                <li>Notice of Lack of Consideration (unrebutted)</li>
+                <li>Evidence of broken chain of title</li>
+                <li>Federal Reserve and Bank of England publications on money creation</li>
+            </ul>
+        </div>
+
+        <div class="phase-nav">
+            <a href="/templates/phase-2/" class="phase-nav__link">&larr; Phase 2: Affidavits & Notices</a>
+            <a href="/templates/phase-4/" class="phase-nav__link">Phase 4: Criminal Complaints &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

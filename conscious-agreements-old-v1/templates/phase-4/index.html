@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 4: Criminal Complaints & Regulatory Actions - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .phase-header {
+            background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .phase-header__number {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .phase-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .phase-overview {
+            background: #eceff1;
+            border-left: 4px solid #455a64;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .phase-overview__title {
+            font-family: 'Cinzel', serif;
+            color: #263238;
+            margin-top: 0;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .template-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .template-card__icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #263238;
+            margin: 0.5rem 0;
+        }
+
+        .template-card__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .template-card__title a:hover {
+            text-decoration: underline;
+        }
+
+        .template-card__description {
+            font-family: 'Crimson Text', serif;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .template-card__meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .template-card__tag {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .template-card__tag--criminal {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .template-card__tag--regulatory {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .template-card__tag--securities {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            color: #c62828;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .strategy-section {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .strategy-section__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .agency-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .agency-table th {
+            background: #263238;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .agency-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+        }
+
+        .agency-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .phase-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .phase-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .phase-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="phase-header">
+            <div class="phase-header__number">Phase 4 of 7</div>
+            <h1 class="phase-header__title">Criminal Complaints & Regulatory Actions</h1>
+            <p class="phase-header__subtitle">Escalating to Federal Law Enforcement and Regulators</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <span>Phase 4: Criminal Complaints</span>
+        </div>
+
+        <div class="phase-overview">
+            <h2 class="phase-overview__title">Phase Overview</h2>
+            <p>Phase 4 escalates beyond civil remedies to engage federal law enforcement and regulatory agencies. These templates report criminal violations to the FBI, request prosecution from the DOJ, file regulatory complaints with the CFPB, and report securities fraud to the SEC.</p>
+            <p>These agencies have investigative powers, can impose fines and penalties, and in some cases can initiate criminal prosecution. Filing these complaints creates additional pressure and establishes a documented record of the violations with federal authorities.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3 class="warning-box__title">Critical Considerations</h3>
+            <ul>
+                <li><strong>Truth and Accuracy:</strong> False statements to federal agencies are crimes. Be accurate and truthful in all submissions.</li>
+                <li><strong>Documentation:</strong> Attach all supporting evidence. The stronger your documentation, the more likely action will be taken.</li>
+                <li><strong>Follow-Up:</strong> Agencies receive many complaints. Follow up persistently and professionally.</li>
+                <li><strong>Coordination:</strong> Filing with multiple agencies creates broader pressure and cross-referencing of violations.</li>
+                <li><strong>Expectations:</strong> Federal agencies have discretion and limited resources. Not all complaints result in action.</li>
+            </ul>
+        </div>
+
+        <h2>Phase 4 Templates</h2>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F6A8;</div>
+                <h3 class="template-card__title"><a href="fbi-complaint.html">FBI Criminal Complaint</a></h3>
+                <p class="template-card__description">Report bank fraud, mail fraud, wire fraud, RICO violations, and other federal crimes to the FBI White Collar Crime Division. Creates permanent federal record and may initiate investigation.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--criminal">Criminal</span>
+                    <span class="template-card__tag">RICO</span>
+                    <span class="template-card__tag">Bank Fraud</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x2696;</div>
+                <h3 class="template-card__title"><a href="doj-referral.html">DOJ Criminal Referral</a></h3>
+                <p class="template-card__description">Request federal prosecution from the Department of Justice Criminal Division. Formal request for criminal charges, grand jury investigation, and asset forfeiture.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--criminal">Criminal</span>
+                    <span class="template-card__tag">Prosecution</span>
+                    <span class="template-card__tag">RICO Enterprise</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F6E1;</div>
+                <h3 class="template-card__title"><a href="cfpb-complaint.html">CFPB Consumer Complaint</a></h3>
+                <p class="template-card__description">File regulatory complaint with the Consumer Financial Protection Bureau. CFPB can investigate, impose fines, require restitution, and issue consent orders against servicers.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--regulatory">Regulatory</span>
+                    <span class="template-card__tag">Consumer Protection</span>
+                    <span class="template-card__tag">RESPA/TILA</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-card__icon">&#x1F4C8;</div>
+                <h3 class="template-card__title"><a href="sec-complaint.html">SEC Securities Fraud Complaint</a></h3>
+                <p class="template-card__description">Report mortgage-backed securities fraud and REMIC violations to the SEC. Addresses securitization fraud affecting investors. Potential whistleblower awards available.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag template-card__tag--securities">Securities</span>
+                    <span class="template-card__tag">REMIC Violations</span>
+                    <span class="template-card__tag">Whistleblower</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-section__title">Agency Overview</h3>
+
+            <table class="agency-table">
+                <thead>
+                    <tr>
+                        <th>Agency</th>
+                        <th>Focus Area</th>
+                        <th>Powers</th>
+                        <th>Typical Response Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>FBI</strong></td>
+                        <td>Federal criminal violations</td>
+                        <td>Investigation, arrest, criminal referral to DOJ</td>
+                        <td>Varies widely; complex cases may take years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DOJ</strong></td>
+                        <td>Federal prosecution</td>
+                        <td>Grand jury, indictment, criminal prosecution, asset forfeiture</td>
+                        <td>Prosecutorial discretion; no guaranteed timeline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CFPB</strong></td>
+                        <td>Consumer financial protection</td>
+                        <td>Investigation, fines, consent orders, restitution</td>
+                        <td>15 days for company response; 60 days typical resolution</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEC</strong></td>
+                        <td>Securities fraud</td>
+                        <td>Investigation, disgorgement, penalties, trading suspensions</td>
+                        <td>Varies; whistleblower awards if successful enforcement</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-section__title">Strategic Considerations</h3>
+
+            <h4>Maximizing Impact</h4>
+            <ul>
+                <li><strong>File with multiple agencies:</strong> Cross-referencing complaints creates broader awareness and pressure</li>
+                <li><strong>Document everything:</strong> Keep copies of all submissions and confirmations</li>
+                <li><strong>Follow up regularly:</strong> Don't assume filing is enough; persistent follow-up is essential</li>
+                <li><strong>Connect with other victims:</strong> Pattern evidence strengthens all complaints</li>
+                <li><strong>Coordinate with litigation:</strong> Reference pending complaints in court filings for added pressure</li>
+            </ul>
+
+            <h4>Building Your Case</h4>
+            <p>These complaints reference the documented violations from earlier phases:</p>
+            <ul>
+                <li>Unanswered QWRs and debt validation requests (Phase 1)</li>
+                <li>Unrebutted Affidavits of Truth (Phase 2)</li>
+                <li>Evidence of robo-signing and document fabrication</li>
+                <li>Federal Reserve and Bank of England publications on money creation</li>
+                <li>Court filings and case documentation (Phase 3)</li>
+            </ul>
+
+            <h4>Whistleblower Considerations</h4>
+            <p>The SEC Whistleblower Program provides awards of 10-30% of monetary sanctions over $1 million. If you have original information about securities fraud not publicly known, consider filing Form TCR for potential award eligibility.</p>
+        </div>
+
+        <div class="phase-nav">
+            <a href="/templates/phase-3/" class="phase-nav__link">&larr; Phase 3: Court Filings</a>
+            <a href="/templates/phase-5/" class="phase-nav__link">Phase 5: Alternative Strategies &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminology — Conscious Agreements</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
         .term-nav {
@@ -22,7 +21,7 @@
             background: rgba(44, 62, 80, 0.1);
             border-radius: 4px;
             text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.85rem;
         }
         .term-nav a:hover {
@@ -51,7 +50,6 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #666;
-            font-family: 'Source Sans Pro', sans-serif;
         }
         .meaning-comparison {
             display: grid;
@@ -81,7 +79,6 @@
             letter-spacing: 0.1em;
             color: #666;
             margin-bottom: 0.5rem;
-            font-family: 'Source Sans Pro', sans-serif;
         }
         .term-quote {
             font-style: italic;
@@ -115,7 +112,7 @@
 <body>
     <div id="site-header"></div>
 
-<main class="content">
+    <main class="content">
         <div class="container">
             <nav class="breadcrumb">
                 <a href="/">Home</a>
@@ -125,12 +122,13 @@
                 <span>Terminology</span>
             </nav>
 
-            <article>
-                <header>
-                    <h1>Terminology</h1>
-                    <p class="lead">Legal terms rarely mean what you think they mean. Before you can navigate agreements consciously, you must understand the actual definitions in play.</p>
-                </header>
+            <header class="hero">
+                <div class="hero__badge">The Decoder Ring</div>
+                <h1 class="hero__title">Words Are Weapons</h1>
+                <p class="hero__subtitle">Legal terms rarely mean what you think they mean. Before you can navigate agreements consciously, you must understand the actual definitions in play.</p>
+            </header>
 
+            <article>
                 <div class="important-box">
                     <div class="important-box__title">Why This Matters</div>
                     <p>Every contract, statute, and legal document operates on precise definitions. When you assume a word means what it commonly means, you may be agreeing to something entirely different than what you believe. <strong>Definitions are the first battleground.</strong></p>
@@ -525,18 +523,25 @@
 
                     <p>These definitions are starting points for inquiry, not final answers. When a term matters in your specific situation, research its full definition in the applicable context.</p>
                 </section>
-            </article>
 
-            <nav class="page-nav">
-                <a href="/reference/" class="page-nav__link">
-                    <span class="page-nav__label">Back to</span>
-                    <span class="page-nav__title">← Reference</span>
-                </a>
-                <a href="/foundation/what-is-agreement.html" class="page-nav__link page-nav__link--next">
-                    <span class="page-nav__label">Related</span>
-                    <span class="page-nav__title">What Is an Agreement? →</span>
-                </a>
-            </nav>
+                <section>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">📖</div>
+                        <div class="path-indicator__text">Armed with these definitions, you can now decode agreements with clarity. The words reveal their true meaning.</div>
+                    </div>
+
+                    <nav class="page-nav">
+                        <a href="/reference/" class="page-nav__link">
+                            <span class="page-nav__label">Back to</span>
+                            <span class="page-nav__title">← Reference</span>
+                        </a>
+                        <a href="/foundation/what-is-agreement.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Related</span>
+                            <span class="page-nav__title">What Is an Agreement? →</span>
+                        </a>
+                    </nav>
+                </section>
+            </article>
         </div>
     </main>
 

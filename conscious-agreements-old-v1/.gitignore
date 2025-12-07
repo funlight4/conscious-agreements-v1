@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Build outputs
+node_modules/
+.cache/
+dist/
+
+# Local development
+.env
+.env.local
+
+# Keep _workspace folders but you can add exclusions here if needed
+# _workspace/sources/*
+# !_workspace/sources/.gitkeep

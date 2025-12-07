@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFPB Consumer Complaint - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.9;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #1b5e20;
+            margin-top: 0.25rem;
+        }
+
+        .info-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-box__title {
+            color: #1b5e20;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .template-section {
+            margin: 2rem 0;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            color: #1b5e20;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 0.5rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-letter__agency {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fff3e0;
+            border-bottom: 1px solid #e65100;
+            padding: 0.1rem 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        .template-letter__section {
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #1b5e20;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .template-letter p {
+            margin: 0.75rem 0;
+            text-align: justify;
+        }
+
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .numbered-list li {
+            counter-increment: item;
+            margin: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .numbered-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .statute-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .statute-box__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .statute-box code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #bbdefb;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        .regulatory-box {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .regulatory-box__title {
+            font-family: 'Cinzel', serif;
+            color: #1b5e20;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .insight-box {
+            background: #fffbf0;
+            border: 1px solid #f0e6d3;
+            border-left: 4px solid #c9a227;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box__title {
+            font-family: 'Cinzel', serif;
+            color: #8b7355;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .process-box {
+            background: #fff8e1;
+            border-left: 4px solid #ff8f00;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .process-box__title {
+            font-family: 'Cinzel', serif;
+            color: #e65100;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .template-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="template-header">
+            <div class="template-header__category">Phase 4 &bull; Regulatory Complaint</div>
+            <h1 class="template-header__title">CFPB Consumer Complaint</h1>
+            <p class="template-header__subtitle">Filing with the Consumer Financial Protection Bureau</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-4/">Phase 4</a> &rsaquo;
+            <span>CFPB Consumer Complaint</span>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Regulatory Complaint</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Filing Method</div>
+                <div class="meta-item__value">consumerfinance.gov/complaint</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Primary Statutes</div>
+                <div class="meta-item__value">RESPA, TILA, FDCPA</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Response Time</div>
+                <div class="meta-item__value">15-60 Days</div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3 class="info-box__title">Why File with CFPB?</h3>
+            <p>The Consumer Financial Protection Bureau has regulatory authority over mortgage servicers and can:</p>
+            <ul>
+                <li>Investigate consumer complaints and require company responses</li>
+                <li>Issue enforcement actions with substantial civil penalties</li>
+                <li>Require restitution and remediation for affected consumers</li>
+                <li>Issue consent orders mandating changes to business practices</li>
+                <li>Refer matters to DOJ for criminal prosecution</li>
+            </ul>
+            <p>Companies are required to respond to CFPB complaints within 15 days and resolve within 60 days.</p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Purpose and Effect</h2>
+            <p>This template reports mortgage servicing violations to the CFPB. The CFPB consumer complaint database is public, and companies are motivated to resolve complaints to avoid negative publicity and regulatory scrutiny. The CFPB uses complaint data to identify patterns that may trigger enforcement actions.</p>
+
+            <div class="regulatory-box">
+                <h4 class="regulatory-box__title">CFPB Enforcement Powers</h4>
+                <ul>
+                    <li><strong>Civil Penalties:</strong> Up to $1 million per day for knowing violations</li>
+                    <li><strong>Restitution:</strong> Requiring return of wrongfully collected funds</li>
+                    <li><strong>Injunctive Relief:</strong> Orders to cease illegal practices</li>
+                    <li><strong>Consent Orders:</strong> Binding agreements requiring compliance programs</li>
+                    <li><strong>DOJ Referral:</strong> Referral for criminal prosecution in serious cases</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-box">
+            <h4 class="process-box__title">CFPB Complaint Process</h4>
+            <ol>
+                <li><strong>Submit Complaint:</strong> File online at consumerfinance.gov/complaint</li>
+                <li><strong>Company Notified:</strong> CFPB forwards to company (within days)</li>
+                <li><strong>Company Response:</strong> Company must respond within 15 days</li>
+                <li><strong>Resolution Attempt:</strong> Company has 60 days to close complaint</li>
+                <li><strong>Consumer Review:</strong> You can dispute company response</li>
+                <li><strong>Public Database:</strong> Complaint appears in public database</li>
+            </ol>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">CFPB Complaint Template</h2>
+
+            <p>Use this content when filing at consumerfinance.gov/complaint. The CFPB portal has specific fields; this template provides the narrative content.</p>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <div class="template-letter__agency">CONSUMER FINANCIAL PROTECTION BUREAU</div>
+                    <div>Consumer Complaint - Mortgage Servicing</div>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Company Information</div>
+                    <p><strong>Company Name:</strong> <span class="template-letter__field">[SERVICER NAME]</span></p>
+                    <p><strong>Product:</strong> Mortgage</p>
+                    <p><strong>Sub-Product:</strong> Conventional home mortgage / Other mortgage</p>
+                    <p><strong>Issue:</strong> Trouble during payment process / Struggling to pay mortgage</p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Loan Information</div>
+                    <p><strong>Property Address:</strong> <span class="template-letter__field">[PROPERTY ADDRESS]</span></p>
+                    <p><strong>Loan Number:</strong> <span class="template-letter__field">[LOAN NUMBER]</span></p>
+                    <p><strong>Original Lender:</strong> <span class="template-letter__field">[ORIGINAL LENDER]</span></p>
+                    <p><strong>Original Loan Amount:</strong> $<span class="template-letter__field">[AMOUNT]</span></p>
+                    <p><strong>Current Claimed Balance:</strong> $<span class="template-letter__field">[CURRENT AMOUNT]</span></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Complaint Narrative</div>
+
+                    <p><strong>Summary of Issues:</strong></p>
+
+                    <p>I am filing this complaint against <span class="template-letter__field">[SERVICER NAME]</span> for multiple violations of federal consumer protection laws in connection with mortgage servicing.</p>
+
+                    <p><strong>1. RESPA Qualified Written Request Violations</strong></p>
+                    <p>On <span class="template-letter__field">[DATE]</span>, I sent a Qualified Written Request (QWR) pursuant to 12 U.S.C. &sect; 2605(e) to the servicer demanding:</p>
+                    <ul>
+                        <li>Identification of the owner of the loan</li>
+                        <li>Complete payment history</li>
+                        <li>All documents evidencing the debt</li>
+                        <li>Complete chain of title documentation</li>
+                    </ul>
+                    <p>The servicer [failed to respond within 30 days / provided inadequate response that did not address specific requests / <span class="template-letter__field">[DESCRIBE RESPONSE]</span>].</p>
+                    <p>This violates RESPA requirements for timely and complete responses to QWRs.</p>
+
+                    <p><strong>2. Failure to Validate Debt</strong></p>
+                    <p>On <span class="template-letter__field">[DATE]</span>, I sent a debt validation request pursuant to the Fair Debt Collection Practices Act. The servicer:</p>
+                    <ul>
+                        <li>Failed to provide validation within 30 days</li>
+                        <li>Continued collection activity despite disputed debt</li>
+                        <li>Could not produce original promissory note</li>
+                        <li>Could not document chain of ownership</li>
+                    </ul>
+
+                    <p><strong>3. Inability to Document Standing</strong></p>
+                    <p>The servicer claims the right to service and collect on this mortgage but cannot provide:</p>
+                    <ul>
+                        <li>Original promissory note with wet ink signature</li>
+                        <li>Complete and unbroken chain of assignments</li>
+                        <li>Documentation of authority from actual creditor</li>
+                        <li>Proof of purchase of the debt</li>
+                    </ul>
+
+                    <p><strong>4. Document Irregularities</strong></p>
+                    <p>The documents provided by the servicer contain the following irregularities:</p>
+                    <ul>
+                        <li><span class="template-letter__field">[DESCRIBE - robo-signed documents, backdated assignments, forged signatures, etc.]</span></li>
+                    </ul>
+
+                    <p><strong>5. Improper Foreclosure Activity</strong></p>
+                    <p>Despite the unresolved disputes and lack of documentation, the servicer has:</p>
+                    <ul>
+                        <li><span class="template-letter__field">[DESCRIBE - initiated foreclosure, sent notices, filed court documents, etc.]</span></li>
+                    </ul>
+
+                    <p><strong>6. Additional Violations</strong></p>
+                    <p><span class="template-letter__field">[DESCRIBE ANY ADDITIONAL ISSUES - fee pyramiding, force-placed insurance, payment misapplication, dual tracking, etc.]</span></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Timeline of Events</div>
+                    <ul>
+                        <li><span class="template-letter__field">[DATE]</span>: <span class="template-letter__field">[EVENT - Original loan closing]</span></li>
+                        <li><span class="template-letter__field">[DATE]</span>: <span class="template-letter__field">[EVENT - Transfer to current servicer]</span></li>
+                        <li><span class="template-letter__field">[DATE]</span>: Sent Qualified Written Request</li>
+                        <li><span class="template-letter__field">[DATE]</span>: Sent Debt Validation Request</li>
+                        <li><span class="template-letter__field">[DATE]</span>: <span class="template-letter__field">[Response or lack thereof]</span></li>
+                        <li><span class="template-letter__field">[DATE]</span>: <span class="template-letter__field">[Additional events]</span></li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Laws Violated</div>
+                    <ul>
+                        <li><strong>RESPA (12 U.S.C. &sect; 2605):</strong> Failure to respond to QWR, failure to identify owner</li>
+                        <li><strong>TILA (15 U.S.C. &sect; 1641):</strong> Failure to provide required disclosures upon transfer</li>
+                        <li><strong>FDCPA (15 U.S.C. &sect; 1692g):</strong> Failure to validate debt, continued collection</li>
+                        <li><strong>CFPB Mortgage Servicing Rules (Reg X):</strong> 12 C.F.R. &sect; 1024.35, 1024.36</li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Requested Resolution</div>
+                    <p>I am requesting that <span class="template-letter__field">[SERVICER NAME]</span>:</p>
+                    <ol class="numbered-list">
+                        <li>Provide complete and documented response to my Qualified Written Request</li>
+                        <li>Produce the original promissory note with wet ink signature</li>
+                        <li>Provide complete, unbroken chain of title with all assignments</li>
+                        <li>Identify the actual owner/investor of the alleged loan</li>
+                        <li>Cease all foreclosure activity until disputes are resolved</li>
+                        <li>Correct any credit reporting related to disputed amounts</li>
+                        <li>Provide full accounting of all payments, fees, and charges</li>
+                        <li>Refund any payments made to an entity without lawful authority</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Documents I Can Provide</div>
+                    <ul>
+                        <li>Copies of Qualified Written Requests (with certified mail receipts)</li>
+                        <li>Copies of any responses received</li>
+                        <li>Debt validation requests</li>
+                        <li>Copies of alleged loan documents showing irregularities</li>
+                        <li>Chain of title research</li>
+                        <li>Correspondence with servicer</li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Fair Resolution</div>
+                    <p>I believe a fair resolution would include:</p>
+                    <ul>
+                        <li>Full compliance with RESPA disclosure requirements</li>
+                        <li>Production of original documents proving the debt</li>
+                        <li>Halt of all collection and foreclosure activity until proper documentation is provided</li>
+                        <li>Correction of any inaccurate credit reporting</li>
+                        <li>If servicer cannot document authority: cancellation of alleged debt and release of any lien</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="statute-box">
+            <h4 class="statute-box__title">Key Consumer Protection Statutes</h4>
+            <ul>
+                <li><code>12 U.S.C. &sect; 2605(e)</code> - RESPA QWR Response Requirements</li>
+                <li><code>12 U.S.C. &sect; 2605(k)</code> - RESPA Servicer Obligations</li>
+                <li><code>15 U.S.C. &sect; 1641(g)</code> - TILA Transfer Disclosure Requirements</li>
+                <li><code>15 U.S.C. &sect; 1692g</code> - FDCPA Debt Validation Requirements</li>
+                <li><code>12 C.F.R. &sect; 1024.35</code> - Error Resolution Procedures</li>
+                <li><code>12 C.F.R. &sect; 1024.36</code> - Information Request Procedures</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 class="checklist__title">Filing Checklist</h3>
+            <ul>
+                <li>Create account at consumerfinance.gov</li>
+                <li>Gather all supporting documents (QWRs, responses, correspondence)</li>
+                <li>Document timeline of events with specific dates</li>
+                <li>Identify specific law violations with citations</li>
+                <li>State clearly what resolution you are seeking</li>
+                <li>Submit complaint online</li>
+                <li>Save confirmation number and all correspondence</li>
+                <li>Monitor for company response (15 days)</li>
+                <li>Review company response and dispute if inadequate</li>
+                <li>Follow up if no resolution within 60 days</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <h4 class="insight-box__title">Strategic Considerations</h4>
+            <p>CFPB complaints create public records and pressure companies to respond. The CFPB tracks complaint volume and patterns, which can trigger investigations. Companies with high complaint volumes or unresolved complaints may face regulatory scrutiny.</p>
+            <p>Reference your CFPB complaint in court filings and other regulatory complaints to show you are pursuing all available remedies and to demonstrate the pattern of misconduct.</p>
+        </div>
+
+        <div class="template-nav">
+            <a href="/templates/phase-4/doj-referral.html" class="template-nav__link">&larr; DOJ Criminal Referral</a>
+            <a href="/templates/phase-4/sec-complaint.html" class="template-nav__link">SEC Securities Complaint &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

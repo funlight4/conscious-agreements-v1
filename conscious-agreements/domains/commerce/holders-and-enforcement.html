@@ -4,103 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holders and Enforcement — Conscious Agreements</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/shared.css">
-    <style>
-        .statute-box {
-            background: rgba(44, 62, 80, 0.05);
-            border-left: 4px solid #2c3e50;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            font-family: 'Crimson Text', serif;
-        }
-        .statute-box__cite {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.75rem;
-        }
-        .statute-box__text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        .statute-box__text em {
-            background: rgba(212, 168, 83, 0.2);
-            padding: 0 0.25rem;
-        }
-        .flow-step {
-            display: flex;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: rgba(212, 168, 83, 0.08);
-            border-radius: 8px;
-            border-left: 4px solid var(--color-gold);
-        }
-        .flow-step__number {
-            flex-shrink: 0;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--color-gold);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-family: 'Cinzel', serif;
-        }
-        .flow-step__content h4 {
-            margin: 0 0 0.5rem 0;
-            color: var(--color-gold-dark);
-        }
-        .flow-step__content p {
-            margin: 0;
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        .comparison-table th {
-            background: rgba(212, 168, 83, 0.2);
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 2px solid var(--color-gold);
-        }
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-            vertical-align: top;
-        }
-        .indorsement-type {
-            padding: 1.25rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border-left: 4px solid #2c3e50;
-            background: rgba(44, 62, 80, 0.05);
-        }
-        .indorsement-type__title {
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            color: var(--color-text-heading);
-            margin-bottom: 0.5rem;
-        }
-        .code-example {
-            background: #1a1a2e;
-            color: #e0e0e0;
-            padding: 1rem;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-        }
-    </style>
 </head>
 <body>
     <div id="site-header"></div>
 
-<main class="content">
+    <main class="content">
         <div class="container">
             <nav class="breadcrumb">
                 <a href="/">Home</a>
@@ -112,179 +21,170 @@
                 <span>Holders and Enforcement</span>
             </nav>
 
+            <header class="hero">
+                <div class="hero__badge">Commerce Lesson #2</div>
+                <h1 class="hero__title">Who's Got the Note?</h1>
+                <p class="hero__subtitle">Instruments change hands. Understanding who can actually enforce one against you — and what defenses exist — is essential for navigating commercial disputes.</p>
+            </header>
+
             <article>
-                <header>
-                    <h1>Holders and Enforcement</h1>
-                    <p class="lead">A <a href="/reference/terminology.html#negotiable-instrument">negotiable instrument</a> can change hands. Understanding who can enforce it — and what defenses exist — is essential for navigating commercial disputes.</p>
-                </header>
+                <section>
+                    <p class="lead">A negotiable instrument can be sold, transferred, and traded. When someone claims you owe them money, the first question isn't "do I owe?" — it's <strong>"can YOU enforce?"</strong></p>
+                </section>
 
                 <section>
                     <h2>Who Can Enforce an Instrument?</h2>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-301 — Person Entitled to Enforce</div>
-                        <div class="statute-box__text">
-                            "Person entitled to enforce" an instrument means:
-                            <ol style="margin-top: 0.5rem;">
-                                <li><em>The holder of the instrument</em></li>
-                                <li>A nonholder in possession of the instrument who has the rights of a holder</li>
-                                <li>A person not in possession of the instrument who is entitled to enforce... pursuant to Section 3-309 or 3-418(d)</li>
-                            </ol>
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Person Entitled to Enforce</div>
+                        <div class="definition-box__source">UCC § 3-301</div>
+                        <div class="definition-box__meaning">"Person entitled to enforce" means: (1) The holder of the instrument; (2) A nonholder in possession who has the rights of a holder; (3) A person not in possession who is entitled to enforce under Section 3-309 or 3-418(d).</div>
                     </div>
 
                     <p>The most common enforcer is the "holder" — but even non-holders can sometimes enforce if they acquired the rights properly.</p>
 
                     <div class="important-box">
-                        <div class="important-box__title">Critical Detail</div>
+                        <div class="important-box__title">The Troubling Detail</div>
                         <p>UCC 3-301 continues: "A person may be a person entitled to enforce the instrument <strong>even though the person is not the owner</strong> of the instrument or is in <strong>wrongful possession</strong> of the instrument."</p>
-                        <p style="margin-top: 0.5rem;">This means someone can potentially enforce an instrument even if they shouldn't have it. The system prioritizes negotiability over ownership rights.</p>
+                        <p style="margin-top: 0.5rem;">Translation: Someone can potentially enforce an instrument even if they shouldn't have it. The system prioritizes <strong>negotiability</strong> over ownership rights.</p>
                     </div>
                 </section>
 
                 <section>
-                    <h2>What Is a Holder?</h2>
+                    <h2>What Makes Someone a "Holder"?</h2>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 1-201(b)(21) — Holder</div>
-                        <div class="statute-box__text">
-                            "'Holder' means... the person in possession of a negotiable instrument that is <em>payable either to bearer or to an identified person that is the person in possession</em>."
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Holder</div>
+                        <div class="definition-box__source">UCC § 1-201(b)(21)</div>
+                        <div class="definition-box__meaning">"'Holder' means the person in possession of a negotiable instrument that is payable either to bearer or to an identified person that is the person in possession."</div>
                     </div>
 
                     <p>Two requirements to be a holder:</p>
-                    <ol>
-                        <li><strong>Possession</strong> — You physically have the instrument (or control of electronic equivalent)</li>
-                        <li><strong>Payable to you</strong> — Either it names you specifically, or it's bearer paper (payable to whoever has it)</li>
-                    </ol>
+
+                    <div class="grid grid--2">
+                        <div class="card card--highlight">
+                            <div class="card__title">1. Possession</div>
+                            <p class="card__text">You physically have the instrument (or control of electronic equivalent). No possession? Not a holder.</p>
+                        </div>
+                        <div class="card card--highlight">
+                            <div class="card__title">2. Payable to You</div>
+                            <p class="card__text">Either it names you specifically, or it's bearer paper (payable to whoever has it). Wrong name? Not a holder.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
-                    <h2>Holder in Due Course: Enhanced Status</h2>
+                    <h2>Holder in Due Course: The Super-Holder</h2>
 
                     <p>A "holder in due course" (HDC) is a special category with enhanced enforcement rights:</p>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-302(a) — Holder in Due Course</div>
-                        <div class="statute-box__text">
-                            "Holder in due course" means the holder of an instrument if:
-                            <ol style="margin-top: 0.5rem;">
-                                <li>the instrument when issued or negotiated to the holder <em>does not bear such apparent evidence of forgery or alteration</em>...</li>
-                                <li>the holder <em>took the instrument for value</em></li>
-                                <li>the holder took the instrument <em>in good faith</em></li>
-                                <li>the holder took <em>without notice</em> that the instrument is overdue, dishonored, or has an unauthorized signature</li>
-                            </ol>
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Holder in Due Course</div>
+                        <div class="definition-box__source">UCC § 3-302(a)</div>
+                        <div class="definition-box__meaning">"Holder in due course" means the holder of an instrument if: (1) the instrument does not bear apparent evidence of forgery or alteration; (2) the holder took for value; (3) the holder took in good faith; (4) the holder took without notice of problems.</div>
                     </div>
 
                     <h3>Why HDC Status Matters</h3>
 
                     <p>A holder in due course takes the instrument <strong>free of most defenses</strong>. If a bank becomes an HDC of your promissory note, many arguments you might raise become legally irrelevant to enforcement.</p>
 
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Defense Type</th>
-                                <th>Against Ordinary Holder</th>
-                                <th>Against HDC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Personal Defenses</strong><br><small>(failure of consideration, fraud in inducement, breach of warranty)</small></td>
-                                <td>Available</td>
-                                <td>NOT available</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Real Defenses</strong><br><small>(forgery, minority, fraud in factum, illegality)</small></td>
-                                <td>Available</td>
-                                <td>Available</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="card" style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; min-width: 500px;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">Defense Type</th>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">vs. Ordinary Holder</th>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">vs. HDC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);"><strong>Personal Defenses</strong><br><small>Failure of consideration, fraud in inducement, breach of warranty</small></td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); color: #27ae60;"><strong>Available</strong></td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); color: #c0392b;"><strong>NOT Available</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem;"><strong>Real Defenses</strong><br><small>Forgery, minority, fraud in factum, illegality</small></td>
+                                    <td style="padding: 0.75rem; color: #27ae60;"><strong>Available</strong></td>
+                                    <td style="padding: 0.75rem; color: #27ae60;"><strong>Available</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="insight-box">
                         <div class="insight-box__title">The Strategic Implication</div>
-                        <p>This is why banks and servicers structure transactions to achieve HDC status — it cuts off most defenses. When challenging a mortgage, you may need to attack whether they truly qualify as HDC (did they give value? did they have notice of problems?).</p>
+                        <p>This is why banks and servicers structure transactions to achieve HDC status — it cuts off most defenses. When challenging a mortgage, you may need to attack whether they truly qualify as HDC: <strong>Did they give value? Did they have notice of problems? Can they prove it?</strong></p>
                     </div>
                 </section>
 
                 <section>
                     <h2>How Instruments Transfer: Negotiation</h2>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-201(a) — Negotiation</div>
-                        <div class="statute-box__text">
-                            "'Negotiation' means a transfer of possession, whether voluntary or involuntary, of an instrument by a person other than the issuer to a person who thereby <em>becomes its holder</em>."
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Negotiation</div>
+                        <div class="definition-box__source">UCC § 3-201(a)</div>
+                        <div class="definition-box__meaning">"'Negotiation' means a transfer of possession, whether voluntary or involuntary, of an instrument by a person other than the issuer to a person who thereby becomes its holder."</div>
                     </div>
 
-                    <div class="flow-step">
-                        <div class="flow-step__number">1</div>
-                        <div class="flow-step__content">
-                            <h4>Issue</h4>
-                            <p>First delivery by maker or drawer — the instrument comes to life</p>
-                        </div>
+                    <div class="card card--highlight">
+                        <div class="card__label">Step 1</div>
+                        <div class="card__title">Issue</div>
+                        <p class="card__text">First delivery by maker or drawer — the instrument comes to life.</p>
                     </div>
 
-                    <div class="flow-step">
-                        <div class="flow-step__number">2</div>
-                        <div class="flow-step__content">
-                            <h4>Holder</h4>
-                            <p>Person in possession with right to payment</p>
-                        </div>
+                    <div class="card card--highlight">
+                        <div class="card__label">Step 2</div>
+                        <div class="card__title">Holder</div>
+                        <p class="card__text">Person in possession with right to payment.</p>
                     </div>
 
-                    <div class="flow-step">
-                        <div class="flow-step__number">3</div>
-                        <div class="flow-step__content">
-                            <h4>Negotiation</h4>
-                            <p>Transfer making the recipient a holder (may require indorsement)</p>
-                        </div>
+                    <div class="card card--highlight">
+                        <div class="card__label">Step 3</div>
+                        <div class="card__title">Negotiation</div>
+                        <p class="card__text">Transfer making the recipient a holder (may require endorsement).</p>
                     </div>
 
-                    <div class="flow-step">
-                        <div class="flow-step__number">4</div>
-                        <div class="flow-step__content">
-                            <h4>Enforcement</h4>
-                            <p>Holder demands payment from obligor</p>
-                        </div>
+                    <div class="card card--highlight">
+                        <div class="card__label">Step 4</div>
+                        <div class="card__title">Enforcement</div>
+                        <p class="card__text">Holder demands payment from obligor.</p>
                     </div>
 
-                    <p>For <strong>bearer paper</strong>, mere transfer of possession negotiates the instrument. For <strong>order paper</strong> (made out to a specific person), indorsement is required.</p>
+                    <p>For <strong>bearer paper</strong>, mere transfer of possession negotiates the instrument. For <strong>order paper</strong> (made out to a specific person), endorsement is required.</p>
                 </section>
 
                 <section>
-                    <h2>Types of Indorsement</h2>
+                    <h2>Types of Endorsement</h2>
 
-                    <p><a href="/reference/terminology.html#indorsement">Indorsement</a> is how order paper gets negotiated. The type of indorsement affects who can enforce:</p>
+                    <p>Endorsement is how order paper gets negotiated. The type of endorsement affects who can enforce:</p>
 
-                    <div class="indorsement-type">
-                        <div class="indorsement-type__title">Blank Indorsement</div>
+                    <div class="card">
+                        <div class="card__title">Blank Endorsement</div>
                         <p>Does NOT state the payee — automatically makes the instrument payable to bearer. Anyone who possesses it can enforce.</p>
-                        <div class="code-example">/s/ John Smith</div>
-                        <p style="margin-top: 0.5rem;"><em>Effect: Whoever holds it can cash it or transfer it.</em></p>
+                        <p style="font-family: monospace; background: var(--color-bg-alt); padding: 0.5rem; margin: 0.5rem 0;">/s/ John Smith</p>
+                        <p><em>Effect: Whoever holds it can cash it or transfer it.</em></p>
                     </div>
 
-                    <div class="indorsement-type">
-                        <div class="indorsement-type__title">Special Indorsement</div>
+                    <div class="card">
+                        <div class="card__title">Special Endorsement</div>
                         <p>States the specific payee — only that person can enforce or further negotiate.</p>
-                        <div class="code-example">Pay to the order of Jane Doe<br>/s/ John Smith</div>
-                        <p style="margin-top: 0.5rem;"><em>Effect: Only Jane Doe can now enforce or transfer.</em></p>
+                        <p style="font-family: monospace; background: var(--color-bg-alt); padding: 0.5rem; margin: 0.5rem 0;">Pay to the order of Jane Doe<br>/s/ John Smith</p>
+                        <p><em>Effect: Only Jane Doe can now enforce or transfer.</em></p>
                     </div>
 
-                    <div class="indorsement-type">
-                        <div class="indorsement-type__title">Qualified Indorsement</div>
-                        <p>Typically expressed as "without recourse" — limits the indorser's liability if the instrument is dishonored.</p>
-                        <div class="code-example">Without recourse<br>Pay to the order of Jane Doe<br>/s/ John Smith</div>
-                        <p style="margin-top: 0.5rem;"><em>Effect: John Smith is not liable if the maker doesn't pay.</em></p>
+                    <div class="card">
+                        <div class="card__title">Qualified Endorsement ("Without Recourse")</div>
+                        <p>Limits the endorser's liability if the instrument is dishonored.</p>
+                        <p style="font-family: monospace; background: var(--color-bg-alt); padding: 0.5rem; margin: 0.5rem 0;">Without recourse<br>Pay to the order of Jane Doe<br>/s/ John Smith</p>
+                        <p><em>Effect: John Smith is not liable if the maker doesn't pay.</em></p>
                     </div>
 
-                    <div class="indorsement-type">
-                        <div class="indorsement-type__title">Restrictive Indorsement</div>
-                        <p>Limits what can be done with the instrument — common example: "For deposit only."</p>
-                        <div class="code-example">For deposit only to Account #12345<br>/s/ John Smith</div>
-                        <p style="margin-top: 0.5rem;"><em>Effect: Must be deposited to specified account.</em></p>
+                    <div class="card">
+                        <div class="card__title">Restrictive Endorsement</div>
+                        <p>Limits what can be done with the instrument.</p>
+                        <p style="font-family: monospace; background: var(--color-bg-alt); padding: 0.5rem; margin: 0.5rem 0;">For deposit only to Account #12345<br>/s/ John Smith</p>
+                        <p><em>Effect: Must be deposited to specified account.</em></p>
                     </div>
                 </section>
 
@@ -293,16 +193,10 @@
 
                     <p>What if the original instrument can't be produced?</p>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-309 — Enforcement of Lost, Destroyed, or Stolen Instrument</div>
-                        <div class="statute-box__text">
-                            "A person not in possession of an instrument is entitled to enforce the instrument if:
-                            <ol style="margin-top: 0.5rem;">
-                                <li>the person <em>seeking to enforce the instrument was entitled</em> to enforce it when loss of possession occurred...</li>
-                                <li>the <em>loss of possession was not the result of a transfer</em>... or lawful seizure; and</li>
-                                <li>the person cannot reasonably obtain possession...</li>
-                            </ol>
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Enforcement Without the Instrument</div>
+                        <div class="definition-box__source">UCC § 3-309</div>
+                        <div class="definition-box__meaning">"A person not in possession of an instrument is entitled to enforce the instrument if: (1) the person was entitled to enforce when loss occurred; (2) the loss was not from transfer or lawful seizure; and (3) the person cannot reasonably obtain possession."</div>
                     </div>
 
                     <p>This creates a pathway for enforcing instruments even without the original. But it also creates opportunities for challenge:</p>
@@ -314,7 +208,7 @@
                             <li>Challenge their standing to enforce</li>
                             <li>Require them to meet the burden of UCC 3-309</li>
                             <li>Raise questions about chain of title</li>
-                            <li>Potentially become the holder yourself if their claim fails</li>
+                            <li>Force them to prove they qualify to enforce without it</li>
                         </ul>
                     </div>
                 </section>
@@ -325,26 +219,37 @@
                     <p>In modern mortgage securitization, notes are often transferred multiple times:</p>
 
                     <ol>
-                        <li>Originator creates loan, takes your note</li>
-                        <li>Sells note to aggregator</li>
-                        <li>Aggregator pools notes into securities</li>
-                        <li>Securities sold to investors</li>
-                        <li>Servicer handles payments and enforcement</li>
+                        <li><strong>Originator</strong> creates loan, takes your note</li>
+                        <li><strong>Sells</strong> note to aggregator</li>
+                        <li><strong>Aggregator pools</strong> notes into securities</li>
+                        <li><strong>Securities sold</strong> to investors</li>
+                        <li><strong>Servicer</strong> handles payments and enforcement</li>
                     </ol>
 
                     <p>Each transfer should be properly endorsed. But in practice, many transfers happened without proper endorsement — especially during the 2000s mortgage boom.</p>
 
                     <h3>Common Chain of Title Defects</h3>
 
-                    <ul>
-                        <li><strong>Missing indorsements</strong> — Gaps in the endorsement chain</li>
-                        <li><strong>MERS issues</strong> — Electronic registration system problems</li>
-                        <li><strong>Robo-signing</strong> — Fraudulent execution of documents</li>
-                        <li><strong>Backdated assignments</strong> — Documents created after the fact</li>
-                        <li><strong>Missing original notes</strong> — Can't produce the wet-ink document</li>
-                    </ul>
+                    <div class="grid grid--2">
+                        <div class="card">
+                            <div class="card__title">Missing Endorsements</div>
+                            <p class="card__text">Gaps in the endorsement chain from originator to current holder.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">MERS Issues</div>
+                            <p class="card__text">Electronic registration system problems and confusion about who holds what.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">Robo-Signing</div>
+                            <p class="card__text">Fraudulent execution of documents by unqualified personnel.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">Backdated Assignments</div>
+                            <p class="card__text">Documents created after the fact to paper over transfer problems.</p>
+                        </div>
+                    </div>
 
-                    <p>These defects don't automatically void your obligation, but they can be powerful challenges to the claiming party's standing to enforce.</p>
+                    <p>These defects don't automatically void your obligation, but they can be powerful challenges to the claiming party's <strong>standing to enforce</strong>.</p>
                 </section>
 
                 <section>
@@ -352,8 +257,8 @@
 
                     <p>Before addressing the merits of any claim, you can challenge whether the plaintiff has <strong>standing</strong> to bring it:</p>
 
-                    <div class="card" style="margin: 1.5rem 0;">
-                        <div class="card__title">Questions to Ask</div>
+                    <div class="card card--highlight">
+                        <div class="card__title">The Questions to Ask</div>
                         <ul style="margin: 0;">
                             <li>Are you the holder of the original note?</li>
                             <li>Can you produce the original wet-ink instrument?</li>
@@ -363,26 +268,32 @@
                         </ul>
                     </div>
 
-                    <p>If the claiming party cannot prove they are a person entitled to enforce under UCC 3-301, they may lack standing — and standing must be established before reaching other issues.</p>
+                    <p>If the claiming party cannot prove they are a "person entitled to enforce" under UCC 3-301, they may lack standing — and <strong>standing must be established before reaching other issues</strong>.</p>
+
+                    <div class="fun-fact">
+                        <div class="fun-fact__label">The Power of the Question</div>
+                        <p>"Produce the original note with complete chain of endorsement" is not a magic phrase — but it IS a legitimate legal demand. If they can't answer it, you've found your leverage point.</p>
+                    </div>
                 </section>
 
                 <section>
-                    <h2>Next: Consideration in Commerce</h2>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">📍</div>
+                        <div class="path-indicator__text">You know who can enforce and how to challenge them. Next: What did they actually give you? The consideration question.</div>
+                    </div>
 
-                    <p>Understanding who can enforce is important. But an equally important question is: <strong>Was there valid consideration?</strong> Without proper consideration, a contract — even with a negotiable instrument — may be voidable.</p>
+                    <nav class="page-nav">
+                        <a href="/domains/commerce/negotiable-instruments.html" class="page-nav__link">
+                            <span class="page-nav__label">Previous</span>
+                            <span class="page-nav__title">← Negotiable Instruments</span>
+                        </a>
+                        <a href="/domains/commerce/consideration-in-commerce.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Next</span>
+                            <span class="page-nav__title">Consideration →</span>
+                        </a>
+                    </nav>
                 </section>
             </article>
-
-            <nav class="page-nav">
-                <a href="/domains/commerce/negotiable-instruments.html" class="page-nav__link">
-                    <span class="page-nav__label">Previous</span>
-                    <span class="page-nav__title">← Negotiable Instruments</span>
-                </a>
-                <a href="/domains/commerce/consideration-in-commerce.html" class="page-nav__link page-nav__link--next">
-                    <span class="page-nav__label">Next</span>
-                    <span class="page-nav__title">Consideration in Commerce →</span>
-                </a>
-            </nav>
         </div>
     </main>
 

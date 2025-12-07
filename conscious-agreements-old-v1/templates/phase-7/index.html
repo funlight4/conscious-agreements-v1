@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 7: Settlement & Resolution - Templates - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .phase-header {
+            background: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .phase-header__nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-header__breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .phase-header__breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .phase-header__breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .phase-header__number {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .phase-header__subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .phase-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .phase-intro {
+            background: #e8eaf6;
+            border-left: 4px solid #3f51b5;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .phase-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .overview-card {
+            background: white;
+            border: 1px solid #d4c4a8;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .overview-card__label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .overview-card__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a237e;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            color: #2c1810;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 0.5rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-card {
+            background: white;
+            border: 1px solid #d4c4a8;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .template-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-card__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #1a237e;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .template-card__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .template-card__title a:hover {
+            text-decoration: underline;
+        }
+
+        .template-card__description {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .template-card__meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .template-card__tag {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        .strategic-notes {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .strategic-notes__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: #2c1810;
+            margin: 0 0 1rem 0;
+        }
+
+        .strategic-notes__list {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .strategic-notes__list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box__title {
+            font-weight: 700;
+            color: #f57c00;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .success-box__title {
+            font-weight: 700;
+            color: #2e7d32;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .phase-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            margin-top: 3rem;
+            border-radius: 4px;
+        }
+
+        .phase-nav__link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .phase-nav__link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .phase-header {
+                padding: 2rem 1rem;
+            }
+
+            .phase-header__title {
+                font-size: 2rem;
+            }
+
+            .phase-content {
+                padding: 0 1rem 3rem;
+            }
+
+            .phase-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <header class="phase-header">
+        <nav class="phase-header__nav">
+            <div class="phase-header__breadcrumb">
+                <a href="/">Home</a>
+                <span>→</span>
+                <a href="/templates/">Templates</a>
+                <span>→</span>
+                <span>Phase 7</span>
+            </div>
+        </nav>
+        <div class="phase-header__number">Phase 7 of 7</div>
+        <h1 class="phase-header__title">Settlement & Resolution</h1>
+        <p class="phase-header__subtitle">Negotiated Outcomes and Final Agreements</p>
+    </header>
+
+    <main class="phase-content">
+        <div class="phase-intro">
+            <p><strong>Phase 7 represents the conclusion of the process</strong>—negotiated settlements that resolve disputes on terms acceptable to both parties. These templates formalize agreements reached through previous phases, documenting full satisfaction of obligations, release of claims, and transfer of property when applicable.</p>
+        </div>
+
+        <div class="phase-overview">
+            <div class="overview-card">
+                <div class="overview-card__label">Templates</div>
+                <div class="overview-card__value">2 Documents</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-card__label">Objective</div>
+                <div class="overview-card__value">Final Resolution</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-card__label">Risk Level</div>
+                <div class="overview-card__value">Binding</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-card__label">Legal Counsel</div>
+                <div class="overview-card__value">Essential</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Settlement Templates</h2>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <h3 class="template-card__title">
+                    <a href="/templates/phase-7/settlement-agreement.html">Settlement Agreement</a>
+                </h3>
+                <p class="template-card__description">Comprehensive agreement for full and final resolution of all claims. Addresses payment terms, lien releases, credit reporting, and mutual releases. The primary document for negotiated settlements.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag">Binding Contract</span>
+                    <span class="template-card__tag">Mutual Release</span>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <h3 class="template-card__title">
+                    <a href="/templates/phase-7/deed-in-lieu.html">Deed in Lieu Agreement</a>
+                </h3>
+                <p class="template-card__description">Agreement for voluntary property transfer to avoid foreclosure. Includes full debt discharge, no deficiency, and controlled move-out terms. Alternative to contested foreclosure when retaining property isn't viable.</p>
+                <div class="template-card__meta">
+                    <span class="template-card__tag">Property Transfer</span>
+                    <span class="template-card__tag">Debt Discharge</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-box">
+            <p class="success-box__title">Settlement Advantages</p>
+            <p>Reaching a settlement offers certainty, finality, and control over outcomes that litigation cannot guarantee. Settlements avoid the unpredictability of court decisions, reduce legal costs, and allow parties to craft creative solutions not available through judicial remedies. Well-documented settlement agreements prevent future disputes and provide clear terms for implementation.</p>
+        </div>
+
+        <h2 class="section-title">Strategic Considerations</h2>
+
+        <div class="strategic-notes">
+            <h3 class="strategic-notes__title">Before Settlement</h3>
+            <ul class="strategic-notes__list">
+                <li><strong>Know your leverage:</strong> Document from prior phases strengthens negotiating position</li>
+                <li><strong>Calculate all costs:</strong> Compare settlement terms to litigation expenses and risks</li>
+                <li><strong>Identify priorities:</strong> Rank what matters most (clear title, debt discharge, cash, credit repair)</li>
+                <li><strong>Set walk-away points:</strong> Know your minimum acceptable terms before negotiating</li>
+                <li><strong>Consider tax implications:</strong> Forgiven debt may be taxable income</li>
+            </ul>
+        </div>
+
+        <div class="strategic-notes">
+            <h3 class="strategic-notes__title">Key Settlement Terms</h3>
+            <ul class="strategic-notes__list">
+                <li><strong>Full satisfaction:</strong> Ensure the agreement clearly states the debt is fully satisfied</li>
+                <li><strong>Lien release:</strong> Require recorded satisfaction of mortgage within specified timeframe</li>
+                <li><strong>Deficiency waiver:</strong> Explicit waiver of any deficiency claims</li>
+                <li><strong>Credit reporting:</strong> Specify how the account will be reported to credit bureaus</li>
+                <li><strong>Mutual release:</strong> Both parties release all claims related to the loan</li>
+                <li><strong>No admission:</strong> Settlement without admission of liability by either party</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <p class="warning-box__title">Critical Warning</p>
+            <p>Settlement agreements and deeds in lieu are <strong>legally binding contracts</strong> with significant, often irreversible consequences. These documents release substantial rights and may transfer property. <strong>You must consult with an attorney before signing.</strong> Ensure all blanks are completed, all terms are understood, and all representations are accurate. Keep copies of all documents.</p>
+        </div>
+
+        <h2 class="section-title">The Complete Framework</h2>
+
+        <div class="strategic-notes">
+            <h3 class="strategic-notes__title">How Phase 7 Connects to the System</h3>
+            <ul class="strategic-notes__list">
+                <li><strong>Phase 1 (Discovery)</strong> provided the evidence that strengthens your position</li>
+                <li><strong>Phase 2 (Challenge)</strong> established your legal arguments and good faith</li>
+                <li><strong>Phase 3 (Court Filings)</strong> demonstrated willingness to litigate</li>
+                <li><strong>Phase 4 (Complaints)</strong> added regulatory pressure</li>
+                <li><strong>Phase 5 (Alternatives)</strong> explored creative solutions</li>
+                <li><strong>Phase 6 (Public Pressure)</strong> leveraged reputational concerns</li>
+                <li><strong>Phase 7 (Settlement)</strong> captures the value created by all prior phases</li>
+            </ul>
+        </div>
+
+        <nav class="phase-nav">
+            <a href="/templates/phase-6/" class="phase-nav__link">
+                ← Phase 6: Public Pressure
+            </a>
+            <a href="/templates/" class="phase-nav__link">
+                All Templates
+            </a>
+            <span style="color: #999;">Final Phase</span>
+        </nav>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

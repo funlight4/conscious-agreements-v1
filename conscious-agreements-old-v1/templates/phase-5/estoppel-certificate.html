@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoppel Certificate Request - Conscious Agreements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-header {
+            background: linear-gradient(135deg, #5d4037 0%, #795548 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-header__category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.9;
+        }
+
+        .template-header__title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .template-header__subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: #efebe9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #4e342e;
+            margin-top: 0.25rem;
+        }
+
+        .strategy-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .strategy-box__title {
+            color: #0d47a1;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .template-section {
+            margin: 2rem 0;
+        }
+
+        .template-section__title {
+            font-family: 'Cinzel', serif;
+            color: #4e342e;
+            border-bottom: 2px solid #795548;
+            padding-bottom: 0.5rem;
+        }
+
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-letter__title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-letter__field {
+            background: #fff3e0;
+            border-bottom: 1px solid #e65100;
+            padding: 0.1rem 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        .template-letter__section {
+            margin: 1.5rem 0;
+        }
+
+        .template-letter__section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #4e342e;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .template-letter p {
+            margin: 0.75rem 0;
+            text-align: justify;
+        }
+
+        .estoppel-item {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .estoppel-item__number {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .estoppel-item__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #1b5e20;
+            display: inline;
+        }
+
+        .statute-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1565c0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .statute-box__title {
+            font-family: 'Cinzel', serif;
+            color: #0d47a1;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .consequences-box {
+            background: #ffebee;
+            border: 2px solid #c62828;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .consequences-box__title {
+            color: #c62828;
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist__title {
+            font-family: 'Cinzel', serif;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .insight-box {
+            background: #fffbf0;
+            border: 1px solid #f0e6d3;
+            border-left: 4px solid #c9a227;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box__title {
+            font-family: 'Cinzel', serif;
+            color: #8b7355;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .template-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .template-nav__link {
+            font-family: 'Cinzel', serif;
+            color: #7b341e;
+            text-decoration: none;
+        }
+
+        .template-nav__link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="container">
+        <div class="template-header">
+            <div class="template-header__category">Phase 5 &bull; Alternative Strategy</div>
+            <h1 class="template-header__title">Estoppel Certificate Request</h1>
+            <p class="template-header__subtitle">Binding Statement of Account Status</p>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo;
+            <a href="/templates/">Templates</a> &rsaquo;
+            <a href="/templates/phase-5/">Phase 5</a> &rsaquo;
+            <span>Estoppel Certificate</span>
+        </div>
+
+        <div class="template-meta">
+            <div class="meta-item">
+                <div class="meta-item__label">Template Type</div>
+                <div class="meta-item__value">Estoppel Request</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Legal Basis</div>
+                <div class="meta-item__value">UCC 3-602</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Primary Effect</div>
+                <div class="meta-item__value">Lock In Claims</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item__label">Response Period</div>
+                <div class="meta-item__value">15 Business Days</div>
+            </div>
+        </div>
+
+        <div class="strategy-box">
+            <h3 class="strategy-box__title">The Strategic Power of Estoppel</h3>
+            <p>This document forces the servicer/bank to provide a binding statement about your loan that they <strong>cannot change later</strong>. Once they certify specific facts, they are legally "estopped" (prevented) from claiming otherwise. This:</p>
+            <ul>
+                <li><strong>Locks in their position:</strong> Can't change story later in court</li>
+                <li><strong>Reveals discrepancies:</strong> Errors and fraud exposed when compared to other documents</li>
+                <li><strong>Creates evidence:</strong> Binding admissions usable in litigation</li>
+                <li><strong>Prevents surprises:</strong> No hidden fees or claims can appear later</li>
+                <li><strong>Establishes facts:</strong> Foundation for negotiation or litigation</li>
+            </ul>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Purpose and Effect</h2>
+            <p>An estoppel certificate is a binding statement of account status. Once provided, the servicer cannot later claim different amounts, different ownership, or different facts. This is particularly valuable before making any payment, during settlement negotiations, or when preparing for litigation.</p>
+        </div>
+
+        <div class="template-section">
+            <h2 class="template-section__title">Estoppel Certificate Request Template</h2>
+
+            <div class="template-letter">
+                <div class="template-letter__header">
+                    <div class="template-letter__title">ESTOPPEL LETTER/CERTIFICATE REQUEST</div>
+                    <div>Request for Binding Statement of Account Status</div>
+                </div>
+
+                <p><strong>Date:</strong> <span class="template-letter__field">[DATE]</span></p>
+
+                <p><strong>FROM:</strong><br>
+                <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span><br>
+                <span class="template-letter__field">[YOUR ADDRESS]</span><br>
+                <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                ("Borrower/Requesting Party")</p>
+
+                <p><strong>TO:</strong><br>
+                <span class="template-letter__field">[SERVICER/BANK NAME]</span><br>
+                <span class="template-letter__field">[ADDRESS]</span><br>
+                <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                ("Servicer/Responding Party")</p>
+
+                <p><strong>RE:</strong> Loan/Account Number: <span class="template-letter__field">[ACCOUNT NUMBER]</span></p>
+                <p><strong>Property Address:</strong> <span class="template-letter__field">[PROPERTY ADDRESS]</span></p>
+                <p><strong>Original Loan Date:</strong> <span class="template-letter__field">[LOAN DATE]</span></p>
+                <p><strong>Original Loan Amount:</strong> $<span class="template-letter__field">[AMOUNT]</span></p>
+
+                <hr style="margin: 2rem 0;">
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">I. Purpose of Request</div>
+                    <p>I hereby request an Estoppel Certificate/Letter stating the current status of the above-referenced loan account. This request is made for the following purposes:</p>
+                    <ul>
+                        <li>Verification of actual amount owed</li>
+                        <li>Confirmation of payment history</li>
+                        <li>Identification of true owner of the debt</li>
+                        <li>Settlement negotiations</li>
+                        <li>Potential refinancing or sale</li>
+                        <li>Legal proceedings preparation</li>
+                        <li>Tax and accounting purposes</li>
+                    </ul>
+                    <p><strong>This certificate will be relied upon for important financial and legal decisions. Any false or misleading information may result in liability for damages.</strong></p>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">II. Required Estoppel Information</div>
+                    <p>You must provide a sworn statement certifying the following information as of <span class="template-letter__field">[DATE]</span>:</p>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">1</span>
+                        <span class="estoppel-item__title">CURRENT BALANCE</span>
+                        <ul>
+                            <li>Principal Balance: $_______________</li>
+                            <li>Interest Accrued: $_______________</li>
+                            <li>Late Fees: $_______________</li>
+                            <li>Other Fees: $_______________</li>
+                            <li>Escrow Balance: $_______________</li>
+                            <li>Suspense Account: $_______________</li>
+                            <li><strong>TOTAL PAYOFF AMOUNT: $_______________</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">2</span>
+                        <span class="estoppel-item__title">PAYMENT HISTORY</span>
+                        <p>Complete payment history showing all payments received, dates, how applied, payments in suspense, returned payments, and current payment status.</p>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">3</span>
+                        <span class="estoppel-item__title">OWNERSHIP AND AUTHORITY</span>
+                        <ul>
+                            <li>Current owner of the promissory note: _______________</li>
+                            <li>Current holder of the promissory note: _______________</li>
+                            <li>Location of original wet-ink note: _______________</li>
+                            <li>Your authority to collect (attach proof): _______________</li>
+                            <li>All assignments of the mortgage/deed (attach copies)</li>
+                        </ul>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">4</span>
+                        <span class="estoppel-item__title">INTEREST RATE</span>
+                        <ul>
+                            <li>Current interest rate: _____% </li>
+                            <li>Type (Fixed/Variable): _______________</li>
+                            <li>Date of last rate change: _______________</li>
+                            <li>Index and margin if variable: _______________</li>
+                        </ul>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">5</span>
+                        <span class="estoppel-item__title">ESCROW ACCOUNT</span>
+                        <ul>
+                            <li>Current escrow balance: $_______________</li>
+                            <li>Monthly escrow payment: $_______________</li>
+                            <li>Property taxes paid YTD: $_______________</li>
+                            <li>Insurance paid YTD: $_______________</li>
+                            <li>Escrow shortage/surplus: $_______________</li>
+                        </ul>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">6</span>
+                        <span class="estoppel-item__title">DEFAULT STATUS</span>
+                        <ul>
+                            <li>Default date (if applicable): _______________</li>
+                            <li>Default amount: $_______________</li>
+                            <li>Foreclosure status: _______________</li>
+                            <li>Reinstatement amount: $_______________</li>
+                        </ul>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">7</span>
+                        <span class="estoppel-item__title">MODIFICATIONS AND AGREEMENTS</span>
+                        <p>List all loan modifications, forbearance agreements, or payment plans with dates and terms.</p>
+                    </div>
+
+                    <div class="estoppel-item">
+                        <span class="estoppel-item__number">8</span>
+                        <span class="estoppel-item__title">ALL FEES CHARGED</span>
+                        <p>Itemize ALL fees: late fees, NSF fees, property inspection fees, legal fees, foreclosure costs, other fees.</p>
+                    </div>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">III. Legal Effect</div>
+                    <p>By providing this certificate, you are making binding representations that:</p>
+                    <ol>
+                        <li>All information provided is true, accurate, and complete</li>
+                        <li>You are legally estopped from later claiming different amounts or facts</li>
+                        <li>Third parties may rely on this certificate</li>
+                        <li>You may be liable for damages caused by false information</li>
+                        <li>This creates an enforceable agreement as to the stated facts</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">IV. Certificate Format Required</div>
+                    <p>The Estoppel Certificate must be:</p>
+                    <ul>
+                        <li>Sworn and notarized under penalty of perjury</li>
+                        <li>On company letterhead</li>
+                        <li>Signed by authorized officer with printed name and title</li>
+                        <li>Dated as of specific date requested</li>
+                        <li>Complete with all requested information</li>
+                        <li>With supporting documents attached</li>
+                    </ul>
+                </div>
+
+                <div class="template-letter__section" style="background: #ffebee; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.2rem;">RESPONSE REQUIRED WITHIN 15 BUSINESS DAYS</strong><br>
+                    Deadline: <span class="template-letter__field">[DATE + 15 BUSINESS DAYS]</span>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">V. Consequences of Failure to Respond</div>
+                    <p>Your failure to provide the requested Estoppel Certificate within 15 business days will result in:</p>
+                    <ol>
+                        <li><strong>Deemed Agreement</strong> to facts stated in this request</li>
+                        <li><strong>Estoppel by Silence</strong> - cannot later dispute these facts</li>
+                        <li><strong>Account Considered Satisfied</strong> if no balance is stated</li>
+                        <li><strong>Presumption</strong> that you lack authority to collect</li>
+                        <li><strong>Waiver</strong> of any unstated claims or fees</li>
+                        <li><strong>Evidence</strong> of bad faith in servicing</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">VI. Statement of Facts (If No Response)</div>
+                    <p>If you fail to respond with a proper Estoppel Certificate, the following facts will be deemed admitted:</p>
+                    <ol>
+                        <li>Current principal balance: $<span class="template-letter__field">[AMOUNT YOU BELIEVE]</span></li>
+                        <li>Total amount needed to satisfy loan: $<span class="template-letter__field">[PAYOFF AMOUNT]</span></li>
+                        <li>No late fees or other charges are owed</li>
+                        <li>All payments have been properly credited</li>
+                        <li>No valid foreclosure proceedings exist</li>
+                        <li>You do not possess the original promissory note</li>
+                        <li>You lack authority to enforce the debt</li>
+                    </ol>
+                </div>
+
+                <div class="template-letter__section">
+                    <div class="template-letter__section-title">Verification</div>
+                    <p>I, <span class="template-letter__field">[YOUR NAME]</span>, hereby request the above Estoppel Certificate and declare under penalty of perjury that I am the borrower on the referenced loan and have the right to request this information.</p>
+
+                    <p style="margin-top: 2rem;">
+                        Executed on this <span class="template-letter__field">[DAY]</span> day of <span class="template-letter__field">[MONTH]</span>, <span class="template-letter__field">[YEAR]</span>.
+                    </p>
+
+                    <p style="margin-top: 2rem;">
+                        <span class="template-letter__field">[YOUR SIGNATURE]</span><br><br>
+                        _________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="statute-box">
+            <h4 class="statute-box__title">Legal Authority</h4>
+            <ul>
+                <li><strong>Common law doctrine of estoppel:</strong> Party cannot claim contrary to previous certified statements</li>
+                <li><strong>UCC &sect; 3-602:</strong> Payment and discharge provisions</li>
+                <li><strong>Contractual duty of good faith:</strong> Implied in all contracts</li>
+                <li><strong>State consumer protection laws:</strong> Require accurate account information</li>
+            </ul>
+        </div>
+
+        <div class="consequences-box">
+            <h3 class="consequences-box__title">Binding Nature of Response</h3>
+            <p style="text-align: center; font-size: 1.1rem;">
+                YOUR RESPONSE OR FAILURE TO RESPOND CREATES A BINDING AGREEMENT
+            </p>
+            <ul>
+                <li>This is not a request for information - it is a request for a legally binding certificate</li>
+                <li>You will be held to any representations made or amounts stated</li>
+                <li>False statements may result in criminal and civil liability</li>
+                <li>Silence may be deemed admission</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 class="checklist__title">Sending Checklist</h3>
+            <ul>
+                <li>Fill in all blanks completely</li>
+                <li>Calculate 15 business day deadline accurately</li>
+                <li>Consider having notarized</li>
+                <li>Send via Certified Mail, Return Receipt Requested</li>
+                <li>Send to: Legal department, CEO, and regular servicing address</li>
+                <li>Keep all receipts and copies</li>
+                <li>Calendar the deadline for follow-up</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <h4 class="insight-box__title">Strategic Use</h4>
+            <p>Compare any response you receive to:</p>
+            <ul>
+                <li>Your own payment records</li>
+                <li>QWR responses from Phase 1</li>
+                <li>Court filings in any foreclosure action</li>
+                <li>Previous statements</li>
+            </ul>
+            <p>Any discrepancies are evidence of fraud or negligent misrepresentation and can be used in litigation or regulatory complaints.</p>
+        </div>
+
+        <div class="template-nav">
+            <a href="/templates/phase-5/conditional-acceptance.html" class="template-nav__link">&larr; Conditional Acceptance</a>
+            <a href="/templates/phase-5/promissory-note-offset.html" class="template-nav__link">Promissory Note Offset &rarr;</a>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

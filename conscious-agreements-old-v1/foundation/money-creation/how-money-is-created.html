@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Money Is Created — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(212, 168, 83, 0.08);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-gold, #d4a853);
+        }
+        .process-step__number {
+            flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--color-gold, #d4a853);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+        }
+        .process-step__content h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--color-gold-dark, #b8860b);
+        }
+        .process-step__content p {
+            margin: 0;
+        }
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 600px) {
+            .comparison-box {
+                grid-template-columns: 1fr;
+            }
+        }
+        .comparison-box__wrong, .comparison-box__right {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .comparison-box__wrong {
+            background: rgba(180, 60, 60, 0.1);
+            border-left: 4px solid #8b0000;
+        }
+        .comparison-box__right {
+            background: rgba(60, 120, 60, 0.1);
+            border-left: 4px solid #228b22;
+        }
+        .comparison-box__label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .comparison-box__wrong .comparison-box__label { color: #8b0000; }
+        .comparison-box__right .comparison-box__label { color: #228b22; }
+        .math-example {
+            background: rgba(44, 62, 80, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+        }
+        .math-example__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text-heading);
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/foundation/">Foundation</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/foundation/money-creation/">Money Creation</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>How Money Is Created</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>How Money Is Created</h1>
+                    <p class="lead">What you think you know about banks and loans is almost certainly wrong. Understanding what actually happens when you get a loan changes everything.</p>
+                </header>
+
+                <section>
+                    <h2>What You Probably Believe</h2>
+
+                    <p>Most people think the banking system works like this:</p>
+
+                    <ol>
+                        <li>Banks have money (from deposits or reserves)</li>
+                        <li>When you need a loan, they lend you some of that money</li>
+                        <li>You pay it back with interest</li>
+                        <li>The money returns to the bank</li>
+                    </ol>
+
+                    <p>This seems logical. It's what we're taught. It's what most people assume.</p>
+
+                    <p><strong>It's also completely wrong.</strong></p>
+                </section>
+
+                <section>
+                    <h2>A Simple Question</h2>
+
+                    <p>Imagine you want to buy a house for $300,000. You go to the bank for a mortgage.</p>
+
+                    <p><strong>Question:</strong> Where does the bank get that $300,000 to give you?</p>
+
+                    <div class="comparison-box">
+                        <div class="comparison-box__wrong">
+                            <div class="comparison-box__label">Common Assumptions (Wrong)</div>
+                            <ul style="margin: 0; padding-left: 1.2rem;">
+                                <li>From other people's deposits?</li>
+                                <li>From the Federal Reserve?</li>
+                                <li>From the bank's own money?</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-box__right">
+                            <div class="comparison-box__label">The Actual Answer</div>
+                            <p style="margin: 0;">The $300,000 is <strong>created from your signature</strong> on a piece of paper called a promissory note.</p>
+                        </div>
+                    </div>
+
+                    <p>This sounds impossible. Let's walk through exactly what happens.</p>
+                </section>
+
+                <section>
+                    <h2>What Actually Happens</h2>
+
+                    <div class="process-step">
+                        <div class="process-step__number">1</div>
+                        <div class="process-step__content">
+                            <h4>You Create Something Valuable</h4>
+                            <p>You sign a promissory note — your written promise to pay $300,000 plus interest over 30 years. This is a <a href="/reference/terminology.html#negotiable-instrument">negotiable instrument</a> with real legal value.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step__number">2</div>
+                        <div class="process-step__content">
+                            <h4>The Bank Records It As An Asset</h4>
+                            <p>Your promissory note is worth $300,000 (because you promised to pay that). The bank records it as an <strong>asset</strong> on their books — just like they would deposit a check.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step__number">3</div>
+                        <div class="process-step__content">
+                            <h4>The Bank Creates A Matching Deposit</h4>
+                            <p>The bank creates a <strong>deposit</strong> of $300,000 in your account. This is their liability to you. Their books balance: $300,000 asset = $300,000 liability.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step__number">4</div>
+                        <div class="process-step__content">
+                            <h4>The Money Now Exists</h4>
+                            <p>The $300,000 in your account didn't come from anywhere. It was <strong>created</strong> when you signed the promissory note. Your signature literally created the money.</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <div class="insight-box__title">The Key Realization</div>
+                        <p>Only <strong>you</strong> can promise to pay from your future earnings. Not the bank, not gold, not the government — you. Your promise is the source of value. The bank just converts your promise into spendable form.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>This Is Not Disputed</h2>
+
+                    <p>This isn't a fringe theory. It's documented by the institutions themselves:</p>
+
+                    <blockquote style="border-left: 3px solid var(--color-gold); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+                        "Commercial banks create money, in the form of bank deposits, by making new loans. When a bank makes a loan, for example to someone taking out a mortgage to buy a house, it does not typically do so by giving them thousands of pounds worth of banknotes. Instead, it credits their bank account with a bank deposit of the size of the mortgage. At that moment, new money is created."
+                        <cite style="display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.9rem;">— Bank of England, "Money Creation in the Modern Economy" (2014)</cite>
+                    </blockquote>
+
+                    <p>The Federal Reserve, Bank of England, and standard banking textbooks all acknowledge this. The truth is hiding in plain sight — it's just not widely understood.</p>
+                </section>
+
+                <section>
+                    <h2>What About Federal Reserve Notes?</h2>
+
+                    <p>Look at a dollar bill. It says "Federal Reserve Note" at the top.</p>
+
+                    <p>A "note" is a promise to pay. Federal Reserve Notes are just <strong>standardized, transferable versions</strong> of promises to pay — originally based on promissory notes like the one you signed for your mortgage.</p>
+
+                    <h3>The Historical Arc</h3>
+                    <ul>
+                        <li><strong>Before 1933:</strong> Federal Reserve Notes were redeemable for gold</li>
+                        <li><strong>1933-1971:</strong> Only foreign governments could redeem for gold</li>
+                        <li><strong>After 1971:</strong> Federal Reserve Notes are backed by... promises to pay</li>
+                    </ul>
+
+                    <p>Today, all money is essentially someone's promise to pay. Your promissory note is the same type of instrument as a Federal Reserve Note — just not yet standardized for circulation.</p>
+                </section>
+
+                <section>
+                    <h2>The Credit Card Connection</h2>
+
+                    <p>This happens in miniature every day:</p>
+
+                    <h3>When You Use a Credit Card:</h3>
+                    <ol>
+                        <li>You create a new promise to pay</li>
+                        <li>The merchant gets paid immediately</li>
+                        <li>New money enters the economy</li>
+                        <li>You've literally created money with your signature (or chip/tap)</li>
+                    </ol>
+
+                    <h3>When You Use a Debit Card:</h3>
+                    <ol>
+                        <li>You use money that already exists (from previous promises)</li>
+                        <li>No new money is created</li>
+                        <li>You're just transferring existing promises</li>
+                    </ol>
+
+                    <p><em>This is why banks push credit cards so aggressively — every swipe creates new money and new debt.</em></p>
+                </section>
+
+                <section>
+                    <h2>The Mathematical Problem</h2>
+
+                    <p>Here's where it gets concerning:</p>
+
+                    <div class="math-example">
+                        <div class="math-example__title">A Simple Loan</div>
+                        <p>You borrow $300,000 at 5% interest for 30 years:</p>
+                        <ul>
+                            <li>Money created by your signature: <strong>$300,000</strong></li>
+                            <li>Total you'll pay back: <strong>~$580,000</strong></li>
+                            <li>Extra needed for interest: <strong>$280,000</strong></li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Question:</strong> Where does the extra $280,000 come from?</p>
+                    </div>
+
+                    <p><strong>Answer:</strong> It can ONLY come from other people creating new promises (new loans).</p>
+
+                    <div class="math-example">
+                        <div class="math-example__title">Island Economy Example</div>
+                        <pre style="margin: 0; white-space: pre-wrap;">
+Day 1: Empty island, no money exists
+
+Person A borrows $1,000 at 10% interest (creates $1,000)
+Person B borrows $1,000 at 10% interest (creates $1,000)
+Person C borrows $1,000 at 10% interest (creates $1,000)
+
+Total money created: $3,000
+Total money owed: $3,300 (including interest)
+
+Problem: There's only $3,000 but $3,300 is owed!
+                        </pre>
+                    </div>
+
+                    <p>Someone MUST borrow more money (create new promises) or someone MUST default. There is no other option. This is not theory — it's arithmetic.</p>
+                </section>
+
+                <section>
+                    <h2>What This Means</h2>
+
+                    <h3>For the System</h3>
+                    <ul>
+                        <li>The system <strong>requires constant growth</strong> — new loans to pay interest on old loans</li>
+                        <li>Inflation is guaranteed — more money must enter circulation</li>
+                        <li>Total debt can never be paid off — there isn't enough money</li>
+                        <li>Bankruptcy is a necessary safety valve, not a moral failing</li>
+                    </ul>
+
+                    <h3>For You</h3>
+                    <ul>
+                        <li>Your signature has immense power — it literally creates money</li>
+                        <li>You're not "borrowing" from the bank — you're creating through them</li>
+                        <li>The <a href="/reference/terminology.html#consideration">consideration</a> question becomes acute: what did the bank actually provide?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Verify This Yourself</h2>
+
+                    <h3>Ask Your Bank</h3>
+                    <p>"When I got my mortgage, which account did the $300,000 come from?"</p>
+                    <p><em>(They can't answer — because it didn't come from any account.)</em></p>
+
+                    <h3>Read the Statute</h3>
+                    <p><strong>12 U.S.C. § 411</strong> still says Federal Reserve Notes must be "redeemed in lawful money on demand." If Federal Reserve Notes ARE money, what is "lawful money"?</p>
+
+                    <h3>Research It</h3>
+                    <p>Search "banks create money when they make loans" — even the Federal Reserve admits this openly.</p>
+                </section>
+
+                <section>
+                    <h2>What's Next</h2>
+
+                    <p>Now that you understand the basic mechanism, the next question is: <strong>What exactly is your promissory note?</strong></p>
+
+                    <p>It's a <a href="/reference/terminology.html#negotiable-instrument">negotiable instrument</a> — and understanding its nature reveals why your signature has the power it does.</p>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/foundation/money-creation/" class="page-nav__link">
+                    <span class="page-nav__label">Back to</span>
+                    <span class="page-nav__title">← Money Creation</span>
+                </a>
+                <a href="/foundation/money-creation/promissory-notes.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next</span>
+                    <span class="page-nav__title">Promissory Notes as Payment →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOIA Request Bundle — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .meta-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .agency-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--color-gold);
+        }
+        .agency-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .agency-card__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+            font-size: 1.1rem;
+        }
+        .agency-card__abbr {
+            background: var(--color-gold);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+        .agency-card__purpose {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.75rem;
+        }
+        .agency-card__address {
+            background: #f9f9f9;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 0.75rem 0;
+        }
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .template-letter__header {
+            margin-bottom: 2rem;
+        }
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .template-letter h3 {
+            font-family: 'Cinzel', serif;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .template-letter ul, .template-letter ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        .template-letter li {
+            margin: 0.5rem 0;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        .statute-reference {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/">Templates</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/phase-1/">Phase 1</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>FOIA Bundle</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>FOIA Request Bundle</h1>
+                    <p class="lead">Freedom of Information Act requests to multiple federal agencies. May reveal monetization of your promissory note, regulatory violations, and information the bank doesn't want you to have.</p>
+                </header>
+
+                <div class="template-meta">
+                    <div class="meta-item">
+                        <div class="meta-item__label">Legal Authority</div>
+                        <div class="meta-item__value">5 USC 552</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Response Required</div>
+                        <div class="meta-item__value">20 Business Days</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Fee Waiver</div>
+                        <div class="meta-item__value">Usually Available</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Agencies</div>
+                        <div class="meta-item__value">7 Key Agencies</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="insight-box">
+                        <div class="insight-box__title">Why Send FOIA Requests?</div>
+                        <p>Government agencies hold records about your loan that the bank won't voluntarily disclose:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Federal Reserve</strong> — May show your note was monetized at discount window</li>
+                            <li><strong>SEC</strong> — Reveals securitization and who really owns your loan</li>
+                            <li><strong>CFPB</strong> — Shows complaints and enforcement against your servicer</li>
+                            <li><strong>OCC/FDIC</strong> — Bank examination records and violations</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Target Agencies</h2>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Federal Reserve System</div>
+                            <div class="agency-card__abbr">FED</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: Discount window transactions, member bank transactions, promissory note monetization records</div>
+                        <div class="agency-card__address">
+                            Board of Governors of the Federal Reserve System<br>
+                            Attention: FOIA Office<br>
+                            20th Street and Constitution Avenue NW<br>
+                            Washington, DC 20551<br>
+                            Email: foia-pa@frb.gov
+                        </div>
+                        <p>The Fed may have records of your promissory note being discounted. They process member bank transactions at the discount window. This could prove your note was monetized, not "loaned" money.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Office of the Comptroller of the Currency</div>
+                            <div class="agency-card__abbr">OCC</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: National bank examination reports, enforcement actions, complaints, regulatory violations</div>
+                        <div class="agency-card__address">
+                            Office of the Comptroller of the Currency<br>
+                            Disclosure Officer<br>
+                            400 7th Street SW, Suite 3E-218<br>
+                            Washington, DC 20219<br>
+                            Online: https://appsec.occ.gov/publicaccesslink/palMain.aspx
+                        </div>
+                        <p>OCC regulates national banks (those with "National" or "N.A." in name). They have examination reports showing bank practices and may have complaints about your specific bank.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Federal Deposit Insurance Corporation</div>
+                            <div class="agency-card__abbr">FDIC</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: State-chartered bank examination reports, deposit insurance records, bank failure information</div>
+                        <div class="agency-card__address">
+                            FDIC FOIA/Privacy Act Group<br>
+                            550 17th Street NW<br>
+                            Washington, DC 20429<br>
+                            Email: efoia@fdic.gov
+                        </div>
+                        <p>FDIC regulates state-chartered banks that are not Federal Reserve members. Has records of bank examinations and safety/soundness reviews.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Securities and Exchange Commission</div>
+                            <div class="agency-card__abbr">SEC</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: Mortgage-backed securities filings, securitization documents, trust information</div>
+                        <div class="agency-card__address">
+                            Securities and Exchange Commission<br>
+                            FOIA Office<br>
+                            100 F Street NE<br>
+                            Washington, DC 20549<br>
+                            Online: https://www.sec.gov/foia-request
+                        </div>
+                        <p>SEC has records if your loan was securitized (sold to investors). Can provide Pooling and Servicing Agreements. Shows if loan transfer violated securities laws and may prove chain of title is broken.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Consumer Financial Protection Bureau</div>
+                            <div class="agency-card__abbr">CFPB</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: Consumer complaints, examination reports, enforcement actions, mortgage market data</div>
+                        <div class="agency-card__address">
+                            Consumer Financial Protection Bureau<br>
+                            Chief FOIA Officer<br>
+                            1700 G Street NW<br>
+                            Washington, DC 20552<br>
+                            Email: FOIA@consumerfinance.gov
+                        </div>
+                        <p>CFPB has extensive complaint data about mortgage servicers. May have examination reports on your servicer and tracks patterns of abuse.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Department of the Treasury</div>
+                            <div class="agency-card__abbr">TREASURY</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: Currency issuance records, banking policy, TARP funds, financial stability programs</div>
+                        <div class="agency-card__address">
+                            Department of the Treasury<br>
+                            FOIA and Privacy Act Office<br>
+                            1500 Pennsylvania Avenue NW<br>
+                            Washington, DC 20220<br>
+                            Online: https://treasury.gov/foia
+                        </div>
+                        <p>Treasury oversees currency issuance and banking policy. May have TARP or bailout records for your bank. Has policies on Federal Reserve Note creation.</p>
+                    </div>
+
+                    <div class="agency-card">
+                        <div class="agency-card__header">
+                            <div class="agency-card__title">Department of Housing and Urban Development</div>
+                            <div class="agency-card__abbr">HUD</div>
+                        </div>
+                        <div class="agency-card__purpose">What they have: FHA loan records, RESPA violations, settlement statement data, fair housing complaints</div>
+                        <div class="agency-card__address">
+                            U.S. Department of Housing and Urban Development<br>
+                            Office of General Counsel, FOIA Office<br>
+                            451 7th Street SW, Room 10110<br>
+                            Washington, DC 20410<br>
+                            Email: foia@hud.gov
+                        </div>
+                        <p>HUD oversees RESPA compliance, has FHA loan insurance records, tracks fair housing and lending discrimination, and may have your settlement statement (HUD-1).</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template - Federal Reserve Request</h2>
+                    <p>Adapt this template for each agency, adjusting the specific records requested based on what that agency holds.</p>
+
+                    <div class="template-letter">
+                        <div class="template-letter__header">
+                            <span class="template-letter__field">[YOUR FULL NAME]</span><br>
+                            <span class="template-letter__field">[YOUR STREET ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                            <span class="template-letter__field">[YOUR PHONE NUMBER]</span><br>
+                            <span class="template-letter__field">[YOUR EMAIL]</span>
+                            <br><br>
+                            <span class="template-letter__field">[DATE]</span>
+                            <br><br>
+                            <strong>VIA CERTIFIED MAIL AND EMAIL</strong>
+                            <br><br>
+                            Board of Governors of the Federal Reserve System<br>
+                            Attention: FOIA Office<br>
+                            20th Street and Constitution Avenue NW<br>
+                            Washington, DC 20551<br>
+                            Email: foia-pa@frb.gov
+                            <br><br>
+                            <strong>RE: FREEDOM OF INFORMATION ACT REQUEST</strong><br>
+                            <strong>Expedited Processing Requested</strong>
+                        </div>
+
+                        <p>Dear FOIA Officer:</p>
+
+                        <p>Pursuant to the Freedom of Information Act (FOIA), <em>5 U.S.C. § 552</em>, I hereby request the following records:</p>
+
+                        <h3>RECORDS REQUESTED:</h3>
+
+                        <h4>1. Discount Window Transactions:</h4>
+                        <p>All records of discount window transactions involving promissory note(s) associated with:</p>
+                        <ul>
+                            <li>Loan Number: <span class="template-letter__field">[YOUR LOAN NUMBER]</span></li>
+                            <li>Property Address: <span class="template-letter__field">[PROPERTY ADDRESS]</span></li>
+                            <li>Borrower Name: <span class="template-letter__field">[YOUR NAME AS ON LOAN]</span></li>
+                            <li>Original Lender: <span class="template-letter__field">[ORIGINAL LENDER NAME]</span></li>
+                            <li>Approximate Date: <span class="template-letter__field">[LOAN ORIGINATION DATE]</span></li>
+                        </ul>
+
+                        <h4>2. Member Bank Transactions:</h4>
+                        <p>All records of transactions between <span class="template-letter__field">[BANK NAME]</span> and the Federal Reserve regarding the above-referenced loan, including but not limited to:</p>
+                        <ul>
+                            <li>Discount window advances</li>
+                            <li>Collateral pledged</li>
+                            <li>Promissory note deposits or discounting</li>
+                            <li>Credit extensions based on promissory notes</li>
+                        </ul>
+
+                        <h4>3. Promissory Note Monetization:</h4>
+                        <p>All records showing how promissory notes are processed, monetized, or used as collateral for creating Federal Reserve Notes or bank reserves, specifically relating to my loan.</p>
+
+                        <h4>4. Bank Examination Records:</h4>
+                        <p>Any examination records, reports, or correspondence regarding <span class="template-letter__field">[BANK NAME]</span>'s handling of mortgage loans, promissory notes, or discount window usage during the period of <span class="template-letter__field">[YEAR RANGE]</span>.</p>
+
+                        <h4>5. Policy Documents:</h4>
+                        <p>Current policies and procedures regarding:</p>
+                        <ul>
+                            <li>Acceptance of promissory notes as collateral</li>
+                            <li>Discount window operations</li>
+                            <li>Creation of bank reserves from promissory notes</li>
+                            <li>Federal Reserve Note issuance based on commercial paper</li>
+                        </ul>
+
+                        <p><strong>TIME PERIOD:</strong> <span class="template-letter__field">[LOAN ORIGINATION DATE]</span> to present</p>
+
+                        <h3>PRIVACY ACT WAIVER</h3>
+                        <p>I am the borrower on the referenced loan and hereby waive any Privacy Act protections for records about me. Enclosed is a copy of my identification to verify my identity.</p>
+
+                        <h3>REQUEST FOR FEE WAIVER</h3>
+                        <p>I request a waiver of all fees for this request. Disclosure of the requested information is in the public interest because:</p>
+                        <ol>
+                            <li>The information will contribute significantly to public understanding of Federal Reserve operations and monetary policy</li>
+                            <li>I am seeking this information for personal use to understand how my promissory note was processed</li>
+                            <li>I am not seeking this information for commercial purposes</li>
+                            <li>I have limited financial resources and payment would cause financial hardship</li>
+                        </ol>
+
+                        <p><strong>EXPEDITED PROCESSING:</strong><br>
+                        I request expedited processing as there is an urgent need for these records due to <span class="template-letter__field">[pending foreclosure/legal proceedings/time-sensitive matter]</span>.</p>
+
+                        <p><strong>FORMAT OF RESPONSE:</strong><br>
+                        Please provide records in electronic format (PDF) via email if possible. If not, please provide paper copies.</p>
+
+                        <p>If my request is denied in whole or in part, please justify all withholdings by reference to specific FOIA exemptions. Please release all segregable portions of otherwise exempt material.</p>
+
+                        <p>Thank you for your consideration of this request. I look forward to your response within the statutory time period of 20 business days.</p>
+
+                        <p>Sincerely,</p>
+                        <br>
+                        <p>_________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                        Date: <span class="template-letter__field">[DATE]</span></p>
+
+                        <p><strong>Attachments:</strong></p>
+                        <ul>
+                            <li>Copy of Driver's License or ID</li>
+                            <li>Copy of loan documents showing borrower name (if available)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Strategy</h2>
+
+                    <div class="important-box">
+                        <div class="important-box__title">Send to Multiple Agencies Simultaneously</div>
+                        <p>Each agency holds different pieces of the puzzle. Send to all relevant agencies at the same time to:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li>Cast a wide net for information</li>
+                            <li>Cross-reference what different agencies know</li>
+                            <li>Identify inconsistencies in the record</li>
+                            <li>Build comprehensive documentation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Post-Mailing Checklist</h2>
+
+                    <ul class="checklist">
+                        <li>Sent to Federal Reserve</li>
+                        <li>Sent to OCC (if national bank)</li>
+                        <li>Sent to FDIC (if state-chartered bank)</li>
+                        <li>Sent to SEC (if loan securitized)</li>
+                        <li>Sent to CFPB</li>
+                        <li>Sent to Treasury</li>
+                        <li>Sent to HUD (if FHA loan or RESPA issues)</li>
+                        <li>All letters sent certified mail with tracking</li>
+                        <li>Calendar marked: 20 business days for each</li>
+                        <li>Copies kept of all requests</li>
+                        <li>ID copies included with each request</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Legal Citations</h2>
+
+                    <div class="statute-reference">
+                        <strong>5 U.S.C. § 552</strong> — Freedom of Information Act<br>
+                        <strong>5 U.S.C. § 552(a)(6)(A)</strong> — 20-day response requirement<br>
+                        <strong>5 U.S.C. § 552(a)(4)(A)(iii)</strong> — Fee waiver provisions<br>
+                        <strong>5 U.S.C. § 552(a)(6)(E)</strong> — Expedited processing
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Templates</h2>
+                    <ul>
+                        <li><a href="/templates/phase-1/privacy-act.html">Privacy Act Request</a> — All government records about you personally</li>
+                        <li><a href="/templates/phase-1/qwr.html">Qualified Written Request</a> — For mortgage servicers directly</li>
+                        <li><a href="/templates/phase-1/original-documents.html">Original Documents Request</a> — Demand for wet-ink note</li>
+                    </ul>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/templates/phase-1/debt-validation.html" class="page-nav__link">
+                    <span class="page-nav__label">Previous</span>
+                    <span class="page-nav__title">← Debt Validation</span>
+                </a>
+                <a href="/templates/phase-1/original-documents.html" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next Template</span>
+                    <span class="page-nav__title">Original Documents →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

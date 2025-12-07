@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Act Request — Conscious Agreements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .template-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .meta-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-gold);
+        }
+        .meta-item__label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-item__value {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .template-letter {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .template-letter__header {
+            margin-bottom: 2rem;
+        }
+        .template-letter__field {
+            background: #fffef0;
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .template-letter h3 {
+            font-family: 'Cinzel', serif;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .template-letter ul, .template-letter ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        .template-letter li {
+            margin: 0.5rem 0;
+        }
+        .agency-address-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+        .discovery-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .discovery-box__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+        .systems-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .systems-box__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+        .id-verification {
+            background: #fff9c4;
+            border: 2px solid #f9a825;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .id-verification__title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        .statute-reference {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 3px solid #2c3e50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .notary-section {
+            border: 2px solid #333;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
+        .notary-section__title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/">Templates</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/templates/phase-1/">Phase 1</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Privacy Act</span>
+            </nav>
+
+            <article>
+                <header>
+                    <h1>Privacy Act Request</h1>
+                    <p class="lead">Obtains ALL government records about you. May reveal SARs (Suspicious Activity Reports), unknown accounts, surveillance, and information the government has collected without your knowledge.</p>
+                </header>
+
+                <div class="template-meta">
+                    <div class="meta-item">
+                        <div class="meta-item__label">Legal Authority</div>
+                        <div class="meta-item__value">5 USC 552a</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Response Required</div>
+                        <div class="meta-item__value">~30 Days</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Scope</div>
+                        <div class="meta-item__value">ALL Your Records</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-item__label">Rights</div>
+                        <div class="meta-item__value">Access & Correct</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="insight-box">
+                        <div class="insight-box__title">What is a Privacy Act Request?</div>
+                        <p>The Privacy Act gives you the right to:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li><strong>Access ALL records</strong> the government has about you</li>
+                            <li><strong>Correct inaccurate records</strong> in government systems</li>
+                            <li><strong>Find out who</strong> has accessed your records</li>
+                            <li><strong>Discover surveillance</strong> or monitoring of your activities</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;"><strong>This is broader than FOIA</strong> — it covers ALL records about YOU specifically.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="discovery-box">
+                        <div class="discovery-box__title">Surprising Discoveries</div>
+                        <p>Privacy Act requests often reveal:</p>
+                        <ul style="margin: 0.5rem 0 0 1.5rem;">
+                            <li>IRS records showing different income than reported</li>
+                            <li>Secret surveillance or monitoring</li>
+                            <li>Suspicious Activity Reports (SARs) filed by banks</li>
+                            <li>Cross-agency information sharing</li>
+                            <li>Government contracts or benefits you didn't know about</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template</h2>
+
+                    <div class="template-letter">
+                        <div class="template-letter__header">
+                            <span class="template-letter__field">[YOUR FULL LEGAL NAME]</span><br>
+                            <span class="template-letter__field">[YOUR STREET ADDRESS]</span><br>
+                            <span class="template-letter__field">[CITY, STATE ZIP]</span><br>
+                            <span class="template-letter__field">[YOUR PHONE NUMBER]</span><br>
+                            <span class="template-letter__field">[YOUR EMAIL]</span><br>
+                            SSN: <span class="template-letter__field">[YOUR SOCIAL SECURITY NUMBER]</span><br>
+                            DOB: <span class="template-letter__field">[YOUR DATE OF BIRTH]</span>
+                            <br><br>
+                            <span class="template-letter__field">[DATE]</span>
+                            <br><br>
+                            <strong>RE: PRIVACY ACT REQUEST FOR ALL RECORDS</strong><br>
+                            <strong>Request for Records Under 5 U.S.C. § 552a</strong>
+                        </div>
+
+                        <p>Dear Privacy Act Officer:</p>
+
+                        <p>Pursuant to the Privacy Act of 1974, <em>5 U.S.C. § 552a</em>, I request access to and copies of ALL records your agency maintains about me in any system of records.</p>
+
+                        <div class="statute-reference">
+                            <strong>LEGAL BASIS:</strong><br>
+                            Under 5 U.S.C. § 552a(d)(1), I have the right to access any record pertaining to me that is contained in a system of records. This includes all automated and manual files, databases, and collections of information.
+                        </div>
+
+                        <h3>I REQUEST ALL RECORDS INCLUDING BUT NOT LIMITED TO:</h3>
+
+                        <h4>1. IDENTIFICATION RECORDS:</h4>
+                        <ul>
+                            <li>All records associated with my name: <span class="template-letter__field">[FULL NAME]</span></li>
+                            <li>All records associated with my SSN: <span class="template-letter__field">[SSN]</span></li>
+                            <li>Any records under variations of my name</li>
+                            <li>Any records with my previous addresses</li>
+                            <li>Biometric data (fingerprints, photos, etc.)</li>
+                        </ul>
+
+                        <h4>2. FINANCIAL RECORDS:</h4>
+                        <ul>
+                            <li>IRS files, tax records, audits</li>
+                            <li>Bank account information</li>
+                            <li>Suspicious Activity Reports (SARs)</li>
+                            <li>Currency Transaction Reports (CTRs)</li>
+                            <li>Asset searches or inquiries</li>
+                            <li>Liens, levies, or garnishments</li>
+                            <li>Bankruptcy records</li>
+                        </ul>
+
+                        <h4>3. INVESTIGATIVE RECORDS:</h4>
+                        <ul>
+                            <li>Any investigations involving me</li>
+                            <li>Criminal history records</li>
+                            <li>National Crime Information Center (NCIC) records</li>
+                            <li>Terrorist Screening Database checks</li>
+                            <li>No-fly list or selectee list status</li>
+                            <li>Any surveillance records</li>
+                        </ul>
+
+                        <h4>4. CORRESPONDENCE & COMMUNICATIONS:</h4>
+                        <ul>
+                            <li>Letters to or from me</li>
+                            <li>Emails mentioning me</li>
+                            <li>Phone records or intercepts</li>
+                            <li>Inter-agency communications about me</li>
+                            <li>Third-party inquiries about me</li>
+                        </ul>
+
+                        <h4>5. BENEFITS & SERVICES:</h4>
+                        <ul>
+                            <li>Social Security records</li>
+                            <li>Medicare/Medicaid records</li>
+                            <li>Veterans benefits records</li>
+                            <li>Government contracts or grants</li>
+                            <li>Licenses or certifications</li>
+                        </ul>
+
+                        <h4>6. LEGAL & JUDICIAL:</h4>
+                        <ul>
+                            <li>Court records or proceedings</li>
+                            <li>Administrative actions</li>
+                            <li>Complaints filed by or against me</li>
+                            <li>Witness statements involving me</li>
+                        </ul>
+
+                        <h4>7. MORTGAGE/REAL ESTATE SPECIFIC:</h4>
+                        <ul>
+                            <li>HUD/FHA records for property at: <span class="template-letter__field">[PROPERTY ADDRESS]</span></li>
+                            <li>HAMP, HARP, or other modification programs</li>
+                            <li>Foreclosure-related records</li>
+                            <li>Complaints about servicers/lenders</li>
+                            <li>Fair housing violations</li>
+                        </ul>
+
+                        <div class="systems-box">
+                            <div class="systems-box__title">Systems of Records to Search</div>
+                            <p><strong>Please search ALL systems including but not limited to:</strong></p>
+                            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                                <li><strong>IRS:</strong> Individual Master File (IMF), Business Master File (BMF), CADE</li>
+                                <li><strong>SSA:</strong> Master Earnings File, Numident, Claims Folders</li>
+                                <li><strong>DHS:</strong> TECS, IDENT, ADIS, SEVIS</li>
+                                <li><strong>FBI:</strong> Central Records System, NCIC, NGI</li>
+                                <li><strong>Treasury:</strong> FinCEN databases, OFAC lists</li>
+                                <li><strong>HUD:</strong> CAIVRS, TOTAL, Single Family Data Warehouse</li>
+                            </ul>
+                        </div>
+
+                        <h3>ACCOUNTING OF DISCLOSURES:</h3>
+                        <p>Pursuant to <em>5 U.S.C. § 552a(c)</em>, I also request an accounting of all disclosures of my records to any person or agency, including:</p>
+                        <ul>
+                            <li>Date, nature, and purpose of each disclosure</li>
+                            <li>Name and address of person or agency receiving disclosure</li>
+                            <li>Any records shared with state or local governments</li>
+                            <li>Any records shared with private entities</li>
+                        </ul>
+
+                        <p><strong>TIME PERIOD:</strong><br>
+                        Please provide all records from <span class="template-letter__field">[BIRTH DATE OR EARLIEST DATE]</span> to present.</p>
+
+                        <div class="id-verification">
+                            <div class="id-verification__title">Identity Verification</div>
+                            <p>To verify my identity, I am providing:</p>
+                            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                                <li>Notarized signature on this request (see below)</li>
+                                <li>Copy of government-issued ID (attached)</li>
+                                <li>Full name, date of birth, and Social Security Number</li>
+                                <li>Current and previous addresses</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>I declare under penalty of perjury that I am the person named above and authorized to receive these records.</strong></p>
+                        </div>
+
+                        <h3>FEES:</h3>
+                        <p>Under the Privacy Act, agencies may only charge for duplication, not search or review time. I request a fee waiver as this information is for personal use to understand government records about me. If fees exceed $<span class="template-letter__field">[25]</span>, please contact me before processing.</p>
+
+                        <h3>FORMAT OF RECORDS:</h3>
+                        <p>Please provide records in electronic format (PDF) if possible. If records are too voluminous, please provide an index first so I can specify priority items.</p>
+
+                        <h3>CORRECTION OF RECORDS:</h3>
+                        <p>If any records contain inaccurate information, I reserve my right under 5 U.S.C. § 552a(d)(2) to request amendment of those records. Please flag any records that may contain information from third parties that could be disputed.</p>
+
+                        <h3>RESPONSE REQUIRED:</h3>
+                        <p>Under the Privacy Act, you must respond within a reasonable time. Courts have held this to be approximately 30 working days. Please acknowledge receipt of this request within 10 days.</p>
+
+                        <div class="important-box">
+                            <div class="important-box__title">PENALTIES FOR NON-COMPLIANCE</div>
+                            <p>Agencies that fail to comply with Privacy Act requests may be subject to:</p>
+                            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                                <li>Court orders compelling production</li>
+                                <li>Damages for willful non-disclosure</li>
+                                <li>Attorney fees and costs</li>
+                                <li>Adverse inference in litigation</li>
+                            </ul>
+                        </div>
+
+                        <p>I declare under penalty of perjury under the laws of the United States that I am the individual named above and am entitled to these records.</p>
+
+                        <p>Sincerely,</p>
+                        <br>
+                        <p>_________________________________<br>
+                        <span class="template-letter__field">[YOUR PRINTED NAME]</span><br>
+                        Date: <span class="template-letter__field">[DATE]</span></p>
+
+                        <div class="notary-section">
+                            <div class="notary-section__title">NOTARY PUBLIC</div>
+                            <p>State of <span class="template-letter__field">[STATE]</span></p>
+                            <p>County of <span class="template-letter__field">[COUNTY]</span></p>
+                            <p>On this _____ day of _________, 20___, before me personally appeared the above-named individual, who proved to me on the basis of satisfactory evidence to be the person whose name is subscribed to the within instrument and acknowledged to me that he/she executed the same in his/her authorized capacity.</p>
+                            <p>Witness my hand and official seal.</p>
+                            <br>
+                            <p>_________________________________<br>
+                            Notary Public<br>
+                            My Commission Expires: ___________</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Where to Send</h2>
+                    <p><strong>Send copies to each agency's Privacy Act Officer:</strong></p>
+
+                    <div class="agency-address-box">
+                        <strong>IRS:</strong><br>
+                        IRS FOIA Request, Stop 211<br>
+                        PO Box 621506<br>
+                        Atlanta, GA 30362
+                    </div>
+
+                    <div class="agency-address-box">
+                        <strong>SSA:</strong><br>
+                        Social Security Administration<br>
+                        Office of Privacy and Disclosure<br>
+                        617 Altmeyer Building<br>
+                        6401 Security Blvd<br>
+                        Baltimore, MD 21235
+                    </div>
+
+                    <div class="agency-address-box">
+                        <strong>FBI:</strong><br>
+                        FBI, Attn: FOI/PA Request<br>
+                        Record/Information Dissemination Section<br>
+                        200 Constitution Dr.<br>
+                        Winchester, VA 22602
+                    </div>
+
+                    <div class="agency-address-box">
+                        <strong>DHS:</strong><br>
+                        DHS/FOIA<br>
+                        500 12th Street SW, Stop 0655<br>
+                        Washington, DC 20536
+                    </div>
+
+                    <div class="agency-address-box">
+                        <strong>HUD:</strong><br>
+                        HUD FOIA Officer<br>
+                        451 7th Street SW, Room 10139<br>
+                        Washington, DC 20410
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Post-Mailing Checklist</h2>
+
+                    <ul class="checklist">
+                        <li>Letter notarized</li>
+                        <li>Copy of ID attached</li>
+                        <li>Sent to IRS</li>
+                        <li>Sent to SSA</li>
+                        <li>Sent to FBI</li>
+                        <li>Sent to DHS</li>
+                        <li>Sent to HUD</li>
+                        <li>All letters sent certified mail</li>
+                        <li>Calendar marked: 30 days for each</li>
+                        <li>Copies of all requests kept</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Next Steps After Receiving Records</h2>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">Review Carefully</div>
+                        <p>Look for surprises, inaccuracies, or records you didn't know existed.</p>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">Request Corrections</div>
+                        <p>If information is wrong, file a correction request under 5 U.S.C. § 552a(d)(2).</p>
+                    </div>
+
+                    <div class="card" style="margin: 1rem 0;">
+                        <div class="card__title">Use in Your Defense</div>
+                        <p>Government's own records are powerful evidence in any legal proceeding.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Legal Citations</h2>
+
+                    <div class="statute-reference">
+                        <strong>5 U.S.C. § 552a</strong> — Privacy Act of 1974<br>
+                        <strong>5 U.S.C. § 552a(d)(1)</strong> — Right of access<br>
+                        <strong>5 U.S.C. § 552a(d)(2)</strong> — Right to request amendment<br>
+                        <strong>5 U.S.C. § 552a(c)</strong> — Accounting of disclosures
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Templates</h2>
+                    <ul>
+                        <li><a href="/templates/phase-1/foia-bundle.html">FOIA Request Bundle</a> — Request specific agency records</li>
+                        <li><a href="/templates/phase-1/qwr.html">Qualified Written Request</a> — For mortgage servicers</li>
+                        <li><a href="/templates/phase-1/debt-validation.html">Debt Validation Letter</a> — For debt collectors</li>
+                    </ul>
+                </section>
+            </article>
+
+            <nav class="page-nav">
+                <a href="/templates/phase-1/chain-of-title.html" class="page-nav__link">
+                    <span class="page-nav__label">Previous</span>
+                    <span class="page-nav__title">← Chain of Title</span>
+                </a>
+                <a href="/templates/phase-2/" class="page-nav__link page-nav__link--next">
+                    <span class="page-nav__label">Next Phase</span>
+                    <span class="page-nav__title">Phase 2: Notices →</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

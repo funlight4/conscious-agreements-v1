@@ -4,72 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consideration in Commerce — Conscious Agreements</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/shared.css">
-    <style>
-        .statute-box {
-            background: rgba(44, 62, 80, 0.05);
-            border-left: 4px solid #2c3e50;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            font-family: 'Crimson Text', serif;
-        }
-        .statute-box__cite {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.75rem;
-        }
-        .statute-box__text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        .statute-box__text em {
-            background: rgba(212, 168, 83, 0.2);
-            padding: 0 0.25rem;
-        }
-        .scenario-box {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        .scenario-box--valid {
-            background: rgba(60, 120, 60, 0.1);
-            border-left: 4px solid #228b22;
-        }
-        .scenario-box--questionable {
-            background: rgba(180, 60, 60, 0.1);
-            border-left: 4px solid #8b0000;
-        }
-        .scenario-box__title {
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        .scenario-box--valid .scenario-box__title { color: #228b22; }
-        .scenario-box--questionable .scenario-box__title { color: #8b0000; }
-        .test-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        .test-table th {
-            background: rgba(212, 168, 83, 0.2);
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 2px solid var(--color-gold);
-        }
-        .test-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-            vertical-align: top;
-        }
-    </style>
 </head>
 <body>
     <div id="site-header"></div>
 
-<main class="content">
+    <main class="content">
         <div class="container">
             <nav class="breadcrumb">
                 <a href="/">Home</a>
@@ -78,14 +18,19 @@
                 <span class="breadcrumb__separator">→</span>
                 <a href="/domains/commerce/">Commerce</a>
                 <span class="breadcrumb__separator">→</span>
-                <span>Consideration in Commerce</span>
+                <span>Consideration</span>
             </nav>
 
+            <header class="hero">
+                <div class="hero__badge">Commerce Lesson #3</div>
+                <h1 class="hero__title">Something for Something</h1>
+                <p class="hero__subtitle">Every valid contract requires consideration from both parties. You gave them a $300,000 instrument. What did they give you?</p>
+            </header>
+
             <article>
-                <header>
-                    <h1>Consideration in Commerce</h1>
-                    <p class="lead">Every valid contract requires <a href="/reference/terminology.html#consideration">consideration</a> from both parties. This fundamental principle — that both sides must give something of value — is the foundation of commercial agreements and the key to understanding banking contracts.</p>
-                </header>
+                <section>
+                    <p class="lead">Every first-year law student learns: a valid contract requires consideration from both parties. Something for something. But in modern banking, there's a hole in this logic big enough to drive a truck through.</p>
+                </section>
 
                 <section>
                     <h2>The Legal Definition</h2>
@@ -93,16 +38,25 @@
                     <div class="definition-box">
                         <div class="definition-box__term">Consideration</div>
                         <div class="definition-box__source">Black's Law Dictionary, 4th Edition</div>
-                        <p class="definition-box__meaning">"The inducement to a contract. The cause, motive, price, or impelling influence which induces a contracting party to enter into a contract... Some right, interest, profit or benefit accruing to one party, or some forbearance, detriment, loss, or responsibility, given, suffered, or undertaken by the other."</p>
+                        <div class="definition-box__meaning">"The inducement to a contract. The cause, motive, price, or impelling influence which induces a contracting party to enter into a contract... Some right, interest, profit or benefit accruing to one party, or some forbearance, detriment, loss, or responsibility, given, suffered, or undertaken by the other."</div>
                     </div>
 
                     <p>Three elements are required:</p>
 
-                    <ol>
-                        <li><strong>Bargained-for exchange</strong> — Both parties must be seeking something from each other</li>
-                        <li><strong>Legal value</strong> — What's exchanged must have value in the eyes of the law</li>
-                        <li><strong>Real, not illusory</strong> — The consideration must actually be given or promised</li>
-                    </ol>
+                    <div class="grid grid--3">
+                        <div class="card card--highlight">
+                            <div class="card__title">1. Bargained-For</div>
+                            <p class="card__text">Both parties must be seeking something from each other. Not a gift or past action.</p>
+                        </div>
+                        <div class="card card--highlight">
+                            <div class="card__title">2. Legal Value</div>
+                            <p class="card__text">What's exchanged must have value in the eyes of the law. Actually worth something.</p>
+                        </div>
+                        <div class="card card--highlight">
+                            <div class="card__title">3. Real, Not Illusory</div>
+                            <p class="card__text">The consideration must actually be given or promised. Not theoretical.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
@@ -110,54 +64,48 @@
 
                     <p>The Uniform Commercial Code addresses consideration specifically for negotiable instruments:</p>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-303(b) — Value and Consideration</div>
-                        <div class="statute-box__text">
-                            "If an instrument is issued for a promise of performance, the issuer has a defense to the extent performance of the promise is due and <em>the promise has not been performed</em>."
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Defense for Lack of Consideration</div>
+                        <div class="definition-box__source">UCC § 3-303(b)</div>
+                        <div class="definition-box__meaning">"If an instrument is issued for a promise of performance, the issuer has a defense to the extent performance of the promise is due and the promise has not been performed."</div>
                     </div>
 
                     <div class="insight-box">
-                        <div class="insight-box__title">The Cause of Action</div>
-                        <p>UCC 3-303(b) explicitly creates a defense and potential cause of action: if you weren't given adequate consideration, you have grounds to challenge the instrument. This is not a fringe theory — it's built into the code.</p>
+                        <div class="insight-box__title">Built-In Protection</div>
+                        <p>UCC 3-303(b) explicitly creates a defense: if you weren't given adequate consideration, you have grounds to challenge the instrument. This is not a fringe theory — <strong>it's built into the code</strong>.</p>
                     </div>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-303(a) — What Constitutes Value</div>
-                        <div class="statute-box__text">
-                            An instrument is issued or transferred for value if:
-                            <ol style="margin-top: 0.5rem;">
-                                <li>the instrument is issued or transferred for a promise of performance, <em>to the extent the promise has been performed</em></li>
-                                <li>the transferee acquires a security interest or other lien in the instrument...</li>
-                                <li>the instrument is issued or transferred as payment of, or as security for, <em>a preexisting claim</em></li>
-                                <li>the instrument is issued or transferred in exchange for <em>a negotiable instrument</em></li>
-                                <li>the instrument is issued or transferred in exchange for the incurring of an <em>irrevocable obligation</em> to a third party</li>
-                            </ol>
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">What Constitutes Value</div>
+                        <div class="definition-box__source">UCC § 3-303(a)</div>
+                        <div class="definition-box__meaning">An instrument is issued for value if: (1) for a promise of performance, to the extent performed; (2) the transferee acquires a security interest; (3) as payment for a preexisting claim; (4) in exchange for a negotiable instrument; (5) in exchange for an irrevocable obligation to a third party.</div>
                     </div>
                 </section>
 
                 <section>
                     <h2>The Consideration Test Applied</h2>
 
-                    <p>Let's apply the consideration test to common commercial scenarios:</p>
+                    <p>Let's apply the consideration test to common scenarios:</p>
 
-                    <div class="scenario-box scenario-box--valid">
-                        <div class="scenario-box__title">Traditional Sale: Valid Consideration</div>
+                    <div class="card" style="border-left: 4px solid #27ae60;">
+                        <div class="card__label" style="color: #27ae60;">Valid Consideration</div>
+                        <div class="card__title">Traditional Sale</div>
                         <p><strong>You:</strong> Give $50</p>
                         <p><strong>Merchant:</strong> Gives you goods worth $50</p>
                         <p><em>Both parties gave something of value. Valid contract.</em></p>
                     </div>
 
-                    <div class="scenario-box scenario-box--valid">
-                        <div class="scenario-box__title">Traditional Loan (Historical): Valid Consideration</div>
+                    <div class="card" style="border-left: 4px solid #27ae60;">
+                        <div class="card__label" style="color: #27ae60;">Valid Consideration</div>
+                        <div class="card__title">Traditional Loan (Historical)</div>
                         <p><strong>You:</strong> Promise to repay $100 plus interest</p>
                         <p><strong>Lender:</strong> Gives you $100 in gold-backed currency from their vault</p>
                         <p><em>Lender gave up actual pre-existing value. Valid contract.</em></p>
                     </div>
 
-                    <div class="scenario-box scenario-box--questionable">
-                        <div class="scenario-box__title">Modern Bank Loan: Questionable Consideration</div>
+                    <div class="card" style="border-left: 4px solid #c0392b;">
+                        <div class="card__label" style="color: #c0392b;">Questionable Consideration</div>
+                        <div class="card__title">Modern Bank Loan</div>
                         <p><strong>You:</strong> Sign promissory note worth $300,000, pledge future earnings</p>
                         <p><strong>Bank:</strong> Creates $300,000 deposit from your promissory note</p>
                         <p><em>What did the bank give up from its pre-existing assets? The money was created FROM your promise.</em></p>
@@ -169,44 +117,46 @@
 
                     <p>As explored in <a href="/foundation/money-creation/">Money Creation</a>, modern banks don't lend existing money — they create deposits when you sign a promissory note. This raises the consideration question:</p>
 
-                    <table class="test-table">
-                        <thead>
-                            <tr>
-                                <th>Party</th>
-                                <th>What They Gave</th>
-                                <th>Pre-Existing Value?</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>You</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1.2rem;">
-                                        <li>Promissory note (negotiable instrument)</li>
-                                        <li>Pledge of future earnings</li>
-                                        <li>Security interest in property</li>
-                                        <li>Legal obligation to pay interest</li>
-                                    </ul>
-                                </td>
-                                <td>Yes — your future labor is real value</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Bank</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1.2rem;">
-                                        <li>Deposit credit in your account</li>
-                                        <li>Bookkeeping entries</li>
-                                        <li>Account management services</li>
-                                    </ul>
-                                </td>
-                                <td>Questionable — credit was created from YOUR note</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="card" style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; min-width: 500px;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">Party</th>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">What They Gave</th>
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 3px solid var(--color-gold); background: var(--color-bg-alt);">Pre-Existing Value?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);"><strong>You</strong></td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">
+                                        <ul style="margin: 0; padding-left: 1.2rem;">
+                                            <li>Promissory note (negotiable instrument)</li>
+                                            <li>Pledge of future earnings</li>
+                                            <li>Security interest in property</li>
+                                            <li>Legal obligation to pay interest</li>
+                                        </ul>
+                                    </td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); color: #27ae60;"><strong>Yes</strong> — your future labor is real value</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem;"><strong>Bank</strong></td>
+                                    <td style="padding: 0.75rem;">
+                                        <ul style="margin: 0; padding-left: 1.2rem;">
+                                            <li>Deposit credit in your account</li>
+                                            <li>Bookkeeping entries</li>
+                                            <li>Account management services</li>
+                                        </ul>
+                                    </td>
+                                    <td style="padding: 0.75rem; color: #c0392b;"><strong>Questionable</strong> — credit was created from YOUR note</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="important-box">
                         <div class="important-box__title">The Paradox</div>
-                        <p>If the bank's "consideration" was created from your promissory note, then they gave you... what you already gave them. They monetized YOUR promise and returned it to you as a "loan."</p>
+                        <p>If the bank's "consideration" was created from your promissory note, then they gave you... <strong>what you already gave them</strong>. They monetized YOUR promise and returned it to you as a "loan."</p>
                         <p style="margin-top: 0.5rem;">This is the <a href="/foundation/money-creation/the-system.html">consideration paradox</a> at the heart of modern banking.</p>
                     </div>
                 </section>
@@ -216,16 +166,16 @@
 
                     <p>Classical contract law is clear about what constitutes consideration:</p>
 
-                    <blockquote style="border-left: 3px solid var(--color-gold); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+                    <blockquote>
                         "Nothing is consideration that is not regarded as such by both parties."
-                        <cite style="display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.9rem;">— Philpot v. Gruninger, 14 Wall. 570 (1872)</cite>
+                        <cite>— Philpot v. Gruninger, 14 Wall. 570 (1872)</cite>
                     </blockquote>
 
                     <p>Did you understand that the bank would create money from your signature? Did you regard bookkeeping entries as equivalent value to your 30-year commitment of labor?</p>
 
-                    <blockquote style="border-left: 3px solid var(--color-gold); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic;">
+                    <blockquote>
                         "Consideration must be something of value in the eye of the law, moving from the plaintiff, or detriment to the defendant."
-                        <cite style="display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.9rem;">— Black's Law Dictionary, 4th Edition</cite>
+                        <cite>— Black's Law Dictionary, 4th Edition</cite>
                     </blockquote>
 
                     <p>What "moved from" the bank that wasn't derived from what you gave them?</p>
@@ -236,20 +186,23 @@
 
                     <p>One court directly addressed this question:</p>
 
-                    <p><strong>First National Bank of Montgomery v. Daly (1969)</strong></p>
+                    <div class="insight-box">
+                        <div class="insight-box__title">First National Bank of Montgomery v. Daly (1969)</div>
+                        <p>Justice Martin V. Mahoney ruled that the bank had failed to provide consideration because they created credit "out of thin air."</p>
+                        <ul style="margin-bottom: 0;">
+                            <li>The bank admitted creating credit from nothing</li>
+                            <li>No lawful money was transferred from the bank</li>
+                            <li>The mortgage contract was void for lack of consideration</li>
+                            <li>The foreclosure was denied</li>
+                        </ul>
+                    </div>
 
-                    <p>Justice Martin V. Mahoney ruled that the bank had failed to provide consideration because they created credit "out of thin air." Key findings:</p>
+                    <p>The bank's president testified: <em>"The money and credit first came into existence when they created it."</em></p>
 
-                    <ul>
-                        <li>The bank admitted creating credit from nothing</li>
-                        <li>No lawful money was transferred from the bank</li>
-                        <li>The mortgage contract was void for lack of consideration</li>
-                        <li>The foreclosure was denied</li>
-                    </ul>
-
-                    <p>The bank's president testified: "The money and credit first came into existence when they created it."</p>
-
-                    <p><strong>Important caveat:</strong> This decision was not accepted as binding precedent and was largely suppressed. Courts since have declined to follow it. But it demonstrates that the consideration question has been raised — and in at least one case, was decided in favor of the borrower.</p>
+                    <div class="important-box">
+                        <div class="important-box__title">Important Caveat</div>
+                        <p>This decision was not accepted as binding precedent and was largely suppressed. Courts since have declined to follow it. But it demonstrates that the consideration question <strong>has been raised</strong> — and in at least one case, was decided in favor of the borrower.</p>
+                    </div>
                 </section>
 
                 <section>
@@ -257,24 +210,28 @@
 
                     <p>Several legal doctrines make the consideration argument difficult to win:</p>
 
-                    <div class="card" style="margin: 1.5rem 0;">
+                    <div class="card card--highlight">
+                        <div class="card__label">Barrier 1</div>
                         <div class="card__title">Holder in Due Course Doctrine</div>
-                        <p>If the bank (or subsequent holder) qualifies as a holder in due course, lack of consideration is a "personal defense" that may be cut off. HDC status immunizes against most consideration challenges.</p>
+                        <p class="card__text">If the bank qualifies as HDC, lack of consideration becomes a "personal defense" that may be cut off. HDC status immunizes against most consideration challenges.</p>
                     </div>
 
-                    <div class="card" style="margin: 1.5rem 0;">
+                    <div class="card card--highlight">
+                        <div class="card__label">Barrier 2</div>
                         <div class="card__title">Judicial Notice</div>
-                        <p>Courts take "judicial notice" that banks lend money and that Federal Reserve Notes are valid currency. Challenging these assumptions is often dismissed as frivolous without examination.</p>
+                        <p class="card__text">Courts take "judicial notice" that banks lend money and that Federal Reserve Notes are valid currency. Challenging these assumptions is often dismissed as frivolous without examination.</p>
                     </div>
 
-                    <div class="card" style="margin: 1.5rem 0;">
+                    <div class="card card--highlight">
+                        <div class="card__label">Barrier 3</div>
                         <div class="card__title">Legal Tender Laws</div>
-                        <p>31 U.S.C. § 5103 declares Federal Reserve Notes legal tender for all debts. Courts interpret this as making FRNs valid consideration by statute, regardless of how they're created.</p>
+                        <p class="card__text">31 U.S.C. § 5103 declares Federal Reserve Notes legal tender. Courts interpret this as making FRNs valid consideration by statute, regardless of how they're created.</p>
                     </div>
 
-                    <div class="card" style="margin: 1.5rem 0;">
+                    <div class="card card--highlight">
+                        <div class="card__label">Barrier 4</div>
                         <div class="card__title">Systemic Concerns</div>
-                        <p>Even sympathetic judges face the reality that accepting this argument would destabilize the entire banking system. Pragmatic concerns often override legal principles.</p>
+                        <p class="card__text">Even sympathetic judges face the reality that accepting this argument would destabilize the entire banking system. Pragmatic concerns often override legal principles.</p>
                     </div>
                 </section>
 
@@ -283,31 +240,44 @@
 
                     <p>While direct consideration challenges rarely succeed in court, understanding this framework is valuable:</p>
 
-                    <h3>For Awareness</h3>
-                    <ul>
-                        <li>You understand what actually happened when you signed</li>
-                        <li>You see the transaction clearly rather than through assumptions</li>
-                        <li>You can make more informed decisions about future agreements</li>
-                    </ul>
+                    <div class="grid grid--2">
+                        <div class="card">
+                            <div class="card__title">For Awareness</div>
+                            <ul style="margin-bottom: 0;">
+                                <li>You understand what actually happened</li>
+                                <li>You see the transaction clearly</li>
+                                <li>You make more informed decisions</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">For Negotiation</div>
+                            <ul style="margin-bottom: 0;">
+                                <li>Knowledge creates leverage</li>
+                                <li>Banks may prefer to settle</li>
+                                <li>Loan mods become clearer</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">For Other Challenges</div>
+                            <ul style="margin-bottom: 0;">
+                                <li>Standing challenges</li>
+                                <li>Chain of title issues</li>
+                                <li>Procedural violations</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card__title">For Strategy</div>
+                            <ul style="margin-bottom: 0;">
+                                <li>See the full picture</li>
+                                <li>Choose your approach wisely</li>
+                                <li>Attack procedure, not philosophy</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                    <h3>For Negotiation</h3>
-                    <ul>
-                        <li>Knowledge creates leverage in settlement discussions</li>
-                        <li>Banks may prefer to settle rather than have these arguments on record</li>
-                        <li>Loan modifications become more understandable negotiations</li>
-                    </ul>
-
-                    <h3>For Other Challenges</h3>
-                    <ul>
-                        <li>Standing challenges (who can enforce?)</li>
-                        <li>Chain of title challenges (proper endorsements?)</li>
-                        <li>Procedural violations (TILA, RESPA, FDCPA)</li>
-                        <li>Fraud in the inducement (were you deceived?)</li>
-                    </ul>
-
-                    <div class="insight-box">
-                        <div class="insight-box__title">Strategic Reality</div>
-                        <p>The consideration argument provides understanding. Practical success often comes through other routes — procedural challenges, statutory violations, standing issues. But understanding consideration helps you see the full picture and choose your approach wisely.</p>
+                    <div class="fun-fact">
+                        <div class="fun-fact__label">Strategic Reality</div>
+                        <p>The consideration argument provides <strong>understanding</strong>. Practical success often comes through other routes — procedural challenges, statutory violations, standing issues. But understanding consideration helps you see the full picture and choose your approach wisely.</p>
                     </div>
                 </section>
 
@@ -316,14 +286,14 @@
 
                     <p>Related to consideration is the fraud defense under UCC Article 3:</p>
 
-                    <div class="statute-box">
-                        <div class="statute-box__cite">UCC § 3-305(a)(1)(iii)</div>
-                        <div class="statute-box__text">
-                            A defense is valid against enforcement if based on: "fraud that induced the obligor to sign the instrument with <em>neither knowledge nor reasonable opportunity to learn</em> of its character or its essential terms."
-                        </div>
+                    <div class="definition-box">
+                        <div class="definition-box__term">Fraud Defense</div>
+                        <div class="definition-box__source">UCC § 3-305(a)(1)(iii)</div>
+                        <div class="definition-box__meaning">A defense is valid against enforcement if based on: "fraud that induced the obligor to sign the instrument with neither knowledge nor reasonable opportunity to learn of its character or its essential terms."</div>
                     </div>
 
                     <p>Were you told that:</p>
+
                     <ul>
                         <li>Your signature would create the money?</li>
                         <li>The bank would use your promissory note as an asset?</li>
@@ -335,22 +305,23 @@
                 </section>
 
                 <section>
-                    <h2>Next: Protecting Yourself</h2>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">📍</div>
+                        <div class="path-indicator__text">You understand consideration. Now: How you sign determines your liability. Let's look at signatures and protection.</div>
+                    </div>
 
-                    <p>Understanding consideration is foundational. The next question is: <strong>How do you sign documents to limit your liability?</strong> The way you sign determines what obligations you assume.</p>
+                    <nav class="page-nav">
+                        <a href="/domains/commerce/holders-and-enforcement.html" class="page-nav__link">
+                            <span class="page-nav__label">Previous</span>
+                            <span class="page-nav__title">← Holders and Enforcement</span>
+                        </a>
+                        <a href="/domains/commerce/signatures-and-liability.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Next</span>
+                            <span class="page-nav__title">Signatures and Liability →</span>
+                        </a>
+                    </nav>
                 </section>
             </article>
-
-            <nav class="page-nav">
-                <a href="/domains/commerce/holders-and-enforcement.html" class="page-nav__link">
-                    <span class="page-nav__label">Previous</span>
-                    <span class="page-nav__title">← Holders and Enforcement</span>
-                </a>
-                <a href="/domains/commerce/signatures-and-liability.html" class="page-nav__link page-nav__link--next">
-                    <span class="page-nav__label">Next</span>
-                    <span class="page-nav__title">Signatures and Liability →</span>
-                </a>
-            </nav>
         </div>
     </main>
 
