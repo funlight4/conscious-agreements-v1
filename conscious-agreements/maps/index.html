@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Maps — Conscious Agreements</title>
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        .map-card {
+            display: block;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(212, 168, 83, 0.08);
+            border: 2px solid var(--color-gold);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        .map-card:hover {
+            background: rgba(212, 168, 83, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 168, 83, 0.2);
+        }
+        .map-card__icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .map-card__title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--color-gold-dark);
+            margin-bottom: 0.5rem;
+        }
+        .map-card__description {
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+        .map-card__status {
+            font-size: 0.85rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-gold);
+            color: white;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .map-card__status--draft {
+            background: #888;
+        }
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Journey Maps</span>
+            </nav>
+
+            <header class="hero">
+                <div class="hero__badge">The Cartographer's Guild</div>
+                <h1 class="hero__title">Journey Maps</h1>
+                <p class="hero__subtitle">Visual guides to navigate the framework. See the full landscape, understand the decision points, and chart your course.</p>
+            </header>
+
+            <article>
+                <section>
+                    <div class="insight-box">
+                        <div class="insight-box__title">How to Use These Maps</div>
+                        <p>Each map shows a different view of the territory:</p>
+                        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                            <li><strong>Overview Maps</strong> — See how all the pieces connect</li>
+                            <li><strong>Decision Trees</strong> — Follow branching paths based on your situation</li>
+                            <li><strong>Concept Hierarchies</strong> — Understand what you need to learn first</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;">Click any node to open that page in a new tab. Use these maps to orient yourself before diving into specific content.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Overview Maps</h2>
+                    <p>Start here to see the big picture.</p>
+
+                    <div class="map-grid">
+                        <a href="/maps/site-overview.html" class="map-card">
+                            <div class="map-card__icon">🗺️</div>
+                            <div class="map-card__title">Complete Site Map</div>
+                            <p class="map-card__description">The full territory — every section, how they connect, and where to start based on what you need.</p>
+                            <span class="map-card__status">Ready</span>
+                        </a>
+
+                        <a href="/maps/concept-hierarchy.html" class="map-card">
+                            <div class="map-card__icon">🧠</div>
+                            <div class="map-card__title">Concept Dependencies</div>
+                            <p class="map-card__description">What you need to understand before tackling advanced topics. The knowledge tree.</p>
+                            <span class="map-card__status--draft map-card__status">Coming Soon</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Situation Decision Trees</h2>
+                    <p>Facing a specific situation? These maps show your options and decision points.</p>
+
+                    <div class="map-grid">
+                        <a href="/maps/mortgage-decision-tree.html" class="map-card">
+                            <div class="map-card__icon">🏠</div>
+                            <div class="map-card__title">Mortgage Challenge Path</div>
+                            <p class="map-card__description">Complete decision tree for mortgage situations — from first questions through resolution. Includes urgency branches.</p>
+                            <span class="map-card__status">Ready</span>
+                        </a>
+
+                        <a href="/maps/debt-decision-tree.html" class="map-card">
+                            <div class="map-card__icon">📋</div>
+                            <div class="map-card__title">Debt Collection Path</div>
+                            <p class="map-card__description">Navigate debt collection claims — validation, dispute, and resolution options.</p>
+                            <span class="map-card__status--draft map-card__status">Coming Soon</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Template Selection Maps</h2>
+                    <p>Which documents do you need? These maps help you choose.</p>
+
+                    <div class="map-grid">
+                        <a href="/maps/template-selector.html" class="map-card">
+                            <div class="map-card__icon">📜</div>
+                            <div class="map-card__title">Template Selection Guide</div>
+                            <p class="map-card__description">Answer a few questions, get a customized list of which templates to use and in what order.</p>
+                            <span class="map-card__status--draft map-card__status">Coming Soon</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">🧭</div>
+                        <div class="path-indicator__text">Maps are your orientation tools. Use them to see where you are and where you're going before diving into the details.</div>
+                    </div>
+
+                    <nav class="page-nav">
+                        <a href="/" class="page-nav__link">
+                            <span class="page-nav__label">Back to</span>
+                            <span class="page-nav__title">← Home</span>
+                        </a>
+                        <a href="/maps/site-overview.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Start with</span>
+                            <span class="page-nav__title">Site Overview →</span>
+                        </a>
+                    </nav>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

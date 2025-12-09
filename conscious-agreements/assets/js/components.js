@@ -150,6 +150,24 @@ function renderNavigation() {
                         </ul>
                     </div>
                 </li>
+
+                <!-- Guide -->
+                <li class="main-nav__item">
+                    <a href="/maps/" class="main-nav__link">Guide <span class="main-nav__arrow">▼</span></a>
+                    <div class="mega-menu">
+                        <a href="/maps/" class="mega-menu__overview">How to Use This Site →</a>
+                        <div class="mega-menu__title">Orientation</div>
+                        <ul class="mega-menu__list">
+                            <li><a href="/maps/site-overview.html">Complete Site Map</a></li>
+                            <li><a href="/maps/concept-hierarchy.html">What to Learn First</a></li>
+                        </ul>
+                        <div class="mega-menu__title" style="margin-top: 1rem;">Situation Guides</div>
+                        <ul class="mega-menu__list">
+                            <li><a href="/maps/mortgage-decision-tree.html">Mortgage Challenge</a></li>
+                            <li><a href="/maps/debt-decision-tree.html">Debt Collection</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Collection Decision Tree — Conscious Agreements</title>
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        /* Full-width map section */
+        .map-section-full {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 2rem 5%;
+            background: #fdfbf7;
+            border-top: 2px solid var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .map-container {
+            background: white;
+            border: 2px solid var(--color-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 100%;
+        }
+        .map-svg {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            min-height: 1000px;
+        }
+        .map-svg a:hover rect,
+        .map-svg a:hover ellipse,
+        .map-svg a:hover polygon {
+            filter: brightness(1.08);
+            cursor: pointer;
+        }
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(212, 168, 83, 0.08);
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-shape {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .branch-description {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .branch-description__title {
+            font-weight: bold;
+            color: var(--color-gold-dark);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-box {
+            background: rgba(44, 62, 80, 0.05);
+            border-left: 4px solid #2c3e50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .timeline-box__title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin: 0.75rem 0;
+        }
+        .timeline-item__time {
+            flex-shrink: 0;
+            width: 120px;
+            font-weight: 600;
+            color: var(--color-gold-dark);
+        }
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .rights-box {
+            padding: 1rem;
+            background: rgba(74, 144, 164, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #4a90a4;
+        }
+        .rights-box__title {
+            font-weight: bold;
+            color: #3a7a8a;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/maps/">Guide</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>Debt Collection Decision Tree</span>
+            </nav>
+
+            <header class="hero">
+                <div class="hero__badge">Decision Tree</div>
+                <h1 class="hero__title">When Collectors Call</h1>
+                <p class="hero__subtitle">A complete decision tree for handling debt collection. Know your rights, follow the process, document everything.</p>
+            </header>
+
+            <article>
+                <section>
+                    <div class="important-box">
+                        <div class="important-box__title">The 30-Day Rule</div>
+                        <p>You have <strong>30 days from first contact</strong> to dispute in writing and request validation. This is your most powerful window. After that, you still have rights, but they're stronger if exercised early.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-shape">
+                                <svg width="24" height="24"><polygon points="12,2 22,12 12,22 2,12" fill="#e74c3c" stroke="#c0392b"/></svg>
+                            </div>
+                            <span>Decision Point</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-shape">
+                                <svg width="24" height="20"><rect x="2" y="2" width="20" height="16" rx="2" fill="#4a90a4" stroke="#3a7a8a"/></svg>
+                            </div>
+                            <span>Action Step</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-shape">
+                                <svg width="24" height="20"><rect x="2" y="2" width="20" height="16" rx="8" fill="#27ae60" stroke="#1e8449"/></svg>
+                            </div>
+                            <span>Outcome / State</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-shape">
+                                <svg width="24" height="20"><rect x="2" y="2" width="20" height="16" rx="2" fill="#8b5a8b" stroke="#7a4a7a"/></svg>
+                            </div>
+                            <span>Template / Document</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-shape">
+                                <svg width="24" height="20"><rect x="2" y="2" width="20" height="16" rx="2" fill="#e67e22" stroke="#d35400"/></svg>
+                            </div>
+                            <span>Warning / Danger</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="map-section-full">
+                    <h2 style="text-align: center; margin-bottom: 0.5rem;">The Complete Decision Tree</h2>
+                    <p style="text-align: center; margin-bottom: 1.5rem;">Start at the top and follow the path based on your situation. Click any node to learn more.</p>
+
+                    <div class="map-container">
+                        <svg class="map-svg" viewBox="0 0 1100 1350" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                            <!-- Background -->
+                            <rect width="1100" height="1350" fill="#fdfbf7"/>
+
+                            <!-- Arrowhead definitions -->
+                            <defs>
+                                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+                                </marker>
+                                <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+                                </marker>
+                                <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+                                </marker>
+                            </defs>
+
+                            <!-- ========== ENTRY POINT ========== -->
+                            <a href="/pathways/common-situations/debt-collection.html" target="_blank">
+                                <ellipse cx="550" cy="40" rx="140" ry="30" fill="#4a90a4" stroke="#3a7a8a" stroke-width="2"/>
+                                <text x="550" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">START: Debt Collector Contact</text>
+                            </a>
+
+                            <path d="M 550 70 L 550 95" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- ========== FIRST DECISION: WITHIN 30 DAYS? ========== -->
+                            <polygon points="550,100 680,160 550,220 420,160" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                            <text x="550" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Within 30 Days of</text>
+                            <text x="550" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">First Contact?</text>
+
+                            <!-- YES - Within 30 days (Best position) -->
+                            <path d="M 420 160 L 250 160" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                            <text x="335" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27ae60" font-weight="bold">YES</text>
+
+                            <!-- NO - Outside 30 days -->
+                            <path d="M 680 160 L 850 160" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+                            <text x="765" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c" font-weight="bold">NO</text>
+
+                            <!-- ========== LEFT BRANCH: WITHIN 30 DAYS ========== -->
+
+                            <!-- Immediate Action: Send Validation Letter -->
+                            <a href="/templates/phase-1/debt-validation.html" target="_blank">
+                                <rect x="100" y="135" width="150" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="175" y="157" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Send Debt</text>
+                                <text x="175" y="173" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Validation Letter</text>
+                                <text x="175" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">Certified mail</text>
+                            </a>
+
+                            <path d="M 175 190 L 175 230" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Result: Collection Must Stop -->
+                            <rect x="100" y="235" width="150" height="45" rx="8" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+                            <text x="175" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Collection STOPS</text>
+                            <text x="175" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Until they validate</text>
+
+                            <path d="M 175 280 L 175 310" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- ========== RIGHT BRANCH: OUTSIDE 30 DAYS ========== -->
+
+                            <!-- Still can dispute -->
+                            <rect x="775" y="135" width="150" height="55" rx="6" fill="#4a90a4" stroke="#3a7a8a" stroke-width="2"/>
+                            <text x="850" y="157" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Still Dispute +</text>
+                            <text x="850" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Request Validation</text>
+                            <text x="850" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#cce">Less leverage but still valid</text>
+
+                            <path d="M 850 190 L 850 230" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Check Statute of Limitations -->
+                            <polygon points="850,235 960,285 850,335 740,285" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                            <text x="850" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Is Debt Past</text>
+                            <text x="850" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Statute of Limits?</text>
+
+                            <!-- YES - Time barred -->
+                            <path d="M 960 285 L 1030 285" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                            <text x="995" y="275" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">YES</text>
+
+                            <rect x="1000" y="260" width="90" height="50" rx="8" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+                            <text x="1045" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">TIME</text>
+                            <text x="1045" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">BARRED</text>
+
+                            <!-- NO - Still within SOL -->
+                            <path d="M 850 335 L 850 380" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+                            <text x="865" y="360" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">NO</text>
+
+                            <!-- Connect back to main flow -->
+                            <path d="M 850 380 L 850 420 L 550 420" stroke="#666" stroke-width="2" fill="none"/>
+
+                            <!-- ========== MAIN FLOW: WAIT FOR RESPONSE ========== -->
+
+                            <!-- Decision: Did they respond? -->
+                            <polygon points="550,315 680,375 550,435 420,375" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                            <text x="550" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Did They Respond</text>
+                            <text x="550" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Within 30 Days?</text>
+
+                            <!-- Connect from left branch -->
+                            <path d="M 175 310 L 175 375 L 410 375" stroke="#666" stroke-width="2" fill="none"/>
+
+                            <!-- NO Response -->
+                            <path d="M 420 375 L 200 375 L 200 460" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                            <text x="280" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27ae60" font-weight="bold">NO</text>
+
+                            <!-- They failed to validate -->
+                            <rect x="100" y="465" width="200" height="60" rx="8" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+                            <text x="200" y="487" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">FDCPA Violation!</text>
+                            <text x="200" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">They cannot legally continue</text>
+                            <text x="200" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cfc">Document & report</text>
+
+                            <!-- YES Response -->
+                            <path d="M 680 375 L 850 375 L 850 460" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+                            <text x="765" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c" font-weight="bold">YES</text>
+
+                            <!-- Evaluate Response -->
+                            <polygon points="850,465 980,525 850,585 720,525" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                            <text x="850" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Is Validation</text>
+                            <text x="850" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Complete?</text>
+
+                            <!-- NO - Incomplete validation -->
+                            <path d="M 720 525 L 550 525" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+                            <text x="635" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">NO</text>
+
+                            <!-- Incomplete validation box -->
+                            <rect x="400" y="495" width="150" height="60" rx="6" fill="#4a90a4" stroke="#3a7a8a" stroke-width="2"/>
+                            <text x="475" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Inadequate</text>
+                            <text x="475" y="533" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Validation</text>
+                            <text x="475" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#cce">Send notice of deficiency</text>
+
+                            <!-- YES - Complete validation -->
+                            <path d="M 980 525 L 1050 525" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                            <text x="1015" y="515" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">YES</text>
+
+                            <!-- Valid debt - options -->
+                            <rect x="1000" y="495" width="90" height="60" rx="6" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+                            <text x="1045" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Debt</text>
+                            <text x="1045" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Validated</text>
+                            <text x="1045" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fee">See options below</text>
+
+                            <!-- ========== FDCPA VIOLATION BRANCH ========== -->
+
+                            <path d="M 200 525 L 200 580" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Actions for violation -->
+                            <rect x="50" y="585" width="300" height="90" rx="8" fill="rgba(39, 174, 96, 0.15)" stroke="#27ae60" stroke-width="2"/>
+                            <text x="200" y="608" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1e8449" font-weight="bold">Your Options When They Violate</text>
+                            <text x="200" y="628" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">1. Send Cease Collection Notice</text>
+                            <text x="200" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">2. File CFPB Complaint</text>
+                            <text x="200" y="662" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">3. Sue for FDCPA damages ($1,000 + fees)</text>
+
+                            <!-- ========== INCOMPLETE VALIDATION BRANCH ========== -->
+
+                            <path d="M 475 555 L 475 620" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Decision: Do they continue collecting? -->
+                            <polygon points="475,625 585,680 475,735 365,680" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                            <text x="475" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Do They Keep</text>
+                            <text x="475" y="687" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Collecting?</text>
+
+                            <!-- YES - They continue (violation) -->
+                            <path d="M 365 680 L 200 680" stroke="#e74c3c" stroke-width="2" fill="none"/>
+                            <text x="280" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">YES</text>
+                            <path d="M 200 675 L 200 650" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow-red)"/>
+
+                            <!-- NO - They stop -->
+                            <path d="M 475 735 L 475 780" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                            <text x="490" y="760" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">NO</text>
+
+                            <!-- Collection stops -->
+                            <rect x="375" y="785" width="200" height="50" rx="8" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+                            <text x="475" y="807" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Collection Stops</text>
+                            <text x="475" y="823" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Document everything, keep records</text>
+
+                            <!-- ========== VALID DEBT OPTIONS ========== -->
+
+                            <path d="M 1045 555 L 1045 620" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Options box -->
+                            <rect x="700" y="625" width="350" height="170" rx="8" fill="rgba(230, 126, 34, 0.1)" stroke="#e67e22" stroke-width="2"/>
+                            <text x="875" y="650" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#d35400" font-weight="bold">If Debt Is Validated</text>
+
+                            <!-- Option 1: Negotiate -->
+                            <rect x="720" y="665" width="150" height="45" rx="6" fill="#4a90a4" stroke="#3a7a8a" stroke-width="1"/>
+                            <text x="795" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Negotiate Settlement</text>
+                            <text x="795" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cce">Often 25-50% of total</text>
+
+                            <!-- Option 2: Payment plan -->
+                            <rect x="880" y="665" width="150" height="45" rx="6" fill="#4a90a4" stroke="#3a7a8a" stroke-width="1"/>
+                            <text x="955" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Payment Plan</text>
+                            <text x="955" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cce">Get terms in writing</text>
+
+                            <!-- Option 3: Challenge -->
+                            <rect x="720" y="720" width="150" height="45" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="1"/>
+                            <text x="795" y="740" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Challenge Further</text>
+                            <text x="795" y="755" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ddd">Consideration questions</text>
+
+                            <!-- Option 4: Consult attorney -->
+                            <rect x="880" y="720" width="150" height="45" rx="6" fill="#a0522d" stroke="#8b4513" stroke-width="1"/>
+                            <text x="955" y="740" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">Consult Attorney</text>
+                            <text x="955" y="755" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#eee">Many do free consults</text>
+
+                            <!-- Warning -->
+                            <text x="875" y="785" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#d35400" font-weight="bold">WARNING: Get any settlement in writing BEFORE paying!</text>
+
+
+                            <!-- ========== SUED SECTION ========== -->
+
+                            <rect x="350" y="880" width="400" height="50" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
+                            <text x="550" y="905" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="white" font-weight="bold">IF THEY SUE YOU</text>
+                            <text x="550" y="922" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fdd">DO NOT IGNORE — You must respond or they win by default</text>
+
+                            <path d="M 550 930 L 550 965" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Lawsuit response -->
+                            <rect x="200" y="970" width="700" height="120" rx="8" fill="rgba(231, 76, 60, 0.1)" stroke="#e74c3c" stroke-width="2"/>
+                            <text x="550" y="995" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c0392b" font-weight="bold">Critical Steps if Sued</text>
+
+                            <text x="260" y="1020" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">1. Note the deadline</text>
+                            <text x="260" y="1035" font-family="Arial, sans-serif" font-size="10" fill="#555">Usually 20-30 days to respond</text>
+
+                            <text x="470" y="1020" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">2. File an Answer</text>
+                            <text x="470" y="1035" font-family="Arial, sans-serif" font-size="10" fill="#555">Deny claims, raise defenses</text>
+
+                            <text x="680" y="1020" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">3. Raise Defenses</text>
+                            <text x="680" y="1035" font-family="Arial, sans-serif" font-size="10" fill="#555">Standing, SOL, validation failure</text>
+
+                            <text x="550" y="1065" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">4. Consider Legal Help — Many FDCPA attorneys work on contingency</text>
+                            <text x="550" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c0392b">Default judgment = they win automatically. ALWAYS respond!</text>
+
+
+                            <!-- ========== KEY DOCUMENTS BOX ========== -->
+
+                            <rect x="100" y="1120" width="400" height="100" rx="8" fill="rgba(139, 90, 139, 0.1)" stroke="#8b5a8b" stroke-width="2"/>
+                            <text x="300" y="1145" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#7a4a7a" font-weight="bold">Key Documents</text>
+
+                            <a href="/templates/phase-1/debt-validation.html" target="_blank">
+                                <rect x="120" y="1160" width="170" height="30" rx="4" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="1"/>
+                                <text x="205" y="1180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Debt Validation Letter</text>
+                            </a>
+
+                            <a href="/templates/phase-2/disputed-debt.html" target="_blank">
+                                <rect x="310" y="1160" width="170" height="30" rx="4" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="1"/>
+                                <text x="395" y="1180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Disputed Debt Notice</text>
+                            </a>
+
+                            <text x="300" y="1210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Send all documents via certified mail, return receipt requested</text>
+
+
+                            <!-- ========== FDCPA VIOLATIONS BOX ========== -->
+
+                            <rect x="550" y="1120" width="450" height="100" rx="8" fill="rgba(74, 144, 164, 0.1)" stroke="#4a90a4" stroke-width="2"/>
+                            <text x="775" y="1145" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#3a7a8a" font-weight="bold">Document These FDCPA Violations</text>
+
+                            <text x="590" y="1168" font-family="Arial, sans-serif" font-size="10" fill="#333">• Collecting after dispute without validation</text>
+                            <text x="590" y="1183" font-family="Arial, sans-serif" font-size="10" fill="#333">• Calling after cease communication request</text>
+                            <text x="590" y="1198" font-family="Arial, sans-serif" font-size="10" fill="#333">• Calls before 8am or after 9pm</text>
+
+                            <text x="820" y="1168" font-family="Arial, sans-serif" font-size="10" fill="#333">• Threats they can't/won't follow through</text>
+                            <text x="820" y="1183" font-family="Arial, sans-serif" font-size="10" fill="#333">• Discussing debt with third parties</text>
+                            <text x="820" y="1198" font-family="Arial, sans-serif" font-size="10" fill="#333">• Misrepresenting amount owed</text>
+
+                            <text x="775" y="1215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3a7a8a" font-weight="bold">Each violation = potential $1,000 + attorney fees if you sue</text>
+
+
+                            <!-- ========== TIMELINE REMINDER ========== -->
+
+                            <rect x="200" y="1260" width="700" height="50" rx="8" fill="rgba(212, 168, 83, 0.15)" stroke="#d4a853" stroke-width="2"/>
+                            <text x="550" y="1282" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#b8942e" font-weight="bold">Key Timeline: 30 days to dispute • Check your state's Statute of Limitations</text>
+                            <text x="550" y="1300" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Document every contact • Save all mail • Never admit the debt without understanding consequences</text>
+
+                        </svg>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Key Decision Points Explained</h2>
+
+                    <div class="branch-description">
+                        <div class="branch-description__title">The 30-Day Window</div>
+                        <p>Your strongest position is within 30 days of first contact. During this window:</p>
+                        <ul>
+                            <li>Written dispute triggers their obligation to <strong>stop all collection</strong></li>
+                            <li>They must validate before resuming</li>
+                            <li>Failure to validate = FDCPA violation</li>
+                        </ul>
+                        <p>After 30 days you can still dispute, but they're not required to stop collection while validating.</p>
+                    </div>
+
+                    <div class="branch-description">
+                        <div class="branch-description__title">What Counts as Adequate Validation</div>
+                        <p>They must provide:</p>
+                        <ul>
+                            <li><strong>Original signed agreement</strong> — Not just their internal records</li>
+                            <li><strong>Chain of assignment</strong> — How they got authority to collect</li>
+                            <li><strong>Itemized accounting</strong> — How the amount was calculated</li>
+                            <li><strong>Licensing proof</strong> — Are they licensed in your state?</li>
+                        </ul>
+                        <p><strong>A computer printout or "we bought this debt" is NOT adequate validation.</strong></p>
+                    </div>
+
+                    <div class="branch-description">
+                        <div class="branch-description__title">Statute of Limitations</div>
+                        <p>Debts expire for legal collection (typically 3-6 years depending on state and debt type):</p>
+                        <ul>
+                            <li>After expiration, they cannot successfully sue you</li>
+                            <li>They can still ask, but you have a complete defense</li>
+                            <li><strong>WARNING:</strong> Making ANY payment can restart the clock!</li>
+                            <li><strong>WARNING:</strong> Acknowledging the debt in writing may restart it too!</li>
+                        </ul>
+                        <p>Research your state's specific statute before taking action.</p>
+                    </div>
+
+                    <div class="branch-description">
+                        <div class="branch-description__title">If They Sue You</div>
+                        <p>This is serious but not hopeless:</p>
+                        <ul>
+                            <li><strong>DO NOT IGNORE</strong> — Default judgment means automatic loss</li>
+                            <li>File your Answer before the deadline (usually 20-30 days)</li>
+                            <li>Raise defenses: lack of standing, SOL expired, validation failure, improper service</li>
+                            <li>Many consumer attorneys take FDCPA cases on contingency</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Your FDCPA Rights</h2>
+
+                    <div class="rights-grid">
+                        <div class="rights-box">
+                            <div class="rights-box__title">Right to Validation</div>
+                            <p>Demand proof of the debt within 30 days. They must verify before continuing.</p>
+                        </div>
+                        <div class="rights-box">
+                            <div class="rights-box__title">Right to Dispute</div>
+                            <p>Written dispute triggers their obligation to STOP until they validate.</p>
+                        </div>
+                        <div class="rights-box">
+                            <div class="rights-box__title">Right to Cease Contact</div>
+                            <p>Demand they stop contacting you entirely. They must comply.</p>
+                        </div>
+                        <div class="rights-box">
+                            <div class="rights-box__title">Right to Sue</div>
+                            <p>Violations = $1,000 statutory damages + attorney fees.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="timeline-box">
+                        <div class="timeline-box__title">Action Timeline</div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__time">Day 1-5</div>
+                            <div>Receive collector contact → Send validation letter via certified mail</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__time">Day 5-35</div>
+                            <div>Wait for response (they have 30 days) → Collection should stop</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__time">Day 35+</div>
+                            <div>Evaluate response → Take appropriate action based on decision tree</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__time">Ongoing</div>
+                            <div>Document ALL contacts → Save all correspondence → Note any violations</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="important-box">
+                        <div class="important-box__title">Critical Reminders</div>
+                        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                            <li><strong>Never admit the debt</strong> without understanding all consequences</li>
+                            <li><strong>Never make partial payment</strong> — can restart statute of limitations</li>
+                            <li><strong>Always communicate in writing</strong> — creates documentation</li>
+                            <li><strong>Send everything certified mail</strong> — proof of delivery</li>
+                            <li><strong>Document every violation</strong> — each is potential money damages</li>
+                            <li><strong>Get any settlement in writing</strong> BEFORE paying anything</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">📋</div>
+                        <div class="path-indicator__text">Knowledge is your best defense. Collectors rely on fear and ignorance — now you have neither.</div>
+                    </div>
+
+                    <nav class="page-nav">
+                        <a href="/maps/mortgage-decision-tree.html" class="page-nav__link">
+                            <span class="page-nav__label">Previous map</span>
+                            <span class="page-nav__title">← Mortgage Decision Tree</span>
+                        </a>
+                        <a href="/pathways/common-situations/debt-collection.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Full guide</span>
+                            <span class="page-nav__title">Debt Collection Details →</span>
+                        </a>
+                    </nav>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

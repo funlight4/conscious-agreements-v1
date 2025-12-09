@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Learn First — Conscious Agreements</title>
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    <style>
+        /* Full-width map section */
+        .map-section-full {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 2rem 5%;
+            background: #fdfbf7;
+            border-top: 2px solid var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .map-container {
+            background: white;
+            border: 2px solid var(--color-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 100%;
+        }
+        .map-svg {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            min-height: 800px;
+        }
+        .map-svg a:hover rect,
+        .map-svg a:hover ellipse {
+            filter: brightness(1.1);
+            cursor: pointer;
+        }
+        .map-svg a:hover text {
+            font-weight: bold;
+        }
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(212, 168, 83, 0.08);
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid #333;
+        }
+        .learning-path {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(212, 168, 83, 0.08);
+            border-radius: 12px;
+            border: 2px solid var(--color-gold);
+        }
+        .learning-path__title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--color-gold-dark);
+            margin-bottom: 1rem;
+        }
+        .learning-path__steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .learning-path__step {
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+        }
+        .learning-path__step a {
+            color: var(--color-gold-dark);
+            text-decoration: none;
+        }
+        .learning-path__step a:hover {
+            text-decoration: underline;
+        }
+        .learning-path__arrow {
+            color: var(--color-gold);
+            font-weight: bold;
+        }
+        .tier-description {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-gold);
+        }
+        .tier-description__title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .tier-description--foundation .tier-description__title { color: #d4a853; }
+        .tier-description--domains .tier-description__title { color: #5b8c5a; }
+        .tier-description--pathways .tier-description__title { color: #4a90a4; }
+        .tier-description--templates .tier-description__title { color: #8b5a8b; }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb__separator">→</span>
+                <a href="/maps/">Guide</a>
+                <span class="breadcrumb__separator">→</span>
+                <span>What to Learn First</span>
+            </nav>
+
+            <header class="hero">
+                <div class="hero__badge">Learning Path</div>
+                <h1 class="hero__title">What to Learn First</h1>
+                <p class="hero__subtitle">Concepts build on each other. This map shows dependencies — what you need to understand before tackling advanced topics.</p>
+            </header>
+
+            <article>
+                <section>
+                    <div class="insight-box">
+                        <div class="insight-box__title">How to Read This Map</div>
+                        <p>The map flows from <strong>top to bottom</strong>:</p>
+                        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                            <li><strong>Top tier (Gold)</strong> = Foundation concepts — start here</li>
+                            <li><strong>Middle tier (Green)</strong> = Domain knowledge — builds on foundation</li>
+                            <li><strong>Lower tier (Blue)</strong> = Practical pathways — requires domain understanding</li>
+                            <li><strong>Bottom tier (Purple)</strong> = Templates — use after you understand the path</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;"><strong>Arrows show dependencies</strong> — follow them downward to see what each concept enables.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #d4a853;"></div>
+                            <span>Tier 1: Foundation (Start Here)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #5b8c5a;"></div>
+                            <span>Tier 2: Domain Knowledge</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #4a90a4;"></div>
+                            <span>Tier 3: Practical Pathways</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #8b5a8b;"></div>
+                            <span>Tier 4: Templates & Actions</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="map-section-full">
+                    <h2 style="text-align: center; margin-bottom: 0.5rem;">Concept Dependency Map</h2>
+                    <p style="text-align: center; margin-bottom: 1.5rem;">Click any concept to learn about it. Follow arrows to see what it enables.</p>
+
+                    <div class="map-container">
+                        <svg class="map-svg" viewBox="0 0 1200 950" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                            <!-- Background -->
+                            <rect width="1200" height="950" fill="#fdfbf7"/>
+
+                            <!-- Arrowhead definition -->
+                            <defs>
+                                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#999"/>
+                                </marker>
+                            </defs>
+
+                            <!-- Title -->
+                            <text x="600" y="35" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2c3e50" font-weight="bold">Knowledge Dependencies</text>
+                            <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#666">What you need to understand before tackling advanced topics</text>
+
+                            <!-- ========== TIER 1: FOUNDATION (Gold) ========== -->
+                            <text x="50" y="105" font-family="Georgia, serif" font-size="14" fill="#b8942e" font-weight="bold">TIER 1: FOUNDATION</text>
+                            <line x1="50" y1="112" x2="300" y2="112" stroke="#d4a853" stroke-width="2"/>
+
+                            <!-- What is Agreement (Core concept - everything stems from this) -->
+                            <a href="/foundation/what-is-agreement.html" target="_blank">
+                                <rect x="100" y="130" width="180" height="55" rx="8" fill="#d4a853" stroke="#b8942e" stroke-width="2"/>
+                                <text x="190" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">What is Agreement?</text>
+                                <text x="190" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff8e8">The core concept</text>
+                            </a>
+
+                            <!-- Conscious vs Unconscious -->
+                            <a href="/foundation/conscious-unconscious.html" target="_blank">
+                                <rect x="320" y="130" width="180" height="55" rx="8" fill="#d4a853" stroke="#b8942e" stroke-width="2"/>
+                                <text x="410" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Conscious vs</text>
+                                <text x="410" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Unconscious</text>
+                            </a>
+
+                            <!-- How You Energize -->
+                            <a href="/foundation/how-you-energize.html" target="_blank">
+                                <rect x="540" y="130" width="180" height="55" rx="8" fill="#d4a853" stroke="#b8942e" stroke-width="2"/>
+                                <text x="630" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">How You Energize</text>
+                                <text x="630" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff8e8">Agreements</text>
+                            </a>
+
+                            <!-- Covert Contracts -->
+                            <a href="/foundation/covert-contracts.html" target="_blank">
+                                <rect x="760" y="130" width="160" height="55" rx="8" fill="#d4a853" stroke="#b8942e" stroke-width="2"/>
+                                <text x="840" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Covert Contracts</text>
+                                <text x="840" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff8e8">Hidden agreements</text>
+                            </a>
+
+                            <!-- Healthy Agreements -->
+                            <a href="/foundation/healthy-agreements.html" target="_blank">
+                                <rect x="960" y="130" width="160" height="55" rx="8" fill="#d4a853" stroke="#b8942e" stroke-width="2"/>
+                                <text x="1040" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Healthy</text>
+                                <text x="1040" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Agreements</text>
+                            </a>
+
+                            <!-- Money Creation Section (Special emphasis) -->
+                            <a href="/foundation/money-creation/" target="_blank">
+                                <rect x="350" y="210" width="200" height="70" rx="8" fill="#c9952e" stroke="#a87d1e" stroke-width="3"/>
+                                <text x="450" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Money Creation</text>
+                                <text x="450" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">How banks create money</text>
+                                <text x="450" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff8e8">CRITICAL for mortgage path</text>
+                            </a>
+
+                            <!-- Promissory Notes -->
+                            <a href="/foundation/money-creation/promissory-notes.html" target="_blank">
+                                <rect x="590" y="210" width="180" height="70" rx="8" fill="#c9952e" stroke="#a87d1e" stroke-width="2"/>
+                                <text x="680" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Promissory Notes</text>
+                                <text x="680" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Your signature = value</text>
+                                <text x="680" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff8e8">Builds on Money Creation</text>
+                            </a>
+
+                            <!-- The System / Consideration Paradox -->
+                            <a href="/foundation/money-creation/the-system.html" target="_blank">
+                                <rect x="810" y="210" width="180" height="70" rx="8" fill="#c9952e" stroke="#a87d1e" stroke-width="2"/>
+                                <text x="900" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">The System</text>
+                                <text x="900" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Consideration Paradox</text>
+                                <text x="900" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff8e8">The legal vulnerability</text>
+                            </a>
+
+                            <!-- Arrows: Tier 1 internal flow -->
+                            <path d="M 280 157 L 310 157" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 500 157 L 530 157" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 720 157 L 750 157" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 920 157 L 950 157" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Arrows: Foundation to Money Creation -->
+                            <path d="M 190 185 L 190 235 L 340 235" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 410 185 L 410 200" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+                            <!-- Arrows: Money Creation chain -->
+                            <path d="M 550 245 L 580 245" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 770 245 L 800 245" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+
+                            <!-- ========== TIER 2: DOMAINS (Green) ========== -->
+                            <text x="50" y="330" font-family="Georgia, serif" font-size="14" fill="#4a7a4a" font-weight="bold">TIER 2: DOMAIN KNOWLEDGE</text>
+                            <line x1="50" y1="337" x2="300" y2="337" stroke="#5b8c5a" stroke-width="2"/>
+
+                            <!-- Commerce Domain -->
+                            <a href="/domains/commerce/" target="_blank">
+                                <rect x="100" y="355" width="200" height="80" rx="8" fill="#5b8c5a" stroke="#4a7a4a" stroke-width="2"/>
+                                <text x="200" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Commerce</text>
+                                <text x="200" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Negotiable Instruments</text>
+                                <text x="200" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Consideration • UCC</text>
+                                <text x="200" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cfc">Requires: Money Creation</text>
+                            </a>
+
+                            <!-- Identity Domain -->
+                            <a href="/domains/identity/" target="_blank">
+                                <rect x="340" y="355" width="200" height="80" rx="8" fill="#5b8c5a" stroke="#4a7a4a" stroke-width="2"/>
+                                <text x="440" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Identity</text>
+                                <text x="440" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">The Name • Person</text>
+                                <text x="440" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Private vs Public</text>
+                                <text x="440" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cfc">Requires: Agreement basics</text>
+                            </a>
+
+                            <!-- Governance Domain (Coming Soon) -->
+                            <a href="/domains/governance/" target="_blank">
+                                <rect x="580" y="355" width="200" height="80" rx="8" fill="#888" stroke="#666" stroke-width="2" stroke-dasharray="4"/>
+                                <text x="680" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Governance</text>
+                                <text x="680" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Jurisdiction • Statutes</text>
+                                <text x="680" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Consent Framework</text>
+                                <text x="680" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#aaa">Coming Soon</text>
+                            </a>
+
+                            <!-- Property Domain (Coming Soon) -->
+                            <a href="/domains/property/" target="_blank">
+                                <rect x="820" y="355" width="200" height="80" rx="8" fill="#888" stroke="#666" stroke-width="2" stroke-dasharray="4"/>
+                                <text x="920" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Property</text>
+                                <text x="920" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Titles • Trusts • Deeds</text>
+                                <text x="920" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Land Patents</text>
+                                <text x="920" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#aaa">Coming Soon</text>
+                            </a>
+
+                            <!-- Reference (supports all) -->
+                            <a href="/reference/terminology.html" target="_blank">
+                                <rect x="1040" y="370" width="120" height="50" rx="8" fill="#a0522d" stroke="#8b4513" stroke-width="2"/>
+                                <text x="1100" y="392" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Terminology</text>
+                                <text x="1100" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#eee">Use anytime</text>
+                            </a>
+
+                            <!-- Arrows: Foundation to Domains -->
+                            <path d="M 450 280 L 200 345" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 190 185 L 380 345" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 900 280 L 900 345" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+
+                            <!-- ========== TIER 3: PATHWAYS (Blue) ========== -->
+                            <text x="50" y="490" font-family="Georgia, serif" font-size="14" fill="#3a7a8a" font-weight="bold">TIER 3: PRACTICAL PATHWAYS</text>
+                            <line x1="50" y1="497" x2="300" y2="497" stroke="#4a90a4" stroke-width="2"/>
+
+                            <!-- General Methods -->
+                            <a href="/pathways/" target="_blank">
+                                <rect x="100" y="515" width="180" height="70" rx="8" fill="#4a90a4" stroke="#3a7a8a" stroke-width="2"/>
+                                <text x="190" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">General Methods</text>
+                                <text x="190" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Examining Agreements</text>
+                                <text x="190" y="572" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Responding to Claims</text>
+                            </a>
+
+                            <!-- Mortgage Challenge Path -->
+                            <a href="/pathways/common-situations/mortgage-challenge.html" target="_blank">
+                                <rect x="320" y="515" width="200" height="70" rx="8" fill="#3a7a8a" stroke="#2a6a7a" stroke-width="3"/>
+                                <text x="420" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="white" font-weight="bold">Mortgage Path</text>
+                                <text x="420" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Complete challenge strategy</text>
+                                <text x="420" y="572" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cce">Requires: Commerce + Money</text>
+                            </a>
+
+                            <!-- Debt Collection Path -->
+                            <a href="/pathways/common-situations/debt-collection.html" target="_blank">
+                                <rect x="560" y="515" width="200" height="70" rx="8" fill="#4a90a4" stroke="#3a7a8a" stroke-width="2"/>
+                                <text x="660" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" font-weight="bold">Debt Collection</text>
+                                <text x="660" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Validation & dispute</text>
+                                <text x="660" y="572" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#cce">Requires: Commerce basics</text>
+                            </a>
+
+                            <!-- Decision Tree Maps -->
+                            <a href="/maps/mortgage-decision-tree.html" target="_blank">
+                                <rect x="800" y="515" width="180" height="70" rx="8" fill="rgba(212, 168, 83, 0.3)" stroke="#d4a853" stroke-width="2"/>
+                                <text x="890" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#b8942e" font-weight="bold">Decision Trees</text>
+                                <text x="890" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Visual navigation</text>
+                                <text x="890" y="572" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#888">Use alongside pathways</text>
+                            </a>
+
+                            <!-- Arrows: Domains to Pathways -->
+                            <path d="M 200 435 L 190 505" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 200 435 L 380 505" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 440 435 L 420 505" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 200 435 L 620 505" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+
+                            <!-- ========== TIER 4: TEMPLATES (Purple) ========== -->
+                            <text x="50" y="640" font-family="Georgia, serif" font-size="14" fill="#7a4a7a" font-weight="bold">TIER 4: TEMPLATES & ACTIONS</text>
+                            <line x1="50" y1="647" x2="300" y2="647" stroke="#8b5a8b" stroke-width="2"/>
+
+                            <!-- Phase 1 -->
+                            <a href="/templates/phase-1/" target="_blank">
+                                <rect x="100" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="165" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 1</text>
+                                <text x="165" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Discovery</text>
+                                <text x="165" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">QWR, FOIA, Validation</text>
+                            </a>
+
+                            <!-- Phase 2 -->
+                            <a href="/templates/phase-2/" target="_blank">
+                                <rect x="250" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="315" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 2</text>
+                                <text x="315" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Challenge</text>
+                                <text x="315" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">Affidavits, Notices</text>
+                            </a>
+
+                            <!-- Phase 3 -->
+                            <a href="/templates/phase-3/" target="_blank">
+                                <rect x="400" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="465" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 3</text>
+                                <text x="465" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Court Filings</text>
+                                <text x="465" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">Motions, Quiet Title</text>
+                            </a>
+
+                            <!-- Phase 4 -->
+                            <a href="/templates/phase-4/" target="_blank">
+                                <rect x="550" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="615" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 4</text>
+                                <text x="615" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Complaints</text>
+                                <text x="615" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">CFPB, FBI, DOJ</text>
+                            </a>
+
+                            <!-- Phase 5 -->
+                            <a href="/templates/phase-5/" target="_blank">
+                                <rect x="700" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="765" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 5</text>
+                                <text x="765" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Alternatives</text>
+                                <text x="765" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">Conditional Accept</text>
+                            </a>
+
+                            <!-- Phase 6-7 -->
+                            <a href="/templates/phase-6/" target="_blank">
+                                <rect x="850" y="665" width="130" height="55" rx="6" fill="#8b5a8b" stroke="#7a4a7a" stroke-width="2"/>
+                                <text x="915" y="687" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="white" font-weight="bold">Phase 6-7</text>
+                                <text x="915" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Pressure & Settlement</text>
+                                <text x="915" y="715" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ddd">Public, Resolution</text>
+                            </a>
+
+                            <!-- Arrows: Pathways to Templates -->
+                            <path d="M 420 585 L 165 655" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 420 585 L 315 655" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 420 585 L 465 655" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 420 585 L 615 655" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                            <path d="M 660 585 L 165 655" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+
+                            <!-- ========== KEY INSIGHT BOX ========== -->
+                            <rect x="100" y="760" width="500" height="80" rx="12" fill="rgba(212, 168, 83, 0.15)" stroke="#d4a853" stroke-width="2"/>
+                            <text x="350" y="785" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#b8942e" font-weight="bold">The Critical Path for Mortgage Challenges</text>
+                            <text x="350" y="808" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#555">Agreement Basics → Money Creation → Promissory Notes → Consideration Paradox</text>
+                            <text x="350" y="828" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#555">→ Commerce Domain → Mortgage Path → Templates (Phases 1-7)</text>
+
+                            <!-- ========== QUICK START BOX ========== -->
+                            <rect x="640" y="760" width="460" height="80" rx="12" fill="rgba(74, 144, 164, 0.15)" stroke="#4a90a4" stroke-width="2"/>
+                            <text x="870" y="785" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#3a7a8a" font-weight="bold">Quick Start for Debt Collection</text>
+                            <text x="870" y="808" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#555">Agreement Basics → Commerce (Consideration) →</text>
+                            <text x="870" y="828" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#555">Debt Collection Path → Phase 1 Templates</text>
+
+                            <!-- ========== LEGEND NOTE ========== -->
+                            <text x="600" y="920" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#888">Dashed boxes = Coming Soon | Solid boxes = Available Now | Click any box to open in new tab</text>
+
+                        </svg>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Recommended Learning Paths</h2>
+
+                    <div class="learning-path">
+                        <div class="learning-path__title">Path A: Understanding the Framework (Start Here)</div>
+                        <div class="learning-path__steps">
+                            <span class="learning-path__step"><a href="/foundation/what-is-agreement.html" target="_blank">What is Agreement?</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/foundation/conscious-unconscious.html" target="_blank">Conscious vs Unconscious</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/foundation/how-you-energize.html" target="_blank">How You Energize</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/foundation/covert-contracts.html" target="_blank">Covert Contracts</a></span>
+                        </div>
+                    </div>
+
+                    <div class="learning-path">
+                        <div class="learning-path__title">Path B: Mortgage Challenge (Most Common)</div>
+                        <div class="learning-path__steps">
+                            <span class="learning-path__step"><a href="/foundation/money-creation/" target="_blank">Money Creation</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/foundation/money-creation/promissory-notes.html" target="_blank">Promissory Notes</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/foundation/money-creation/the-system.html" target="_blank">The System</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/domains/commerce/" target="_blank">Commerce</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/pathways/common-situations/mortgage-challenge.html" target="_blank">Mortgage Path</a></span>
+                        </div>
+                    </div>
+
+                    <div class="learning-path">
+                        <div class="learning-path__title">Path C: Debt Collection Defense</div>
+                        <div class="learning-path__steps">
+                            <span class="learning-path__step"><a href="/foundation/what-is-agreement.html" target="_blank">Agreement Basics</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/domains/commerce/consideration-in-commerce.html" target="_blank">Consideration</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/pathways/common-situations/debt-collection.html" target="_blank">Debt Collection Path</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/templates/phase-1/debt-validation.html" target="_blank">Debt Validation Template</a></span>
+                        </div>
+                    </div>
+
+                    <div class="learning-path">
+                        <div class="learning-path__title">Path D: Identity & Legal Status</div>
+                        <div class="learning-path__steps">
+                            <span class="learning-path__step"><a href="/foundation/what-is-agreement.html" target="_blank">Agreement Basics</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/reference/terminology.html" target="_blank">Terminology</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/domains/identity/" target="_blank">Identity Domain</a></span>
+                            <span class="learning-path__arrow">→</span>
+                            <span class="learning-path__step"><a href="/domains/identity/person-and-individual.html" target="_blank">Person & Individual</a></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Understanding the Tiers</h2>
+
+                    <div class="tier-description tier-description--foundation">
+                        <div class="tier-description__title">Tier 1: Foundation</div>
+                        <p>These are the core concepts that everything else builds on. You don't need to master all of them immediately, but understanding "What is Agreement?" and "Conscious vs Unconscious" gives you the lens to see everything else clearly. The Money Creation section is especially critical for mortgage challenges.</p>
+                    </div>
+
+                    <div class="tier-description tier-description--domains">
+                        <div class="tier-description__title">Tier 2: Domain Knowledge</div>
+                        <p>These are deep dives into specific areas of law and agreement. Commerce covers the mechanics of contracts, negotiable instruments, and the UCC. Identity explores legal personhood and status. You don't need all domains — pick the one relevant to your situation.</p>
+                    </div>
+
+                    <div class="tier-description tier-description--pathways">
+                        <div class="tier-description__title">Tier 3: Practical Pathways</div>
+                        <p>These are step-by-step guides for specific situations. They assume you have the foundation and relevant domain knowledge. If you jump straight here without the background, you'll know <em>what</em> to do but not <em>why</em> — which makes it harder to adapt when things don't go as expected.</p>
+                    </div>
+
+                    <div class="tier-description tier-description--templates">
+                        <div class="tier-description__title">Tier 4: Templates & Actions</div>
+                        <p>These are the actual documents you'll use. They're organized into 7 phases that build on each other. Using templates without understanding the pathway is like using a map without knowing where you are — technically possible, but risky.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="path-indicator">
+                        <div class="path-indicator__icon">🧠</div>
+                        <div class="path-indicator__text">Knowledge builds on knowledge. Take time with the foundation before rushing to action — you'll be more effective and confident.</div>
+                    </div>
+
+                    <nav class="page-nav">
+                        <a href="/maps/site-overview.html" class="page-nav__link">
+                            <span class="page-nav__label">Previous</span>
+                            <span class="page-nav__title">← Site Overview</span>
+                        </a>
+                        <a href="/maps/mortgage-decision-tree.html" class="page-nav__link page-nav__link--next">
+                            <span class="page-nav__label">Next</span>
+                            <span class="page-nav__title">Mortgage Decision Tree →</span>
+                        </a>
+                    </nav>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
